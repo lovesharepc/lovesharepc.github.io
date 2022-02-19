@@ -1,0 +1,531 @@
+<!doctype html><html lang=en dir=zh>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
+<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
+<meta http-equiv=content-security-policy content="upgrade-insecure-requests">
+<title> linux 系統壓力測試 - IT 紀錄網站 </title>
+<meta name=keywords content="Blog,Software,Big Data,Product,Architecture,Java,Kylin">
+<meta name=author content="Elkan.Li">
+<meta property="og:title" content="linux 系統壓力測試">
+<meta property="og:site_name" content="IT 紀錄網站">
+<meta property="og:image" content="/img/author.jpg">
+<meta name=title content="linux 系統壓力測試 - IT 紀錄網站">
+<meta name=description content="Weclome to Elkan's blog site that who is best on program develop, pre-sales and big data.">
+<link rel="shortcut icon" href=/img/favicon.ico>
+<link rel=apple-touch-icon href=/img/apple-touch-icon.png>
+<link rel=apple-touch-icon-precomposed href=/img/apple-touch-icon.png>
+<link href=//cdn.bootcdn.net/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css rel=stylesheet type=text/css>
+<link href=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.css rel=stylesheet>
+<link href=/css/main.css rel=stylesheet type=text/css>
+<link href=/css/syntax.css rel=stylesheet type=text/css>
+</head>
+<body itemscope itemtype=http://schema.org/WebPage lang=zh-hans>
+<div class="container one-collumn sidebar-position-left page-home">
+<div class=headband></div>
+<header id=header class=header itemscope itemtype=http://schema.org/WPHeader>
+<div class=header-inner> <div class=site-brand-container>
+<div class=site-nav-toggle>
+<div class=toggle role=button style=opacity:1;top:0>
+<span class=toggle-line></span>
+<span class=toggle-line></span>
+<span class=toggle-line></span>
+</div>
+</div>
+<div class=site-meta>
+<div class=multi-lang-switch>
+<i class="fa fa-fw fa-language" style=margin-right:5px></i>
+<a class=lang-link id=en href=#></a>
+</div>
+<div class=custom-logo-site-title>
+<a href=/en/ class=brand rel=start>
+<span class=logo-line-before><i></i></span>
+<span class=site-title>IT 紀錄網站</span>
+<span class=logo-line-after><i></i></span>
+</a>
+</div>
+<p class=site-subtitle>Don't stop running forward!</p>
+</div>
+<div class=site-nav-right>
+<div class="toggle popup-trigger" style=opacity:1;top:0>
+<i class="fa fa-search fa-fw fa-lg"></i>
+</div>
+</div>
+</div>
+<nav class=site-nav>
+<ul id=menu class=menu>
+<li class=menu-item>
+<a href=/en/ rel=section>
+<i class="menu-item-icon fa fa-fw fa-home"></i> <br>首頁
+</a>
+</li>
+<li class=menu-item>
+<a href=/en/post rel=section>
+<i class="menu-item-icon fa fa-fw fa-archive"></i> <br>archive
+</a>
+</li>
+<li class=menu-item>
+<a href=/en/about.html rel=section>
+<i class="menu-item-icon fa fa-fw fa-user"></i> <br>關於我
+</a>
+</li>
+<li class="menu-item menu-item-search">
+<a href=javascript:; class=popup-trigger> <i class="menu-item-icon fa fa-search fa-fw"></i> <br> Search</a>
+</li>
+</ul>
+<div class=site-search>
+<div class="popup search-popup local-search-popup">
+<div class="local-search-header clearfix">
+<span class=search-icon><i class="fa fa-search"></i> </span>
+<span class=popup-btn-close><i class="fa fa-times-circle"></i></span>
+<div class=local-search-input-wrapper>
+<input autocomplete=off placeholder="Enter key words..." spellcheck=false type=text id=local-search-input autocapitalize=none autocorrect=off>
+</div>
+</div>
+<div id=local-search-result></div>
+</div>
+</div>
+</nav>
+</div>
+</header>
+<main id=main class=main>
+<div class=main-inner>
+<div class=content-wrap>
+<div id=content class=content>
+<section id=posts class=posts-expand>
+<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
+<header class=post-header>
+<h1 class=post-title itemprop="name headline">
+<a class=post-title-link href=https://lovesharepc.github.io/2020/05/03/linux-%E7%B3%BB%E7%B5%B1%E5%A3%93%E5%8A%9B%E6%B8%AC%E8%A9%A6/ itemprop=url>
+linux 系統壓力測試
+</a>
+</h1>
+<div class=post-meta>
+<span class=post-time>
+<i class="fa fa-calendar-o fa-fw"></i>
+<span class=post-meta-item-text>Published at:</span>
+<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2020/05/03">
+2020/05/03
+</time>
+</span>
+<span class=post-category>
+&nbsp; | &nbsp;
+<i class="fa fa-folder-o fa-fw"></i>
+<span class=post-meta-item-text>Categories:</span>
+<span itemprop=about itemscope itemtype=https://schema.org/Thing>
+<a href=/en/categories/centos-7 itemprop=url rel=index style=text-decoration:underline>
+<span itemprop=name>Centos 7</span>
+</a>
+&nbsp;
+</span>
+<span itemprop=about itemscope itemtype=https://schema.org/Thing>
+<a href=/en/categories/centos-8 itemprop=url rel=index style=text-decoration:underline>
+<span itemprop=name>Centos 8</span>
+</a>
+&nbsp;
+</span>
+</span>
+<span>
+|
+<i class="fa fa-file-word-o fa-fw"></i>
+<span class=post-meta-item-text>Words:</span>
+<span class=leancloud-world-count>734 words</span>
+</span>
+<span>
+|
+<i class="fa fa-eye fa-fw"></i>
+<span class=post-meta-item-text>Reading:</span>
+<span class=leancloud-view-count>2 minutes</span>
+</span>
+<span id=/2020/05/03/linux-%E7%B3%BB%E7%B5%B1%E5%A3%93%E5%8A%9B%E6%B8%AC%E8%A9%A6/ class=leancloud_visitors data-flag-title="linux 系統壓力測試">
+|
+<i class="fa fa-binoculars fa-fw"></i>
+<span class=post-meta-item-text>Visited:</span>
+<span class=leancloud-visitors-count></span>
+</span>
+</div>
+</header>
+<div class=post-body itemprop=articleBody>
+<p>壓力測試</p>
+<p>用來測試系統效能及好壞</p>
+<h1 id=取得系統資訊>取得系統資訊</h1>
+<pre class=EnlighterJSRAW data-enlighter-language=generic>lscpu
+lsmem
+lspci</pre>
+<p> </p>
+<h1 id=測試-network-iperf3>測試 network (iperf3)</h1>
+<h2 id=安裝工具-iperf3>安裝工具 iperf3</h2>
+<ul>
+<li>centos</li>
+</ul>
+<pre class=EnlighterJSRAW data-enlighter-language=generic>yum install https://iperf.fr/download/fedora/iperf3-3.1.3-1.fc24.x86_64.rpm -y</pre>
+<ul>
+<li>debian</li>
+</ul>
+<pre class=EnlighterJSRAW data-enlighter-language=generic>wget https://iperf.fr/download/ubuntu/iperf3_3.1.3-1_amd64.deb 
+wget https://iperf.fr/download/ubuntu/libiperf0_3.1.3-1_amd64.deb 
+dpkg -i iperf3_3.1.3-1_amd64.deb libiperf0_3.1.3-1_amd64.deb</pre>
+<p> </p>
+<h2 id=測試網路頻寬>測試網路頻寬</h2>
+<pre class=EnlighterJSRAW data-enlighter-language=generic>啟動 server 端
+
+iperf3 -s
+
+啟動 client 端 (測試 100G 雙向)
+
+iperf3 -c &lt;server ip&gt; -n 100G -R -i 10 -P 10 && iperf3 -c &lt;server ip&gt; -n 100G -i 10 -P 10</pre>
+<h2 id=其他參數>其他參數</h2>
+<pre class=EnlighterJSRAW data-enlighter-language=generic>Usage: iperf [-s|-c host] [options]
+       iperf [-h|--help] [-v|--version]
+
+Server or Client:
+  -p, --port      #         server port to listen on/connect to
+  -f, --format    [kmgKMG]  format to report: Kbits, Mbits, KBytes, MBytes
+  -i, --interval  #         seconds between periodic bandwidth reports
+  -F, --file name           xmit/recv the specified file
+  -A, --affinity n/n,m      set CPU affinity
+  -B, --bind      &lt;host&gt;    bind to a specific interface
+  -V, --verbose             more detailed output
+  -J, --json                output in JSON format
+  --logfile f               send output to a log file
+  -d, --debug               emit debugging output
+  -v, --version             show version information and quit
+  -h, --help                show this message and quit
+Server specific:
+  -s, --server              run in server mode
+  -D, --daemon              run the server as a daemon
+  -I, --pidfile file        write PID file
+  -1, --one-off             handle one client connection then exit
+Client specific:
+  -c, --client    &lt;host&gt;    run in client mode, connecting to &lt;host&gt;
+  -u, --udp                 use UDP rather than TCP
+  -b, --bandwidth #[KMG][/#] target bandwidth in bits/sec (0 for unlimited)
+                            (default 1 Mbit/sec for UDP, unlimited for TCP)
+                            (optional slash and packet count for burst mode)
+  -t, --time      #         time in seconds to transmit for (default 10 secs)
+  -n, --bytes     #[KMG]    number of bytes to transmit (instead of -t)
+  -k, --blockcount #[KMG]   number of blocks (packets) to transmit (instead of -t or -n)
+  -l, --len       #[KMG]    length of buffer to read or write
+                            (default 128 KB for TCP, 8 KB for UDP)
+  --cport         &lt;port&gt;    bind to a specific client port (TCP and UDP, default: ephemeral port)
+  -P, --parallel  #         number of parallel client streams to run
+  -R, --reverse             run in reverse mode (server sends, client receives)
+  -w, --window    #[KMG]    set window size / socket buffer size
+  -C, --congestion &lt;algo&gt;   set TCP congestion control algorithm (Linux and FreeBSD only)
+  -M, --set-mss   #         set TCP/SCTP maximum segment size (MTU - 40 bytes)
+  -N, --no-delay            set TCP/SCTP no delay, disabling Nagle's Algorithm
+  -4, --version4            only use IPv4
+  -6, --version6            only use IPv6
+  -S, --tos N               set the IP 'type of service'
+  -L, --flowlabel N         set the IPv6 flow label (only supported on Linux)
+  -Z, --zerocopy            use a 'zero copy' method of sending data
+  -O, --omit N              omit the first n seconds
+  -T, --title str           prefix every output line with this string
+  --get-server-output       get results from server
+  --udp-counters-64bit      use 64-bit counters in UDP test packets
+  --no-fq-socket-pacing     disable fair-queuing based socket pacing
+</pre>
+<p> </p>
+<h1 id=heading></h1>
+<h1 id=測試硬碟-io-fio>測試硬碟 IO (fio)</h1>
+<h2 id=安裝工具-fio>安裝工具 fio</h2>
+<ul>
+<li>debian</li>
+</ul>
+<pre class=EnlighterJSRAW data-enlighter-language=generic>apt install fio</pre>
+<ul>
+<li>centos</li>
+</ul>
+<pre class=EnlighterJSRAW data-enlighter-language=generic>yum install fio</pre>
+<h2 id=寫設定檔>寫設定檔</h2>
+<p>設定檔可以快速的測試各種參數</p>
+<p>nano /fio.conf</p>
+<pre class=EnlighterJSRAW data-enlighter-language=generic>[global]
+# where to test io
+filename=/dev/sdb/jobfile.fio
+size=10g
+io_size=10g
+ioengine=libaio
+group_reporting
+wait_for_previous
+
+[4kSeqRead]
+name=4kSeqRead
+bs=4k
+readwrite=read
+
+[4kSeqwirte]
+name=4kSeqwirte
+bs=4k
+readwrite=write
+
+[4kRandRead]
+name=4kRandRead
+bs=4k
+readwrite=randread
+
+[4kRandwrite]
+name=4kRandwrite
+bs=4k
+readwrite=randwrite
+
+
+[4mSeqRead]
+name=4mSeqRead
+bs=4m
+readwrite=read
+
+[4mSeqwirte]
+name=4mSeqwirte
+bs=4m
+readwrite=write
+
+[4mRandRead]
+name=4mRandRead
+bs=4m
+readwrite=randread
+
+[4mRandwrite]
+name=4mRandwrite
+bs=4m
+readwrite=randwrite
+</pre>
+<p> </p>
+<h2 id=執行測試>執行測試</h2>
+<pre class=EnlighterJSRAW data-enlighter-language=generic>fio fio.conf
+rm jobfile.fio</pre>
+<p> </p>
+<h1 id=測試-cpu--memory-speed-sysbench>測試 CPU & memory speed  (sysbench)</h1>
+<h2 id=安裝-sysbench>安裝 sysbench</h2>
+<p><a href=https://github.com/akopytov/sysbench>https://github.com/akopytov/sysbench</a></p>
+<pre class=EnlighterJSRAW data-enlighter-language=generic>Debian/Ubuntu
+
+curl -s https://packagecloud.io/install/repositories/akopytov/sysbench/script.deb.sh | sudo bash
+sudo apt -y install sysbench
+
+
+RHEL/CentOS:
+
+curl -s https://packagecloud.io/install/repositories/akopytov/sysbench/script.rpm.sh | sudo bash
+sudo yum -y install sysbench</pre>
+<p> </p>
+<h2 id=測試-cpu-效能>測試 CPU 效能</h2>
+<p>執行測試 30s 算質數數量</p>
+<pre class=EnlighterJSRAW data-enlighter-language=generic>sysbench --threads=1 --time=60 cpu  run</pre>
+<p>結果以 total number of events 作為性能基準</p>
+<pre class=EnlighterJSRAW data-enlighter-language=generic>root@pve1:/vm-storage# sysbench --threads=1 cpu --cpu-max-prime=1000 --time=30 run
+sysbench 1.0.20 (using bundled LuaJIT 2.1.0-beta2)
+
+Running the test with following options:
+Number of threads: 1
+Initializing random number generator from current time
+
+
+Prime numbers limit: 1000
+
+Initializing worker threads...
+
+Threads started!
+
+CPU speed:
+    events per second: 18476.94
+
+General statistics:
+    total time:                          30.0001s
+    total number of events:              554357
+
+Latency (ms):
+         min:                                    0.05
+         avg:                                    0.05
+         max:                                    1.45
+         95th percentile:                        0.06
+         sum:                                29875.48
+
+Threads fairness:
+    events (avg/stddev):           554357.0000/0.00
+    execution time (avg/stddev):   29.8755/0.00
+</pre>
+<p> </p>
+<p>測試</p>
+<p>以 total number of events 作為性能基準</p>
+<pre class=EnlighterJSRAW data-enlighter-language=generic>sysbench --threads=1 --time=60 memory --memory-total-size=1024G run</pre>
+<p> </p>
+</div>
+<footer class=post-footer>
+<div class=post-tags>
+<a href=/en/tags/%e5%a3%93%e5%8a%9b%e6%b8%ac%e8%a9%a6 rel=tag title=壓力測試>#壓力測試#</a>
+</div>
+<div id=disqus_thread></div>
+<script type=application/javascript>var disqus_config=function(){};(function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById('disqus_thread').innerHTML='Disqus comments not available by default when the website is previewed locally.';return}var b=document,a=b.createElement('script');a.async=!0,a.src='//bu-jue-ming-shi.disqus.com/embed.js',a.setAttribute('data-timestamp',+new Date),(b.head||b.body).appendChild(a)})()</script>
+<noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript>
+<a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a>
+>
+</footer>
+</article>
+</section>
+</div>
+</div>
+<div class=sidebar-toggle>
+<div class=sidebar-toggle-line-wrap>
+<span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+<span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+<span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+</div>
+</div>
+<aside id=sidebar class=sidebar>
+<div class=sidebar-inner>
+<section class="site-overview sidebar-panel sidebar-panel-active">
+<div class="site-author motion-element" itemprop=author itemscope itemtype=http://schema.org/Person>
+<img class=site-author-image itemprop=image src=/img/avatar.png alt=Elkan.Li>
+<p class=site-author-name itemprop=name>Elkan.Li</p>
+<p class="site-description motion-element" itemprop=description>
+Never forget your dreams！
+</p>
+</div>
+<nav class="site-state motion-element">
+<div class="site-state-item site-state-posts">
+<a href=/en/post/>
+<span class=site-state-item-count>0</span>
+<span class=site-state-item-name>Blogs</span>
+</a>
+</div>
+<div class="site-state-item site-state-categories">
+<a href=/en/categories/>
+<span class=site-state-item-count>13</span>
+<span class=site-state-item-name>Categories</span>
+</a>
+</div>
+<div class="site-state-item site-state-tags">
+<a href=/en/tags/>
+<span class=site-state-item-count>22</span>
+<span class=site-state-item-name>Tags</span>
+</a>
+</div>
+</nav>
+<div class="links-of-author motion-element">
+<span class=links-of-author-item>
+<a href=https://github.com/elkan1788/ target=_blank title=GitHub>
+<i class="fa fa-fw fa-github"></i>
+GitHub
+</a>
+</span>
+<span class=links-of-author-item>
+<a href=https://www.zhihu.com/people/fan-meng-xing-chen-1 target=_blank title=ZhiHu>
+<i class="fa fa-fw fa-globe"></i>
+ZhiHu
+</a>
+</span>
+</div>
+<div class="links-of-blogroll motion-element links-of-blogroll-inline">
+<div class=links-of-blogroll-title>
+<i class="fa fa-fw fa-globe"></i>
+Links
+</div>
+<ul class=links-of-blogroll-list>
+<li class=links-of-blogroll-item>
+<a href=https://nutzam.com/ title=Nutz target=_blank>Nutz</a>
+</li>
+<li class=links-of-blogroll-item>
+<a href=https://jfinal.com/ title=JFinal target=_blank>JFinal</a>
+</li>
+<li class=links-of-blogroll-item>
+<a href=http://wendal.net/ title=Wendal target=_blank>Wendal</a>
+</li>
+<li class=links-of-blogroll-item>
+<a href=https://www.liaoxuefeng.com/ title=LiaoXueFeng target=_blank>LiaoXueFeng</a>
+</li>
+</ul>
+</div>
+<div class="tagcloud-of-blogroll motion-element tagcloud-of-blogroll-inline">
+<div class=tagcloud-of-blogroll-title>
+<i class="fa fa-fw fa-tags"></i>
+TagCloud
+</div>
+<ul class=tagcloud-of-blogroll-list>
+<li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/windows>Windows</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/centos-7>Centos 7</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/markdown>Markdown</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/anti-virus>Anti virus</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/bareos>Bareos</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/chrony>Chrony</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/css>Css</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/emoji>Emoji</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/html>HTML</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/hugo>Hugo</a>
+</li>
+</ul>
+</div>
+</section>
+</div>
+</aside>
+</div>
+</main>
+<footer id=footer class=footer>
+<div class=footer-inner>
+<div class=copyright>
+<span class=copyright-year>
+&copy; 2010 - 2022
+</span>
+<span class=with-love><i class="fa fa-heart"></i></span>
+<span class=copyright-author>IT 紀錄網站</span>
+</div>
+<div class=powered-info>
+<span class=powered-by>
+Powered by - <a class=powered-link href=//gohugo.io target=_blank title=hugo>Hugo v0.92.2</a>
+</span>
+<span class=separator-line>/</span>
+<span class=theme-info>
+Theme by - <a class=powered-link href=//github.com/elkan1788/hugo-theme-next target=_blank> NexT
+</a>
+</span>
+</div>
+<div class=vistor-info>
+<script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
+<span class=site-uv>
+<i class="fa fa-user"></i>
+<span class=busuanzi-value id=busuanzi_value_site_uv></span>
+</span>
+<span class=separator-line>/</span>
+<span class=site-pv>
+<i class="fa fa-eye"></i>
+<span class=busuanzi-value id=busuanzi_value_site_pv></span>
+</span>
+</div>
+</div>
+</footer>
+<div class=back-to-top>
+<i class="fa fa-arrow-up"></i>
+<span id=scrollpercent><span>0</span>%</span>
+</div>
+</div>
+<script type=text/javascript src=//cdn.bootcdn.net/ajax/libs/jquery/2.1.4/jquery.min.js></script>
+<script type=text/javascript src=/js/search.js></script>
+<script type=text/javascript src=/js/affix.js></script>
+<script type=text/javascript src=/js/scrollspy.js></script>
+<script type=text/javascript>function detectIE(){var a=window.navigator.userAgent,b=a.indexOf('MSIE '),c=a.indexOf('Trident/'),d=a.indexOf('Edge/');return b>0||c>0||d>0?-1:1}function getCntViewHeight(){var b=$('#content').height(),a=$(window).height(),c=b>a?b-a:$(document).height()-a;return c}function getScrollbarWidth(){var a=$('<div />').addClass('scrollbar-measure').prependTo('body'),b=a[0],c=b.offsetWidth-b.clientWidth;return a.remove(),c}function registerBackTop(){var b=50,a=$('.back-to-top');$(window).on('scroll',function(){var d,e,f,c,g;a.toggleClass('back-to-top-on',window.pageYOffset>b),d=$(window).scrollTop(),e=getCntViewHeight(),f=d/e,c=Math.round(f*100),g=c>100?100:c,$('#scrollpercent>span').html(g)}),a.on('click',function(){$("html,body").animate({scrollTop:0,screenLeft:0},800)})}function initScrollSpy(){var a='.post-toc',d=$(a),b='.active-current';d.on('activate.bs.scrollspy',function(){var b=$(a+' .active').last();c(),b.addClass('active-current')}).on('clear.bs.scrollspy',c),$('body').scrollspy({target:a});function c(){$(a+' '+b).removeClass(b.substring(1))}}function initAffix(){var a=$('.header-inner').height(),b=parseInt($('.main').css('padding-bottom'),10),c=a+10;$('.sidebar-inner').affix({offset:{top:c,bottom:b}}),$(document).on('affixed.bs.affix',function(){updateTOCHeight(document.body.clientHeight-100)})}function initTOCDimension(){var a,b;$(window).on('resize',function(){a&&clearTimeout(a),a=setTimeout(function(){var a=document.body.clientHeight-100;updateTOCHeight(a)},0)}),updateTOCHeight(document.body.clientHeight-100),b=getScrollbarWidth(),$('.post-toc').css('width','calc(100% + '+b+'px)')}function updateTOCHeight(a){a=a||'auto',$('.post-toc').css('max-height',a)}$(function(){var b=$('.header-inner').height()+10,c,d,a,e;$('#sidebar').css({'margin-top':b}).show(),c=parseInt($('#sidebar').css('margin-top')),d=parseInt($('.sidebar-inner').css('height')),a=c+d,e=$('.content-wrap').height(),e<a&&$('.content-wrap').css('min-height',a),$('.site-nav-toggle').on('click',function(){var a=$('.site-nav'),e=$('.toggle'),b='site-nav-on',f='toggle-close',c=a.hasClass(b),g=c?'slideUp':'slideDown',d=c?'removeClass':'addClass';a.stop()[g]('normal',function(){a[d](b),e[d](f)})}),registerBackTop(),initScrollSpy(),initAffix(),initTOCDimension(),$('.sidebar-nav-toc').click(function(){$(this).addClass('sidebar-nav-active'),$(this).next().removeClass('sidebar-nav-active'),$('.'+$(this).next().attr('data-target')).toggle(500),$('.'+$(this).attr('data-target')).toggle(500)}),$('.sidebar-nav-overview').click(function(){$(this).addClass('sidebar-nav-active'),$(this).prev().removeClass('sidebar-nav-active'),$('.'+$(this).prev().attr('data-target')).toggle(500),$('.'+$(this).attr('data-target')).toggle(500)})})</script>
+<script src=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.js></script>
+<script type=text/javascript>$(function(){$('.post-body').viewer()})</script>
+<script type=text/javascript>$(function(){detectIE()>0?$.getScript(document.location.protocol+'//cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js',function(){new Waline({el:'#wcomments',visitor:!0,avatar:'wavatar',avatarCDN:'https://sdn.geekzu.org/avatar/',avatarForce:!1,wordLimit:'200',placeholder:' Just do what you want leave here, and don\u0027t forget give your email to make exchange. ^_^ ',requiredFields:['nick','mail'],serverURL:"Your WalineSerURL",lang:"en"})}):$('#wcomments').html('Sorry, Waline plugin doesn\u0027t support IE or Edge, Please swithc to Chrome browser.')})</script>
+<script type=text/javascript src="//s7.addthis.com/js/300/addthis_widget.js#pubid=Your%20AddthisId"></script>
+<script>(function(){var a=document.createElement('script'),c=window.location.protocol.split(':')[0],b;c==='https'?a.src='https://zz.bdstatic.com/linksubmit/push.js':a.src='http://push.zhanzhang.baidu.com/push.js',b=document.getElementsByTagName("script")[0],b.parentNode.insertBefore(a,b)})()</script>
+</body>
+</html>

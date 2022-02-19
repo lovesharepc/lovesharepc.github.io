@@ -1,0 +1,385 @@
+<!doctype html><html lang=en dir=zh>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
+<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
+<meta http-equiv=content-security-policy content="upgrade-insecure-requests">
+<title> day3 CCNA – router (雷)硬體也要分 license - IT 紀錄網站 </title>
+<meta name=keywords content="Blog,Software,Big Data,Product,Architecture,Java,Kylin">
+<meta name=author content="Elkan.Li">
+<meta property="og:title" content="day3 CCNA – router  (雷)硬體也要分 license">
+<meta property="og:site_name" content="IT 紀錄網站">
+<meta property="og:image" content="/img/author.jpg">
+<meta name=title content="day3 CCNA – router  (雷)硬體也要分 license - IT 紀錄網站">
+<meta name=description content="Weclome to Elkan's blog site that who is best on program develop, pre-sales and big data.">
+<link rel="shortcut icon" href=/img/favicon.ico>
+<link rel=apple-touch-icon href=/img/apple-touch-icon.png>
+<link rel=apple-touch-icon-precomposed href=/img/apple-touch-icon.png>
+<link href=//cdn.bootcdn.net/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css rel=stylesheet type=text/css>
+<link href=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.css rel=stylesheet>
+<link href=/css/main.css rel=stylesheet type=text/css>
+<link href=/css/syntax.css rel=stylesheet type=text/css>
+</head>
+<body itemscope itemtype=http://schema.org/WebPage lang=zh-hans>
+<div class="container one-collumn sidebar-position-left page-home">
+<div class=headband></div>
+<header id=header class=header itemscope itemtype=http://schema.org/WPHeader>
+<div class=header-inner> <div class=site-brand-container>
+<div class=site-nav-toggle>
+<div class=toggle role=button style=opacity:1;top:0>
+<span class=toggle-line></span>
+<span class=toggle-line></span>
+<span class=toggle-line></span>
+</div>
+</div>
+<div class=site-meta>
+<div class=multi-lang-switch>
+<i class="fa fa-fw fa-language" style=margin-right:5px></i>
+<a class=lang-link id=en href=#></a>
+</div>
+<div class=custom-logo-site-title>
+<a href=/en/ class=brand rel=start>
+<span class=logo-line-before><i></i></span>
+<span class=site-title>IT 紀錄網站</span>
+<span class=logo-line-after><i></i></span>
+</a>
+</div>
+<p class=site-subtitle>Don't stop running forward!</p>
+</div>
+<div class=site-nav-right>
+<div class="toggle popup-trigger" style=opacity:1;top:0>
+<i class="fa fa-search fa-fw fa-lg"></i>
+</div>
+</div>
+</div>
+<nav class=site-nav>
+<ul id=menu class=menu>
+<li class=menu-item>
+<a href=/en/ rel=section>
+<i class="menu-item-icon fa fa-fw fa-home"></i> <br>首頁
+</a>
+</li>
+<li class=menu-item>
+<a href=/en/post rel=section>
+<i class="menu-item-icon fa fa-fw fa-archive"></i> <br>archive
+</a>
+</li>
+<li class=menu-item>
+<a href=/en/about.html rel=section>
+<i class="menu-item-icon fa fa-fw fa-user"></i> <br>關於我
+</a>
+</li>
+<li class="menu-item menu-item-search">
+<a href=javascript:; class=popup-trigger> <i class="menu-item-icon fa fa-search fa-fw"></i> <br> Search</a>
+</li>
+</ul>
+<div class=site-search>
+<div class="popup search-popup local-search-popup">
+<div class="local-search-header clearfix">
+<span class=search-icon><i class="fa fa-search"></i> </span>
+<span class=popup-btn-close><i class="fa fa-times-circle"></i></span>
+<div class=local-search-input-wrapper>
+<input autocomplete=off placeholder="Enter key words..." spellcheck=false type=text id=local-search-input autocapitalize=none autocorrect=off>
+</div>
+</div>
+<div id=local-search-result></div>
+</div>
+</div>
+</nav>
+</div>
+</header>
+<main id=main class=main>
+<div class=main-inner>
+<div class=content-wrap>
+<div id=content class=content>
+<section id=posts class=posts-expand>
+<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
+<header class=post-header>
+<h1 class=post-title itemprop="name headline">
+<a class=post-title-link href=https://lovesharepc.github.io/2021/09/18/day2-ccna-%E6%8C%87%E5%8D%97-2-%E9%9B%B7%E7%A1%AC%E9%AB%94%E4%B9%9F%E8%A6%81%E5%88%86-license/ itemprop=url>
+day3 CCNA – router (雷)硬體也要分 license
+</a>
+</h1>
+<div class=post-meta>
+<span class=post-time>
+<i class="fa fa-calendar-o fa-fw"></i>
+<span class=post-meta-item-text>Published at:</span>
+<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2021/09/17">
+2021/09/17
+</time>
+</span>
+<span class=post-category>
+&nbsp; | &nbsp;
+<i class="fa fa-folder-o fa-fw"></i>
+<span class=post-meta-item-text>Categories:</span>
+<span itemprop=about itemscope itemtype=https://schema.org/Thing>
+<a href=/en/categories/%E9%90%B5%E4%BA%BA%E8%B3%BD2021 itemprop=url rel=index style=text-decoration:underline>
+<span itemprop=name>鐵人賽2021</span>
+</a>
+&nbsp;
+</span>
+</span>
+<span>
+|
+<i class="fa fa-file-word-o fa-fw"></i>
+<span class=post-meta-item-text>Words:</span>
+<span class=leancloud-world-count>845 words</span>
+</span>
+<span>
+|
+<i class="fa fa-eye fa-fw"></i>
+<span class=post-meta-item-text>Reading:</span>
+<span class=leancloud-view-count>2 minutes</span>
+</span>
+<span id=/2021/09/18/day2-ccna-%E6%8C%87%E5%8D%97-2-%E9%9B%B7%E7%A1%AC%E9%AB%94%E4%B9%9F%E8%A6%81%E5%88%86-license/ class=leancloud_visitors data-flag-title="day3 CCNA – router  (雷)硬體也要分 license">
+|
+<i class="fa fa-binoculars fa-fw"></i>
+<span class=post-meta-item-text>Visited:</span>
+<span class=leancloud-visitors-count></span>
+</span>
+</div>
+</header>
+<div class=post-body itemprop=articleBody>
+<img loading=lazy class="alignnone size-full wp-image-1045" src=https://wp.nevertired.us.to/wp-content/uploads/2021/09/2100_44.png alt width=210 height=190>
+<p> </p>
+<p>在我開始接觸商用設備之前</p>
+<p>我大概都是玩這種設備</p>
+<img loading=lazy class="alignnone size-medium wp-image-1058" src=https://wp.nevertired.us.to/wp-content/uploads/2021/09/51QMHdyFiOL._AC_SY741_-230x300.jpg alt width=230 height=300 srcset="https://wp.nevertired.mooo.com/wp-content/uploads/2021/09/51QMHdyFiOL._AC_SY741_-230x300.jpg 230w, https://wp.nevertired.mooo.com/wp-content/uploads/2021/09/51QMHdyFiOL._AC_SY741_.jpg 568w" sizes="(max-width: 230px) 100vw, 230px">
+<p> </p>
+<p>俗稱 IP 分享器</p>
+<p>在那時候就會先去刷 DD-WRT 這類的路由來玩</p>
+<p>從基本幾個按鈕能做少少幾件事</p>
+<p>到眼花撩亂的功能</p>
+<p>了解到網路這塊是非常多東西可以玩</p>
+<p>那時對 cisco Router 的認識</p>
+<p>大概就是 layer 3 必定要使用 router</p>
+<p> </p>
+<p>然而真正開始接觸 系統工程師這塊時</p>
+<p>才知道，原來 cisco switch 也能做 router 功能</p>
+<p> </p>
+<p>那他跟 cisco router 差在哪呢?</p>
+<p>所謂的 layer 3 其實涵蓋許多協定</p>
+<p>可以使用 <a href=https://cfnng.cisco.com/compare>https://cfnng.cisco.com/compare</a></p>
+<p>隨便抓台 switch 跟 router 做比較</p>
+<p>PS.雖然這官方的比較工具能 switch 與 router 互相比較，但結果似乎會不太準確</p>
+<p> </p>
+<p>在細說之前</p>
+<p>先說說 switch 的踩雷</p>
+<p>這是我第二年學到的東西</p>
+<p>cisco switch 有 license 的差別</p>
+<p>那時主流的 switch</p>
+<p>layer 2 是 2960 系列</p>
+<p>layer 3 是 3750 系列</p>
+<p>包含我上司也認為看到型號就知道是 L2 或是 L3  (L =layer)</p>
+<p>誰知某天突然有人說</p>
+<p>“2960 也能做路由啊 (･_･?)  為什麼不用 2960 來跑路由就好”</p>
+<p>在那時還在不斷學技術且接觸到的設備不多，根本不會去細看 datasheet</p>
+<p>(尤其 cisco datasheet 挺複雜的，就算現在也要花時間找很多地方才看得懂)</p>
+<p> </p>
+<p>誰知一看</p>
+<p>Σ(°ロ°)  WTF 還真的可以</p>
+<p>天真的我那時候一直認為硬體就是硬體，不是軟體還分 license</p>
+<p>沒想到原來硬體內也有分 license 來限制功能 (☆_@)</p>
+<p>就在這時開始，慢慢培養看 datasheet 的能力</p>
+<p>藉由 datasheet 就可知道這設備的能力範圍</p>
+<p>而不至於每次都只能有實機才能知道有哪些功能</p>
+<p>細看之後呢就發現，2960 做路由不是不行</p>
+<p>但他也有硬體的限制，無法像 3750 那樣強大</p>
+<p>所以這樣幹還不如乖乖買的 L3 switch 更好</p>
+<p> </p>
+<p>回過頭來說 switch 跟 router 差別</p>
+<p>大概差異會是</p>
+<p>switch 支援這些路由協定 : EIGRP, HSRP, IS-IS, BSR, MSDP, IP SLA, OSPF</p>
+<p>router 除了上面 switch 那些功能，會多支援 NAT、SIP、MPLS、VPN….功能</p>
+<p> </p>
+<p>聽起來 router 好棒棒啊</p>
+<p>但企業內部一定會有 switch、firewall</p>
+<p>router 提供的功能基本上 firewall 也有</p>
+<p>router 要拚 inter-vlan 路由沒 switch 快</p>
+<p>剩下一些 router 才能幹的功能，基本上也都用不到，要不就是很多便宜的設備也能做</p>
+<p>或是 ISP 業者會提供設備 (數據機)</p>
+<p>所以實際要看到 cisco router 的機會其實蠻低，真的c會用的大部分是不懂被騙買下去居多呢  （ ´∀｀）</p>
+<p> </p>
+<p>所以在 系統工程師學習的過程中</p>
+<p>雖然 cisco 的 router 有很多特異功能</p>
+<p>但基本上除特殊需求外，各位是不用特別去了解的</p>
+<p>倒是 cisco 的 switch 是非常值得去深入了解</p>
+<p>學完之後對網路的了解真的幫助很大</p>
+<p> </p>
+<p>下篇 來介紹一下網路學習利器 GNS3</p>
+</div>
+<footer class=post-footer>
+<div id=disqus_thread></div>
+<script type=application/javascript>var disqus_config=function(){};(function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById('disqus_thread').innerHTML='Disqus comments not available by default when the website is previewed locally.';return}var b=document,a=b.createElement('script');a.async=!0,a.src='//bu-jue-ming-shi.disqus.com/embed.js',a.setAttribute('data-timestamp',+new Date),(b.head||b.body).appendChild(a)})()</script>
+<noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript>
+<a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a>
+>
+</footer>
+</article>
+</section>
+</div>
+</div>
+<div class=sidebar-toggle>
+<div class=sidebar-toggle-line-wrap>
+<span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+<span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+<span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+</div>
+</div>
+<aside id=sidebar class=sidebar>
+<div class=sidebar-inner>
+<section class="site-overview sidebar-panel sidebar-panel-active">
+<div class="site-author motion-element" itemprop=author itemscope itemtype=http://schema.org/Person>
+<img class=site-author-image itemprop=image src=/img/avatar.png alt=Elkan.Li>
+<p class=site-author-name itemprop=name>Elkan.Li</p>
+<p class="site-description motion-element" itemprop=description>
+Never forget your dreams！
+</p>
+</div>
+<nav class="site-state motion-element">
+<div class="site-state-item site-state-posts">
+<a href=/en/post/>
+<span class=site-state-item-count>0</span>
+<span class=site-state-item-name>Blogs</span>
+</a>
+</div>
+<div class="site-state-item site-state-categories">
+<a href=/en/categories/>
+<span class=site-state-item-count>13</span>
+<span class=site-state-item-name>Categories</span>
+</a>
+</div>
+<div class="site-state-item site-state-tags">
+<a href=/en/tags/>
+<span class=site-state-item-count>22</span>
+<span class=site-state-item-name>Tags</span>
+</a>
+</div>
+</nav>
+<div class="links-of-author motion-element">
+<span class=links-of-author-item>
+<a href=https://github.com/elkan1788/ target=_blank title=GitHub>
+<i class="fa fa-fw fa-github"></i>
+GitHub
+</a>
+</span>
+<span class=links-of-author-item>
+<a href=https://www.zhihu.com/people/fan-meng-xing-chen-1 target=_blank title=ZhiHu>
+<i class="fa fa-fw fa-globe"></i>
+ZhiHu
+</a>
+</span>
+</div>
+<div class="links-of-blogroll motion-element links-of-blogroll-inline">
+<div class=links-of-blogroll-title>
+<i class="fa fa-fw fa-globe"></i>
+Links
+</div>
+<ul class=links-of-blogroll-list>
+<li class=links-of-blogroll-item>
+<a href=https://nutzam.com/ title=Nutz target=_blank>Nutz</a>
+</li>
+<li class=links-of-blogroll-item>
+<a href=https://jfinal.com/ title=JFinal target=_blank>JFinal</a>
+</li>
+<li class=links-of-blogroll-item>
+<a href=http://wendal.net/ title=Wendal target=_blank>Wendal</a>
+</li>
+<li class=links-of-blogroll-item>
+<a href=https://www.liaoxuefeng.com/ title=LiaoXueFeng target=_blank>LiaoXueFeng</a>
+</li>
+</ul>
+</div>
+<div class="tagcloud-of-blogroll motion-element tagcloud-of-blogroll-inline">
+<div class=tagcloud-of-blogroll-title>
+<i class="fa fa-fw fa-tags"></i>
+TagCloud
+</div>
+<ul class=tagcloud-of-blogroll-list>
+<li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/windows>Windows</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/centos-7>Centos 7</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/markdown>Markdown</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/anti-virus>Anti virus</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/bareos>Bareos</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/chrony>Chrony</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/css>Css</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/emoji>Emoji</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/html>HTML</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/hugo>Hugo</a>
+</li>
+</ul>
+</div>
+</section>
+</div>
+</aside>
+</div>
+</main>
+<footer id=footer class=footer>
+<div class=footer-inner>
+<div class=copyright>
+<span class=copyright-year>
+&copy; 2010 - 2022
+</span>
+<span class=with-love><i class="fa fa-heart"></i></span>
+<span class=copyright-author>IT 紀錄網站</span>
+</div>
+<div class=powered-info>
+<span class=powered-by>
+Powered by - <a class=powered-link href=//gohugo.io target=_blank title=hugo>Hugo v0.92.2</a>
+</span>
+<span class=separator-line>/</span>
+<span class=theme-info>
+Theme by - <a class=powered-link href=//github.com/elkan1788/hugo-theme-next target=_blank> NexT
+</a>
+</span>
+</div>
+<div class=vistor-info>
+<script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
+<span class=site-uv>
+<i class="fa fa-user"></i>
+<span class=busuanzi-value id=busuanzi_value_site_uv></span>
+</span>
+<span class=separator-line>/</span>
+<span class=site-pv>
+<i class="fa fa-eye"></i>
+<span class=busuanzi-value id=busuanzi_value_site_pv></span>
+</span>
+</div>
+</div>
+</footer>
+<div class=back-to-top>
+<i class="fa fa-arrow-up"></i>
+<span id=scrollpercent><span>0</span>%</span>
+</div>
+</div>
+<script type=text/javascript src=//cdn.bootcdn.net/ajax/libs/jquery/2.1.4/jquery.min.js></script>
+<script type=text/javascript src=/js/search.js></script>
+<script type=text/javascript src=/js/affix.js></script>
+<script type=text/javascript src=/js/scrollspy.js></script>
+<script type=text/javascript>function detectIE(){var a=window.navigator.userAgent,b=a.indexOf('MSIE '),c=a.indexOf('Trident/'),d=a.indexOf('Edge/');return b>0||c>0||d>0?-1:1}function getCntViewHeight(){var b=$('#content').height(),a=$(window).height(),c=b>a?b-a:$(document).height()-a;return c}function getScrollbarWidth(){var a=$('<div />').addClass('scrollbar-measure').prependTo('body'),b=a[0],c=b.offsetWidth-b.clientWidth;return a.remove(),c}function registerBackTop(){var b=50,a=$('.back-to-top');$(window).on('scroll',function(){var d,e,f,c,g;a.toggleClass('back-to-top-on',window.pageYOffset>b),d=$(window).scrollTop(),e=getCntViewHeight(),f=d/e,c=Math.round(f*100),g=c>100?100:c,$('#scrollpercent>span').html(g)}),a.on('click',function(){$("html,body").animate({scrollTop:0,screenLeft:0},800)})}function initScrollSpy(){var a='.post-toc',d=$(a),b='.active-current';d.on('activate.bs.scrollspy',function(){var b=$(a+' .active').last();c(),b.addClass('active-current')}).on('clear.bs.scrollspy',c),$('body').scrollspy({target:a});function c(){$(a+' '+b).removeClass(b.substring(1))}}function initAffix(){var a=$('.header-inner').height(),b=parseInt($('.main').css('padding-bottom'),10),c=a+10;$('.sidebar-inner').affix({offset:{top:c,bottom:b}}),$(document).on('affixed.bs.affix',function(){updateTOCHeight(document.body.clientHeight-100)})}function initTOCDimension(){var a,b;$(window).on('resize',function(){a&&clearTimeout(a),a=setTimeout(function(){var a=document.body.clientHeight-100;updateTOCHeight(a)},0)}),updateTOCHeight(document.body.clientHeight-100),b=getScrollbarWidth(),$('.post-toc').css('width','calc(100% + '+b+'px)')}function updateTOCHeight(a){a=a||'auto',$('.post-toc').css('max-height',a)}$(function(){var b=$('.header-inner').height()+10,c,d,a,e;$('#sidebar').css({'margin-top':b}).show(),c=parseInt($('#sidebar').css('margin-top')),d=parseInt($('.sidebar-inner').css('height')),a=c+d,e=$('.content-wrap').height(),e<a&&$('.content-wrap').css('min-height',a),$('.site-nav-toggle').on('click',function(){var a=$('.site-nav'),e=$('.toggle'),b='site-nav-on',f='toggle-close',c=a.hasClass(b),g=c?'slideUp':'slideDown',d=c?'removeClass':'addClass';a.stop()[g]('normal',function(){a[d](b),e[d](f)})}),registerBackTop(),initScrollSpy(),initAffix(),initTOCDimension(),$('.sidebar-nav-toc').click(function(){$(this).addClass('sidebar-nav-active'),$(this).next().removeClass('sidebar-nav-active'),$('.'+$(this).next().attr('data-target')).toggle(500),$('.'+$(this).attr('data-target')).toggle(500)}),$('.sidebar-nav-overview').click(function(){$(this).addClass('sidebar-nav-active'),$(this).prev().removeClass('sidebar-nav-active'),$('.'+$(this).prev().attr('data-target')).toggle(500),$('.'+$(this).attr('data-target')).toggle(500)})})</script>
+<script src=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.js></script>
+<script type=text/javascript>$(function(){$('.post-body').viewer()})</script>
+<script type=text/javascript>$(function(){detectIE()>0?$.getScript(document.location.protocol+'//cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js',function(){new Waline({el:'#wcomments',visitor:!0,avatar:'wavatar',avatarCDN:'https://sdn.geekzu.org/avatar/',avatarForce:!1,wordLimit:'200',placeholder:' Just do what you want leave here, and don\u0027t forget give your email to make exchange. ^_^ ',requiredFields:['nick','mail'],serverURL:"Your WalineSerURL",lang:"en"})}):$('#wcomments').html('Sorry, Waline plugin doesn\u0027t support IE or Edge, Please swithc to Chrome browser.')})</script>
+<script type=text/javascript src="//s7.addthis.com/js/300/addthis_widget.js#pubid=Your%20AddthisId"></script>
+<script>(function(){var a=document.createElement('script'),c=window.location.protocol.split(':')[0],b;c==='https'?a.src='https://zz.bdstatic.com/linksubmit/push.js':a.src='http://push.zhanzhang.baidu.com/push.js',b=document.getElementsByTagName("script")[0],b.parentNode.insertBefore(a,b)})()</script>
+</body>
+</html>

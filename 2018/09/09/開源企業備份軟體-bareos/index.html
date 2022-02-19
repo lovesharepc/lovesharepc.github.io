@@ -1,0 +1,1280 @@
+<!doctype html><html lang=en dir=zh>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
+<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
+<meta http-equiv=content-security-policy content="upgrade-insecure-requests">
+<title> 開源企業備份軟體 Bareos - IT 紀錄網站 </title>
+<meta name=keywords content="Blog,Software,Big Data,Product,Architecture,Java,Kylin">
+<meta name=author content="Elkan.Li">
+<meta property="og:title" content="開源企業備份軟體 Bareos">
+<meta property="og:site_name" content="IT 紀錄網站">
+<meta property="og:image" content="/img/author.jpg">
+<meta name=title content="開源企業備份軟體 Bareos - IT 紀錄網站">
+<meta name=description content="Weclome to Elkan's blog site that who is best on program develop, pre-sales and big data.">
+<link rel="shortcut icon" href=/img/favicon.ico>
+<link rel=apple-touch-icon href=/img/apple-touch-icon.png>
+<link rel=apple-touch-icon-precomposed href=/img/apple-touch-icon.png>
+<link href=//cdn.bootcdn.net/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css rel=stylesheet type=text/css>
+<link href=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.css rel=stylesheet>
+<link href=/css/main.css rel=stylesheet type=text/css>
+<link href=/css/syntax.css rel=stylesheet type=text/css>
+</head>
+<body itemscope itemtype=http://schema.org/WebPage lang=zh-hans>
+<div class="container one-collumn sidebar-position-left page-home">
+<div class=headband></div>
+<header id=header class=header itemscope itemtype=http://schema.org/WPHeader>
+<div class=header-inner> <div class=site-brand-container>
+<div class=site-nav-toggle>
+<div class=toggle role=button style=opacity:1;top:0>
+<span class=toggle-line></span>
+<span class=toggle-line></span>
+<span class=toggle-line></span>
+</div>
+</div>
+<div class=site-meta>
+<div class=multi-lang-switch>
+<i class="fa fa-fw fa-language" style=margin-right:5px></i>
+<a class=lang-link id=en href=#></a>
+</div>
+<div class=custom-logo-site-title>
+<a href=/en/ class=brand rel=start>
+<span class=logo-line-before><i></i></span>
+<span class=site-title>IT 紀錄網站</span>
+<span class=logo-line-after><i></i></span>
+</a>
+</div>
+<p class=site-subtitle>Don't stop running forward!</p>
+</div>
+<div class=site-nav-right>
+<div class="toggle popup-trigger" style=opacity:1;top:0>
+<i class="fa fa-search fa-fw fa-lg"></i>
+</div>
+</div>
+</div>
+<nav class=site-nav>
+<ul id=menu class=menu>
+<li class=menu-item>
+<a href=/en/ rel=section>
+<i class="menu-item-icon fa fa-fw fa-home"></i> <br>首頁
+</a>
+</li>
+<li class=menu-item>
+<a href=/en/post rel=section>
+<i class="menu-item-icon fa fa-fw fa-archive"></i> <br>archive
+</a>
+</li>
+<li class=menu-item>
+<a href=/en/about.html rel=section>
+<i class="menu-item-icon fa fa-fw fa-user"></i> <br>關於我
+</a>
+</li>
+<li class="menu-item menu-item-search">
+<a href=javascript:; class=popup-trigger> <i class="menu-item-icon fa fa-search fa-fw"></i> <br> Search</a>
+</li>
+</ul>
+<div class=site-search>
+<div class="popup search-popup local-search-popup">
+<div class="local-search-header clearfix">
+<span class=search-icon><i class="fa fa-search"></i> </span>
+<span class=popup-btn-close><i class="fa fa-times-circle"></i></span>
+<div class=local-search-input-wrapper>
+<input autocomplete=off placeholder="Enter key words..." spellcheck=false type=text id=local-search-input autocapitalize=none autocorrect=off>
+</div>
+</div>
+<div id=local-search-result></div>
+</div>
+</div>
+</nav>
+</div>
+</header>
+<main id=main class=main>
+<div class=main-inner>
+<div class=content-wrap>
+<div id=content class=content>
+<section id=posts class=posts-expand>
+<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
+<header class=post-header>
+<h1 class=post-title itemprop="name headline">
+<a class=post-title-link href=https://lovesharepc.github.io/2018/09/09/%E9%96%8B%E6%BA%90%E4%BC%81%E6%A5%AD%E5%82%99%E4%BB%BD%E8%BB%9F%E9%AB%94-bareos/ itemprop=url>
+開源企業備份軟體 Bareos
+</a>
+</h1>
+<div class=post-meta>
+<span class=post-time>
+<i class="fa fa-calendar-o fa-fw"></i>
+<span class=post-meta-item-text>Published at:</span>
+<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2018/09/09">
+2018/09/09
+</time>
+</span>
+<span class=post-category>
+&nbsp; | &nbsp;
+<i class="fa fa-folder-o fa-fw"></i>
+<span class=post-meta-item-text>Categories:</span>
+<span itemprop=about itemscope itemtype=https://schema.org/Thing>
+<a href=/en/categories/bareos itemprop=url rel=index style=text-decoration:underline>
+<span itemprop=name>bareos</span>
+</a>
+&nbsp;
+</span>
+</span>
+<span>
+|
+<i class="fa fa-file-word-o fa-fw"></i>
+<span class=post-meta-item-text>Words:</span>
+<span class=leancloud-world-count>4327 words</span>
+</span>
+<span>
+|
+<i class="fa fa-eye fa-fw"></i>
+<span class=post-meta-item-text>Reading:</span>
+<span class=leancloud-view-count>9 minutes</span>
+</span>
+<span id=/2018/09/09/%E9%96%8B%E6%BA%90%E4%BC%81%E6%A5%AD%E5%82%99%E4%BB%BD%E8%BB%9F%E9%AB%94-bareos/ class=leancloud_visitors data-flag-title="開源企業備份軟體 Bareos">
+|
+<i class="fa fa-binoculars fa-fw"></i>
+<span class=post-meta-item-text>Visited:</span>
+<span class=leancloud-visitors-count></span>
+</span>
+</div>
+</header>
+<div class=post-body itemprop=articleBody>
+<div style=clear:both;text-align:center>
+<a style=margin-left:1em;margin-right:1em href=https://2.bp.blogspot.com/-9_6-QigzDeU/W5TU137AkwI/AAAAAAAACtw/pCF1HZJfFlUP-1b6IM5MtQPWsCvEAJyMQCLcBGAs/s1600/bareos-full-logo.png><img loading=lazy src=https://2.bp.blogspot.com/-9_6-QigzDeU/W5TU137AkwI/AAAAAAAACtw/pCF1HZJfFlUP-1b6IM5MtQPWsCvEAJyMQCLcBGAs/s320/bareos-full-logo.png width=320 height=100 border=0 data-original-height=233 data-original-width=743></a>
+</div>
+<h1 id=簡介>簡介</h1>
+<p>在 centos 中，官方預設的備份軟體是 Amanda</p>
+<p>另外有一套 bacula</p>
+<p>但這兩套實際上並沒有這麼好用</p>
+<p>作為上面兩套 netbackup 的替代方案 Bareos 是由 bacula 分支而來</p>
+<p>簡單來說，他更好用</p>
+<p><a href=https://www.bareos.org/en/>Bareos 官網</a></p>
+<p> </p>
+<p>功能面來說</p>
+<p>首先 他支援 VSS 陰影複製</p>
+<p>他是 server – client 中央控管備份軟體，不是單機備份軟體</p>
+<p>他是網路備份軟體，備份檔案資料，無法直接裸機還原</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>Bareos 架構如下    引用自 <a href=https://www.serveradminz.com/blog/what-is-bareos-and-how-to-install-bareos/>https://www.serveradminz.com/blog/what-is-bareos-and-how-to-install-bareos/</a></p>
+<img loading=lazy class="alignnone wp-image-641 zoooom" src=https://nevertired.nctu.me/wp-content/uploads/2018/09/bareos_arch-300x214.jpg alt width=376 height=268>
+<p>Bareos 分成幾個服務元件</p>
+<ul>
+<li><a href=https://docs.bareos.org/IntroductionAndTutorial/WhatIsBareos.html#bareos-director>Director</a> – 作為中央控制服務</li>
+<li><a href=https://docs.bareos.org/IntroductionAndTutorial/WhatIsBareos.html#bareos-console>Bareos Console</a> – 指令控制介面</li>
+<li><a href=https://docs.bareos.org/IntroductionAndTutorial/WhatIsBareos.html#bareos-file-daemon>File Daemon</a> – 作為控制檔案存取 (備份、還原)</li>
+<li><a href=https://docs.bareos.org/IntroductionAndTutorial/WhatIsBareos.html#bareos-storage-daemon>Storage Daemon</a> – 作為提供儲存備份空間的服務</li>
+<li><a href=https://docs.bareos.org/IntroductionAndTutorial/WhatIsBareos.html#catalog>Catalog</a> – 資料庫，用來維護備份索引 (那些檔案有備份、存在哪裡…..的紀錄)</li>
+<li>bareos-webui 能夠觀看備份狀態、簡易的手動備份/還原操作、控制</li>
+</ul>
+<p>這些東西可以安裝在單一 server 上</p>
+<p>也可以拆開</p>
+<p>好處是 一個 Director ，可以同時控制多個服務</p>
+<p>比如說的多個存放備份的地方，成為分散式儲存</p>
+<p> </p>
+<h1 id=支援系統清單>支援系統清單</h1>
+<p>支援的系統清單如下</p>
+<p><a href=https://docs.bareos.org/Appendix/OperatingSystems.html>https://docs.bareos.org/Appendix/OperatingSystems.html</a></p>
+<p>Director Daemon  即為能作為 server 端</p>
+<p>Client Daemon  能被備份的對象</p>
+<p> </p>
+<h1 id=server-端安裝>Server 端安裝</h1>
+<h2 id=server-端介紹>Server 端介紹</h2>
+<p>Server 端</p>
+<p>即包含所有元件</p>
+<p>Director<br>
+Bareos Console<br>
+File Daemon<br>
+Storage Daemon<br>
+Catalog<br>
+bareos-webui</p>
+<p> </p>
+<p><span style=color:red>這邊要講清楚</span></p>
+<p><span style=color:red>因為他是 linux 上的軟體</span></p>
+<p><span style=color:red>雖然官方有支援在 windows 上安裝 server 端</span></p>
+<p><span style=color:red>但會碰到 Unicode 的問題</span></p>
+<p><span style=color:red>非英文語系字元會全部變成亂碼，以個人慘痛經驗來說</span></p>
+<p><span style=color:red>不 要 裝 在  windows 上 !!</span></p>
+<h2 id=實際操作安裝>實際操作安裝</h2>
+<p>以下安裝採用，單一伺服器架構</p>
+<ul>
+<li>Centos 7 Minimal</li>
+<li>Bareos 18.2</li>
+<li>MariaDB 10.4</li>
+<li>apache 2.4</li>
+<li>php 7.2</li>
+</ul>
+<p> </p>
+<p>首先安裝 epel repository 、 工具程式</p>
+<p>apache2 、php7.2、mariadb</p>
+<pre class=EnlighterJSRAW data-enlighter-language=null>yum install -y epel-release
+yum install -y wget nano
+
+yum install -y http://rpms.remirepo.net/enterprise/remi-release-7.rpm
+yum install -y yum-utils
+yum-config-manager --disable remi-php54
+yum-config-manager --enable remi-php72
+curl -sS https://downloads.mariadb.com/MariaDB/mariadb_repo_setup | sudo bash
+cd /etc/yum.repos.d && wget https://repo.codeit.guru/codeit.el`rpm -q --qf "%{VERSION}" $(rpm -q --whatprovides redhat-release)`.repo
+
+
+</pre>
+<div>
+</div>
+<p>匯入官方 Bareos  REPO (18.2 穩定版)</p>
+<div>
+</div>
+<div>
+<pre class=EnlighterJSRAW data-enlighter-language=null>wget -O /etc/yum.repos.d/bareos.repo  http://download.bareos.org/bareos/release/18.2/CentOS_7/bareos.repo</pre>
+<p>
+&nbsp;
+</p>
+</div>
+<p>安裝套件</p>
+<pre class=EnlighterJSRAW data-enlighter-language=null>yum clean all
+yum install -y httpd php php-gd bareos bareos-database-mysql bareos-webui mariadb-server</pre>
+<p> </p>
+<p>優化 PHP 設定</p>
+<div>
+<pre class=EnlighterJSRAW data-enlighter-language=null>timedatectl set-timezone Asia/Taipei
+sed -e 's/memory_limit = 128M/memory_limit = 1024M/' -i /etc/php.ini 
+sed -e 's/max_execution_time = 30/max_execution_time = 3600/' -i /etc/php.ini 
+sed -e 's/max_input_time = 60/max_input_time = 3600/' -i /etc/php.ini 
+sed -e 's/upload_max_filesize = 2M/upload_max_filesize = 1024M/' -i /etc/php.ini 
+sed -e 's/post_max_size = 8M/post_max_size = 1024M/' -i /etc/php.ini 
+sed -e 's/^;date\.timezone =/date\\.timezone ="Asia\\/Taipei"/' -i /etc/php.ini</pre>
+<p>
+&nbsp;
+</p>
+</div>
+<p>讓服務開機自動執行</p>
+<div>
+<div>
+<pre class=EnlighterJSRAW data-enlighter-language=null>systemctl start mariadb &&
+systemctl start bareos-dir &&
+systemctl start bareos-sd &&
+systemctl start bareos-fd &&
+systemctl start httpd &&
+systemctl enable mariadb &&
+systemctl enable bareos-dir &&
+systemctl enable bareos-sd &&
+systemctl enable bareos-fd &&
+systemctl enable httpd</pre>
+<pre><code>&lt;p&gt;
+  &amp;nbsp;
+&lt;/p&gt;
+</code></pre>
+</div>
+</div>
+<p>匯入 bareos schema</p>
+<div>
+<pre class=EnlighterJSRAW data-enlighter-language=null>/usr/lib/bareos/scripts/create_bareos_database
+/usr/lib/bareos/scripts/make_bareos_tables
+/usr/lib/bareos/scripts/grant_bareos_privileges</pre>
+<p>
+&nbsp;
+</p>
+</div>
+<p>selinux 允許 webui 連線</p>
+<div>
+<pre class=EnlighterJSRAW data-enlighter-language=null>setsebool -P httpd_can_network_connect on
+<p></pre></p>
+</div>
+<p> </p>
+<p>建立 bareos webui 帳密 admin/admin</p>
+<div>
+<pre class=EnlighterJSRAW data-enlighter-language=null>執行 
+bconsole
+<p>輸入
+configure add console name=admin password=admin profile=webui-admin tlsenable=false</p>
+<p>重新套用 config
+reload</p>
+<p>離開
+q</pre></p>
+</div>
+<p> </p>
+<p>開通防火牆</p>
+<pre class=EnlighterJSRAW data-enlighter-language=null>firewall-cmd --zone=public --permanent --add-service=http
+firewall-cmd --zone=public --permanent --add-port=9101/tcp
+firewall-cmd --zone=public --permanent --add-port=9102/tcp
+firewall-cmd --zone=public --permanent --add-port=9103/tcp
+firewall-cmd --reload
+
+
+#Console -&gt; DIR:9101
+#DIR     -&gt; SD:9103
+#DIR     -&gt; FD:9102
+#FD      -&gt; SD:9103</pre>
+<p> </p>
+<p>最後這邊我建議重開機一下</p>
+<p>再進去 webui</p>
+<p>http://<ip-address>/bareos-webui/</p>
+<div>
+如果能夠登錄，代表上述步驟都沒有問題
+</div>
+<div>
+</div>
+<div>
+<img loading=lazy class="alignnone size-medium wp-image-649 zoooom" src=https://nevertired.nctu.me/wp-content/uploads/2018/09/Image_20191102_001-300x163.jpg alt width=300 height=163>
+</div>
+<div>
+</div>
+<div>
+這樣就能進行預設的備份作業了
+</div>
+<div>
+</div>
+<h1 id=server-端-config-位置優化>Server 端 config 位置、優化</h1>
+<h2 id=位置>位置</h2>
+<p>Server 端主要有三個 config</p>
+<div>
+<pre class=EnlighterJSRAW data-enlighter-language=null>/etc/bareos/bareos-dir.d   # Director
+/etc/bareos/bareos-fd.d    # File
+/etc/bareos/bareos-sd.d    # storage</pre>
+</div>
+<div>
+</div>
+<div>
+<div>
+<p>
+#進入  Director conf 目錄<br> cd /etc/bareos/bareos-dir.d/
+</p>
+</div>
+<div>
+<p>
+bareos 在 config 切得相當細，提供了大量的彈性應用<br> 在這裡有幾個 conf 目錄是我們新增備份來源會用到的
+</p>
+<pre><code>&lt;p&gt;
+  client – 要備份的裝置&lt;br /&gt; Job – 要執行備份的工作&lt;br /&gt; JobDefs – job 的範本，用在快速引用&lt;br /&gt; FileSet – 要備份的項目&lt;br /&gt; pool &amp;#8211; 備份檔的存放空間&lt;br /&gt; schedule &amp;#8211; 備份排程
+&lt;/p&gt;
+</code></pre>
+</div>
+</div>
+<div>
+</div>
+<h2 id=備份存放位置>備份存放位置</h2>
+<div>
+</div>
+<div>
+<p>
+Archive Device 是指存放備份檔的目錄
+</p>
+<p>
+依自己的實際情況做更改
+</p>
+</div>
+<div>
+<pre class=EnlighterJSRAW data-enlighter-language=null>nano /etc/bareos/bareos-sd.d/device/FileStorage.conf
+<p>Device {
+Name = FileStorage
+Media Type = File
+Archive Device = /var/lib/bareos/storage
+LabelMedia = yes;                   # lets Bareos label unlabeled media
+Random Access = yes;
+AutomaticMount = yes;               # when device opened, read it
+RemovableMedia = no;
+AlwaysOpen = no;
+Description = &ldquo;File device. A connecting Director must have the same Name and MediaType.&rdquo;</p>
+<p>}</p>
+<p>以我的例子 我是把它改到 /home/
+記得目錄也要建立 擁有者是 bareos</pre></p>
+<p>
+&nbsp;
+</p>
+</div>
+<h3 id=client-連線-storage-服務位置>client 連線 storage 服務位置</h3>
+<p>Address = localhost</p>
+<p>localhost 改成 server 的 IP (不一定要用 FQDN)</p>
+<pre class=EnlighterJSRAW data-enlighter-language=null>nano /etc/bareos/bareos-dir.d/storage/File.conf
+
+Storage {
+  Name = File
+  Address = 192.168.43.203                 # N.B. Use a fully qualified name here (do not use "localhost" here).
+  Password = "JytUV8gWZhPxY/koRhEzRdsVEH3d/q8YLzxI5qLOtA8B"
+  Device = FileStorage
+  Media Type = File
+Maximum Concurrent Jobs = 10
+}</pre>
+<p>不改的話 client 會連線至 localhost 等於client 一直連自己</p>
+<p> </p>
+<p>Maximum Concurrent Jobs = 10</p>
+<p>讓該儲存空間最多能同時接受 10 個作業</p>
+<p> </p>
+<h2 id=備份使用空間大小>備份使用空間大小</h2>
+<p><a href=https://docs.bareos.org/Configuration/Director.html#directorresourcepool>https://docs.bareos.org/Configuration/Director.html#directorresourcepool</a></p>
+<div>
+<pre class=EnlighterJSRAW data-enlighter-language=null>nano /etc/bareos/bareos-dir.d/pool/File.conf
+<p>Pool {
+Name = File_pool
+Pool Type = Backup
+Recycle = yes                       # Bareos can automatically recycle Volumes
+AutoPrune = yes                     # Prune expired volumes
+Volume Retention = 7 days         # How long should the Full Backups be kept? (#06)
+Maximum Volume Bytes = 100G          # Limit Volume size to something reasonable
+Maximum Volumes = 5               # Limit number of Volumes in Pool
+Label Format = &ldquo;Full-&rdquo;              # Volumes will be labeled &ldquo;Full-&lt;volume-id&gt;&rdquo;</p>
+<p>Purge Oldest Volume = yes
+Recycle Oldest Volume = yes</p>
+<p>}</pre></p>
+</div>
+<div>
+範例說明
+</div>
+<div>
+這裡建立一個存放備份檔的 pool
+</div>
+<div>
+命名為 File_pool
+</div>
+<div>
+File_pool 底下會有 5 個 Volumes ，每個 100GB
+</div>
+<div>
+等於這個 File_pool 最大能存放 500GB 的備份資料
+</div>
+<div>
+Volume Retention 什麼時候備份內容會過期
+</div>
+<div>
+AutoPrune 、Recycle  基本上一同使用，代表備份內容過期後能夠被複寫
+</div>
+<div>
+</div>
+<div>
+當空間已滿但沒有任何 pool 可存放備份時<br> 這時備份 job 就會停擺<br> 要解決這問題就要加上這兩個參數
+</div>
+<div>
+Purge Oldest Volume = yes<br> Recycle Oldest Volume = yes<br> 不論備份是否過期，皆會自動清除回收最後的備份空間
+</div>
+<div>
+</div>
+<div>
+</div>
+<h1 id=client-端安裝>Client 端安裝</h1>
+<h2 id=windows>windows</h2>
+<p><a href="https://docs.bareos.org/TasksAndConcepts/TheWindowsVersionOfBareos.html?highlight=windows">官方文件</a></p>
+<div>
+<span style=font-family:inherit;font-style:inherit;font-weight:inherit>再來下一步是新增 windows 裝置進行備份</span>
+</div>
+<div>
+<p>
+在官方網站下載 client 後 <a href=http://download.bareos.org/bareos/release/18.2/windows/>http://download.bareos.org/bareos/release/18.2/windows/</a>
+</p>
+<p>
+以預設選項安裝即可 (client)
+</p>
+<p>
+<img loading=lazy class="alignnone size-medium wp-image-650" src=https://nevertired.nctu.me/wp-content/uploads/2018/09/Image_20191102_002-300x233.jpg alt width=300 height=233>
+</p>
+<p>
+&nbsp;
+</p>
+<p>
+參數的部分<br> 如果你有多台電腦要備份<br> 我的建議密碼都設一樣即可<br> 不然管理上會很累
+</p>
+<p>
+記住，networkaddress 是 client 自己的 IP
+</p>
+<p>
+設定範例
+</p>
+<p>
+<img loading=lazy class="alignnone size-medium wp-image-651" src=https://nevertired.nctu.me/wp-content/uploads/2018/09/Image_20191102_005-300x233.jpg alt width=300 height=233>
+</p>
+</div>
+<div>
+<p>
+之後就是下一步、下一步安裝完成
+</p>
+<p>
+接著他會產生一段 conf 要你放到 server 端
+</p>
+<p>
+如果你在安裝時都採用同樣的模式，倒也不必特別記
+</p>
+<p>
+&nbsp;
+</p>
+</div>
+<img loading=lazy class="alignnone size-medium wp-image-652" src=https://nevertired.nctu.me/wp-content/uploads/2018/09/Image_20191102_006-300x234.jpg alt width=300 height=234>
+<p>安裝完成後只要一登錄系統</p>
+<p>在app tray 就會看到 bareos tray monitor 可以看到自己的備份狀況</p>
+<p>而相關的 config 都會放在</p>
+<pre class=EnlighterJSRAW data-enlighter-language=null>C:\\ProgramData\\Bareos</pre>
+<p>日後如果有需要修改來這邊即可</p>
+<p> </p>
+<h2 id=linux-centos-7>Linux (Centos 7)</h2>
+<pre class=EnlighterJSRAW data-enlighter-language=null>wget -O /etc/yum.repos.d/bareos.repo  http://download.bareos.org/bareos/release/18.2/CentOS_7/bareos.repo
+yum install -y  bareos-filedaemon
+
+
+
+/etc/bareos/bareos-fd.d/client/myself.conf
+修改 Name 
+
+
+/etc/bareos/bareos-fd.d/director/bareos-dir.conf
+修改 Password
+
+重啟服務
+systemctl restart bareos-fd
+
+
+
+firewall-cmd --zone=public --permanent --add-port=9102/tcp
+
+firewall-cmd --reload
+</pre>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<h1 id=建立備份任務>建立備份任務</h1>
+<p><span style=font-family:inherit;font-style:inherit;font-weight:inherit>回到 server 上</span></p>
+<div>
+<p>
+#進入  Director conf 目錄<br> cd /etc/bareos/bareos-dir.d/
+</p>
+</div>
+<p>再次說明每個目錄對應的功能</p>
+<p>client – 要備份的裝置<br>
+Job – 要執行備份的工作<br>
+JobDefs – job 的範本，用在快速引用<br>
+FileSet – 要備份的項目<br>
+pool – 備份檔的存放空間<br>
+schedule – 備份排程</p>
+<p> </p>
+<div>
+</div>
+<h2 id=新增備份-client>新增備份 Client</h2>
+<div>
+<p>
+<a href=https://docs.bareos.org/Configuration/Director.html#directorresourceclient>官方文件</a>
+</p>
+<p>
+意思就是能被控制的 client
+</p>
+<p>
+我們在 client 目錄新增一個 conf
+</p>
+<p>
+我的習慣檔名就是該 client  的名稱<br> 這邊輸入
+</p>
+<pre class=EnlighterJSRAW data-enlighter-language=null>nano /etc/bareos/bareos-dir.d/client/192.168.43.200.conf
+
+Client {
+Name = 192.168.43.200
+Address = 192.168.43.200
+Password = "bareos"
+# uncomment the following if using bacula
+# Catalog = "MyCatalog"
+Auto Prune=yes
+Maximum Concurrent Jobs = 4
+}</pre>
+</div>
+<p>Auto Prune=yes</p>
+<p>這個參數可以讓資料滿的時候</p>
+<p>自動將舊資料刪除</p>
+<p> </p>
+<p>Maximum Concurrent Jobs = 4</p>
+<p>讓該 client 能同時接受 4 個作業 (每個作業只會吃掉一個 cpu thread)</p>
+<p>藉此加速備份速度</p>
+<p> </p>
+<h2 id=新增備份項目-fileset>新增備份項目 FileSet</h2>
+<div>
+<p>
+<a href=https://docs.bareos.org/Configuration/Director.html#fileset-resource>官方文件</a>
+</p>
+<p>
+意思就是要備份哪些檔案
+</p>
+<p>
+我們新增一個備份項目，可以參考 Windows All Drives.conf 做修改<br> 而我這裡建立一個備份 D:\\ 的項目<br> <span style=color:red>這邊要特別注意，linux 的路徑以 / 表示而不是 \\</span><br> <span style=color:red>所以 config 要用 / 表示</span>
+</p>
+<p>
+儘管來源是 windows<br> compression 可以調整壓縮率，細節請參考文件
+</p>
+</div>
+<div>
+<pre class=EnlighterJSRAW data-enlighter-language=null>nano /etc/bareos/bareos-dir.d/fileset/WinD_fileset.conf 
+<p>FileSet {
+Name = &ldquo;WinD_fileset&rdquo;
+Enable VSS = yes
+Include {
+Options {
+Signature = MD5
+Drive Type = fixed
+IgnoreCase = yes
+WildFile = &ldquo;[A-Z]:/pagefile.sys&rdquo;
+WildDir = &ldquo;[A-Z]:/RECYCLER&rdquo;
+WildDir = &ldquo;[A-Z]:/$RECYCLE.BIN&rdquo;
+WildDir = &ldquo;[A-Z]:/System Volume Information&rdquo;
+Exclude = yes
+compression=GZIP
+}
+File = D:/
+}
+}</pre></p>
+</div>
+<p>這邊有個特別的參數</p>
+<p>Drive Type = fixed</p>
+<p>代表外接式裝置是排除掉的，包含網路磁碟(待求證?)</p>
+<p> </p>
+<p>如果要讓 client 多工備份</p>
+<p>你可以選擇建立兩個  FileSet</p>
+<p>比如說 C 槽、D槽</p>
+<p> </p>
+<h2 id=建立排程-schedule>建立排程 Schedule</h2>
+<div>
+<a href=https://docs.bareos.org/Configuration/Director.html#schedule-resource>官方文件</a>
+</div>
+<div>
+這邊指的是建立一個時間表
+</div>
+<div>
+後面的 jobdefs
+</div>
+<p>可以依這邊的 Schedule  執行備份作業</p>
+<div>
+<pre class=EnlighterJSRAW data-enlighter-language=null>nano /etc/bareos/bareos-dir.d/schedule/CyclePM21_Schedule.conf
+<p>Schedule {
+Name = &ldquo;CyclePM21_Schedule&rdquo;
+Run = Full 1st saturday at 00:01                   # 每個月的第一周的禮拜六早上 00:01 執行全備份
+Run = Differential daily at 21:00       #  每天晚上 9 點執行差異備份 (沒有全備份紀錄會變成跑全備份工作)</p>
+<p>}
+</pre></p>
+<p>
+Full
+</p>
+</div>
+<div>
+Differential<br> Incremental
+</div>
+<div>
+三者間的關係
+</div>
+<div>
+<a href=https://searchdatabackup.techtarget.com/tip/Data-backup-types-explained-Full-incremental-differential-and-incremental-forever-backup>https://searchdatabackup.techtarget.com/tip/Data-backup-types-explained-Full-incremental-differential-and-incremental-forever-backup</a>
+</div>
+<div>
+<img loading=lazy class="alignnone size-medium wp-image-661 zoooom" src=https://nevertired.nctu.me/wp-content/uploads/2018/09/whatis-pillar_full_incremental_differential_backup-180x300.png alt width=180 height=300>
+</div>
+<div>
+</div>
+<h2 id=job-範本-jobdefs>job 範本  jobdefs</h2>
+<div>
+jobdefs 他並不是一個必要的 config
+</div>
+<div>
+它的用途在建立一個 job 的範本
+</div>
+<div>
+設定好後
+</div>
+<p>在最後建立 job 的 config 會輕鬆很多</p>
+<pre class=EnlighterJSRAW data-enlighter-language=null>nano /etc/bareos/bareos-dir.d/jobdefs/winD_jobdefs.conf
+
+
+JobDefs {
+        Name = "winD_jobdefs"
+        Type = Backup
+        Level = Incremental
+   Client = "192.168.43.200"
+        FileSet = "WinD_fileset"                     # selftest fileset
+        Schedule = "CyclePM21_Schedule"
+        Storage = File
+        Messages = Standard
+        Pool = File_pool
+        Priority = 10
+        Write Bootstrap = "/var/lib/bareos/%c.bsr"
+
+Maximum Concurrent Jobs = 4
+}</pre>
+<p>記得要多工 這邊也要給</p>
+<p>Maximum Concurrent Jobs</p>
+<p> </p>
+<h2 id=建立-job>建立 job</h2>
+<p>總算到最後了，job 要建立非常簡單</p>
+<p>因為我們建好 jobdefs 了</p>
+<p>所以最後只要帶進來就可以使用</p>
+<pre class=EnlighterJSRAW data-enlighter-language=null>nano /etc/bareos/bareos-dir.d/job/192.168.43.200_job.conf
+
+Job {
+  Name = "192.168.43.200_job"
+  JobDefs = "winD_jobdefs"
+  Client = "192.168.43.200"
+}
+</pre>
+<p> </p>
+<h2 id=重新讀取-config>重新讀取 config</h2>
+<p>最後進入 bareos 操作工具，執行 reload 命令<br>
+bconsole<br>
+reload</p>
+<p>這樣前面的設定就會套進去 bareos 中</p>
+<p>接著去 webui</p>
+<p>job – actions</p>
+<p>就能手動執行工作</p>
+<p>或是等排程到，job 也會自動進行</p>
+<p> </p>
+<h1 id=其他>其他</h1>
+<h2 id=刪除備份>刪除備份</h2>
+<p>進入 bconsole 執行 purge 指令</p>
+<p>按照提示進行即可，以下範例</p>
+<pre class=EnlighterJSRAW data-enlighter-language=null>*purge
+
+This command can be DANGEROUS!!!
+
+It purges (deletes) all Files from a Job,
+JobId, Client or Volume; or it purges (deletes)
+all Jobs from a Client or Volume without regard
+to retention periods. Normally you should use the
+PRUNE command, which respects retention periods.
+This command requires full access to all resources.
+Automatically selected Catalog: MyCatalog
+Using Catalog "MyCatalog"
+You have the following choices:
+     1: files
+     2: jobs
+     3: volume
+     4: quota
+Choose item to purge (1-4): 2
+The defined Client resources are:
+     1: bareos-fd
+     2: 192.168.43.200
+Select Client (File daemon) resource (1-2): 2
+Begin purging jobs from Client "192.168.43.200"
+Found 5 Jobs for client "192.168.43.200" in catalog "MyCatalog".
+Purge (yes/no)? yes
+*
+</pre>
+<p> </p>
+<p> </p>
+<h2 id=故障排除>故障排除</h2>
+<p>如果遇到服務起不來</p>
+<p>記得所有相關目錄、config 都要是用 bareos 的權限</p>
+<pre class=EnlighterJSRAW data-enlighter-language=null>chown -R bareos: /etc/bareos/*</pre>
+<p>或是利用 config 檢測工具</p>
+<p>能告訴你是哪邊有錯</p>
+<p><a href=https://docs.bareos.org/IntroductionAndTutorial/GettingStartedWithBareos.html#testing-your-configuration-files>官方文件</a></p>
+<pre class=EnlighterJSRAW data-enlighter-language=null>su bareos -s /bin/sh -c "/usr/sbin/bareos-dir -t"
+su bareos -s /bin/sh -c "/usr/sbin/bareos-sd -t"
+bareos-fd -t
+bconsole -t
+bareos-tray-monitor -t</pre>
+<p>實際檢測會是這樣</p>
+<pre class=EnlighterJSRAW data-enlighter-language=null>[root@localhost job]# su bareos -s /bin/sh -c "/usr/sbin/bareos-dir -t"
+bareos-dir: ERROR TERMINATION at lib/res.cc:574
+Config error: Could not find config resource "winD_jobdefs11" referenced on line 3:   JobDefs = "winD_jobdefs11"
+
+            : line 3, col 28 of file /etc/bareos/bareos-dir.d/job/192.168.43.200_job.conf
+  JobDefs = "winD_jobdefs11"
+</pre>
+<p> </p>
+<h2 id=減少重複數據>減少重複數據</h2>
+<p><a href="https://docs.bareos.org/TasksAndConcepts/FileDeduplicationUsingBaseJobs.html?highlight=job#file-deduplication-using-base-jobs">官方文件</a></p>
+<p>簡單來說 就是找一台設備當作 base (基底)</p>
+<p>後面的備份就跟他比較，一樣的檔案就不進行備份</p>
+<p> </p>
+<p>舉個例子 有 3 台 windows ，A、B、C</p>
+<p>那個只要第 1 台 A 先作為 base 先進行備份 ，後面B、C  台可以跟 A 的備份做比較，相同的檔案就不進行備份，以節省空間</p>
+<p> </p>
+<p>實際舉例</p>
+<pre class=EnlighterJSRAW data-enlighter-language=null>Client_1  -&gt; BASE backup
+Client_2  -&gt; 使用 Client_1 的 BASE backup 減少備份空間
+
+
+fileset/BaseFileset_var.conf
+## 參數為官方手冊範本
+FileSet {
+  Name = BaseFileset_var
+  Include  {
+    Options {
+       BaseJob  = pmugcs5
+       Accurate = mcs
+       Verify   = pin5
+    }
+    File = /var/
+  }
+}
+
+jobdefs/create_base_jobdefs.conf
+## 建立 base backup 的 jobdefs(job 範本)
+JobDefs {
+        Name = "create_base_jobdefs"
+        Type = Backup
+        Level = base
+        FileSet = "BaseFileset_var"       
+        Storage = File
+        Messages = Standard
+        Pool = File_pool
+        client = client_1
+}
+
+
+jobdefs/use_base_jobdefs.conf
+## 使用 base backup 的 jobdefs(job 範本)
+JobDefs {
+        Name = "use_base_jobdefs"
+        Type = Backup
+        Level = Full
+        FileSet = "BaseFileset_var"                 
+        Storage = File
+        Messages = Standard
+    Base = create_base_job
+        Pool = File_pool
+        client = client_2
+    Accurate = yes
+}
+
+
+
+
+
+job/create_base_job.conf
+## 建立 base backup job
+Job {
+        Name = "create_base_job"
+    JobDefs = create_base_jobdefs
+
+}
+
+
+
+job/use_base_job.conf
+## 使用 base backup job
+Job {
+        Name = "use_base_job"
+    JobDefs = use_base_jobdefs
+
+}</pre>
+<p> </p>
+<p>實際執行效果</p>
+<p>base backup 備份 165 MB</p>
+<p>使用 base backup 只需備份 3 MB</p>
+<img loading=lazy class="alignnone size-medium wp-image-706 zoooom" src=https://nevertired.nctu.me/wp-content/uploads/2018/09/Image_20191108_001-300x21.jpg alt width=300 height=21>
+<p> </p>
+<p>點進去 job 可以看到 節省近 97 % 的檔案不須備份</p>
+<p>Base files/Used files: 3831/3713 (96.92%)</p>
+<p>節省 154 MB</p>
+<p>Space saved with Base jobs: 154 MB</p>
+<img loading=lazy class="alignnone size-medium wp-image-708 zoooom" src=https://nevertired.nctu.me/wp-content/uploads/2018/09/Image_20191108_004-300x203.jpg alt width=300 height=203>
+<p> </p>
+<h2 id=多工處理>多工處理</h2>
+<p>bareos 預設一個 client 同時只會有一個 job</p>
+<p>打開壓縮功能後，一般備份大概只能跑 10MB/s</p>
+<p>這速度其實蠻慢的</p>
+<p>為了要解決這種狀況</p>
+<p>我們可以建立多個 job</p>
+<p>比如說</p>
+<p>job1 備份 C 槽</p>
+<p>job2 備份 D 槽</p>
+<p> </p>
+<p>會動到的參數</p>
+<p>Maximum Concurrent Jobs = &lt;數值></p>
+<p> </p>
+<p>會動到的 config</p>
+<pre class=EnlighterJSRAW data-enlighter-language=null>/etc/bareos/bareos-dir.d/director/
+
+/etc/bareos/bareos-dir.d/client/
+
+/etc/bareos/bareos-dir.d/storage/
+
+/etc/bareos/bareos-dir.d/jobdefs/
+
+/etc/bareos/bareos-dir.d/job/</pre>
+<p> </p>
+<p>director、storage 影響 server 端</p>
+<p>其他影響 client 端</p>
+<p>建議公式</p>
+<p>client 端 &lt; CPU 線程數<br>
+我個人建議用 4</p>
+<p> </p>
+<p>server 端  I/O 除以10MB<br>
+比如說 server 使用  1Gb 的網路<br>
+那<br>
+Maximum Concurrent Jobs = 10</p>
+<p> </p>
+<p>記得 fileset</p>
+<p>要去設定分工作業</p>
+<p>備份 C</p>
+<p>備份 D</p>
+<p> </p>
+<p>最後 job</p>
+<p>也要建立多份讓他同步執行</p>
+<p> </p>
+<h2 id=使用-command-還原檔案>使用 command 還原檔案</h2>
+<p>有時候備份內容太大</p>
+<p>webui 會無法還原</p>
+<p>這時候就只能使用指令操作</p>
+<p>以下簡單操作範例</p>
+<pre class=EnlighterJSRAW data-enlighter-language=null>*restore
+
+First you select one or more JobIds that contain files
+to be restored. You will be presented several methods
+of specifying the JobIds. Then you will be allowed to
+select which files from those JobIds are to be restored.
+
+To select the JobIds, you have the following choices:
+     1: List last 20 Jobs run
+     2: List Jobs where a given File is saved
+     3: Enter list of comma separated JobIds to select
+     4: Enter SQL list command
+     5: Select the most recent backup for a client
+     6: Select backup for a client before a specified time
+     7: Enter a list of files to restore
+     8: Enter a list of files to restore before a specified time
+     9: Find the JobIds of the most recent backup for a client
+    10: Find the JobIds for a backup for a client before a specified time
+    11: Enter a list of directories to restore for found JobIds
+    12: Select full restore to a specified Job date
+    13: Cancel
+Select item:  (1-13): 1
++-------+----------------+---------------------+----------+----------+---------------+
+| JobId | Client         | StartTime           | JobLevel | JobFiles | JobBytes      |
++-------+----------------+---------------------+----------+----------+---------------+
+| 55    | 192.168.43.200 | 2019-11-03 21:11:15 | B        | 49642    | 4659885968    |
+| 53    | 192.168.43.200 | 2019-11-03 21:00:02 | F        | 193132   | 8884700929    |
+| 54    | 192.168.43.200 | 2019-11-03 21:00:02 | F        | 26272    | 2401983322    |
+| 52    | 192.168.43.200 | 2019-11-03 21:00:00 | F        | 25374    | 2332146461    |
+| 51    | 192.168.43.200 | 2019-11-03 20:56:04 | B        | 193132   | 8884550034    |
+| 50    | 192.168.43.200 | 2019-11-03 20:53:22 | B        | 9        | 129946759     |
+| 47    | 192.168.43.204 | 2019-11-03 20:47:43 | F        | 30996    | 1075651426    |
+| 48    | bareos-fd      | 2019-11-03 20:47:43 | F        | 39677    | 1786903959    |
+| 45    | 192.168.43.204 | 2019-11-03 20:44:33 | F        | 425      | 42228487      |
+| 8     | bareos-fd      | 2019-11-02 21:00:00 | F        | 449      | 67708047      |
++-------+----------------+---------------------+----------+----------+---------------+
+To select the JobIds, you have the following choices:
+     1: List last 20 Jobs run
+     2: List Jobs where a given File is saved
+     3: Enter list of comma separated JobIds to select
+     4: Enter SQL list command
+     5: Select the most recent backup for a client
+     6: Select backup for a client before a specified time
+     7: Enter a list of files to restore
+     8: Enter a list of files to restore before a specified time
+     9: Find the JobIds of the most recent backup for a client
+    10: Find the JobIds for a backup for a client before a specified time
+    11: Enter a list of directories to restore for found JobIds
+    12: Select full restore to a specified Job date
+    13: Cancel
+3
+Enter JobId(s), comma separated, to restore: 55
+You have selected the following JobId: 55
+
+Building directory tree for JobId(s) 55 ...  +++++++++++++++++++++++++++++++++++++++++++++++++
+49,572 files inserted into the tree.
+
+You are now entering file selection mode where you add (mark) and
+remove (unmark) files to be restored. No files are initially added, unless
+you used the "all" keyword on the command line.
+Enter "done" to leave this mode.
+
+cwd is: /
+$ ls
+D:/
+
+$ ls
+1/
+1 - 複製/
+
+cd "1 - 複製"
+cwd is: D:/1 - 複製/
+
+$ ls
+Application - 複製 (2) - 複製.evtx
+
+$
+?          $          abort      add        cd         count      delete     dir        done       estimate   exit       find       help       ls         lsmark     mark       markdir    pwd        quit       unmark     unmarkdir
+mark
+mark     markdir
+mark
+Display all 730 possibilities? (y or n)
+mark System.evtx
+1 file marked.
+$ add
+Display all 730 possibilities? (y or n)
+?
+  Command    Description
+  =======    ===========
+  abort      abort and do not do restore
+  add        add dir/file to be restored recursively, wildcards allowed
+  cd         change current directory
+  count      count marked files in and below the cd
+  delete     delete dir/file to be restored recursively in dir
+  dir        long list current directory, wildcards allowed
+  done       leave file selection mode
+  estimate   estimate restore size
+  exit       same as done command
+  find       find files, wildcards allowed
+  help       print help
+  ls         list current directory, wildcards allowed
+  lsmark     list the marked files in and below the cd
+  mark       mark dir/file to be restored recursively, wildcards allowed
+  markdir    mark directory name to be restored (no files)
+  pwd        print current working directory
+  unmark     unmark dir/file to be restored recursively in dir
+  unmarkdir  unmark directory name only no recursion
+  quit       quit and do not do restore
+  ?          print help
+
+$ done
+Bootstrap records written to /var/lib/bareos/bareos-dir.restore.1.bsr
+
+The job will require the following
+   Volume(s)                 Storage(s)                SD Device(s)
+===========================================================================
+
+    File-0030                 File                      FileStorage
+
+Volumes marked with "*" are online.
+
+
+1 file selected to be restored.
+
+Defined Clients:
+     1: 192.168.43.200
+     2: 192.168.43.204
+     3: bareos-fd
+Select the Client (1-3): 2
+Using Catalog "MyCatalog"
+Run Restore job
+JobName:         RestoreFiles
+Bootstrap:       /var/lib/bareos/bareos-dir.restore.1.bsr
+Where:           /tmp/bareos-restores
+Replace:         Always
+FileSet:         LinuxAll
+Backup Client:   192.168.43.204
+Restore Client:  192.168.43.204
+Format:          Native
+Storage:         File
+When:            2019-11-03 21:42:40
+Catalog:         MyCatalog
+Priority:        10
+Plugin Options:  *None*
+OK to run? (yes/mod/no): mod
+Parameters to modify:
+     1: Level
+     2: Storage
+     3: Job
+     4: FileSet
+     5: Restore Client
+     6: Backup Format
+     7: When
+     8: Priority
+     9: Bootstrap
+    10: Where
+    11: File Relocation
+    12: Replace
+    13: JobId
+    14: Plugin Options
+Select parameter to modify (1-14): 4
+The defined FileSet resources are:
+     1: Windows All Drives
+     2: WinD_fileset
+     3: WinD2_fileset
+     4: WinD1_fileset
+     5: SelfTest
+     6: LinuxAll
+     7: Catalog
+Select FileSet resource (1-7): 6
+Run Restore job
+JobName:         RestoreFiles
+Bootstrap:       /var/lib/bareos/bareos-dir.restore.1.bsr
+Where:           /tmp/bareos-restores
+Replace:         Always
+FileSet:         LinuxAll
+Backup Client:   192.168.43.204
+Restore Client:  192.168.43.204
+Format:          Native
+Storage:         File
+When:            2019-11-03 21:42:40
+Catalog:         MyCatalog
+Priority:        10
+Plugin Options:  *None*
+OK to run? (yes/mod/no): yes
+Job queued. JobId=56
+</pre>
+<p> </p>
+<p> </p>
+</div>
+<footer class=post-footer>
+<div class=post-tags>
+<a href=/en/tags/bareos rel=tag title=bareos>#bareos#</a>
+<a href=/en/tags/centos-7 rel=tag title="centos 7">#centos 7#</a>
+</div>
+<div id=disqus_thread></div>
+<script type=application/javascript>var disqus_config=function(){};(function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById('disqus_thread').innerHTML='Disqus comments not available by default when the website is previewed locally.';return}var b=document,a=b.createElement('script');a.async=!0,a.src='//bu-jue-ming-shi.disqus.com/embed.js',a.setAttribute('data-timestamp',+new Date),(b.head||b.body).appendChild(a)})()</script>
+<noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript>
+<a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a>
+>
+</footer>
+</article>
+</section>
+</div>
+</div>
+<div class=sidebar-toggle>
+<div class=sidebar-toggle-line-wrap>
+<span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+<span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+<span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+</div>
+</div>
+<aside id=sidebar class=sidebar>
+<div class=sidebar-inner>
+<section class="site-overview sidebar-panel sidebar-panel-active">
+<div class="site-author motion-element" itemprop=author itemscope itemtype=http://schema.org/Person>
+<img class=site-author-image itemprop=image src=/img/avatar.png alt=Elkan.Li>
+<p class=site-author-name itemprop=name>Elkan.Li</p>
+<p class="site-description motion-element" itemprop=description>
+Never forget your dreams！
+</p>
+</div>
+<nav class="site-state motion-element">
+<div class="site-state-item site-state-posts">
+<a href=/en/post/>
+<span class=site-state-item-count>0</span>
+<span class=site-state-item-name>Blogs</span>
+</a>
+</div>
+<div class="site-state-item site-state-categories">
+<a href=/en/categories/>
+<span class=site-state-item-count>13</span>
+<span class=site-state-item-name>Categories</span>
+</a>
+</div>
+<div class="site-state-item site-state-tags">
+<a href=/en/tags/>
+<span class=site-state-item-count>22</span>
+<span class=site-state-item-name>Tags</span>
+</a>
+</div>
+</nav>
+<div class="links-of-author motion-element">
+<span class=links-of-author-item>
+<a href=https://github.com/elkan1788/ target=_blank title=GitHub>
+<i class="fa fa-fw fa-github"></i>
+GitHub
+</a>
+</span>
+<span class=links-of-author-item>
+<a href=https://www.zhihu.com/people/fan-meng-xing-chen-1 target=_blank title=ZhiHu>
+<i class="fa fa-fw fa-globe"></i>
+ZhiHu
+</a>
+</span>
+</div>
+<div class="links-of-blogroll motion-element links-of-blogroll-inline">
+<div class=links-of-blogroll-title>
+<i class="fa fa-fw fa-globe"></i>
+Links
+</div>
+<ul class=links-of-blogroll-list>
+<li class=links-of-blogroll-item>
+<a href=https://nutzam.com/ title=Nutz target=_blank>Nutz</a>
+</li>
+<li class=links-of-blogroll-item>
+<a href=https://jfinal.com/ title=JFinal target=_blank>JFinal</a>
+</li>
+<li class=links-of-blogroll-item>
+<a href=http://wendal.net/ title=Wendal target=_blank>Wendal</a>
+</li>
+<li class=links-of-blogroll-item>
+<a href=https://www.liaoxuefeng.com/ title=LiaoXueFeng target=_blank>LiaoXueFeng</a>
+</li>
+</ul>
+</div>
+<div class="tagcloud-of-blogroll motion-element tagcloud-of-blogroll-inline">
+<div class=tagcloud-of-blogroll-title>
+<i class="fa fa-fw fa-tags"></i>
+TagCloud
+</div>
+<ul class=tagcloud-of-blogroll-list>
+<li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/windows>Windows</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/centos-7>Centos 7</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/markdown>Markdown</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/anti-virus>Anti virus</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/bareos>Bareos</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/chrony>Chrony</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/css>Css</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/emoji>Emoji</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/html>HTML</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/hugo>Hugo</a>
+</li>
+</ul>
+</div>
+</section>
+</div>
+</aside>
+</div>
+</main>
+<footer id=footer class=footer>
+<div class=footer-inner>
+<div class=copyright>
+<span class=copyright-year>
+&copy; 2010 - 2022
+</span>
+<span class=with-love><i class="fa fa-heart"></i></span>
+<span class=copyright-author>IT 紀錄網站</span>
+</div>
+<div class=powered-info>
+<span class=powered-by>
+Powered by - <a class=powered-link href=//gohugo.io target=_blank title=hugo>Hugo v0.92.2</a>
+</span>
+<span class=separator-line>/</span>
+<span class=theme-info>
+Theme by - <a class=powered-link href=//github.com/elkan1788/hugo-theme-next target=_blank> NexT
+</a>
+</span>
+</div>
+<div class=vistor-info>
+<script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
+<span class=site-uv>
+<i class="fa fa-user"></i>
+<span class=busuanzi-value id=busuanzi_value_site_uv></span>
+</span>
+<span class=separator-line>/</span>
+<span class=site-pv>
+<i class="fa fa-eye"></i>
+<span class=busuanzi-value id=busuanzi_value_site_pv></span>
+</span>
+</div>
+</div>
+</footer>
+<div class=back-to-top>
+<i class="fa fa-arrow-up"></i>
+<span id=scrollpercent><span>0</span>%</span>
+</div>
+</div>
+<script type=text/javascript src=//cdn.bootcdn.net/ajax/libs/jquery/2.1.4/jquery.min.js></script>
+<script type=text/javascript src=/js/search.js></script>
+<script type=text/javascript src=/js/affix.js></script>
+<script type=text/javascript src=/js/scrollspy.js></script>
+<script type=text/javascript>function detectIE(){var a=window.navigator.userAgent,b=a.indexOf('MSIE '),c=a.indexOf('Trident/'),d=a.indexOf('Edge/');return b>0||c>0||d>0?-1:1}function getCntViewHeight(){var b=$('#content').height(),a=$(window).height(),c=b>a?b-a:$(document).height()-a;return c}function getScrollbarWidth(){var a=$('<div />').addClass('scrollbar-measure').prependTo('body'),b=a[0],c=b.offsetWidth-b.clientWidth;return a.remove(),c}function registerBackTop(){var b=50,a=$('.back-to-top');$(window).on('scroll',function(){var d,e,f,c,g;a.toggleClass('back-to-top-on',window.pageYOffset>b),d=$(window).scrollTop(),e=getCntViewHeight(),f=d/e,c=Math.round(f*100),g=c>100?100:c,$('#scrollpercent>span').html(g)}),a.on('click',function(){$("html,body").animate({scrollTop:0,screenLeft:0},800)})}function initScrollSpy(){var a='.post-toc',d=$(a),b='.active-current';d.on('activate.bs.scrollspy',function(){var b=$(a+' .active').last();c(),b.addClass('active-current')}).on('clear.bs.scrollspy',c),$('body').scrollspy({target:a});function c(){$(a+' '+b).removeClass(b.substring(1))}}function initAffix(){var a=$('.header-inner').height(),b=parseInt($('.main').css('padding-bottom'),10),c=a+10;$('.sidebar-inner').affix({offset:{top:c,bottom:b}}),$(document).on('affixed.bs.affix',function(){updateTOCHeight(document.body.clientHeight-100)})}function initTOCDimension(){var a,b;$(window).on('resize',function(){a&&clearTimeout(a),a=setTimeout(function(){var a=document.body.clientHeight-100;updateTOCHeight(a)},0)}),updateTOCHeight(document.body.clientHeight-100),b=getScrollbarWidth(),$('.post-toc').css('width','calc(100% + '+b+'px)')}function updateTOCHeight(a){a=a||'auto',$('.post-toc').css('max-height',a)}$(function(){var b=$('.header-inner').height()+10,c,d,a,e;$('#sidebar').css({'margin-top':b}).show(),c=parseInt($('#sidebar').css('margin-top')),d=parseInt($('.sidebar-inner').css('height')),a=c+d,e=$('.content-wrap').height(),e<a&&$('.content-wrap').css('min-height',a),$('.site-nav-toggle').on('click',function(){var a=$('.site-nav'),e=$('.toggle'),b='site-nav-on',f='toggle-close',c=a.hasClass(b),g=c?'slideUp':'slideDown',d=c?'removeClass':'addClass';a.stop()[g]('normal',function(){a[d](b),e[d](f)})}),registerBackTop(),initScrollSpy(),initAffix(),initTOCDimension(),$('.sidebar-nav-toc').click(function(){$(this).addClass('sidebar-nav-active'),$(this).next().removeClass('sidebar-nav-active'),$('.'+$(this).next().attr('data-target')).toggle(500),$('.'+$(this).attr('data-target')).toggle(500)}),$('.sidebar-nav-overview').click(function(){$(this).addClass('sidebar-nav-active'),$(this).prev().removeClass('sidebar-nav-active'),$('.'+$(this).prev().attr('data-target')).toggle(500),$('.'+$(this).attr('data-target')).toggle(500)})})</script>
+<script src=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.js></script>
+<script type=text/javascript>$(function(){$('.post-body').viewer()})</script>
+<script type=text/javascript>$(function(){detectIE()>0?$.getScript(document.location.protocol+'//cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js',function(){new Waline({el:'#wcomments',visitor:!0,avatar:'wavatar',avatarCDN:'https://sdn.geekzu.org/avatar/',avatarForce:!1,wordLimit:'200',placeholder:' Just do what you want leave here, and don\u0027t forget give your email to make exchange. ^_^ ',requiredFields:['nick','mail'],serverURL:"Your WalineSerURL",lang:"en"})}):$('#wcomments').html('Sorry, Waline plugin doesn\u0027t support IE or Edge, Please swithc to Chrome browser.')})</script>
+<script type=text/javascript src="//s7.addthis.com/js/300/addthis_widget.js#pubid=Your%20AddthisId"></script>
+<script>(function(){var a=document.createElement('script'),c=window.location.protocol.split(':')[0],b;c==='https'?a.src='https://zz.bdstatic.com/linksubmit/push.js':a.src='http://push.zhanzhang.baidu.com/push.js',b=document.getElementsByTagName("script")[0],b.parentNode.insertBefore(a,b)})()</script>
+</body>
+</html>

@@ -1,0 +1,438 @@
+<!doctype html><html lang=en dir=zh>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
+<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
+<meta http-equiv=content-security-policy content="upgrade-insecure-requests">
+<title> UrBackup 跨平台開源中央備份軟體 - IT 紀錄網站 </title>
+<meta name=keywords content="Blog,Software,Big Data,Product,Architecture,Java,Kylin">
+<meta name=author content="Elkan.Li">
+<meta property="og:title" content="UrBackup  跨平台開源中央備份軟體">
+<meta property="og:site_name" content="IT 紀錄網站">
+<meta property="og:image" content="/img/author.jpg">
+<meta name=title content="UrBackup  跨平台開源中央備份軟體 - IT 紀錄網站">
+<meta name=description content="Weclome to Elkan's blog site that who is best on program develop, pre-sales and big data.">
+<link rel="shortcut icon" href=/img/favicon.ico>
+<link rel=apple-touch-icon href=/img/apple-touch-icon.png>
+<link rel=apple-touch-icon-precomposed href=/img/apple-touch-icon.png>
+<link href=//cdn.bootcdn.net/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css rel=stylesheet type=text/css>
+<link href=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.css rel=stylesheet>
+<link href=/css/main.css rel=stylesheet type=text/css>
+<link href=/css/syntax.css rel=stylesheet type=text/css>
+</head>
+<body itemscope itemtype=http://schema.org/WebPage lang=zh-hans>
+<div class="container one-collumn sidebar-position-left page-home">
+<div class=headband></div>
+<header id=header class=header itemscope itemtype=http://schema.org/WPHeader>
+<div class=header-inner> <div class=site-brand-container>
+<div class=site-nav-toggle>
+<div class=toggle role=button style=opacity:1;top:0>
+<span class=toggle-line></span>
+<span class=toggle-line></span>
+<span class=toggle-line></span>
+</div>
+</div>
+<div class=site-meta>
+<div class=multi-lang-switch>
+<i class="fa fa-fw fa-language" style=margin-right:5px></i>
+<a class=lang-link id=en href=#></a>
+</div>
+<div class=custom-logo-site-title>
+<a href=/en/ class=brand rel=start>
+<span class=logo-line-before><i></i></span>
+<span class=site-title>IT 紀錄網站</span>
+<span class=logo-line-after><i></i></span>
+</a>
+</div>
+<p class=site-subtitle>Don't stop running forward!</p>
+</div>
+<div class=site-nav-right>
+<div class="toggle popup-trigger" style=opacity:1;top:0>
+<i class="fa fa-search fa-fw fa-lg"></i>
+</div>
+</div>
+</div>
+<nav class=site-nav>
+<ul id=menu class=menu>
+<li class=menu-item>
+<a href=/en/ rel=section>
+<i class="menu-item-icon fa fa-fw fa-home"></i> <br>首頁
+</a>
+</li>
+<li class=menu-item>
+<a href=/en/post rel=section>
+<i class="menu-item-icon fa fa-fw fa-archive"></i> <br>archive
+</a>
+</li>
+<li class=menu-item>
+<a href=/en/about.html rel=section>
+<i class="menu-item-icon fa fa-fw fa-user"></i> <br>關於我
+</a>
+</li>
+<li class="menu-item menu-item-search">
+<a href=javascript:; class=popup-trigger> <i class="menu-item-icon fa fa-search fa-fw"></i> <br> Search</a>
+</li>
+</ul>
+<div class=site-search>
+<div class="popup search-popup local-search-popup">
+<div class="local-search-header clearfix">
+<span class=search-icon><i class="fa fa-search"></i> </span>
+<span class=popup-btn-close><i class="fa fa-times-circle"></i></span>
+<div class=local-search-input-wrapper>
+<input autocomplete=off placeholder="Enter key words..." spellcheck=false type=text id=local-search-input autocapitalize=none autocorrect=off>
+</div>
+</div>
+<div id=local-search-result></div>
+</div>
+</div>
+</nav>
+</div>
+</header>
+<main id=main class=main>
+<div class=main-inner>
+<div class=content-wrap>
+<div id=content class=content>
+<section id=posts class=posts-expand>
+<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
+<header class=post-header>
+<h1 class=post-title itemprop="name headline">
+<a class=post-title-link href=https://lovesharepc.github.io/2020/02/02/urbackup-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E4%B8%AD%E5%A4%AE%E5%82%99%E4%BB%BD%E8%BB%9F%E9%AB%94/ itemprop=url>
+UrBackup 跨平台開源中央備份軟體
+</a>
+</h1>
+<div class=post-meta>
+<span class=post-time>
+<i class="fa fa-calendar-o fa-fw"></i>
+<span class=post-meta-item-text>Published at:</span>
+<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2020/02/02">
+2020/02/02
+</time>
+</span>
+<span class=post-category>
+&nbsp; | &nbsp;
+<i class="fa fa-folder-o fa-fw"></i>
+<span class=post-meta-item-text>Categories:</span>
+<span itemprop=about itemscope itemtype=https://schema.org/Thing>
+<a href=/en/categories/%E7%B6%B2%E7%AE%A1 itemprop=url rel=index style=text-decoration:underline>
+<span itemprop=name>網管</span>
+</a>
+&nbsp;
+</span>
+</span>
+<span>
+|
+<i class="fa fa-file-word-o fa-fw"></i>
+<span class=post-meta-item-text>Words:</span>
+<span class=leancloud-world-count>959 words</span>
+</span>
+<span>
+|
+<i class="fa fa-eye fa-fw"></i>
+<span class=post-meta-item-text>Reading:</span>
+<span class=leancloud-view-count>2 minutes</span>
+</span>
+<span id=/2020/02/02/urbackup-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E4%B8%AD%E5%A4%AE%E5%82%99%E4%BB%BD%E8%BB%9F%E9%AB%94/ class=leancloud_visitors data-flag-title="UrBackup  跨平台開源中央備份軟體">
+|
+<i class="fa fa-binoculars fa-fw"></i>
+<span class=post-meta-item-text>Visited:</span>
+<span class=leancloud-visitors-count></span>
+</span>
+</div>
+</header>
+<div class=post-body itemprop=articleBody>
+<img loading=lazy class="alignnone size-full wp-image-1037" src=https://wp.nevertired.us.to/wp-content/uploads/2020/02/0001_45.png alt width=216 height=69>
+<p>官網 <a href=https://www.urbackup.org/index.html>https://www.urbackup.org/index.html</a></p>
+<p> </p>
+<h1 id=主打功能>主打功能</h1>
+<p>fast 快速-支援增量備份</p>
+<p>Easy to setup 簡單上手，不需要什麼設定</p>
+<p>Space efficient  支援重複數據刪除</p>
+<p>Free Software. 採用<a href=https://www.gnu.org/licenses/agpl-3.0>AGPLv3+</a>.授權的免費軟體</p>
+<p>Web interface 網頁管理</p>
+<p>Consistent backups while in use 可線上備份</p>
+<p>Backups via Internet 可跨網際網路備份</p>
+<p>Multi-platform. 跨平台</p>
+<p>** **</p>
+<p>** **</p>
+<p>** **</p>
+<h1 id=full-feature-list-功能清單><strong>Full feature list 功能清單</strong></h1>
+<p>以下不專業簡易翻譯</p>
+<ul>
+<li>
+<p>Full and incremental image and file backups: Whole partitions can be saved as well as single directories<br>
+支援全備份、增量備份、支援映像檔和檔案模式</p>
+</li>
+<li>
+<p>Clients for Windows, Linux and FreeBSD<br>
+Client 支援 windows 、Linux 、 FreeBSD</p>
+</li>
+<li>
+<p>Fast calculation of file tree differences leads to very fast incremental file backups – only new changed files will be retransmitted<br>
+強調增量備份性能佳</p>
+</li>
+<li>
+<p>Only used and changed hard disk sectors are transmitted during an incremental image backup<br>
+強調增量備份能力</p>
+</li>
+<li>
+<p>Image and file backups while the system is running<br>
+可以線上備份</p>
+</li>
+<li>
+<p>Consistent backups of used files on Windows and Linux. For example Outlook .pst files<br>
+檔案可保留原格式備份</p>
+</li>
+<li>
+<p>Same files on different computers are saved only once. Less server storage space is needed for your backups (file level deduplication)<br>
+支援重複數據刪除</p>
+</li>
+<li>
+<p>Clients can change their settings like backup frequency or number of backups and can take a look at log files of their backups<br>
+Client 端可以控制備份作業，包含備份紀錄及可用還原</p>
+</li>
+<li>
+<p>Next to no configuration. Install, select the directories you want to backup and watch it backup<br>
+超容易上手，1.安裝 2.指定備份檔存放位置 3.開始使用</p>
+</li>
+<li>
+<p>Client warns if there was no backup for some time<br>
+Client 可以收到告警功能</p>
+</li>
+<li>
+<p>Webinterface that shows the status of the clients, current activities and statistics. It allows the administrator to change backup settings and override the settings for the clients. Existing file backups can be browsed, files from these backups can be extracted or restore processes started<br>
+採用WEB管理，管理者能控制權限</p>
+</li>
+<li>
+<p>Reports about backups can be sent to users or administrators<br>
+有報告機制，可送至users or administrators</p>
+</li>
+<li>
+<p>Secure and efficient backups to your own server via Internet if the client is currently not in your local network<br>
+強調安全、高效能的備份機制</p>
+</li>
+<li>
+<p>File metadata such as last modified time is backed up<br>
+檔案詳細資料皆有備份，例如修改時間</p>
+</li>
+<li>
+<p>Easy to use file and image restore (via restore CD/USB stick)<br>
+官方提供裸機還原工具</p>
+</li>
+<li>
+<p>Easy to configure and use file backup access<br>
+強調使用上簡易</p>
+</li>
+<li>
+<p>E-Mail alerts if a machine isn’t backed up for a configurable amount of time<br>
+有Email 告警功能</p>
+</li>
+</ul>
+<p>** **</p>
+<h1 id=limitations-限制><strong>Limitations 限制</strong></h1>
+<ul>
+<li>Image backups only work with NTFS formatted volumes and with the Windows client. The drives must be MBR or GPT partitioned, the partition must be a primary one. Dynamic volumes are not supported. Mirrored dynamic volumes work, but are not officially supported. Backup to VHD files only works for volumes with a size of less than 2TB.</li>
+</ul>
+<p><em>Explanation:</em></p>
+<p>The image backup is mainly designed to backup the boot volume (C:) of Windows systems such that they can be brought back quickly e.g. after a hard disk failure or hardware loss. Other data on other volumes should be backed up and restored via file backup. If the server uses ZFS or btrfs as backup storage file system it can backup to raw image files which have no size restriction.</p>
+<p> </p>
+<p>映像檔備份僅支援 NTFS、ZFS、btrfs三種檔案系統</p>
+<p>備份成 VHD 格式映像檔最大至 2TB (目前僅支援 VHD)</p>
+<p> </p>
+<h1 id=其他優點>其他優點</h1>
+<p>支援多國語言，包括繁中(部分)</p>
+<p>Server and client 架構</p>
+<p> </p>
+<h1 id=快速使用步驟>快速使用步驟</h1>
+<ol>
+<li>下載 server 端安裝</li>
+<li>選擇存放備份目錄</li>
+<li>去網頁管理介面設定備份目錄</li>
+<li>Server 會自動搜尋 client 端</li>
+<li>安裝 client 端</li>
+</ol>
+<p>完成  開始備份</p>
+<p> </p>
+<h1 id=簡易實測心得>簡易實測心得</h1>
+<p>就如同快速使用步驟一樣，上手超簡易，傻子都會、功能又齊全<br>
+設定面也相當齊全，包含自動備份規則<br>
+傳輸加密規則<br>
+備份歸檔<br>
+速度限制…. 該有的都有</p>
+<p>對比之前介紹的 Bareos<br>
+覺得花大把時間、精力根本傻子一樣</p>
+</div>
+<footer class=post-footer>
+<div id=disqus_thread></div>
+<script type=application/javascript>var disqus_config=function(){};(function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById('disqus_thread').innerHTML='Disqus comments not available by default when the website is previewed locally.';return}var b=document,a=b.createElement('script');a.async=!0,a.src='//bu-jue-ming-shi.disqus.com/embed.js',a.setAttribute('data-timestamp',+new Date),(b.head||b.body).appendChild(a)})()</script>
+<noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript>
+<a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a>
+>
+</footer>
+</article>
+</section>
+</div>
+</div>
+<div class=sidebar-toggle>
+<div class=sidebar-toggle-line-wrap>
+<span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+<span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+<span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+</div>
+</div>
+<aside id=sidebar class=sidebar>
+<div class=sidebar-inner>
+<section class="site-overview sidebar-panel sidebar-panel-active">
+<div class="site-author motion-element" itemprop=author itemscope itemtype=http://schema.org/Person>
+<img class=site-author-image itemprop=image src=/img/avatar.png alt=Elkan.Li>
+<p class=site-author-name itemprop=name>Elkan.Li</p>
+<p class="site-description motion-element" itemprop=description>
+Never forget your dreams！
+</p>
+</div>
+<nav class="site-state motion-element">
+<div class="site-state-item site-state-posts">
+<a href=/en/post/>
+<span class=site-state-item-count>0</span>
+<span class=site-state-item-name>Blogs</span>
+</a>
+</div>
+<div class="site-state-item site-state-categories">
+<a href=/en/categories/>
+<span class=site-state-item-count>13</span>
+<span class=site-state-item-name>Categories</span>
+</a>
+</div>
+<div class="site-state-item site-state-tags">
+<a href=/en/tags/>
+<span class=site-state-item-count>22</span>
+<span class=site-state-item-name>Tags</span>
+</a>
+</div>
+</nav>
+<div class="links-of-author motion-element">
+<span class=links-of-author-item>
+<a href=https://github.com/elkan1788/ target=_blank title=GitHub>
+<i class="fa fa-fw fa-github"></i>
+GitHub
+</a>
+</span>
+<span class=links-of-author-item>
+<a href=https://www.zhihu.com/people/fan-meng-xing-chen-1 target=_blank title=ZhiHu>
+<i class="fa fa-fw fa-globe"></i>
+ZhiHu
+</a>
+</span>
+</div>
+<div class="links-of-blogroll motion-element links-of-blogroll-inline">
+<div class=links-of-blogroll-title>
+<i class="fa fa-fw fa-globe"></i>
+Links
+</div>
+<ul class=links-of-blogroll-list>
+<li class=links-of-blogroll-item>
+<a href=https://nutzam.com/ title=Nutz target=_blank>Nutz</a>
+</li>
+<li class=links-of-blogroll-item>
+<a href=https://jfinal.com/ title=JFinal target=_blank>JFinal</a>
+</li>
+<li class=links-of-blogroll-item>
+<a href=http://wendal.net/ title=Wendal target=_blank>Wendal</a>
+</li>
+<li class=links-of-blogroll-item>
+<a href=https://www.liaoxuefeng.com/ title=LiaoXueFeng target=_blank>LiaoXueFeng</a>
+</li>
+</ul>
+</div>
+<div class="tagcloud-of-blogroll motion-element tagcloud-of-blogroll-inline">
+<div class=tagcloud-of-blogroll-title>
+<i class="fa fa-fw fa-tags"></i>
+TagCloud
+</div>
+<ul class=tagcloud-of-blogroll-list>
+<li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/windows>Windows</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/centos-7>Centos 7</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/markdown>Markdown</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/anti-virus>Anti virus</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/bareos>Bareos</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/chrony>Chrony</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/css>Css</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/emoji>Emoji</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/html>HTML</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/hugo>Hugo</a>
+</li>
+</ul>
+</div>
+</section>
+</div>
+</aside>
+</div>
+</main>
+<footer id=footer class=footer>
+<div class=footer-inner>
+<div class=copyright>
+<span class=copyright-year>
+&copy; 2010 - 2022
+</span>
+<span class=with-love><i class="fa fa-heart"></i></span>
+<span class=copyright-author>IT 紀錄網站</span>
+</div>
+<div class=powered-info>
+<span class=powered-by>
+Powered by - <a class=powered-link href=//gohugo.io target=_blank title=hugo>Hugo v0.92.2</a>
+</span>
+<span class=separator-line>/</span>
+<span class=theme-info>
+Theme by - <a class=powered-link href=//github.com/elkan1788/hugo-theme-next target=_blank> NexT
+</a>
+</span>
+</div>
+<div class=vistor-info>
+<script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
+<span class=site-uv>
+<i class="fa fa-user"></i>
+<span class=busuanzi-value id=busuanzi_value_site_uv></span>
+</span>
+<span class=separator-line>/</span>
+<span class=site-pv>
+<i class="fa fa-eye"></i>
+<span class=busuanzi-value id=busuanzi_value_site_pv></span>
+</span>
+</div>
+</div>
+</footer>
+<div class=back-to-top>
+<i class="fa fa-arrow-up"></i>
+<span id=scrollpercent><span>0</span>%</span>
+</div>
+</div>
+<script type=text/javascript src=//cdn.bootcdn.net/ajax/libs/jquery/2.1.4/jquery.min.js></script>
+<script type=text/javascript src=/js/search.js></script>
+<script type=text/javascript src=/js/affix.js></script>
+<script type=text/javascript src=/js/scrollspy.js></script>
+<script type=text/javascript>function detectIE(){var a=window.navigator.userAgent,b=a.indexOf('MSIE '),c=a.indexOf('Trident/'),d=a.indexOf('Edge/');return b>0||c>0||d>0?-1:1}function getCntViewHeight(){var b=$('#content').height(),a=$(window).height(),c=b>a?b-a:$(document).height()-a;return c}function getScrollbarWidth(){var a=$('<div />').addClass('scrollbar-measure').prependTo('body'),b=a[0],c=b.offsetWidth-b.clientWidth;return a.remove(),c}function registerBackTop(){var b=50,a=$('.back-to-top');$(window).on('scroll',function(){var d,e,f,c,g;a.toggleClass('back-to-top-on',window.pageYOffset>b),d=$(window).scrollTop(),e=getCntViewHeight(),f=d/e,c=Math.round(f*100),g=c>100?100:c,$('#scrollpercent>span').html(g)}),a.on('click',function(){$("html,body").animate({scrollTop:0,screenLeft:0},800)})}function initScrollSpy(){var a='.post-toc',d=$(a),b='.active-current';d.on('activate.bs.scrollspy',function(){var b=$(a+' .active').last();c(),b.addClass('active-current')}).on('clear.bs.scrollspy',c),$('body').scrollspy({target:a});function c(){$(a+' '+b).removeClass(b.substring(1))}}function initAffix(){var a=$('.header-inner').height(),b=parseInt($('.main').css('padding-bottom'),10),c=a+10;$('.sidebar-inner').affix({offset:{top:c,bottom:b}}),$(document).on('affixed.bs.affix',function(){updateTOCHeight(document.body.clientHeight-100)})}function initTOCDimension(){var a,b;$(window).on('resize',function(){a&&clearTimeout(a),a=setTimeout(function(){var a=document.body.clientHeight-100;updateTOCHeight(a)},0)}),updateTOCHeight(document.body.clientHeight-100),b=getScrollbarWidth(),$('.post-toc').css('width','calc(100% + '+b+'px)')}function updateTOCHeight(a){a=a||'auto',$('.post-toc').css('max-height',a)}$(function(){var b=$('.header-inner').height()+10,c,d,a,e;$('#sidebar').css({'margin-top':b}).show(),c=parseInt($('#sidebar').css('margin-top')),d=parseInt($('.sidebar-inner').css('height')),a=c+d,e=$('.content-wrap').height(),e<a&&$('.content-wrap').css('min-height',a),$('.site-nav-toggle').on('click',function(){var a=$('.site-nav'),e=$('.toggle'),b='site-nav-on',f='toggle-close',c=a.hasClass(b),g=c?'slideUp':'slideDown',d=c?'removeClass':'addClass';a.stop()[g]('normal',function(){a[d](b),e[d](f)})}),registerBackTop(),initScrollSpy(),initAffix(),initTOCDimension(),$('.sidebar-nav-toc').click(function(){$(this).addClass('sidebar-nav-active'),$(this).next().removeClass('sidebar-nav-active'),$('.'+$(this).next().attr('data-target')).toggle(500),$('.'+$(this).attr('data-target')).toggle(500)}),$('.sidebar-nav-overview').click(function(){$(this).addClass('sidebar-nav-active'),$(this).prev().removeClass('sidebar-nav-active'),$('.'+$(this).prev().attr('data-target')).toggle(500),$('.'+$(this).attr('data-target')).toggle(500)})})</script>
+<script src=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.js></script>
+<script type=text/javascript>$(function(){$('.post-body').viewer()})</script>
+<script type=text/javascript>$(function(){detectIE()>0?$.getScript(document.location.protocol+'//cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js',function(){new Waline({el:'#wcomments',visitor:!0,avatar:'wavatar',avatarCDN:'https://sdn.geekzu.org/avatar/',avatarForce:!1,wordLimit:'200',placeholder:' Just do what you want leave here, and don\u0027t forget give your email to make exchange. ^_^ ',requiredFields:['nick','mail'],serverURL:"Your WalineSerURL",lang:"en"})}):$('#wcomments').html('Sorry, Waline plugin doesn\u0027t support IE or Edge, Please swithc to Chrome browser.')})</script>
+<script type=text/javascript src="//s7.addthis.com/js/300/addthis_widget.js#pubid=Your%20AddthisId"></script>
+<script>(function(){var a=document.createElement('script'),c=window.location.protocol.split(':')[0],b;c==='https'?a.src='https://zz.bdstatic.com/linksubmit/push.js':a.src='http://push.zhanzhang.baidu.com/push.js',b=document.getElementsByTagName("script")[0],b.parentNode.insertBefore(a,b)})()</script>
+</body>
+</html>

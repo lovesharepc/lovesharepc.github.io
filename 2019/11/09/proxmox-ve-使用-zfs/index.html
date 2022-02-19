@@ -1,0 +1,472 @@
+<!doctype html><html lang=en dir=zh>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
+<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
+<meta http-equiv=content-security-policy content="upgrade-insecure-requests">
+<title> proxmox VE 使用 ZFS - IT 紀錄網站 </title>
+<meta name=keywords content="Blog,Software,Big Data,Product,Architecture,Java,Kylin">
+<meta name=author content="Elkan.Li">
+<meta property="og:title" content="proxmox VE 使用 ZFS">
+<meta property="og:site_name" content="IT 紀錄網站">
+<meta property="og:image" content="/img/author.jpg">
+<meta name=title content="proxmox VE 使用 ZFS - IT 紀錄網站">
+<meta name=description content="Weclome to Elkan's blog site that who is best on program develop, pre-sales and big data.">
+<link rel="shortcut icon" href=/img/favicon.ico>
+<link rel=apple-touch-icon href=/img/apple-touch-icon.png>
+<link rel=apple-touch-icon-precomposed href=/img/apple-touch-icon.png>
+<link href=//cdn.bootcdn.net/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css rel=stylesheet type=text/css>
+<link href=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.css rel=stylesheet>
+<link href=/css/main.css rel=stylesheet type=text/css>
+<link href=/css/syntax.css rel=stylesheet type=text/css>
+</head>
+<body itemscope itemtype=http://schema.org/WebPage lang=zh-hans>
+<div class="container one-collumn sidebar-position-left page-home">
+<div class=headband></div>
+<header id=header class=header itemscope itemtype=http://schema.org/WPHeader>
+<div class=header-inner> <div class=site-brand-container>
+<div class=site-nav-toggle>
+<div class=toggle role=button style=opacity:1;top:0>
+<span class=toggle-line></span>
+<span class=toggle-line></span>
+<span class=toggle-line></span>
+</div>
+</div>
+<div class=site-meta>
+<div class=multi-lang-switch>
+<i class="fa fa-fw fa-language" style=margin-right:5px></i>
+<a class=lang-link id=en href=#></a>
+</div>
+<div class=custom-logo-site-title>
+<a href=/en/ class=brand rel=start>
+<span class=logo-line-before><i></i></span>
+<span class=site-title>IT 紀錄網站</span>
+<span class=logo-line-after><i></i></span>
+</a>
+</div>
+<p class=site-subtitle>Don't stop running forward!</p>
+</div>
+<div class=site-nav-right>
+<div class="toggle popup-trigger" style=opacity:1;top:0>
+<i class="fa fa-search fa-fw fa-lg"></i>
+</div>
+</div>
+</div>
+<nav class=site-nav>
+<ul id=menu class=menu>
+<li class=menu-item>
+<a href=/en/ rel=section>
+<i class="menu-item-icon fa fa-fw fa-home"></i> <br>首頁
+</a>
+</li>
+<li class=menu-item>
+<a href=/en/post rel=section>
+<i class="menu-item-icon fa fa-fw fa-archive"></i> <br>archive
+</a>
+</li>
+<li class=menu-item>
+<a href=/en/about.html rel=section>
+<i class="menu-item-icon fa fa-fw fa-user"></i> <br>關於我
+</a>
+</li>
+<li class="menu-item menu-item-search">
+<a href=javascript:; class=popup-trigger> <i class="menu-item-icon fa fa-search fa-fw"></i> <br> Search</a>
+</li>
+</ul>
+<div class=site-search>
+<div class="popup search-popup local-search-popup">
+<div class="local-search-header clearfix">
+<span class=search-icon><i class="fa fa-search"></i> </span>
+<span class=popup-btn-close><i class="fa fa-times-circle"></i></span>
+<div class=local-search-input-wrapper>
+<input autocomplete=off placeholder="Enter key words..." spellcheck=false type=text id=local-search-input autocapitalize=none autocorrect=off>
+</div>
+</div>
+<div id=local-search-result></div>
+</div>
+</div>
+</nav>
+</div>
+</header>
+<main id=main class=main>
+<div class=main-inner>
+<div class=content-wrap>
+<div id=content class=content>
+<section id=posts class=posts-expand>
+<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
+<header class=post-header>
+<h1 class=post-title itemprop="name headline">
+<a class=post-title-link href=https://lovesharepc.github.io/2019/11/09/proxmox-ve-%E4%BD%BF%E7%94%A8-zfs/ itemprop=url>
+proxmox VE 使用 ZFS
+</a>
+</h1>
+<div class=post-meta>
+<span class=post-time>
+<i class="fa fa-calendar-o fa-fw"></i>
+<span class=post-meta-item-text>Published at:</span>
+<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2019/11/09">
+2019/11/09
+</time>
+</span>
+<span class=post-category>
+&nbsp; | &nbsp;
+<i class="fa fa-folder-o fa-fw"></i>
+<span class=post-meta-item-text>Categories:</span>
+<span itemprop=about itemscope itemtype=https://schema.org/Thing>
+<a href=/en/categories/proxmox-ve itemprop=url rel=index style=text-decoration:underline>
+<span itemprop=name>proxmox VE</span>
+</a>
+&nbsp;
+</span>
+</span>
+<span>
+|
+<i class="fa fa-file-word-o fa-fw"></i>
+<span class=post-meta-item-text>Words:</span>
+<span class=leancloud-world-count>847 words</span>
+</span>
+<span>
+|
+<i class="fa fa-eye fa-fw"></i>
+<span class=post-meta-item-text>Reading:</span>
+<span class=leancloud-view-count>2 minutes</span>
+</span>
+<span id=/2019/11/09/proxmox-ve-%E4%BD%BF%E7%94%A8-zfs/ class=leancloud_visitors data-flag-title="proxmox VE 使用 ZFS">
+|
+<i class="fa fa-binoculars fa-fw"></i>
+<span class=post-meta-item-text>Visited:</span>
+<span class=leancloud-visitors-count></span>
+</span>
+</div>
+</header>
+<div class=post-body itemprop=articleBody>
+<p>相關手冊</p>
+<p><a href=https://pve.proxmox.com/wiki/ZFS_on_Linux>https://pve.proxmox.com/wiki/ZFS_on_Linux</a><br>
+<a href=https://manpages.ubuntu.com/manpages/trusty/en/man8/zpool.8.html>https://manpages.ubuntu.com/manpages/trusty/en/man8/zpool.8.html</a></p>
+<p> </p>
+<h1 id=簡介>簡介</h1>
+<p>ZFS 是 linux 能使用的 soft raid 軟體</p>
+<p>其中指令相當”豐富”</p>
+<p>可玩性很大，功能也很多</p>
+<p>只是這也變成調校是件很重要的事情，在網路上</p>
+<p>謠傳調校之後可以增加好幾倍的效能</p>
+<p> </p>
+<h1 id=開始建立-zfs-空間>開始建立 ZFS 空間</h1>
+<h2 id=硬碟初始化>硬碟初始化</h2>
+<p>在使用前，先用 fdisk 把硬碟初始化</p>
+<p><span style=color:#f0f>zfs 重點</span><br>
+<span style=color:#f0f>務必使用 GPT partition tables</span></p>
+<p>用</p>
+<p>fdisk -l</p>
+<p>列出你的硬碟</p>
+<p> </p>
+<p>我的硬碟清單如下<br>
+/dev/sda #HDD1<br>
+/dev/sdc #HDD2<br>
+/dev/sdd #SSD</p>
+<p>這裡我用兩顆硬碟做 RAID1</p>
+<p>首先刪除既有的 partition table</p>
+<pre class=EnlighterJSRAW data-enlighter-language=null>fdisk  /dev/sda 
+
+g   #create a new empty GPT partition table
+
+w   #write table to disk and exit
+
+
+fdisk  /dev/sdc  
+g   #create a new empty GPT partition table 
+w  #write table to disk and exit</pre>
+<p> </p>
+<h2 id=建立-raid>建立 RAID</h2>
+<p> </p>
+<p>我的範例建立 RAID 1 ，其他 RAID 模式請參考手冊</p>
+<p># -f 使用 virtual disk (建議)<br>
+# -o ashift=12 所謂的 4K 對齊<br>
+# 實例<br>
+zpool create -f -o ashift=12 RAID1 mirror /dev/sda /dev/sdc</p>
+<p> </p>
+<p>完成後，顯示你的 ZFS zpool 資訊<br>
+zpool list</p>
+<p> </p>
+<h2 id=掛入-proxmox-storage-空間>掛入 Proxmox Storage 空間</h2>
+<p>ZFS pool 建立完成後<br>
+要用 pvesm – Proxmox VE Storage Manager<br>
+掛起來才能夠開始存放 VM 使用</p>
+<p>掃描可用的 ZFS pool<br>
+pvesm scan zfs</p>
+<p>掛入 Proxmox Storage<br>
+pvesm add zfspool RAID1storage -pool RAID1</p>
+<p>上面的動作其實 web ui 都可以完成</p>
+<p> </p>
+<h1 id=zfs-設定>ZFS 設定</h1>
+<h2 id=顯示-zfs-空間的設定>顯示 ZFS 空間的設定</h2>
+<p><strong>列出 zfs pool 的詳細參數</strong><br>
+zpool get all   RAID1<br>
+zfs get all RAID1</p>
+<p> </p>
+<p>**查看 pool 模式、HDD 成員<br>
+** zpool status</p>
+<p> </p>
+<p>**查看 pool 使用狀況<br>
+** zpool iostat -v</p>
+<p> </p>
+<h2 id=刪除-zfs-pool>刪除 zfs pool</h2>
+<p>zpool destroy -f RAID1</p>
+<ul>
+<li>刪除後 zfs partition table 不會刪除<br>
+可以用 fdisk<br>
+把 partition table  重建就好</li>
+</ul>
+<p> </p>
+<h2 id=使用-ssd-做-cache>使用 SSD 做 cache</h2>
+<p>首先 ZFS 總共有三種快取設定</p>
+<p>首先是第一級的 primary cache (ARC)</p>
+<p>他是用電腦的 RAM 作為快取空間，容量預設是一半的 RAM</p>
+<p>也就是說，假設你有 32GB 的 RAM ，那有 16 GB 會被他拿來使用</p>
+<p>不過當然這是動態的，只有 RAM 是空閒的時候才會被使用</p>
+<p> </p>
+<p>然後是二級快取 secondary cache (L2ARC)</p>
+<p>跟</p>
+<p>ZFS Intent Log (ZIL)</p>
+<p> </p>
+<ul>
+<li>log  –  設定為<span style=color:#0ff>寫入</span>快取 (ZIL)</li>
+<li>cache  – 設定為<span style=color:#0ff>讀取</span>快取  (L2ARC)</li>
+</ul>
+<p> </p>
+<p>你可以在建立的時候直接指定 SSD</p>
+<p>或者也可以事後增加</p>
+<p>ZFS 中有兩種 cache 設定</p>
+<ul>
+<li>log  –  設定為<span style=color:#0ff>寫入</span>快取</li>
+<li>cache  – 設定為<span style=color:#0ff>讀取</span>快取</li>
+</ul>
+<p> </p>
+<p>在我的情況，我全都要!</p>
+<p>首先把 SSD 對半分割</p>
+<pre class=EnlighterJSRAW data-enlighter-language=null>root@pve:~# fdisk /dev/sdd
+Command (m for help): n
+Partition number (1-128, default 1):
+First sector (2048-937703054, default 2048):
+Last sector, +/-sectors or +/-size{K,M,G,T,P} (2048-937703054, default 937703054): 437703054
+Created a new partition 1 of type 'Linux filesystem' and of size 208.7 GiB.
+Partition #1 contains a zfs_member signature.
+Do you want to remove the signature? [Y]es/[N]o: Y
+The signature will be removed by a write command.
+Command (m for help): n
+Partition number (2-128, default 2):
+First sector (437703055-937703054, default 437704704):
+Last sector, +/-sectors or +/-size{K,M,G,T,P} (437704704-937703054, default 937703054):
+Created a new partition 2 of type 'Linux filesystem' and of size 238.4 GiB.
+Command (m for help): w
+The partition table has been altered.
+Calling ioctl() to re-read partition table.
+Syncing disks.</pre>
+<p> </p>
+<p>然後設定 ZFS</p>
+<pre class=EnlighterJSRAW data-enlighter-language=null>建立新的 zfs pool 並設定 SSD cache 
+zpool create -f -o ashift=12 RAID1 mirror /dev/sda /dev/sdc log /dev/sdd1 cache /dev/sdd2
+
+
+
+
+==============================================================================
+設定 SSD cache 到現有 zfs pool
+
+zpool add -f RAID1 log /dev/sdd1 cache /dev/sdd2
+
+
+
+
+移除
+zpool remove  RAID1 sdd1
+zpool remove  RAID1 sdd2
+
+</pre>
+<p>不過實測 只有 cache 比較會用到</p>
+<p>log 倒是比較少</p>
+<p> </p>
+<h2 id=其他設定>其他設定</h2>
+<p>**壓縮功能 compression<br>
+** zfs set compression=on/off <pool></p>
+<p><strong>重複數據刪除 dedup</strong><br>
+zfs set dedup=on/off <pool></p>
+<p><strong>提醒硬碟故障、自動更換</strong><br>
+<a href=https://nevertired.nctu.me/2019/11/10/proxmox-ve-zfs-%E6%9B%B4%E6%8F%9B%E7%A1%AC%E7%A2%9F/>更換硬碟</a></p>
+<p> </p>
+</div>
+<footer class=post-footer>
+<div id=disqus_thread></div>
+<script type=application/javascript>var disqus_config=function(){};(function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById('disqus_thread').innerHTML='Disqus comments not available by default when the website is previewed locally.';return}var b=document,a=b.createElement('script');a.async=!0,a.src='//bu-jue-ming-shi.disqus.com/embed.js',a.setAttribute('data-timestamp',+new Date),(b.head||b.body).appendChild(a)})()</script>
+<noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript>
+<a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a>
+>
+</footer>
+</article>
+</section>
+</div>
+</div>
+<div class=sidebar-toggle>
+<div class=sidebar-toggle-line-wrap>
+<span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+<span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+<span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+</div>
+</div>
+<aside id=sidebar class=sidebar>
+<div class=sidebar-inner>
+<section class="site-overview sidebar-panel sidebar-panel-active">
+<div class="site-author motion-element" itemprop=author itemscope itemtype=http://schema.org/Person>
+<img class=site-author-image itemprop=image src=/img/avatar.png alt=Elkan.Li>
+<p class=site-author-name itemprop=name>Elkan.Li</p>
+<p class="site-description motion-element" itemprop=description>
+Never forget your dreams！
+</p>
+</div>
+<nav class="site-state motion-element">
+<div class="site-state-item site-state-posts">
+<a href=/en/post/>
+<span class=site-state-item-count>0</span>
+<span class=site-state-item-name>Blogs</span>
+</a>
+</div>
+<div class="site-state-item site-state-categories">
+<a href=/en/categories/>
+<span class=site-state-item-count>13</span>
+<span class=site-state-item-name>Categories</span>
+</a>
+</div>
+<div class="site-state-item site-state-tags">
+<a href=/en/tags/>
+<span class=site-state-item-count>22</span>
+<span class=site-state-item-name>Tags</span>
+</a>
+</div>
+</nav>
+<div class="links-of-author motion-element">
+<span class=links-of-author-item>
+<a href=https://github.com/elkan1788/ target=_blank title=GitHub>
+<i class="fa fa-fw fa-github"></i>
+GitHub
+</a>
+</span>
+<span class=links-of-author-item>
+<a href=https://www.zhihu.com/people/fan-meng-xing-chen-1 target=_blank title=ZhiHu>
+<i class="fa fa-fw fa-globe"></i>
+ZhiHu
+</a>
+</span>
+</div>
+<div class="links-of-blogroll motion-element links-of-blogroll-inline">
+<div class=links-of-blogroll-title>
+<i class="fa fa-fw fa-globe"></i>
+Links
+</div>
+<ul class=links-of-blogroll-list>
+<li class=links-of-blogroll-item>
+<a href=https://nutzam.com/ title=Nutz target=_blank>Nutz</a>
+</li>
+<li class=links-of-blogroll-item>
+<a href=https://jfinal.com/ title=JFinal target=_blank>JFinal</a>
+</li>
+<li class=links-of-blogroll-item>
+<a href=http://wendal.net/ title=Wendal target=_blank>Wendal</a>
+</li>
+<li class=links-of-blogroll-item>
+<a href=https://www.liaoxuefeng.com/ title=LiaoXueFeng target=_blank>LiaoXueFeng</a>
+</li>
+</ul>
+</div>
+<div class="tagcloud-of-blogroll motion-element tagcloud-of-blogroll-inline">
+<div class=tagcloud-of-blogroll-title>
+<i class="fa fa-fw fa-tags"></i>
+TagCloud
+</div>
+<ul class=tagcloud-of-blogroll-list>
+<li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/windows>Windows</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/centos-7>Centos 7</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/markdown>Markdown</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/anti-virus>Anti virus</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/bareos>Bareos</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/chrony>Chrony</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/css>Css</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/emoji>Emoji</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/html>HTML</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/hugo>Hugo</a>
+</li>
+</ul>
+</div>
+</section>
+</div>
+</aside>
+</div>
+</main>
+<footer id=footer class=footer>
+<div class=footer-inner>
+<div class=copyright>
+<span class=copyright-year>
+&copy; 2010 - 2022
+</span>
+<span class=with-love><i class="fa fa-heart"></i></span>
+<span class=copyright-author>IT 紀錄網站</span>
+</div>
+<div class=powered-info>
+<span class=powered-by>
+Powered by - <a class=powered-link href=//gohugo.io target=_blank title=hugo>Hugo v0.92.2</a>
+</span>
+<span class=separator-line>/</span>
+<span class=theme-info>
+Theme by - <a class=powered-link href=//github.com/elkan1788/hugo-theme-next target=_blank> NexT
+</a>
+</span>
+</div>
+<div class=vistor-info>
+<script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
+<span class=site-uv>
+<i class="fa fa-user"></i>
+<span class=busuanzi-value id=busuanzi_value_site_uv></span>
+</span>
+<span class=separator-line>/</span>
+<span class=site-pv>
+<i class="fa fa-eye"></i>
+<span class=busuanzi-value id=busuanzi_value_site_pv></span>
+</span>
+</div>
+</div>
+</footer>
+<div class=back-to-top>
+<i class="fa fa-arrow-up"></i>
+<span id=scrollpercent><span>0</span>%</span>
+</div>
+</div>
+<script type=text/javascript src=//cdn.bootcdn.net/ajax/libs/jquery/2.1.4/jquery.min.js></script>
+<script type=text/javascript src=/js/search.js></script>
+<script type=text/javascript src=/js/affix.js></script>
+<script type=text/javascript src=/js/scrollspy.js></script>
+<script type=text/javascript>function detectIE(){var a=window.navigator.userAgent,b=a.indexOf('MSIE '),c=a.indexOf('Trident/'),d=a.indexOf('Edge/');return b>0||c>0||d>0?-1:1}function getCntViewHeight(){var b=$('#content').height(),a=$(window).height(),c=b>a?b-a:$(document).height()-a;return c}function getScrollbarWidth(){var a=$('<div />').addClass('scrollbar-measure').prependTo('body'),b=a[0],c=b.offsetWidth-b.clientWidth;return a.remove(),c}function registerBackTop(){var b=50,a=$('.back-to-top');$(window).on('scroll',function(){var d,e,f,c,g;a.toggleClass('back-to-top-on',window.pageYOffset>b),d=$(window).scrollTop(),e=getCntViewHeight(),f=d/e,c=Math.round(f*100),g=c>100?100:c,$('#scrollpercent>span').html(g)}),a.on('click',function(){$("html,body").animate({scrollTop:0,screenLeft:0},800)})}function initScrollSpy(){var a='.post-toc',d=$(a),b='.active-current';d.on('activate.bs.scrollspy',function(){var b=$(a+' .active').last();c(),b.addClass('active-current')}).on('clear.bs.scrollspy',c),$('body').scrollspy({target:a});function c(){$(a+' '+b).removeClass(b.substring(1))}}function initAffix(){var a=$('.header-inner').height(),b=parseInt($('.main').css('padding-bottom'),10),c=a+10;$('.sidebar-inner').affix({offset:{top:c,bottom:b}}),$(document).on('affixed.bs.affix',function(){updateTOCHeight(document.body.clientHeight-100)})}function initTOCDimension(){var a,b;$(window).on('resize',function(){a&&clearTimeout(a),a=setTimeout(function(){var a=document.body.clientHeight-100;updateTOCHeight(a)},0)}),updateTOCHeight(document.body.clientHeight-100),b=getScrollbarWidth(),$('.post-toc').css('width','calc(100% + '+b+'px)')}function updateTOCHeight(a){a=a||'auto',$('.post-toc').css('max-height',a)}$(function(){var b=$('.header-inner').height()+10,c,d,a,e;$('#sidebar').css({'margin-top':b}).show(),c=parseInt($('#sidebar').css('margin-top')),d=parseInt($('.sidebar-inner').css('height')),a=c+d,e=$('.content-wrap').height(),e<a&&$('.content-wrap').css('min-height',a),$('.site-nav-toggle').on('click',function(){var a=$('.site-nav'),e=$('.toggle'),b='site-nav-on',f='toggle-close',c=a.hasClass(b),g=c?'slideUp':'slideDown',d=c?'removeClass':'addClass';a.stop()[g]('normal',function(){a[d](b),e[d](f)})}),registerBackTop(),initScrollSpy(),initAffix(),initTOCDimension(),$('.sidebar-nav-toc').click(function(){$(this).addClass('sidebar-nav-active'),$(this).next().removeClass('sidebar-nav-active'),$('.'+$(this).next().attr('data-target')).toggle(500),$('.'+$(this).attr('data-target')).toggle(500)}),$('.sidebar-nav-overview').click(function(){$(this).addClass('sidebar-nav-active'),$(this).prev().removeClass('sidebar-nav-active'),$('.'+$(this).prev().attr('data-target')).toggle(500),$('.'+$(this).attr('data-target')).toggle(500)})})</script>
+<script src=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.js></script>
+<script type=text/javascript>$(function(){$('.post-body').viewer()})</script>
+<script type=text/javascript>$(function(){detectIE()>0?$.getScript(document.location.protocol+'//cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js',function(){new Waline({el:'#wcomments',visitor:!0,avatar:'wavatar',avatarCDN:'https://sdn.geekzu.org/avatar/',avatarForce:!1,wordLimit:'200',placeholder:' Just do what you want leave here, and don\u0027t forget give your email to make exchange. ^_^ ',requiredFields:['nick','mail'],serverURL:"Your WalineSerURL",lang:"en"})}):$('#wcomments').html('Sorry, Waline plugin doesn\u0027t support IE or Edge, Please swithc to Chrome browser.')})</script>
+<script type=text/javascript src="//s7.addthis.com/js/300/addthis_widget.js#pubid=Your%20AddthisId"></script>
+<script>(function(){var a=document.createElement('script'),c=window.location.protocol.split(':')[0],b;c==='https'?a.src='https://zz.bdstatic.com/linksubmit/push.js':a.src='http://push.zhanzhang.baidu.com/push.js',b=document.getElementsByTagName("script")[0],b.parentNode.insertBefore(a,b)})()</script>
+</body>
+</html>
