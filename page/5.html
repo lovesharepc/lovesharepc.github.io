@@ -98,56 +98,6 @@
 <article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
 <header class=post-header>
 <h1 class=post-title itemprop="name headline">
-<a class=post-title-link href=https://lovesharepc.github.io/2019/11/10/proxmox-ve-zfs-%E6%9B%B4%E6%8F%9B%E7%A1%AC%E7%A2%9F/ itemprop=url>
-Proxmox VE ZFS 更換硬碟
-</a>
-</h1>
-<div class=post-meta>
-<span class=post-time>
-<i class="fa fa-calendar-o fa-fw"></i>
-<span class=post-meta-item-text>時間：</span>
-<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2019-11-10">
-2019-11-10
-</time>
-</span>
-<span class=post-category>
-&nbsp; | &nbsp;
-<i class="fa fa-folder-o fa-fw"></i>
-<span class=post-meta-item-text>分類：</span>
-<span itemprop=about itemscope itemtype=https://schema.org/Thing>
-<a href=/categories/proxmox-ve itemprop=url rel=index style=text-decoration:underline>
-<span itemprop=name>proxmox VE</span>
-</a>
-&nbsp;
-</span>
-</span>
-<span>
-|
-<i class="fa fa-file-word-o fa-fw"></i>
-<span class=post-meta-item-text>字數：</span>
-<span class=leancloud-world-count>1040 字</span>
-</span>
-<span>
-|
-<i class="fa fa-eye fa-fw"></i>
-<span class=post-meta-item-text>閱讀：</span>
-<span class=leancloud-view-count>3分鐘</span>
-</span>
-</div>
-</header>
-<div class=post-body itemprop=articleBody>
-如果有一顆硬碟故障了 該如何處理 首先用 zpool status 查看 pool 的組成模式、硬碟、狀態 正常情況 root@pve:~# zpool status pool: RAID1 state: ONLINE config: NAME STATE READ WRITE CKSUM RAID1 ONLINE 0 0 0 mirror-0 ONLINE 0 0 0 sda1 ONLINE 0 0 0 sdc1 ONLINE 0 0
-</div>
-<div class="post-more-link text-center">
-<a class=btn href=https://lovesharepc.github.io/2019/11/10/proxmox-ve-zfs-%E6%9B%B4%E6%8F%9B%E7%A1%AC%E7%A2%9F/ rel=contents>
-閱讀全文 &#187;
-</a>
-</div>
-<footer class=post-footer><div class=post-eof></div></footer>
-</article>
-<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
-<header class=post-header>
-<h1 class=post-title itemprop="name headline">
 <a class=post-title-link href=https://lovesharepc.github.io/2019/11/10/proxmox-ve-%E4%BD%BF%E7%94%A8-ssd-cache-%E5%A2%9E%E9%80%B2-zfs-%E6%95%88%E8%83%BD/ itemprop=url>
 proxmox VE 使用 SSD cache 增進 ZFS 效能
 </a>
@@ -580,6 +530,56 @@ https://docs.microsoft.com/en-us/windows/win32/debug/system-error-codes 備註 �
 </div>
 <footer class=post-footer><div class=post-eof></div></footer>
 </article>
+<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
+<header class=post-header>
+<h1 class=post-title itemprop="name headline">
+<a class=post-title-link href=https://lovesharepc.github.io/2019/10/12/centos7-%E5%AE%89%E8%A3%9D-wordpress/ itemprop=url>
+centos 7 安裝 wordpress
+</a>
+</h1>
+<div class=post-meta>
+<span class=post-time>
+<i class="fa fa-calendar-o fa-fw"></i>
+<span class=post-meta-item-text>時間：</span>
+<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2019-10-12">
+2019-10-12
+</time>
+</span>
+<span class=post-category>
+&nbsp; | &nbsp;
+<i class="fa fa-folder-o fa-fw"></i>
+<span class=post-meta-item-text>分類：</span>
+<span itemprop=about itemscope itemtype=https://schema.org/Thing>
+<a href=/categories/centos-7 itemprop=url rel=index style=text-decoration:underline>
+<span itemprop=name>Centos 7</span>
+</a>
+&nbsp;
+</span>
+</span>
+<span>
+|
+<i class="fa fa-file-word-o fa-fw"></i>
+<span class=post-meta-item-text>字數：</span>
+<span class=leancloud-world-count>367 字</span>
+</span>
+<span>
+|
+<i class="fa fa-eye fa-fw"></i>
+<span class=post-meta-item-text>閱讀：</span>
+<span class=leancloud-view-count>1分鐘</span>
+</span>
+</div>
+</header>
+<div class=post-body itemprop=articleBody>
+事先準備 centos 7 PHP 7.3 apache mariadb 安裝工具 yum install -y nano wget unzip 指定 php 版本 yum install -y epel-release yum install -y http://rpms.remirepo.net/enterprise/remi-release-7.rpm yum install -y yum-utils yum-config-manager --disable remi-php54 yum-config-manager --enable remi-php73 新版 mariadb curl -sS https://downloads.mariadb.com/MariaDB/mariadb_repo_setup | sudo bash 新版 apache cd /etc/yum.repos.d && wget https://repo.codeit.guru/codeit.el`rpm -q --qf "%{VERSION}" $(rpm -q --whatprovides redhat-release)`.repo 安裝套
+</div>
+<div class="post-more-link text-center">
+<a class=btn href=https://lovesharepc.github.io/2019/10/12/centos7-%E5%AE%89%E8%A3%9D-wordpress/ rel=contents>
+閱讀全文 &#187;
+</a>
+</div>
+<footer class=post-footer><div class=post-eof></div></footer>
+</article>
 </section>
 <nav class=pagination>
 <a class="extend prev" rel=prev href=/page/4.html><i class="fa fa-angle-left"></i></a>
@@ -622,13 +622,13 @@ https://docs.microsoft.com/en-us/windows/win32/debug/system-error-codes 備註 �
 </div>
 <div class="site-state-item site-state-categories">
 <a href=/categories/>
-<span class=site-state-item-count>13</span>
+<span class=site-state-item-count>12</span>
 <span class=site-state-item-name>分類</span>
 </a>
 </div>
 <div class="site-state-item site-state-tags">
 <a href=/tags/>
-<span class=site-state-item-count>21</span>
+<span class=site-state-item-count>20</span>
 <span class=site-state-item-name>標籤</span>
 </a>
 </div>
@@ -681,7 +681,7 @@ GitHub
 <a href=/tags/html>HTML</a>
 </li>
 <li class=tagcloud-of-blogroll-item>
-<a href=/tags/hugo>Hugo</a>
+<a href=/tags/ntop>Ntop</a>
 </li>
 </ul>
 </div>

@@ -1,26 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>hugo host in github</title><url>https://lovesharepc.github.io/en/zh-tw/post/hugo_install/hugo_install.html</url><categories><category>hugo</category></categories><tags><tag>hugo</tag></tags><content type="html"> 在此網站建立時順手作的紀錄文章
-PS D:\Gdrive\hugo_sitetool\quickstart> hugo server -D Start building sites … hugo v0.92.2-CDF6A0D6 windows/amd64 BuildDate=2022-02-11T14:17:39Z VendorInfo=gohugoio WARNING: calling IsSet with unsupported type "invalid" (&lt;nil>) will always return false. | EN -------------------+----- Pages | 7 Paginator pages | 0 Non-page files | 0 Static files | 26 Processed images | 0 Aliases | 1 Sitemaps | 1 Cleaned | 0 Built in 25 ms Watching for changes in D:\Gdrive\hugo_sitetool\quickstart\{archetypes,content,data,layouts,static,themes} Watching for config changes in D:\Gdrive\hugo_sitetool\quickstart\config.toml Environment: "development" Serving pages from memory Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender Web Server is available at http://localhost:1313/ (bind address 127.0.0.1) Press Ctrl+C to stop 插入圖
-asdasd
-測試結果
-註解
-code block in line code
-in line code
-註解
-測試輸入正常
-標題 下麵的 HTML 代碼 &lt;h1>—&lt;h6> 元素表示六個級別的節標題。 &lt;h1>是最高的節級別，&lt;h6>是最低的節級別。
-H1 H2 H3 H4 H5 H6 段落 Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur? Quianimin porecus evelectur, cum que nis nust voloribus ratem aut omnimi, sitatur? Quiatem. Nam, omnis sum am facea corem alique molestrunt et eos evelece arcillit ut aut eos eos nus, sin conecerem erum fuga. Ri oditatquam, ad quibus unda veliamenimin cusam et facea ipsamus es exerum sitate dolores editium rerore eost, temped molorro ratiae volorro te reribus dolorer sperchicium faceata tiustia prat.
-伊塔圖？廚房裡有很多東西，我不知道他們喜歡吃什麼，或者他們喜歡吃什麼。
-引用 blockquote元素表示從另一個來源引用的內容，可選的引用必須在 footer或 cite元素內，也可選的內嵌更改，如註釋和縮寫。
-引用沒有歸屬 Tiam, ad mint andaepu dandae nostion secatur sequo quae. 註意 可以在塊引用中使用 Markdown 語法。
-帶歸屬的引用 不要通過分享記憶來交流，通過交流來分享記憶。 —&lt;cite>羅布·派克[^1]&lt;/cite>
-[^1]: 以上引文摘自Rob Pike在2015年11月18日Gopherfest上的演講。
-表格 表不是Markdown核心規範的一部分，但是Hugo支持開箱即用。
-Name Age Bob | 27 Alice | 23
-表格內使用Markdown語法 Italics Bold Code italics bold code 圖像 ![圖像描述](圖像地址) 示例 [![Coogle Chrome](https://img.shields.io/static/v1?label=Chrome&message=92.0.45%2B&color=%234285F4&logo=GoogleChrome)](#) [![Firefox](https://img.shields.io/static/v1?label=Firefox&message=91.0.2%2B&color=%23FF7139&logo=Firefox)](#) [![Safari](https://img.shields.io/static/v1?label=Safari&message=14.7.1%2B&color=%23212E50&logo=Safari)](#) [![Microsoft Edge](https://img.shields.io/static/v1?label=Microsoft%20Edge&message=44.18362%2B&color=%230078D7&logo=Microsoft%20Edge)](#) [![Internet Exporler](https://img.shields.io/static/v1?label=IE&message=11.356%2B&color=%230076D6&logo=Internet%20Explorer)](#)  點擊圖像可以打開圖像瀏覽器，快試試吧。
-代碼塊 帶有引號的代碼塊 &lt;!doctype html> &lt;html lang="en"> &lt;head> &lt;meta charset="utf-8"> &lt;title>Example HTML5 Document&lt;/title> &lt;/head> &lt;body> &lt;p>Test&lt;/p> &lt;/body> &lt;/html> 用四個空格縮進的代碼塊 &lt;!doctype html> &lt;html lang="en"> &lt;head> &lt;meta charset="utf-8"> &lt;title>Example HTML5 Document&lt;/title> &lt;/head> &lt;body> &lt;p>Test&lt;/p> &lt;/body> &lt;/html> 代碼塊引用Hugo的內部高亮短代碼 &lt;br> Test 列表類型 有序列表 First item Second item Third item 無序列表 List item Another item And another item 嵌套列表 Fruit Apple Orange Banana Dairy Milk Cheese 其他元素 — abbr, sub, sup, kbd, mark &lt;abbr title="Graphics Interchange Format">GIF &lt;/abbr>是位圖圖像格式。
-H &lt;sub>2 &lt;/sub>O
-X &lt;sup>n &lt;/sup>+ Y &lt;sup>n &lt;/sup>= Z &lt;sup>n &lt;/sup>&lt;br> &lt;br> 按 &lt;kbd>&lt;kbd>CTRL &lt;/kbd>+&lt;kbd>ALT &lt;/kbd>+&lt;kbd>Delete &lt;/kbd>&lt;/kbd>組合鍵結束會話。
-大多數蠑螈在夜間活動，捕食昆蟲、蠕蟲和其他小動物。</content></entry><entry><title>day11 弱點 (雷)被加密被入侵都是人為因素多</title><url>https://lovesharepc.github.io/2021/09/25/day11-%E5%BC%B1%E9%BB%9E/</url><categories><category>鐵人賽2021</category></categories><tags/><content type="html"> Nessus
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>day11 弱點 (雷)被加密被入侵都是人為因素多</title><url>https://lovesharepc.github.io/2021/09/25/day11-%E5%BC%B1%E9%BB%9E/</url><categories><category>鐵人賽2021</category></categories><tags/><content type="html"> Nessus
  在比較大的企業中會定期進行弱點掃描
  弱點掃描
 就是利用工具程式進行模擬滲透攻擊
@@ -2330,25 +2308,12 @@ Remove-AppxPackage
 DISM /Online /Get-ProvisionedAppxPackages
 找到 Microsoft.WindowsStore……
 DISM /Online /Remove-ProvisionedAppxPackage /PackageName:</content></entry><entry><title>ESXi 系統更新</title><url>https://lovesharepc.github.io/2018/08/05/esxi-%E6%9B%B4%E6%96%B0/</url><categories><category>VMware</category></categories><tags/><content type="html"> ESXi 更新
-ESXi 上傳 zip 到local 儲存區
-開SSH 、 進入維護模式
+ESXi 上傳 zip 到local 儲存區 開SSH 、 進入維護模式
 檢查 source
-esxcli software sources profile list -d &lt;路徑>
-esxcli software sources profile list -d /vmfs/volumes/ESXI-97/VMware-VMvisor-Installer-6.5.0.update02-8935087.x86_64-DellEMC_Customized-A01.zip
-Name Vendor Acceptance Level Creation Time Modification Time
-—————————— —— —————- ——————- ——————-
-DellEMC-ESXi-6.5U2-8935087-A01 Dell PartnerSupported 2018-06-24T02:43:16 2018-07-09T11:38:57
-套用 source
-esxcli software profile update -d &lt;路徑> -p
-esxcli software profile update -d /vmfs/volumes/ESXI-96/esxi/VMware-VMvisor-Installer-6.5.0.update02-8935087.x86_64-DellEMC_Customized-A01.zip -p DellEMC-ESXi-6.5U2-8935087-A01
-發生錯誤
-[root@ESXI96:~] esxcli software profile update -d /vmfs/volumes/ESXI-96/esxi/VMware-VMvisor-Installer-6.5.0.update02-8935087.x86_64-DellEMC_Customized-A01.zip -p DellEMC-ESXi-6.5U2-8935087-A01
-[DependencyError]
-File path of ‘/etc/vmware/oem.xml’ is claimed by multiple overlay VIBs: {‘DellEMC_bootbank_dell-configuration-vib_6.5-2A01’, ‘Lenovo_bootbank_lnvcustomization_6.5-00’}
-File path of ‘/etc/vmware/support’ is claimed by multiple overlay VIBs: {‘DellEMC_bootbank_dell-configuration-vib_6.5-2A01’, ‘Lenovo_bootbank_lnvcustomization_6.5-00’}
-移除 VIB
-esxcli software vib remove –vibname=lnvcustomization
-reboot</content></entry><entry><title>使用 VMware ovf tool 匯出虛擬機</title><url>https://lovesharepc.github.io/2018/07/23/%E4%BD%BF%E7%94%A8-vmware-ovf-tool-%E5%8C%AF%E5%87%BA%E8%99%9B%E6%93%AC%E6%A9%9F/</url><categories><category>網管</category></categories><tags/><content type="html"> # 匯出虛擬機 ovftool.exe &#8211;machineOutput &#8211;noSSLVerify vi://root:@10.4.200.90/&#8220;&#8221; D:test.ova</content></entry><entry><title>CentOS 7 安裝 cacti 1.2.3</title><url>https://lovesharepc.github.io/2018/07/02/centos-7-%E5%AE%89%E8%A3%9D-cacti-1-2-3/</url><categories><category>Centos 7</category></categories><tags/><content type="html"> cacti 為一套免費的 SNMP monitoring soft 由 MRTG 演化而來 主要差別在於比 MRTG 簡易好上手許多 (不過其實也是挺麻煩的) 在我接觸 cacti 之前，我是使用 PRTG 的 如果你只是要小範圍的監控，100 個監視項目以內(其實也蠻多了) 我建議你到這裡打住，離開 使用 PRTG 來達成你的目的，畢竟商業軟體還是比較厲害 cacti 除了免費外，我找不到別的優點(監控成果有差) ============================================================================================================ 在這邊先講解一下 cacti 的核心由 web、php、sql、snmp 元件組成 其中也能掛附加元件的方式來擴充它 而既然是一個 SNMP monitoring soft 主要就是蒐集 port 的流量、設備運作狀況(CPU、RAM…) 這邊進入主題 這篇我使用 CentOS7 Minimal 架設 架設好後 先進行軟體的安裝動作 建議關閉 selinux #安裝 EPEL 擴充套件庫、工具 安裝新版 php7.3、mariadb、apache 、工具 Install EPEL Repository (Extra Packages for Enterprise Linux) 、Remi Repository (packaging PHP)、 mariadb Repository
+esxcli software sources profile list -d &lt;路徑>esxcli software sources profile list -d /vmfs/volumes/ESXI-97/VMware-VMvisor-Installer-6.5.0.update02-8935087.x86\_64-DellEMC\_Customized-A01.zipName Vendor Acceptance Level Creation Time Modification Time———————————————————— ———— ——————————- ————————————- ————————————-DellEMC-ESXi-6.5U2-8935087-A01 Dell PartnerSupported 2018-06-24T02:43:16 2018-07-09T11:38:57 套用 source
+esxcli software profile update -d &lt;路徑> -p 發生錯誤
+[root@ESXI96:~] esxcli software profile update -d /vmfs/volumes/ESXI-96/esxi/VMware-VMvisor-Installer-6.5.0.update02-8935087.x86\_64-DellEMC\_Customized-A01.zip -p DellEMC-ESXi-6.5U2-8935087-A01[DependencyError]File path of ‘‘/etc/vmware/oem.xml’’ is claimed by multiple overlay VIBs: {‘‘DellEMC\_bootbank\_dell-configuration-vib\_6.5-2A01’’, ‘‘Lenovo\_bootbank\_lnvcustomization\_6.5-00’’}File path of ‘‘/etc/vmware/support’’ is claimed by multiple overlay VIBs: {‘‘DellEMC\_bootbank\_dell-configuration-vib\_6.5-2A01’’, ‘‘Lenovo\_bootbank\_lnvcustomization\_6.5-00’’} 移除 VIB
+esxcli software vib remove ––vibname=lnvcustomization reboot</content></entry><entry><title>使用 VMware ovf tool 匯出虛擬機</title><url>https://lovesharepc.github.io/2018/07/23/%E4%BD%BF%E7%94%A8-vmware-ovf-tool-%E5%8C%AF%E5%87%BA%E8%99%9B%E6%93%AC%E6%A9%9F/</url><categories><category>網管</category></categories><tags/><content type="html"> # 匯出虛擬機 ovftool.exe &#8211;machineOutput &#8211;noSSLVerify vi://root:@10.4.200.90/&#8220;&#8221; D:test.ova</content></entry><entry><title>CentOS 7 安裝 cacti 1.2.3</title><url>https://lovesharepc.github.io/2018/07/02/centos-7-%E5%AE%89%E8%A3%9D-cacti-1-2-3/</url><categories><category>Centos 7</category></categories><tags/><content type="html"> cacti 為一套免費的 SNMP monitoring soft 由 MRTG 演化而來 主要差別在於比 MRTG 簡易好上手許多 (不過其實也是挺麻煩的) 在我接觸 cacti 之前，我是使用 PRTG 的 如果你只是要小範圍的監控，100 個監視項目以內(其實也蠻多了) 我建議你到這裡打住，離開 使用 PRTG 來達成你的目的，畢竟商業軟體還是比較厲害 cacti 除了免費外，我找不到別的優點(監控成果有差) ============================================================================================================ 在這邊先講解一下 cacti 的核心由 web、php、sql、snmp 元件組成 其中也能掛附加元件的方式來擴充它 而既然是一個 SNMP monitoring soft 主要就是蒐集 port 的流量、設備運作狀況(CPU、RAM…) 這邊進入主題 這篇我使用 CentOS7 Minimal 架設 架設好後 先進行軟體的安裝動作 建議關閉 selinux #安裝 EPEL 擴充套件庫、工具 安裝新版 php7.3、mariadb、apache 、工具 Install EPEL Repository (Extra Packages for Enterprise Linux) 、Remi Repository (packaging PHP)、 mariadb Repository
 rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm yum install -y epel-release
 yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm
 yum install -y yum-utils
@@ -2702,4 +2667,21 @@ Windows 10 專業版
  2.再來重開機進入安全模式 (開機按F8)
  3.執行 Driver Sweeper
  4.再選擇沒移除的驅動刪掉就行了
- </content></entry></search>
+ </content></entry><entry><title/><url>https://lovesharepc.github.io/en/zh-tw/post/hugo_install/hugo_install.html</url><categories/><tags/><content type="html"> g+++ title = &lsquo;hugo host in github&rsquo; date = &ldquo;2022-02-19&rdquo; author = &ldquo;owan"description = &lsquo;紀錄安裝建置過程&rsquo; tags = [&lsquo;hugo&rsquo;] categories = [&lsquo;hugo&rsquo;] toc = &ldquo;true&rdquo; +++
+在此網站建立時順手作的紀錄文章
+序言 github 提供一個功能 叫做 GitHub Pages
+GitHub Pages 讓 github 帳號建立 repository 後 讓該 repository 能夠以靜態網頁呈現內容
+好處是你不需要有 server 、 DNS domain 就能夠使用 當使用 markdown 編寫文件，並結合 Jekyll 就能產生簡易的部落格
+在此指之前我都使用 GCP 開一個永久免費的 VM 架設 wordpress 使用
+論功能來說 wordpress 較強大 但文件應用彈性，使用 markdown 會較容易 比如說我可以將筆記功能與網站結合，而不需要發布兩個地方
+GitHub Pages 介紹可以使用 Jekyll 作為網站生成器 但評估後，覺得 HUGO 似乎較符合我 所以這網站就以 HUGO 建立
+建置流程簡介 建立 github 帳號並建立 2 個 repository 下載網站生成器 hugo 下載 VScode、gitdesktop 生成網站、文章 發佈到 github 建立 github 帳號並建立 2 個 repository github 預設會將 &lt;username>.github.io 這個 Repository name 直接對應到 https://&lt;username>.github.io 這個 domain 如果你想要使用其他 Repository name 也是可以設定為虛擬目錄使用
+這邊我們建立兩個 repository 一個用為供 public 瀏覽用 另一個做為我們網站程式碼的保存用 (這步驟就非必要)
+以我舉例我分別建立 lovesharepc.github.io 權限: public hugo_sitetool 權限: private
+下載網站生成器 hugo 到 hugo 的 github 下載執行檔
+https://github.com/gohugoio/hugo/releases
+在電腦上建立目錄 hugo_sitetool 將 hogo 檔案放置此處 並設定環境變數 開啟 terminal 軟體嘗試執行 hugo 確認是否能正常運作 hugo help
+下載 VScode、github desktop 下一步 我們要準備好開發工具
+VScode 可以作為多功能的編輯器(包含 markdown) https://code.visualstudio.com/
+GitHub Desktop 則是用來將我們的網站 push 到網路上 https://desktop.github.com/
+生成網站、文章 發佈到 github</content></entry></search>
