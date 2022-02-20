@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>hugo host in github</title><url>https://lovesharepc.github.io/post/hugo_install/hugo_install.html</url><categories><category>hugo</category></categories><tags><tag>hugo</tag></tags><content type="html"> 在此網站建立時順手作的紀錄文章
-github 提供一個功能 叫做 GitHub Pages
+docker stop nextcloud docker pull certbot/certbot sudo docker run -it --rm --name certbot \ -v "/etc/letsencrypt:/etc/letsencrypt" \ -v "/var/lib/letsencrypt:/var/lib/letsencrypt" \ -p 80:80 \ certbot/certbot certonly 憑證存放位置 cd /etc/letsencrypt/live/nevertired.us.to/ [root@wiznote nevertired.us.to]# cp fullchain.pem ~ cp: overwrite '/root/fullchain.pem'? y [root@wiznote nevertired.us.to]# cp privkey.pem ~ cp: overwrite '/root/privkey.pem'? y docker restart wiz github 提供一個功能 叫做 GitHub Pages
 GitHub Pages 讓 github 帳號建立 repository 後 讓該 repository 能夠以靜態網頁呈現內容
 好處是你不需要有 server 、 DNS domain 就能夠使用 當使用 markdown 編寫文件，並結合 Jekyll 就能產生簡易的部落格
 在此指之前我都使用 GCP 開一個永久免費的 VM 架設 wordpress 使用

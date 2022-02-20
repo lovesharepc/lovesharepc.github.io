@@ -123,7 +123,7 @@ hugo host in github
 |
 <i class="fa fa-file-word-o fa-fw"></i>
 <span class=post-meta-item-text>字數：</span>
-<span class=leancloud-world-count>739 字</span>
+<span class=leancloud-world-count>793 字</span>
 </span>
 <span>
 |
@@ -141,7 +141,29 @@ hugo host in github
 </header>
 <div class=post-body itemprop=articleBody>
 <p>在此網站建立時順手作的紀錄文章</p>
-<p>github 提供一個功能
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>docker stop nextcloud
+
+docker pull certbot/certbot
+
+sudo docker run -it --rm --name certbot <span style=color:#b62;font-weight:700>\
+</span><span style=color:#b62;font-weight:700></span>-v <span style=color:#b44>&#34;/etc/letsencrypt:/etc/letsencrypt&#34;</span> <span style=color:#b62;font-weight:700>\
+</span><span style=color:#b62;font-weight:700></span>-v <span style=color:#b44>&#34;/var/lib/letsencrypt:/var/lib/letsencrypt&#34;</span> <span style=color:#b62;font-weight:700>\
+</span><span style=color:#b62;font-weight:700></span>-p 80:80 <span style=color:#b62;font-weight:700>\
+</span><span style=color:#b62;font-weight:700></span>certbot/certbot certonly
+
+
+憑證存放位置
+<span style=color:#a2f>cd</span> /etc/letsencrypt/live/nevertired.us.to/
+
+<span style=color:#666>[</span>root@wiznote nevertired.us.to<span style=color:#666>]</span><span style=color:#080;font-style:italic># cp fullchain.pem ~</span>
+cp: overwrite <span style=color:#b44>&#39;/root/fullchain.pem&#39;</span>? y
+<span style=color:#666>[</span>root@wiznote nevertired.us.to<span style=color:#666>]</span><span style=color:#080;font-style:italic># cp privkey.pem ~</span>
+cp: overwrite <span style=color:#b44>&#39;/root/privkey.pem&#39;</span>? y
+
+
+
+docker restart wiz
+</code></pre></div><p>github 提供一個功能
 叫做 <a href=https://pages.github.com/>GitHub Pages</a></p>
 <p>GitHub Pages 讓 github 帳號建立 repository 後
 讓該 repository 能夠以靜態網頁呈現內容</p>
