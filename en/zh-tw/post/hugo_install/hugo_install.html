@@ -111,7 +111,7 @@
 |
 <i class="fa fa-file-word-o fa-fw"></i>
 <span class=post-meta-item-text>Words:</span>
-<span class=leancloud-world-count>562 words</span>
+<span class=leancloud-world-count>787 words</span>
 </span>
 <span>
 |
@@ -171,29 +171,66 @@ toc = &ldquo;true&rdquo;
 lovesharepc.github.io <code>權限: public</code>
 hugo_sitetool <code>權限: private</code></p>
 <p><img src=image/hugo_install/1645361331285.png alt=img></p>
-<h2 id=下載網站生成器-hugo>下載網站生成器 hugo</h2>
-<p>到 hugo 的 github 下載執行檔</p>
-<p><a href>https://github.com/gohugoio/hugo/releases</a></p>
-<p>在電腦上建立目錄 hugo_sitetool
-將 hogo 檔案放置此處
-並設定環境變數
-<img src=image/hugo_install/1645361618677.png alt=1645361618677.png></p>
-<p><img src=image/hugo_install/1645361632407.png alt=1645361632407.png></p>
-<p>開啟 terminal 軟體嘗試執行 hugo 確認是否能正常運作
-<code>hugo help</code></p>
-<p><img src=image/hugo_install/1645361655004.png alt=1645361655004.png></p>
 <h2 id=下載-vscodegithub-desktop>下載 VScode、github desktop</h2>
 <p>下一步
 我們要準備好開發工具</p>
 <p>VScode 可以作為多功能的編輯器(包含 markdown)
 <a href>https://code.visualstudio.com/</a></p>
 <p>GitHub Desktop 則是用來將我們的網站 push 到網路上
-<a href>https://desktop.github.com/
-</a></p>
-<p><a href>
-</a></p>
+<a href>https://desktop.github.com/</a></p>
+<h2 id=下載網站生成器-hugo>下載網站生成器 hugo</h2>
+<p>到 hugo 的 github 下載執行檔</p>
+<p><a href>https://github.com/gohugoio/hugo/releases</a></p>
+<p>在電腦上建立目錄 hugo_sitetool
+使用 github desktop 將 github reopsitory clone 至此</p>
+<p>將 hogo 檔案放置此處
+並設定環境變數
+<img src=image/hugo_install/1645361618677.png alt=1645361618677.png></p>
+<p><img src=image/hugo_install/1645361632407.png alt=1645361632407.png></p>
+<p>開啟 terminal 軟體嘗試執行 hugo 確認是否能正常運作
+<code>hugo help</code></p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>PS D:<span style=color:#b62;font-weight:700>\G</span>drive<span style=color:#b62;font-weight:700>\h</span>ugo_sitetool<span style=color:#b62;font-weight:700>\q</span>uickstart&gt; hugo <span style=color:#a2f>help</span>
+hugo is the main command, used to build your Hugo site.
+
+Hugo is a Fast and Flexible Static Site Generator
+built with love by spf13 and friends in Go.
+
+Complete documentation is available at http://gohugo.io/.
+
+Usage:
+  hugo <span style=color:#666>[</span>flags<span style=color:#666>]</span>
+  hugo <span style=color:#666>[</span>command<span style=color:#666>]</span>
+
+Available Commands:
+  completion  generate the autocompletion script <span style=color:#a2f;font-weight:700>for</span> the specified shell
+  config      Print the site configuration
+  convert     Convert your content to different formats
+  deploy      Deploy your site to a Cloud provider.
+  env         Print Hugo version and environment info
+  gen         A collection of several useful generators.
+  <span style=color:#a2f>help</span>        Help about any <span style=color:#a2f>command</span>
+  import      Import your site from others.
+  list        Listing out various types of content
+  mod         Various Hugo Modules helpers.
+</code></pre></div><p><img src=image/hugo_install/1645361655004.png alt=1645361655004.png></p>
 <h2 id=生成網站文章>生成網站、文章</h2>
+<p>這邊簡單的流程說明如下
+首先建立網站</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>hugo new site quickstart
+</code></pre></div><p>參考 <a href=https://gohugo.io/getting-started/quick-start/>quick-start</a>
+設定 Theme</p>
+<p>接著建立目錄 public
+將 github repository (lovesharepc.github.io) clone 至此</p>
+<p>然後執行 hugo 編譯網站，網站就準備好發布了</p>
 <h2 id=發佈到-github>發佈到 github</h2>
+<p>發布很簡單
+就是使用 github desktop commt 變更並 push 至 github</p>
+<blockquote>
+<p>hugo_sitetool 要將 public 目錄排除掉</p>
+</blockquote>
+<p>之後到 <a href>https://lovesharepc.github.io/</a></p>
+<p>就能看到自己網站的成品了</p>
+<p><img src=image/hugo_install/1645363637147.png alt></p>
 </div>
 <footer class=post-footer>
 <div id=disqus_thread></div>

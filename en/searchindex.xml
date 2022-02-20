@@ -2678,10 +2678,18 @@ GitHub Pages 介紹可以使用 Jekyll 作為網站生成器 但評估後，覺�
 建置流程簡介 建立 github 帳號並建立 2 個 repository 下載網站生成器 hugo 下載 VScode、gitdesktop 生成網站、文章 發佈到 github 建立 github 帳號並建立 2 個 repository github 預設會將 &lt;username>.github.io 這個 Repository name 直接對應到 https://&lt;username>.github.io 這個 domain 如果你想要使用其他 Repository name 也是可以設定為虛擬目錄使用
 這邊我們建立兩個 repository 一個用為供 public 瀏覽用 另一個做為我們網站程式碼的保存用 (這步驟就非必要)
 以我舉例我分別建立 lovesharepc.github.io 權限: public hugo_sitetool 權限: private
-下載網站生成器 hugo 到 hugo 的 github 下載執行檔
-https://github.com/gohugoio/hugo/releases
-在電腦上建立目錄 hugo_sitetool 將 hogo 檔案放置此處 並設定環境變數 開啟 terminal 軟體嘗試執行 hugo 確認是否能正常運作 hugo help
 下載 VScode、github desktop 下一步 我們要準備好開發工具
 VScode 可以作為多功能的編輯器(包含 markdown) https://code.visualstudio.com/
 GitHub Desktop 則是用來將我們的網站 push 到網路上 https://desktop.github.com/
-生成網站、文章 發佈到 github</content></entry></search>
+下載網站生成器 hugo 到 hugo 的 github 下載執行檔
+https://github.com/gohugoio/hugo/releases
+在電腦上建立目錄 hugo_sitetool 使用 github desktop 將 github reopsitory clone 至此
+將 hogo 檔案放置此處 並設定環境變數 開啟 terminal 軟體嘗試執行 hugo 確認是否能正常運作 hugo help
+PS D:\Gdrive\hugo_sitetool\quickstart> hugo help hugo is the main command, used to build your Hugo site. Hugo is a Fast and Flexible Static Site Generator built with love by spf13 and friends in Go. Complete documentation is available at http://gohugo.io/. Usage: hugo [flags] hugo [command] Available Commands: completion generate the autocompletion script for the specified shell config Print the site configuration convert Convert your content to different formats deploy Deploy your site to a Cloud provider. env Print Hugo version and environment info gen A collection of several useful generators. help Help about any command import Import your site from others. list Listing out various types of content mod Various Hugo Modules helpers. 生成網站、文章 這邊簡單的流程說明如下 首先建立網站
+hugo new site quickstart 參考 quick-start 設定 Theme
+接著建立目錄 public 將 github repository (lovesharepc.github.io) clone 至此
+然後執行 hugo 編譯網站，網站就準備好發布了
+發佈到 github 發布很簡單 就是使用 github desktop commt 變更並 push 至 github
+hugo_sitetool 要將 public 目錄排除掉
+之後到 https://lovesharepc.github.io/
+就能看到自己網站的成品了</content></entry></search>
