@@ -1,30 +1,26 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>hugo host in github</title><url>https://lovesharepc.github.io/en/zh-tw/post/hugo_install/hugo_install/</url><categories><category>hugo</category></categories><tags><tag>hugo</tag></tags><content type="html"> 在此網站建立時 順手作的紀錄文章1
-標題 下麵的 HTML 代碼&lt;h1>—&lt;h6> 元素表示六個級別的節標題。 &lt;h1>是最高的節級別，&lt;h6>是最低的節級別。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>hugo host in github</title><url>https://lovesharepc.github.io/en/zh-tw/post/hugo_install/hugo_install.html</url><categories><category>hugo</category></categories><tags><tag>hugo</tag></tags><content type="html"> 在此網站建立時順手作的紀錄文章
+PS D:\Gdrive\hugo_sitetool\quickstart> hugo server -D Start building sites … hugo v0.92.2-CDF6A0D6 windows/amd64 BuildDate=2022-02-11T14:17:39Z VendorInfo=gohugoio WARNING: calling IsSet with unsupported type "invalid" (&lt;nil>) will always return false. | EN -------------------+----- Pages | 7 Paginator pages | 0 Non-page files | 0 Static files | 26 Processed images | 0 Aliases | 1 Sitemaps | 1 Cleaned | 0 Built in 25 ms Watching for changes in D:\Gdrive\hugo_sitetool\quickstart\{archetypes,content,data,layouts,static,themes} Watching for config changes in D:\Gdrive\hugo_sitetool\quickstart\config.toml Environment: "development" Serving pages from memory Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender Web Server is available at http://localhost:1313/ (bind address 127.0.0.1) Press Ctrl+C to stop 插入圖
+asdasd
+測試結果
+註解
+code block in line code
+in line code
+註解
+測試輸入正常
+標題 下麵的 HTML 代碼 &lt;h1>—&lt;h6> 元素表示六個級別的節標題。 &lt;h1>是最高的節級別，&lt;h6>是最低的節級別。
 H1 H2 H3 H4 H5 H6 段落 Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur? Quianimin porecus evelectur, cum que nis nust voloribus ratem aut omnimi, sitatur? Quiatem. Nam, omnis sum am facea corem alique molestrunt et eos evelece arcillit ut aut eos eos nus, sin conecerem erum fuga. Ri oditatquam, ad quibus unda veliamenimin cusam et facea ipsamus es exerum sitate dolores editium rerore eost, temped molorro ratiae volorro te reribus dolorer sperchicium faceata tiustia prat.
 伊塔圖？廚房裡有很多東西，我不知道他們喜歡吃什麼，或者他們喜歡吃什麼。
-引用 blockquote元素表示從另一個來源引用的內容，可選的引用必須在footer或cite元素內，也可選的內嵌更改，如註釋和縮寫。
+引用 blockquote元素表示從另一個來源引用的內容，可選的引用必須在 footer或 cite元素內，也可選的內嵌更改，如註釋和縮寫。
 引用沒有歸屬 Tiam, ad mint andaepu dandae nostion secatur sequo quae. 註意 可以在塊引用中使用 Markdown 語法。
-帶歸屬的引用 不要通過分享記憶來交流，通過交流來分享記憶。
-— 羅布·派克1
+帶歸屬的引用 不要通過分享記憶來交流，通過交流來分享記憶。 —&lt;cite>羅布·派克[^1]&lt;/cite>
+[^1]: 以上引文摘自Rob Pike在2015年11月18日Gopherfest上的演講。
 表格 表不是Markdown核心規範的一部分，但是Hugo支持開箱即用。
-Name Age Bob 27 Alice 23 表格內使用Markdown語法 Italics Bold Code italics bold code 圖像 ![圖像描述](圖像地址) 示例 Google Chrome Firefox Browser
-點擊圖像可以打開圖像瀏覽器，快試試吧。
-代碼塊 帶有引號的代碼塊 &lt;!doctype html> &lt;html lang="en"> &lt;head> &lt;meta charset="utf-8"> &lt;title>Example HTML5 Document&lt;/title> &lt;/head> &lt;body> &lt;p>Test&lt;/p> &lt;/body> &lt;/html> 用四個空格縮進的代碼塊 &lt;!doctype html>
-&lt;html lang="en">
-&lt;head>
-&lt;meta charset="utf-8">
-&lt;title>Example HTML5 Document&lt;/title>
-&lt;/head>
-&lt;body>
-&lt;p>Test&lt;/p>
-&lt;/body>
-&lt;/html>
-代碼塊引用Hugo的內部高亮短代碼 &lt;!doctype html> &lt;html lang="en"> &lt;head> &lt;meta charset="utf-8"> &lt;title>Example HTML5 Document&lt;/title> &lt;/head> &lt;body> &lt;p>Test&lt;/p> &lt;/body> &lt;/html> 列表類型 有序列表 First item Second item Third item 無序列表 List item Another item And another item 嵌套列表 Fruit Apple Orange Banana Dairy Milk Cheese 其他元素 — abbr, sub, sup, kbd, mark GIF 是位圖圖像格式。
-H2O
-Xn + Yn = Zn
-按 CTRL+ALT+Delete 組合鍵結束會話。
-大多數蠑螈在夜間活動，捕食昆蟲、蠕蟲和其他小動物。
-以上引文摘自Rob Pike在2015年11月18日Gopherfest上的演講。&#160;&#8617;&#xfe0e;</content></entry><entry><title>day11 弱點 (雷)被加密被入侵都是人為因素多</title><url>https://lovesharepc.github.io/2021/09/25/day11-%E5%BC%B1%E9%BB%9E/</url><categories><category>鐵人賽2021</category></categories><tags/><content type="html"> Nessus
+Name Age Bob | 27 Alice | 23
+表格內使用Markdown語法 Italics Bold Code italics bold code 圖像 ![圖像描述](圖像地址) 示例 [![Coogle Chrome](https://img.shields.io/static/v1?label=Chrome&message=92.0.45%2B&color=%234285F4&logo=GoogleChrome)](#) [![Firefox](https://img.shields.io/static/v1?label=Firefox&message=91.0.2%2B&color=%23FF7139&logo=Firefox)](#) [![Safari](https://img.shields.io/static/v1?label=Safari&message=14.7.1%2B&color=%23212E50&logo=Safari)](#) [![Microsoft Edge](https://img.shields.io/static/v1?label=Microsoft%20Edge&message=44.18362%2B&color=%230078D7&logo=Microsoft%20Edge)](#) [![Internet Exporler](https://img.shields.io/static/v1?label=IE&message=11.356%2B&color=%230076D6&logo=Internet%20Explorer)](#)  點擊圖像可以打開圖像瀏覽器，快試試吧。
+代碼塊 帶有引號的代碼塊 &lt;!doctype html> &lt;html lang="en"> &lt;head> &lt;meta charset="utf-8"> &lt;title>Example HTML5 Document&lt;/title> &lt;/head> &lt;body> &lt;p>Test&lt;/p> &lt;/body> &lt;/html> 用四個空格縮進的代碼塊 &lt;!doctype html> &lt;html lang="en"> &lt;head> &lt;meta charset="utf-8"> &lt;title>Example HTML5 Document&lt;/title> &lt;/head> &lt;body> &lt;p>Test&lt;/p> &lt;/body> &lt;/html> 代碼塊引用Hugo的內部高亮短代碼 &lt;br> Test 列表類型 有序列表 First item Second item Third item 無序列表 List item Another item And another item 嵌套列表 Fruit Apple Orange Banana Dairy Milk Cheese 其他元素 — abbr, sub, sup, kbd, mark &lt;abbr title="Graphics Interchange Format">GIF &lt;/abbr>是位圖圖像格式。
+H &lt;sub>2 &lt;/sub>O
+X &lt;sup>n &lt;/sup>+ Y &lt;sup>n &lt;/sup>= Z &lt;sup>n &lt;/sup>&lt;br> &lt;br> 按 &lt;kbd>&lt;kbd>CTRL &lt;/kbd>+&lt;kbd>ALT &lt;/kbd>+&lt;kbd>Delete &lt;/kbd>&lt;/kbd>組合鍵結束會話。
+大多數蠑螈在夜間活動，捕食昆蟲、蠕蟲和其他小動物。</content></entry><entry><title>day11 弱點 (雷)被加密被入侵都是人為因素多</title><url>https://lovesharepc.github.io/2021/09/25/day11-%E5%BC%B1%E9%BB%9E/</url><categories><category>鐵人賽2021</category></categories><tags/><content type="html"> Nessus
  在比較大的企業中會定期進行弱點掃描
  弱點掃描
 就是利用工具程式進行模擬滲透攻擊
@@ -1583,7 +1579,7 @@ nmap –script=http-headers 192.168.1.0/24</content></entry><entry><title>CentOS
 國外有人有將自己打包好的 rpm 包以 repo 方式供人直接更新下載
 https://codeit.guru/en_US/
 輸入以下指令 更新即可
-yum install -y epel-release cd /etc/yum.repos.d && wget https://repo.codeit.guru/codeit.el`rpm -q --qf "%{VERSION}" $(rpm -q --whatprovides redhat-release)`.repo yum update  </content></entry><entry><title>Markdown 語法手冊</title><url>https://lovesharepc.github.io/en/zh-tw/post/markdown-syntax/</url><categories><category>themes</category><category>syntax</category></categories><tags><tag>markdown</tag><tag>css</tag><tag>html</tag></tags><content type="html"> 本文提供了一個可以在 Hugo 內容文件中使用的基本Markdown語法示例，還展示了基本 HTML 元素在 Hugo 主題中是否使用 CSS 裝飾。
+yum install -y epel-release cd /etc/yum.repos.d && wget https://repo.codeit.guru/codeit.el`rpm -q --qf "%{VERSION}" $(rpm -q --whatprovides redhat-release)`.repo yum update  </content></entry><entry><title>Markdown 語法手冊</title><url>https://lovesharepc.github.io/en/zh-tw/post/markdown-syntax.html</url><categories><category>themes</category><category>syntax</category></categories><tags><tag>markdown</tag><tag>css</tag><tag>html</tag></tags><content type="html"> 本文提供了一個可以在 Hugo 內容文件中使用的基本Markdown語法示例，還展示了基本 HTML 元素在 Hugo 主題中是否使用 CSS 裝飾。
 標題 下麵的 HTML 代碼&lt;h1>—&lt;h6> 元素表示六個級別的節標題。 &lt;h1>是最高的節級別，&lt;h6>是最低的節級別。
 H1 H2 H3 H4 H5 H6 段落 Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur? Quianimin porecus evelectur, cum que nis nust voloribus ratem aut omnimi, sitatur? Quiatem. Nam, omnis sum am facea corem alique molestrunt et eos evelece arcillit ut aut eos eos nus, sin conecerem erum fuga. Ri oditatquam, ad quibus unda veliamenimin cusam et facea ipsamus es exerum sitate dolores editium rerore eost, temped molorro ratiae volorro te reribus dolorer sperchicium faceata tiustia prat.
 伊塔圖？廚房裡有很多東西，我不知道他們喜歡吃什麼，或者他們喜歡吃什麼。
@@ -1599,16 +1595,16 @@ H2O
 Xn + Yn = Zn
 按 CTRL+ALT+Delete 組合鍵結束會話。
 大多數蠑螈在夜間活動，捕食昆蟲、蠕蟲和其他小動物。
-以上引文摘自Rob Pike在2015年11月18日Gopherfest上的演講。&#160;&#8617;&#xfe0e;</content></entry><entry><title>富文本内容测试</title><url>https://lovesharepc.github.io/en/zh-tw/post/rich-content/</url><categories/><tags><tag>shortcodes</tag><tag>privacy</tag></tags><content type="html"> Hugo上有几个内置短代码，用于丰富内容，以及隐私配置还有一组简单的短代码，支持各种社交媒体嵌入的静态和非JS版本。
+以上引文摘自Rob Pike在2015年11月18日Gopherfest上的演講。&#160;&#8617;&#xfe0e;</content></entry><entry><title>富文本内容测试</title><url>https://lovesharepc.github.io/en/zh-tw/post/rich-content.html</url><categories/><tags><tag>shortcodes</tag><tag>privacy</tag></tags><content type="html"> Hugo上有几个内置短代码，用于丰富内容，以及隐私配置还有一组简单的短代码，支持各种社交媒体嵌入的静态和非JS版本。
 YouTube Privacy Enhanced Shortcode Twitter Simple Shortcode .twitter-tweet { font: 14px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif; border-left: 4px solid #2b7bb9; padding-left: 1.5em; color: #555; } .twitter-tweet a { color: #2b7bb9; text-decoration: none; } blockquote.twitter-tweet a:hover, blockquote.twitter-tweet a:focus { text-decoration: underline; } “In addition to being more logical, asymmetry has the advantage that its complete appearance is far more optically effective than symmetry.”
 — Jan Tschichold pic.twitter.com/gcv7SrhvJb
-&mdash; Graphic Design History (@DesignReviewed) January 17, 2019 Vimeo Simple Shortcode .__h_video { position: relative; padding-bottom: 56.23%; height: 0; overflow: hidden; width: 100%; background: #000; } .__h_video img { width: 100%; height: auto; color: #000; } .__h_video .play { height: 72px; width: 72px; left: 50%; top: 50%; margin-left: -36px; margin-top: -36px; position: absolute; cursor: pointer; }</content></entry><entry><title>占位符文本显示</title><url>https://lovesharepc.github.io/en/zh-tw/post/placeholder-text/</url><categories/><tags><tag>markdown</tag><tag>text</tag></tags><content type="html"> 你对我的心有偏见。我向您保证，我们的生活将不会受到影响，我们的生活将会受到影响。你说你现在住在医院里，因为你的眼睛是透明的，你的眼睛是光明的，你的眼睛是光明的!
+&mdash; Graphic Design History (@DesignReviewed) January 17, 2019 Vimeo Simple Shortcode .__h_video { position: relative; padding-bottom: 56.23%; height: 0; overflow: hidden; width: 100%; background: #000; } .__h_video img { width: 100%; height: auto; color: #000; } .__h_video .play { height: 72px; width: 72px; left: 50%; top: 50%; margin-left: -36px; margin-top: -36px; position: absolute; cursor: pointer; }</content></entry><entry><title>占位符文本显示</title><url>https://lovesharepc.github.io/en/zh-tw/post/placeholder-text.html</url><categories/><tags><tag>markdown</tag><tag>text</tag></tags><content type="html"> 你对我的心有偏见。我向您保证，我们的生活将不会受到影响，我们的生活将会受到影响。你说你现在住在医院里，因为你的眼睛是透明的，你的眼睛是光明的，你的眼睛是光明的!
 Exierant elisi ambit vivere dedere Duce pollice Eris modo Spargitque ferrea quos palude Rursus nulli murmur; hastile inridet ut ab gravi sententia! Nomine potitus silentia flumen, sustinet placuit petis in dilapsa erat sunt. Atria tractus malis.
 Comas hunc haec pietate fetum procerum dixit Post torum vates letum Tiresia Flumen querellas Arcanaque montibus omnes Quidem et Vagus elidunt
 The Van de Graaf Canon
 Mane refeci capiebant unda mulcebat Victa caducifer, malo vulnere contra dicere aurato, ludit regale, voca! Retorsit colit est profanae esse virescere furit nec; iaculi matertera et visa est, viribus. Divesque creatis, tecta novat collumque vulnus est, parvas. Faces illo pepulere tempus adest. Tendit flamma, ab opes virum sustinet, sidus sequendo urbis.
 Iubar proles corpore raptos vero auctor imperium; sed et huic: manus caeli Lelegas tu lux. Verbis obstitit intus oblectamina fixis linguisque ausus sperare Echionides cornuaque tenent clausit possit. Omnia putatur. Praeteritae refert ausus; ferebant e primus lora nutat, vici quae mea ipse. Et iter nil spectatae vulnus haerentia iuste et exercebat, sui et.
-Eurytus Hector, materna ipsumque ut Politen, nec, nate, ignari, vernum cohaesit sequitur. Vel mitis temploque vocatus, inque alis, oculos nomen non silvis corpore coniunx ne displicet illa. Crescunt non unus, vidit visa quantum inmiti flumina mortis facto sic: undique a alios vincula sunt iactata abdita! Suspenderat ego fuit tendit: luna, ante urbem Propoetides parte.</content></entry><entry><title>数据公式设置显示</title><url>https://lovesharepc.github.io/en/zh-tw/post/math-typesetting/</url><categories/><tags/><content type="html"> Hugo项目中的数学表示法可以通过使用第三方JavaScript库来实现。
+Eurytus Hector, materna ipsumque ut Politen, nec, nate, ignari, vernum cohaesit sequitur. Vel mitis temploque vocatus, inque alis, oculos nomen non silvis corpore coniunx ne displicet illa. Crescunt non unus, vidit visa quantum inmiti flumina mortis facto sic: undique a alios vincula sunt iactata abdita! Suspenderat ego fuit tendit: luna, ante urbem Propoetides parte.</content></entry><entry><title>数据公式设置显示</title><url>https://lovesharepc.github.io/en/zh-tw/post/math-typesetting.html</url><categories/><tags/><content type="html"> Hugo项目中的数学表示法可以通过使用第三方JavaScript库来实现。
 在这个例子中，我们将使用 MathJax
 Create a post under /content/en[zh-CN]/math.md
 可以全局启用MathJax，请在项目配置中将参数math设置为true
@@ -1654,7 +1650,7 @@ $$ \frac{n!}{k!(n-k)!} = {^n}C_k {n \choose k} $$
 矩阵 $$ \begin{pmatrix} a_{11} &amp; a_{12} &amp; a_{13}\ a_{21} &amp; a_{22} &amp; a_{23}\ a_{31} &amp; a_{32} &amp; a_{33} \end{pmatrix} \begin{bmatrix} 0 &amp; \cdots &amp; 0 \ \vdots &amp; \ddots &amp; \vdots \ 0 &amp; \cdots &amp; 0 \end{bmatrix} $$
 标点符号 $$ f(x) = \sqrt{1+x} \quad (x \ge -1) f(x) \sim x^2 \quad (x\to\infty) $$
 现在用标点符号:
-$$ f(x) = \sqrt{1+x}, \quad x \ge -1 f(x) \sim x^2, \quad x\to\infty $$</content></entry><entry><title>支持Emoji表情符号</title><url>https://lovesharepc.github.io/en/zh-tw/post/emoji-support/</url><categories/><tags><tag>emoji</tag></tags><content type="html"> 在Hugo项目中可以通过多种方式启用Emoji。
+$$ f(x) = \sqrt{1+x}, \quad x \ge -1 f(x) \sim x^2, \quad x\to\infty $$</content></entry><entry><title>支持Emoji表情符号</title><url>https://lovesharepc.github.io/en/zh-tw/post/emoji-support.html</url><categories/><tags><tag>emoji</tag></tags><content type="html"> 在Hugo项目中可以通过多种方式启用Emoji。
 The emojify function can be called directly in templates or Inline Shortcodes.
 To enable emoji globally, set enableEmoji to true in your site&rsquo;s configuration and then you can type emoji shorthand codes directly in content files; e.g.
 馃檲 🙈 馃檳 🙉 馃檴 🙊
