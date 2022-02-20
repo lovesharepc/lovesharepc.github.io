@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>hugo host in github</title><url>https://lovesharepc.github.io/en/zh-tw/post/hugo_install/hugo_install.html</url><categories><category>hugo</category></categories><tags><tag>hugo</tag></tags><content type="html"> 在此網站建立時順手作的紀錄文章
-序言 github 提供一個功能 叫做 GitHub Pages
+github 提供一個功能 叫做 GitHub Pages
 GitHub Pages 讓 github 帳號建立 repository 後 讓該 repository 能夠以靜態網頁呈現內容
 好處是你不需要有 server 、 DNS domain 就能夠使用 當使用 markdown 編寫文件，並結合 Jekyll 就能產生簡易的部落格
 在此指之前我都使用 GCP 開一個永久免費的 VM 架設 wordpress 使用
@@ -1582,21 +1582,20 @@ nmap –script=http-headers 192.168.1.0/24</content></entry><entry><title>CentOS
 https://codeit.guru/en_US/
 輸入以下指令 更新即可
 yum install -y epel-release cd /etc/yum.repos.d && wget https://repo.codeit.guru/codeit.el`rpm -q --qf "%{VERSION}" $(rpm -q --whatprovides redhat-release)`.repo yum update  </content></entry><entry><title>Markdown 語法手冊</title><url>https://lovesharepc.github.io/en/zh-tw/post/markdown-syntax.html</url><categories><category>themes</category><category>syntax</category></categories><tags><tag>markdown</tag><tag>css</tag><tag>html</tag></tags><content type="html"> 本文提供了一個可以在 Hugo 內容文件中使用的基本Markdown語法示例，還展示了基本 HTML 元素在 Hugo 主題中是否使用 CSS 裝飾。
-標題 下麵的 HTML 代碼&lt;h1>—&lt;h6> 元素表示六個級別的節標題。 &lt;h1>是最高的節級別，&lt;h6>是最低的節級別。
+標題 下麵的 HTML 代碼 &lt;h1>—&lt;h6> 元素表示六個級別的節標題。 &lt;h1>是最高的節級別，&lt;h6>是最低的節級別。
 H1 H2 H3 H4 H5 H6 段落 Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur? Quianimin porecus evelectur, cum que nis nust voloribus ratem aut omnimi, sitatur? Quiatem. Nam, omnis sum am facea corem alique molestrunt et eos evelece arcillit ut aut eos eos nus, sin conecerem erum fuga. Ri oditatquam, ad quibus unda veliamenimin cusam et facea ipsamus es exerum sitate dolores editium rerore eost, temped molorro ratiae volorro te reribus dolorer sperchicium faceata tiustia prat.
 伊塔圖？廚房裡有很多東西，我不知道他們喜歡吃什麼，或者他們喜歡吃什麼。
-引用 blockquote元素表示從另一個來源引用的內容，可選的引用必須在footer或cite元素內，也可選的內嵌更改，如註釋和縮寫。
+引用 blockquote元素表示從另一個來源引用的內容，可選的引用必須在 footer或 cite元素內，也可選的內嵌更改，如註釋和縮寫。
 引用沒有歸屬 Tiam, ad mint andaepu dandae nostion secatur sequo quae. 註意 可以在塊引用中使用 Markdown 語法。
-帶歸屬的引用 不要通過分享記憶來交流，通過交流來分享記憶。
-— 羅布·派克1
+帶歸屬的引用 不要通過分享記憶來交流，通過交流來分享記憶。&lt;br> — &lt;cite>羅布·派克1 &lt;/cite>
 表格 表不是Markdown核心規範的一部分，但是Hugo支持開箱即用。
 Name Age Bob 27 Alice 23 表格內使用Markdown語法 Italics Bold Code italics bold code 圖像 ![圖像描述](圖像地址) 示例 Google Chrome Firefox Browser
 點擊圖像可以打開圖像瀏覽器，快試試吧。
-代碼塊 帶有引號的代碼塊 &lt;!doctype html> &lt;html lang="en"> &lt;head> &lt;meta charset="utf-8"> &lt;title>Example HTML5 Document&lt;/title> &lt;/head> &lt;body> &lt;p>Test&lt;/p> &lt;/body> &lt;/html> 用四個空格縮進的代碼塊 &lt;!doctype html> &lt;html lang="en"> &lt;head> &lt;meta charset="utf-8"> &lt;title>Example HTML5 Document&lt;/title> &lt;/head> &lt;body> &lt;p>Test&lt;/p> &lt;/body> &lt;/html> 代碼塊引用Hugo的內部高亮短代碼 &lt;!doctype html> &lt;html lang="en"> &lt;head> &lt;meta charset="utf-8"> &lt;title>Example HTML5 Document&lt;/title> &lt;/head> &lt;body> &lt;p>Test&lt;/p> &lt;/body> &lt;/html> 列表類型 有序列表 First item Second item Third item 無序列表 List item Another item And another item 嵌套列表 Fruit Apple Orange Banana Dairy Milk Cheese 其他元素 — abbr, sub, sup, kbd, mark GIF 是位圖圖像格式。
-H2O
-Xn + Yn = Zn
-按 CTRL+ALT+Delete 組合鍵結束會話。
-大多數蠑螈在夜間活動，捕食昆蟲、蠕蟲和其他小動物。
+代碼塊 帶有引號的代碼塊 &lt;!doctype html> &lt;html lang="en"> &lt;head> &lt;meta charset="utf-8"> &lt;title>Example HTML5 Document&lt;/title> &lt;/head> &lt;body> &lt;p>Test&lt;/p> &lt;/body> &lt;/html> 用四個空格縮進的代碼塊 &lt;!doctype html>`&lt;html lang="en">` `&lt;head>` `&lt;meta charset="utf-8">` `&lt;title>`Example HTML5 Document `&lt;/title>` `&lt;/head>` `&lt;body>` `&lt;p>`Test `&lt;/p>` `&lt;/body>` `&lt;/html>` 代碼塊引用Hugo的內部高亮短代碼 &lt;!doctype html> &lt;html lang="en"> &lt;head> &lt;meta charset="utf-8"> &lt;title>Example HTML5 Document&lt;/title> &lt;/head> &lt;body> &lt;p>Test&lt;/p> &lt;/body> &lt;/html> 列表類型 有序列表 First item Second item Third item 無序列表 List item Another item And another item 嵌套列表 Fruit Apple Orange Banana Dairy Milk Cheese 其他元素 — abbr, sub, sup, kbd, mark &lt;abbr title="Graphics Interchange Format">GIF &lt;/abbr> 是位圖圖像格式。
+H &lt;sub>2 &lt;/sub>O
+X &lt;sup>n &lt;/sup> + Y &lt;sup>n &lt;/sup> = Z &lt;sup>n &lt;/sup>
+按 &lt;kbd>&lt;kbd>CTRL &lt;/kbd>+&lt;kbd>ALT &lt;/kbd>+&lt;kbd>Delete &lt;/kbd>&lt;/kbd> 組合鍵結束會話。
+大多數 &lt;mark>蠑螈 &lt;/mark>在夜間活動，捕食昆蟲、蠕蟲和其他小動物。
 以上引文摘自Rob Pike在2015年11月18日Gopherfest上的演講。&#160;&#8617;&#xfe0e;</content></entry><entry><title>富文本内容测试</title><url>https://lovesharepc.github.io/en/zh-tw/post/rich-content.html</url><categories/><tags><tag>shortcodes</tag><tag>privacy</tag></tags><content type="html"> Hugo上有几个内置短代码，用于丰富内容，以及隐私配置还有一组简单的短代码，支持各种社交媒体嵌入的静态和非JS版本。
 YouTube Privacy Enhanced Shortcode Twitter Simple Shortcode .twitter-tweet { font: 14px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif; border-left: 4px solid #2b7bb9; padding-left: 1.5em; color: #555; } .twitter-tweet a { color: #2b7bb9; text-decoration: none; } blockquote.twitter-tweet a:hover, blockquote.twitter-tweet a:focus { text-decoration: underline; } “In addition to being more logical, asymmetry has the advantage that its complete appearance is far more optically effective than symmetry.”
 — Jan Tschichold pic.twitter.com/gcv7SrhvJb

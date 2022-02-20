@@ -123,7 +123,7 @@ hugo host in github
 |
 <i class="fa fa-file-word-o fa-fw"></i>
 <span class=post-meta-item-text>Words:</span>
-<span class=leancloud-world-count>741 words</span>
+<span class=leancloud-world-count>739 words</span>
 </span>
 <span>
 |
@@ -141,7 +141,6 @@ hugo host in github
 </header>
 <div class=post-body itemprop=articleBody>
 <p>在此網站建立時順手作的紀錄文章</p>
-<h1 id=序言>序言</h1>
 <p>github 提供一個功能
 叫做 <a href=https://pages.github.com/>GitHub Pages</a></p>
 <p>GitHub Pages 讓 github 帳號建立 repository 後
@@ -156,7 +155,7 @@ hugo host in github
 <p>GitHub Pages 介紹可以使用 <a href=https://jekyllrb.com/>Jekyll </a>作為網站生成器
 但評估後，覺得 <a href=https://gohugo.io/>HUGO</a> 似乎較符合我
 所以這網站就以 <a href=https://gohugo.io/>HUGO</a> 建立</p>
-<h1 id=建置流程簡介>建置流程簡介</h1>
+<h2 id=建置流程簡介>建置流程簡介</h2>
 <ul>
 <li>建立 github 帳號並建立 2 個 repository</li>
 <li>下載網站生成器 hugo</li>
@@ -164,7 +163,7 @@ hugo host in github
 <li>生成網站、文章</li>
 <li>發佈到 github</li>
 </ul>
-<h2 id=建立-github-帳號並建立-2-個-repository>建立 github 帳號並建立 2 個 repository</h2>
+<h3 id=建立-github-帳號並建立-2-個-repository>建立 github 帳號並建立 2 個 repository</h3>
 <p>github 預設會將 <code>&lt;username></code>.github.io 這個 Repository name
 直接對應到 https://<code>&lt;username></code>.github.io 這個 domain
 如果你想要使用其他 Repository name 也是可以設定為虛擬目錄使用</p>
@@ -175,14 +174,14 @@ hugo host in github
 lovesharepc.github.io <code>權限: public</code>
 hugo_sitetool <code>權限: private</code></p>
 <p><img src=image/hugo_install/1645361331285.png alt=img></p>
-<h2 id=下載-vscodegithub-desktop>下載 VScode、github desktop</h2>
+<h3 id=下載-vscodegithub-desktop>下載 VScode、github desktop</h3>
 <p>下一步
 我們要準備好開發工具</p>
 <p>VScode 可以作為多功能的編輯器(包含 markdown)
 <a href>https://code.visualstudio.com/</a></p>
 <p>GitHub Desktop 則是用來將我們的網站 push 到網路上
 <a href>https://desktop.github.com/</a></p>
-<h2 id=下載網站生成器-hugo>下載網站生成器 hugo</h2>
+<h3 id=下載網站生成器-hugo>下載網站生成器 hugo</h3>
 <p>到 hugo 的 github 下載執行檔</p>
 <p><a href>https://github.com/gohugoio/hugo/releases</a></p>
 <p>在電腦上建立目錄 hugo_sitetool
@@ -217,7 +216,7 @@ Available Commands:
   list        Listing out various types of content
   mod         Various Hugo Modules helpers.
 </code></pre></div><p><img src=image/hugo_install/1645361655004.png alt=1645361655004.png></p>
-<h2 id=生成網站文章>生成網站、文章</h2>
+<h3 id=生成網站文章>生成網站、文章</h3>
 <p>這邊簡單的流程說明如下
 首先建立網站</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>hugo new site quickstart
@@ -226,7 +225,7 @@ Available Commands:
 <p>接著建立目錄 public
 將 github repository (lovesharepc.github.io) clone 至此</p>
 <p>然後執行 hugo 編譯網站，網站就準備好發布了</p>
-<h2 id=發佈到-github>發佈到 github</h2>
+<h3 id=發佈到-github>發佈到 github</h3>
 <p>發布很簡單
 就是使用 github desktop commt 變更並 push 至 github</p>
 <blockquote>
@@ -372,11 +371,15 @@ TagCloud
 <div class=post-toc>
 <div class=post-toc-content><nav id=TableOfContents>
 <ul>
+<li><a href=#建置流程簡介>建置流程簡介</a>
+<ul>
 <li><a href=#建立-github-帳號並建立-2-個-repository>建立 github 帳號並建立 2 個 repository</a></li>
 <li><a href=#下載-vscodegithub-desktop>下載 VScode、github desktop</a></li>
 <li><a href=#下載網站生成器-hugo>下載網站生成器 hugo</a></li>
 <li><a href=#生成網站文章>生成網站、文章</a></li>
 <li><a href=#發佈到-github>發佈到 github</a></li>
+</ul>
+</li>
 </ul>
 </nav></div>
 </div>
