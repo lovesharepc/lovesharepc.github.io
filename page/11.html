@@ -98,6 +98,56 @@
 <article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
 <header class=post-header>
 <h1 class=post-title itemprop="name headline">
+<a class=post-title-link href=https://lovesharepc.github.io/2018/04/30/cisco-%E5%9F%BA%E6%9C%AC%E8%A8%AD%E5%AE%9A-ssh%E3%80%81spanning-tree/ itemprop=url>
+CISCO 基本設定 (ssh、spanning tree)
+</a>
+</h1>
+<div class=post-meta>
+<span class=post-time>
+<i class="fa fa-calendar-o fa-fw"></i>
+<span class=post-meta-item-text>時間：</span>
+<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2018-04-30">
+2018-04-30
+</time>
+</span>
+<span class=post-category>
+&nbsp; | &nbsp;
+<i class="fa fa-folder-o fa-fw"></i>
+<span class=post-meta-item-text>分類：</span>
+<span itemprop=about itemscope itemtype=https://schema.org/Thing>
+<a href=/categories/%E7%B6%B2%E7%AE%A1 itemprop=url rel=index style=text-decoration:underline>
+<span itemprop=name>網管</span>
+</a>
+&nbsp;
+</span>
+</span>
+<span>
+|
+<i class="fa fa-file-word-o fa-fw"></i>
+<span class=post-meta-item-text>字數：</span>
+<span class=leancloud-world-count>161 字</span>
+</span>
+<span>
+|
+<i class="fa fa-eye fa-fw"></i>
+<span class=post-meta-item-text>閱讀：</span>
+<span class=leancloud-view-count>1分鐘</span>
+</span>
+</div>
+</header>
+<div class=post-body itemprop=articleBody>
+SSH 開啟前要完成 HOST neme 、 doman name 的設定 switch (config)#spanning-tree mode rapid-pvst switch(config)# hostname test //命名主機名稱 test(config)# ip domain-name test.local //設定網域名稱 test(config)# crypto key generate rsa //產生金鑰 //金鑰預設是用 512 bit 指定 768 bit 以上才
+</div>
+<div class="post-more-link text-center">
+<a class=btn href=https://lovesharepc.github.io/2018/04/30/cisco-%E5%9F%BA%E6%9C%AC%E8%A8%AD%E5%AE%9A-ssh%E3%80%81spanning-tree/ rel=contents>
+閱讀全文 &#187;
+</a>
+</div>
+<footer class=post-footer><div class=post-eof></div></footer>
+</article>
+<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
+<header class=post-header>
+<h1 class=post-title itemprop="name headline">
 <a class=post-title-link href=https://lovesharepc.github.io/2018/02/04/vcenter-server-%E5%AE%89%E8%A3%9D/ itemprop=url>
 vCenter SERVER 安裝
 </a>
@@ -541,56 +591,6 @@ GPO 相關 更新 gpupdate /force GPO 狀態 GPRESULT /H 匯出檔案位置 編�
 </div>
 <footer class=post-footer><div class=post-eof></div></footer>
 </article>
-<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
-<header class=post-header>
-<h1 class=post-title itemprop="name headline">
-<a class=post-title-link href=https://lovesharepc.github.io/2017/08/28/virtualbox-vdi-%E8%99%9B%E6%93%AC%E7%A3%81%E7%A2%9F%E7%98%A6%E8%BA%AB/ itemprop=url>
-VIRTUALBOX VDI 虛擬磁碟瘦身
-</a>
-</h1>
-<div class=post-meta>
-<span class=post-time>
-<i class="fa fa-calendar-o fa-fw"></i>
-<span class=post-meta-item-text>時間：</span>
-<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2017-08-28">
-2017-08-28
-</time>
-</span>
-<span class=post-category>
-&nbsp; | &nbsp;
-<i class="fa fa-folder-o fa-fw"></i>
-<span class=post-meta-item-text>分類：</span>
-<span itemprop=about itemscope itemtype=https://schema.org/Thing>
-<a href=/categories/%E7%B6%B2%E7%AE%A1 itemprop=url rel=index style=text-decoration:underline>
-<span itemprop=name>網管</span>
-</a>
-&nbsp;
-</span>
-</span>
-<span>
-|
-<i class="fa fa-file-word-o fa-fw"></i>
-<span class=post-meta-item-text>字數：</span>
-<span class=leancloud-world-count>194 字</span>
-</span>
-<span>
-|
-<i class="fa fa-eye fa-fw"></i>
-<span class=post-meta-item-text>閱讀：</span>
-<span class=leancloud-view-count>1分鐘</span>
-</span>
-</div>
-</header>
-<div class=post-body itemprop=articleBody>
-虛擬磁碟在建立時我們通常會選用動態磁碟 在使用空間上會較彈性 (有資料時才增加磁碟檔案容量) 但使用久了 磁碟檔案會越來越大，儘管磁碟中沒有什麼資料
-</div>
-<div class="post-more-link text-center">
-<a class=btn href=https://lovesharepc.github.io/2017/08/28/virtualbox-vdi-%E8%99%9B%E6%93%AC%E7%A3%81%E7%A2%9F%E7%98%A6%E8%BA%AB/ rel=contents>
-閱讀全文 &#187;
-</a>
-</div>
-<footer class=post-footer><div class=post-eof></div></footer>
-</article>
 </section>
 <nav class=pagination>
 <a class="extend prev" rel=prev href=/page/10.html><i class="fa fa-angle-left"></i></a>
@@ -627,19 +627,19 @@ VIRTUALBOX VDI 虛擬磁碟瘦身
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href=/post/>
-<span class=site-state-item-count>117</span>
+<span class=site-state-item-count>118</span>
 <span class=site-state-item-name>日誌</span>
 </a>
 </div>
 <div class="site-state-item site-state-categories">
 <a href=/categories/>
-<span class=site-state-item-count>17</span>
+<span class=site-state-item-count>18</span>
 <span class=site-state-item-name>分類</span>
 </a>
 </div>
 <div class="site-state-item site-state-tags">
 <a href=/tags/>
-<span class=site-state-item-count>25</span>
+<span class=site-state-item-count>26</span>
 <span class=site-state-item-name>標籤</span>
 </a>
 </div>
@@ -668,10 +668,19 @@ GitHub
 <a href=/tags/windows>Windows</a>
 </li>
 <li class=tagcloud-of-blogroll-item>
+<a href=/tags/centos>Centos</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
 <a href=/tags/centos-7>Centos 7</a>
 </li>
 <li class=tagcloud-of-blogroll-item>
+<a href=/tags/linux>Linux</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
 <a href=/tags/markdown>Markdown</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/rocky-linux>Rocky linux</a>
 </li>
 <li class=tagcloud-of-blogroll-item>
 <a href=/tags/anti-virus>Anti virus</a>
@@ -680,19 +689,10 @@ GitHub
 <a href=/tags/bareos>Bareos</a>
 </li>
 <li class=tagcloud-of-blogroll-item>
-<a href=/tags/centos>Centos</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
 <a href=/tags/chrony>Chrony</a>
 </li>
 <li class=tagcloud-of-blogroll-item>
 <a href=/tags/css>Css</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/emoji>Emoji</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/html>HTML</a>
 </li>
 </ul>
 </div>

@@ -753,13 +753,12 @@ WEICLOUD\chw : WEICLOUD\domain^users WEICLOUD\domain^admins WEICLOUD\aa_users WE
 
 
 
-
-
-
+### Detect the Desktop Environment
+```
 How to Detect the Desktop Environment in Linux Command Line
 ps -e | grep -E -i "xfce|kde|gnome"
 
 # or
 # 在 x-windows 環境下才有用
 echo $XDG_CURRENT_DESKTOP
-
+```

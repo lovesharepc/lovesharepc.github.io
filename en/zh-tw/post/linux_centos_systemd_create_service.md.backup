@@ -1,0 +1,25 @@
+---
+title: "linux centos systemd create service"
+description: "日常紀錄"
+date: "2022-02-21"
+author: "owan"
+tags:
+- linux
+- centos
+- rocky linux
+- systemd
+categories:
+- linux
+- centos
+- rocky linux
+- systemd
+toc: "true"
+---
+
+
+有些程式沒有包裝成 service 執行以此篇為記錄
+
+
+![](assets/cat_working.jpg)
+
+<!--more-->
