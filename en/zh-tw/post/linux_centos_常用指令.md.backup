@@ -1,0 +1,765 @@
+---
+title: "linux centos 常用指令"
+description: "日常紀錄"
+date: "2022-02-21"
+author: "owan"
+tags:
+- linux
+- centos
+- rocky linux
+categories:
+- linux
+- centos
+- rocky linux
+toc: "true"
+---
+
+
+![](linux_centos_常用指令/cat_linux.jpg)
+紀錄 linux 指令
+<!--more-->
+## 監控類
+ ### iostat 
+
+```
+dnf install sysstat
+
+
+[root@localhost local]# iostat -hx 10
+Linux 4.18.0-358.el8.x86_64 (localhost.localdomain)     01/17/2022      _x86_64_        (2 CPU)
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0.1%    0.0%    0.2%    0.0%    0.0%   99.7%
+
+     r/s     w/s     rkB/s     wkB/s   rrqm/s   wrqm/s  %rrqm  %wrqm r_await w_await aqu-sz rareq-sz wareq-sz  svctm  %util Device
+    0.04    0.12      1.6k     39.2k     0.00     0.02   0.7%  16.4%    1.56  102.91   0.01    40.7k   324.4k   2.62   0.0% sda
+    0.04    0.12      1.4k     39.2k     0.00     0.00   0.0%   0.0%    1.38   60.94   0.01    39.9k   314.8k   2.06   0.0% dm-0
+    0.00    0.00      0.0k      0.0k     0.00     0.00   0.0%   0.0%    0.51   49.91   0.00    15.3k     4.0k   1.66   0.0% dm-1
+
+```
+
+### 網路流量
+```
+[root@localhost local]# sar -n DEV 1
+Linux 4.18.0-358.el8.x86_64 (localhost.localdomain)     01/17/2022      _x86_64_        (2 CPU)
+
+11:16:10 AM     IFACE   rxpck/s   txpck/s    rxkB/s    txkB/s   rxcmp/s   txcmp/s  rxmcst/s   %ifutil
+11:16:11 AM        lo      0.00      0.00      0.00      0.00      0.00      0.00      0.00      0.00
+11:16:11 AM    ens192     18.00      1.00      1.23      0.10      0.00      0.00      0.00      0.00
+
+
+
+# 網卡速度
+root@pve1:~# ethtool ens192
+Settings for ens192:
+Supported ports: [ TP ]
+Supported link modes:   1000baseT/Full
+                        10000baseT/Full
+Supported pause frame use: No
+Supports auto-negotiation: No
+Advertised link modes:  Not reported
+Advertised pause frame use: No
+Advertised auto-negotiation: No
+Speed: 10000Mb/s
+Duplex: Full
+Port: Twisted Pair
+PHYAD: 0
+Transceiver: internal
+Auto-negotiation: off
+MDI-X: Unknown
+Supports Wake-on: uag
+Wake-on: d
+Link detected: yes
+
+
+root@pve1:~# cat /sys/class/net/ens192/speed
+10000
+```
+
+
+## 帳號控制
+```
+chage  (帳號原則)
+
+
+usermod  unlock 
+```
+
+
+
+## Repository
+```
+# third-party (httpd 、 nginx)
+https://codeit.guru/en_US/
+
+#  EPEL (Extra Packages for Enterprise Linux)
+yum -y install epel-release
+
+# for centos 8 stream
+dnf install epel-next-release
+```
+
+
+## 多工指令
+```
+# Move Running Command in Background (pause)
+CTRL + Z
+
+# type bg command on terminal
+root@tecadmin:~$ bg
+
+# list all jobs running
+root@tecadmin:~$ jobs
+[1]+  Running                 tar czf log-backup.tar.gz /var/log &
+
+#Move Background Commands to Foreground (Terminal)
+root@tecadmin:~$ fg 1
+
+#running in backguard
+tar -czf home.tar.gz . &
+jobs
+```
+
+## 時間
+timezone
+```
+# 查詢目前設定
+timedatectl
+
+# 查詢可用時區
+timedatectl list-timezones | grep Asia
+
+# 設定時區
+sudo timedatectl set-timezone Asia/Taipei
+
+```
+
+NTP
+```
+NTP 
+yum install chrony  -y
+
+nano /etc/chrony.conf
+
+# as NTP server
+allow 0.0.0.0/0
+
+# as NTP client
+server <IP address of the NTP server> iburst
+maxdistance 16.0
+
+systemctl restart chronyd
+
+firewall-cmd --zone=public --add-port=123/udp --permanent
+
+chronyc makestep
+
+# 確認 NTP 狀態
+chronyc tracking
+
+[root@libreNMS ~]#  chronyc sources -v
+MS Name/IP address         Stratum Poll Reach LastRx Last sample
+===============================================================================
+^+ 242-184-213-49.tinp.net.>     2   6    17     3   -192us[ -214us] +/- 6802us
+^- 103.147.23.5                  2   6    17     2  -4595us[-4617us] +/-   14ms
+^- time.cloudflare.com           3   6    17     3   +432us[ +484us] +/-   58ms
+^* twtpe2-ntp-002.aaplimg.c>     1   6    17     1  +1188us[+1166us] +/- 3527us
+```
+
+## Mount 
+cifs SMB
+```
+yum install cifs-utils
+
+
+mount -t cifs -o username=chw,password=<win_share_password>,domain=<win_domain>,vers=3.0 //10.201.100.49/iso /cifs
+
+
+
+## /etc/fstab
+//192.168.56.1/testdir /mnt/win cifs rw,suid,dir_mode=0777,file_mode=0777,username=帳號,password=密碼 0 0
+```
+
+## du 查空間
+```
+# 目錄大小
+du */ -sh
+sudo du -hs .[a-z]* va* *
+
+
+#磁碟大小
+df -Th
+#磁碟 map
+lsblk
+#磁碟 ID
+blkid
+```
+
+## yum
+```
+# 找版本
+dnf search openjdk
+yum  group
+[root@ELK27 pa_config]# yum grouplist
+Last metadata expiration check: 0:01:55 ago on Sun 08 Aug 2021 11:03:05 AM CST.
+Available Environment Groups:
+   Server with GUI
+   Server
+   Workstation
+   Virtualization Host
+   Custom Operating System
+Installed Environment Groups:
+   Minimal Install
+Available Groups:
+   Container Management
+   .NET Core Development
+   RPM Development Tools
+   Development Tools
+   Graphical Administration Tools
+   Headless Management
+   Legacy UNIX Compatibility
+   Network Servers
+   Scientific Support
+   Security Tools
+   Smart Card Support
+   System Tools
+
+
+
+[root@ELK27 pa_config]# yum groups info "Minimal Install"
+Last metadata expiration check: 0:03:19 ago on Sun 08 Aug 2021 11:03:05 AM CST.
+Environment Group: Minimal Install
+ Description: Basic functionality.
+ Mandatory Groups:
+   Core
+ Optional Groups:
+   Guest Agents
+   Standard
+
+
+[root@ELK27 pa_config]# yum groups info "Guest Agents"
+Last metadata expiration check: 0:05:47 ago on Sun 08 Aug 2021 11:03:05 AM CST.
+
+Group: Guest Agents
+ Description: Agents used when running under a hypervisor.
+ Mandatory Packages:
+   hyperv-daemons
+   open-vm-tools
+   qemu-guest-agent
+```
+
+
+## 其他
+### tcpdump
+> sudo tcpdump -ni ens160
+
+
+### Proxy
+```
+PROXY
+export http_proxy=http://172.28.11.112:3128/
+echo "http_proxy=http://172.28.11.112:3128/" > /etc/environment
+
+
+
+Linux 使用全域 Proxy 上網 (with only apt/yum)
+2016-12-16 CENTOS, UBUNTU
+這一兩天遇到 Server 必須要用 HTTP Proxy 才能上網，順手紀錄一下如何設定
+ 
+使用 export http_proxy / https_proxy 的方式代理
+ 
+全域變數 http_proxy / https_proxy
+1    # 暫時生效，重開機proxy就會失效
+2    $ export http_proxy=http://proxy.example.com
+3     
+4    # https用https_proxy
+5    $ export https_proxy=https://proxy.example.com
+ 
+設定永久變數
+• 僅在目前使用者
+永久變數可以寫在登入後會讀取的 ~/.bash_profile , ~/.bashrc
+1    $ echo "export http_proxy=http://proxy.example.com" >> ~/.bashrc
+2    $ echo "export https_proxy=https://proxy.example.com" >> ~/.bashrc
+ 
+• 針對所有使用者
+如果要讓這台主機的所有 http / https 都走 proxy 就設定在 /etc/profile
+1    $ echo "export http_proxy=http://proxy.example.com" >> /etc/profile
+2    $ echo "export https_proxy=https://proxy.example.com" >> /etc/profile
+ 
+• 僅 apt or yum 使用時才用 proxy
+
+
+# YUM setting
+$ vim /etc/yum.conf
+proxy=http://proxy.example.com
+
+# APT setting
+$ vim /etc/apt/apt.conf
+Acquire::http::Proxy "http://proxy.example.com";
+
+如果需要驗證的格式為
+1    # 變數=http://使用者帳號:密碼@伺服器位址:端口
+2    http_proxy=http://user:pass@proxy.example.com:80
+ 
+https 以此類推。
+
+```
+來自 <https://shazi.info/linux-%E4%BD%BF%E7%94%A8%E5%85%A8%E5%9F%9F-proxy-%E4%B8%8A%E7%B6%B2-with-only-aptyum/> 
+
+
+
+
+### 系統版本
+看 kernel version
+> cat /proc/version
+> uname -a
+
+
+System version
+> cat /etc/os-release
+
+
+
+
+
+
+
+### openjdk
+
+```
+cd /usr/lib/
+
+wget  https://download.java.net/java/GA/jdk14.0.1/664493ef4a6946b186ff29eb326336a2/7/GPL/openjdk-14.0.1_linux-x64_bin.tar.gz
+tar xvf openjdk-14*.tar.gz && rm -f openjdk-14*.tar.gz
+
+
+
+echo "JAVA_HOME=/usr/lib/jdk-14.0.1/" >> ~/.bashrc
+echo "PATH=$PATH:$JAVA_HOME/bin/" >> ~/.bashrc
+source ~/.bashrc
+
+reboot
+
+
+java -version
+```
+
+
+### dnsperf
+```
+[root@wiznote dnsperf-2.4.0]# sudo dnf copr enable @dnsoarc/dnsperf
+
+wget https://download-ib01.fedoraproject.org/pub/epel/8/Everything/x86_64/Packages/c/ck-0.6.0-9.el8.x86_64.rpm
+
+
+
+[root@wiznote dnsperf-2.4.0]# sudo dnf install dnsperf
+
+[root@elk-uat-old dnsperf]# dnsperf -h
+DNS Performance Testing Tool
+Version 2.3.4
+
+
+Usage: dnsperf [-f family] [-m mode] [-s server_addr] [-p port]
+               [-a local_addr] [-x local_port] [-d datafile] [-c clients]
+               [-T threads] [-n maxruns] [-l timelimit] [-b buffer_size]
+               [-t timeout] [-e] [-E code:value] [-D]
+               [-y [alg:]name:secret] [-q num_queries] [-Q max_qps]
+               [-S stats_interval] [-u] [-v] [-h]
+  -f address family of DNS transport, inet or inet6 (default: any)
+  -m set transport mode: udp, tcp or tls (default: udp)
+  -s the server to query (default: 127.0.0.1)
+  -p the port on which to query the server (default: udp/tcp 53 or tls 853)
+  -a the local address from which to send queries
+  -x the local port from which to send queries (default: 0)
+  -d the input data file (default: stdin)
+  -c the number of clients to act as
+  -T the number of threads to run
+  -n run through input at most N times
+  -l run for at most this many seconds
+  -b socket send/receive buffer size in kilobytes
+  -t the timeout for query completion in seconds (default: 5)
+  -e enable EDNS 0
+  -E send EDNS option
+  -D set the DNSSEC OK bit (implies EDNS)
+  -y the TSIG algorithm, name and secret
+  -q the maximum number of queries outstanding (default: 100)
+  -Q limit the number of queries per second
+  -S print qps statistics every N seconds
+  -u send dynamic updates instead of queries
+  -v verbose: report each query and additional information to stdout
+  -h print this help
+
+
+#####
+wget https://www.dns-oarc.net/files/dnsperf/data/queryfile-example-10million-201202.gz
+tar xvf queryfile-example-10million-201202.gz
+gzip -d  queryfile-example-10million-201202.gz
+#####
+
+### 每秒 10000 次查詢 維持 60 秒
+dnsperf -s 10.201.102.2 -d queryfile-example-10million-201202 -q 10000 -l 60
+```
+
+
+
+### firewall-cmd 
+```
+#新增規則
+firewall-cmd --permanent --add-service=ftp
+firewall-cmd --permanent --add-port=3690/tcp
+
+
+#列出規則
+firewall-cmd --list-all
+
+
+#套用規則
+firewall-cmd --reload
+設定 IP
+cd /etc/sysconfig/network-scripts
+```
+
+
+
+
+### LVM 修復
+```
+
+Rescue Mode 中修復
+vgscan 
+vgchange -a y centos
+xfs_repair -L  /dev/centos/root
+mkdir /mnt/test && mount /dev/centos/root /mnt/test
+```
+
+
+
+### local domain Resolve 
+
+```
+sudo vi /etc/nsswitch.conf
+hosts:          files dns myhostname
+
+
+sudo vi /etc/systemd/resolved.conf
+
+[Resolve]
+Domains=weicloud.local
+
+
+
+relink
+sudo ln -sf /run/systemd/resolve/resolv.conf /etc/resolv.conf
+```
+
+
+### SAMBA
+```
+yum install samba samba-client samba-common 
+
+# diable selinux
+firewall-cmd --permanent --add-service=samba
+sed -i s/SELINUX=enforcing/SELINUX=disabled/g /etc/selinux/config
+
+
+
+
+cd /etc/samba/
+mv smb.conf smb.conf.bak
+
+
+
+
+vi smb.conf
+[global]
+    workgroup = MYGROUP
+    server string = Samba Server Version %v
+    security = USER
+    map to guest = Bad User
+    log file = /var/log/samba/log.%m
+    max log size = 50
+    idmap config * : backend = tdb
+    cups options = raw
+
+# User defined share 
+[public]
+    path = /home/public
+    read only = No
+    guest ok = Yes
+    browseable = Yes 
+    public = Yes
+
+
+cd /home
+mkdir public
+
+We change the owner of the folder and its permissions:
+chown nobody:nobody public/
+chmod 777 public/
+
+Enabling the needed services and starting them.
+systemctl enable smb.service
+systemctl enable nmb.service
+systemctl restart smb.service
+systemctl restart nmb.service
+
+Allowing samba through our firewall.
+firewall-cmd --permanent --add-service=samba
+firewall-cmd --reload
+
+
+mount
+mount -t cifs -o username=<your_username>,password=<your_password> //server/share /mountpoint
+``` 
+
+### redhat 5.9 rsyslog
+```
+install rsyslog
+mkdir iso
+mount /dev/cdrom /iso
+
+rpm -ivh ./rsyslog-3.22.1-7.el5.x86_64.rpm
+service syslog stop
+service rsyslog start
+chkconfig rsyslog on
+chkconfig syslog off
+```
+
+### Aliases
+```
+nano ~/.bashrc
+
+/etc/bash.bashrc
+alias bitfusion4G="bitfusion run -n 1 -m 4096"
+```
+
+
+### screen
+```
+yum install epel-release
+yum install screen
+
+
+screen
+screen -r
+
+
+https://blog.gtwang.org/linux/screen-command-examples-to-manage-linux-terminals/
+```
+
+
+
+
+### coreDNS  server
+```
+https://github.com/coredns/coredns/releases/tag/v1.8.3
+wget https://github.com/coredns/coredns/releases/download/v1.8.3/coredns_1.8.3_linux_amd64.tgz
+tar zxvf coredns_*
+
+nano Corefile
+
+.:53 {
+    forward . 8.8.8.8 9.9.9.9
+    log
+    errors
+}
+# Load hosts file inlined in Corefile.
+# domain:example.com 、weicloud.local
+1.hosts adcmuh.org.tw in-addr.arpa ip6.arpa {
+    hosts {
+        10.17.1.100 sfo-m01-vc01.adcmuh.org.tw
+        fallthrough in-addr.arpa ip6.arpa
+    }
+}
+```
+
+
+
+
+
+
+### MTU test
+> ping -M do -s 8972 <host> 
+> 1452 正常 
+
+
+
+
+### webmin
+```
+nano /etc/yum.repos.d/webmin.repo
+[Webmin]
+name=Webmin Distribution Neutral
+#baseurl=https://download.webmin.com/download/yum
+mirrorlist=https://download.webmin.com/download/yum/mirrorlist
+enabled=1
+安裝
+wget https://download.webmin.com/jcameron-key.asc
+rpm --import jcameron-key.asc
+yum -y install webmin 
+```
+
+
+
+
+
+
+### iSCSI
+```
+target = server
+initiator = client
+
+
+server 
+https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/storage_administration_guide/online-storage-management#osm-target-setup
+yum install -y targetcli
+systemctl start target.service
+systemctl enable target.service
+
+[root@iscsi ~]# targetcli
+targetcli shell version 2.1.53
+Copyright 2011-2013 by Datera, Inc and others.
+For help on commands, type 'help'.
+
+/> ls
+o- / ......................................................................................................................... [...]
+  o- backstores .............................................................................................................. [...]
+  | o- block .................................................................................................. [Storage Objects: 0]
+  | o- fileio ................................................................................................. [Storage Objects: 0]
+  | o- pscsi .................................................................................................. [Storage Objects: 0]
+  | o- ramdisk ................................................................................................ [Storage Objects: 0]
+  o- iscsi ............................................................................................................ [Targets: 0]
+  o- loopback ......................................................................................................... [Targets: 0]
+/> backstores/fileio create test /tmp/test.img 10G
+Created fileio test with size 10737418240
+/> iscsi/ create
+Created target iqn.2003-01.org.linux-iscsi.iscsi.x8664:sn.6f68b6498ffb.
+Created TPG 1.
+Global pref auto_add_default_portal=true
+Created default portal listening on all IPs (0.0.0.0), port 3260.
+/> cd iscsi/iqn.2003-01.org.linux-iscsi.iscsi.x8664:sn.6f68b6498ffb/tpg1/
+/iscsi/iqn.20...b6498ffb/tpg1> luns/ create /backstores/fileio/test
+Created LUN 0.
+/iscsi/iqn.20...b6498ffb/tpg1> set attribute generate_node_acls=1
+Parameter generate_node_acls is now '1'.
+/iscsi/iqn.20...b6498ffb/tpg1> set attribute demo_mode_write_protect=0
+Parameter demo_mode_write_protect is now '0'.
+/iscsi/iqn.20...b6498ffb/tpg1> exit
+Global pref auto_save_on_exit=true
+Configuration saved to /etc/target/saveconfig.json
+```
+
+
+
+
+
+
+
+### Rsync
+```
+# 無認證
+yum install rsync
+
+# config
+ [ftp]
+        path = /home/ftp
+        comment = ftp export area
+        read only = no
+
+
+mkdir /home/ftp
+chown /home/ftp
+sysstemctl start rsyncd
+sysstemctl enable rsyncd
+
+
+# 語法
+rsync -arvzh /home/joseph/public/www  SERVER_IP_ADDRESS::ftp 
+
+
+
+
+認證版
+ [ftp]
+        uid = nobody
+        gid = nobody
+        path = /home/ftp
+        comment = ftp export area
+        read only = no
+        auth users = ftpuser
+        secrets file = /home/ftpuser/rsync/rsync.secret
+
+
+mkdir -p /home/ftpuser/rsync
+nano /home/ftpuser/rsync/rsync.secret
+ftpuser:PASSWORD
+
+###################################
+# client
+# 以 root 建立密碼檔 vi /home/rsyncpasswd
+!QAZ2wsx#EDC
+
+# 修改權限 chmod 600 /home/rsyncpasswd
+# 測試傳輸
+rsync -arvzh DB log  ftpuser@10.201.102.24::ftp  --password-file=/home/rsyncpasswd
+
+
+# 定時執行 vi /var/spool/cron/crontabs/root
+# 新增
+* 1 * * * rsync -arvzh DB log  ftpuser@10.201.102.24::ftp  --password-file=/home/rsyncpasswd
+```
+
+
+
+
+
+
+### tar 自動建立日期
+```
+#backup VM
+#ap1
+tar zcfP \
+/SystemBackup/image/IBM_SAS/vm-106-disk-0_$(date +%F).tar.gz \
+/IBM_SAS/images/106/vm-106-disk-0.qcow2 --warning=none
+```
+
+
+
+
+
+
+### sudo
+```
+# add sudo 權限
+adduser username
+passwd username
+usermod -aG wheel username
+
+## or 
+# 查詢所屬 group
+# groups <user>
+WEICLOUD\chw@testlinux1 ~]$ groups  WEICLOUD\\chw
+WEICLOUD\chw : WEICLOUD\domain^users WEICLOUD\domain^admins WEICLOUD\aa_users WEICLOUD\sudousers WEICLOUD\denied^rodc^password^replication^group
+
+# edit /etc/sudoers
+# 新增
+%WEICLOUD\\domain^users  ALL=(ALL)       ALL
+```
+
+### smartctl 查看硬碟資訊
+> smartctl -i /dev/sdb
+
+
+
+
+
+
+
+How to Detect the Desktop Environment in Linux Command Line
+ps -e | grep -E -i "xfce|kde|gnome"
+
+# or
+# 在 x-windows 環境下才有用
+echo $XDG_CURRENT_DESKTOP
+

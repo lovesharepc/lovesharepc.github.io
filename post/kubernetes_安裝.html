@@ -1,0 +1,840 @@
+<!doctype html><html lang=zh-tw dir=content/zh-tw>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
+<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
+<meta http-equiv=content-security-policy content="upgrade-insecure-requests">
+<title> kubernetes 安裝紀錄 - 補覺鳴詩 </title>
+<meta name=keywords content="infra">
+<meta name=author content="Owan">
+<meta property="og:title" content="kubernetes 安裝紀錄">
+<meta property="og:site_name" content="補覺鳴詩">
+<meta property="og:image" content="/img/author.jpg">
+<meta name=title content="kubernetes 安裝紀錄 - 補覺鳴詩">
+<meta name=description content="K8S">
+<link rel="shortcut icon" href=/img/favicon.ico>
+<link rel=apple-touch-icon href=/img/apple-touch-icon.png>
+<link rel=apple-touch-icon-precomposed href=/img/apple-touch-icon.png>
+<link href=//cdn.bootcdn.net/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css rel=stylesheet type=text/css>
+<link href=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.css rel=stylesheet>
+<link href=/css/main.css rel=stylesheet type=text/css>
+<link href=/css/syntax.css rel=stylesheet type=text/css>
+</head>
+<body itemscope itemtype=http://schema.org/WebPage lang=zh-hans>
+<div class="container one-collumn sidebar-position-left page-home">
+<div class=headband></div>
+<header id=header class=header itemscope itemtype=http://schema.org/WPHeader>
+<div class=header-inner> <div class=site-brand-container>
+<div class=site-nav-toggle>
+<div class=toggle role=button style=opacity:1;top:0>
+<span class=toggle-line></span>
+<span class=toggle-line></span>
+<span class=toggle-line></span>
+</div>
+</div>
+<div class=site-meta>
+<div class=multi-lang-switch>
+<i class="fa fa-fw fa-language" style=margin-right:5px></i>
+<a class=lang-link id=zh-tw href=#>正體中文</a>
+</div>
+<div class=custom-logo-site-title>
+<a href=/ class=brand rel=start>
+<span class=logo-line-before><i></i></span>
+<span class=site-title>補覺鳴詩</span>
+<span class=logo-line-after><i></i></span>
+</a>
+</div>
+<p class=site-subtitle>學海無涯</p>
+</div>
+<div class=site-nav-right>
+<div class="toggle popup-trigger" style=opacity:1;top:0>
+<i class="fa fa-search fa-fw fa-lg"></i>
+</div>
+</div>
+</div>
+<nav class=site-nav>
+<ul id=menu class=menu>
+<li class=menu-item>
+<a href=/ rel=section>
+<i class="menu-item-icon fa fa-fw fa-home"></i> <br>首頁
+</a>
+</li>
+<li class=menu-item>
+<a href=/post rel=section>
+<i class="menu-item-icon fa fa-fw fa-archive"></i> <br>archive
+</a>
+</li>
+<li class=menu-item>
+<a href=/about.html rel=section>
+<i class="menu-item-icon fa fa-fw fa-user"></i> <br>關於我
+</a>
+</li>
+<li class="menu-item menu-item-search">
+<a href=javascript:; class=popup-trigger> <i class="menu-item-icon fa fa-search fa-fw"></i> <br> 搜尋</a>
+</li>
+</ul>
+<div class=site-search>
+<div class="popup search-popup local-search-popup">
+<div class="local-search-header clearfix">
+<span class=search-icon><i class="fa fa-search"></i> </span>
+<span class=popup-btn-close><i class="fa fa-times-circle"></i></span>
+<div class=local-search-input-wrapper>
+<input autocomplete=off placeholder=搜索關鍵字... spellcheck=false type=text id=local-search-input autocapitalize=none autocorrect=off>
+</div>
+</div>
+<div id=local-search-result></div>
+</div>
+</div>
+</nav>
+</div>
+</header>
+<main id=main class=main>
+<div class=main-inner>
+<div class=content-wrap>
+<div id=content class=content>
+<section id=posts class=posts-expand>
+<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
+<header class=post-header>
+<h1 class=post-title itemprop="name headline">
+<a class=post-title-link href=https://lovesharepc.github.io/post/kubernetes_%E5%AE%89%E8%A3%9D.html itemprop=url>
+kubernetes 安裝紀錄
+</a>
+</h1>
+<div class=post-meta>
+<span class=post-time>
+<i class="fa fa-calendar-o fa-fw"></i>
+<span class=post-meta-item-text>時間：</span>
+<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2022-02-21">
+2022-02-21
+</time>
+</span>
+<span class=post-category>
+&nbsp; | &nbsp;
+<i class="fa fa-folder-o fa-fw"></i>
+<span class=post-meta-item-text>分類：</span>
+<span itemprop=about itemscope itemtype=https://schema.org/Thing>
+<a href=/categories/k8s itemprop=url rel=index style=text-decoration:underline>
+<span itemprop=name>K8S</span>
+</a>
+&nbsp;
+</span>
+</span>
+<span>
+|
+<i class="fa fa-file-word-o fa-fw"></i>
+<span class=post-meta-item-text>字數：</span>
+<span class=leancloud-world-count>1537 字</span>
+</span>
+<span>
+|
+<i class="fa fa-eye fa-fw"></i>
+<span class=post-meta-item-text>閱讀：</span>
+<span class=leancloud-view-count>4分鐘</span>
+</span>
+<span id=/post/kubernetes_%E5%AE%89%E8%A3%9D.html class=leancloud_visitors data-flag-title="kubernetes 安裝紀錄">
+|
+<i class="fa fa-binoculars fa-fw"></i>
+<span class=post-meta-item-text>閱讀次數：</span>
+<span class=leancloud-visitors-count></span>
+</span>
+</div>
+</header>
+<div class=post-body itemprop=articleBody>
+<p>紀錄 K8S 安裝相關</p>
+<h2 id=準備-ansible>準備 ansible</h2>
+<p>ansible 可以讓重複工作以腳本方式運行</p>
+<p><a href=https://computingforgeeks.com/install-kubernetes-cluster-on-rocky-linux-with-kubeadm-crio/>https://computingforgeeks.com/install-kubernetes-cluster-on-rocky-linux-with-kubeadm-crio/</a></p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback># Prepare base Server for Kubernetes installation
+sudo yum -y install git wget curl vim bash-completion python3.9
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+python3.9 -m pip install ansible --user
+root/.local/bin/
+
+
+# 設定環境變數
+cat &lt;&lt;EOF&gt;&gt; ~/.bashrc
+export PATH=$PATH:$HOME/.local/bin 
+EOF
+
+source .bashrc
+
+
+# 檢查版本
+[root@k8s-mgmt ~]# ansible --version
+ansible [core 2.12.2]
+  config file = None
+  configured module search path = [&#39;/root/.ansible/plugins/modules&#39;, &#39;/usr/share/ansible/plugins/modules&#39;]
+  ansible python module location = /root/.local/lib/python3.9/site-packages/ansible
+  ansible collection location = /root/.ansible/collections:/usr/share/ansible/collections
+  executable location = /root/.local/bin/ansible
+  python version = 3.9.6 (default, Nov  9 2021, 13:31:27) [GCC 8.5.0 20210514 (Red Hat 8.5.0-3)]
+  jinja version = 3.0.3
+  libyaml = True
+
+
+pip install netaddr
+pip install Jinja2
+
+
+</code></pre></div><p>準備 rocky linux 8</p>
+<h2 id=安裝>安裝</h2>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=color:#080;font-style:italic>#set the system hostname and update DNS in your /etc/hosts</span>
+
+cat <span style=color:#b44>&lt;&lt;EOF&gt;&gt; /etc/hosts
+</span><span style=color:#b44>192.168.5.141 k8s-1
+</span><span style=color:#b44>192.168.5.142 k8s-2
+</span><span style=color:#b44>192.168.5.143 k8s-3
+</span><span style=color:#b44>192.168.5.200 k8s-endpoint.localdomain
+</span><span style=color:#b44>EOF</span>
+
+<span style=color:#080;font-style:italic># disable swap</span>
+
+sudo sed -i <span style=color:#b44>&#39;/swap/d&#39;</span> /etc/fstab
+
+<span style=color:#080;font-style:italic># install package</span>
+
+yum -y install git wget curl vim bash-completion curl jq tar iproute-tc
+
+<span style=color:#080;font-style:italic># config  SELinux</span>
+
+sed -i --follow-symlinks <span style=color:#b44>&#39;s/SELINUX=enforcing/SELINUX=permissive/g&#39;</span> /etc/sysconfig/selinux
+reboot
+
+<span style=color:#080;font-style:italic># firewall</span>
+
+firewall-cmd --permanent --add-port<span style=color:#666>=</span>6443/tcp
+firewall-cmd --permanent --add-port<span style=color:#666>=</span>2379-2380/tcp
+firewall-cmd --permanent --add-port<span style=color:#666>=</span>10250/tcp
+firewall-cmd --permanent --add-port<span style=color:#666>=</span>10251/tcp
+firewall-cmd --permanent --add-port<span style=color:#666>=</span>10252/tcp
+firewall-cmd --permanent --add-port<span style=color:#666>=</span>10255/tcp
+firewall-cmd --reload
+
+<span style=color:#080;font-style:italic># containerd</span>
+
+cat <span style=color:#b44>&lt;&lt;EOF | sudo tee /etc/modules-load.d/containerd.conf
+</span><span style=color:#b44>overlay
+</span><span style=color:#b44>br_netfilter
+</span><span style=color:#b44>EOF</span>
+
+sudo modprobe overlay
+sudo modprobe br_netfilter
+
+<span style=color:#080;font-style:italic># Setup required sysctl params, these persist across reboots.</span>
+
+cat <span style=color:#b44>&lt;&lt;EOF | sudo tee /etc/sysctl.d/99-kubernetes-cri.conf
+</span><span style=color:#b44>net.bridge.bridge-nf-call-iptables  = 1
+</span><span style=color:#b44>net.ipv4.ip_forward                 = 1
+</span><span style=color:#b44>net.bridge.bridge-nf-call-ip6tables = 1
+</span><span style=color:#b44>EOF</span>
+
+<span style=color:#080;font-style:italic># Apply sysctl params without reboot</span>
+
+sudo sysctl --system
+
+dnf config-manager --add-repo  https://download.docker.com/linux/centos/docker-ce.repo
+yum install -y containerd.io
+
+sudo mkdir -p /etc/containerd
+containerd config default | sudo tee /etc/containerd/config.toml
+sudo systemctl restart containerd
+
+nano /etc/containerd/config.toml
+<span style=color:#666>[</span>plugins.<span style=color:#b44>&#34;io.containerd.grpc.v1.cri&#34;</span>.containerd.runtimes.runc<span style=color:#666>]</span>
+  ...
+  <span style=color:#666>[</span>plugins.<span style=color:#b44>&#34;io.containerd.grpc.v1.cri&#34;</span>.containerd.runtimes.runc.options<span style=color:#666>]</span>
+    <span style=color:#b8860b>SystemdCgroup</span> <span style=color:#666>=</span> <span style=color:#a2f>true</span>
+
+sudo systemctl <span style=color:#a2f>enable</span> --now   containerd
+
+<span style=color:#080;font-style:italic># install kubernetes</span>
+
+cat <span style=color:#b44>&lt;&lt;EOF | sudo tee /etc/yum.repos.d/kubernetes.repo
+</span><span style=color:#b44>[kubernetes]
+</span><span style=color:#b44>name=Kubernetes
+</span><span style=color:#b44>baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-\$basearch
+</span><span style=color:#b44>enabled=1
+</span><span style=color:#b44>gpgcheck=1
+</span><span style=color:#b44>repo_gpgcheck=1
+</span><span style=color:#b44>gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+</span><span style=color:#b44>exclude=kubelet kubeadm kubectl
+</span><span style=color:#b44>EOF</span>
+
+sudo yum install -y kubelet kubeadm kubectl --disableexcludes<span style=color:#666>=</span>kubernetes
+
+<span style=color:#080;font-style:italic># config for coredns</span>
+
+vi /etc/sysconfig/kubelet
+<span style=color:#b8860b>KUBELET_EXTRA_ARGS</span><span style=color:#666>=</span><span style=color:#b44>&#34;--fail-swap-on=false&#34;</span>
+
+sudo systemctl <span style=color:#a2f>enable</span> --now kubelet
+</code></pre></div><h3 id=init-單節點>init 單節點</h3>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>建立第一個 master node
+kubeadm init --pod-network-cidr=172.16.0.0/16
+
+# install cni
+wget https://docs.projectcalico.org/manifests/tigera-operator.yaml 
+wget https://docs.projectcalico.org/manifests/custom-resources.yaml
+
+# 編輯 custom-resources.yaml  cidr: 部分
+kubectl create -f https://docs.projectcalico.org/manifests/tigera-operator.yaml 
+kubectl create -f https://docs.projectcalico.org/manifests/custom-resources.yaml
+
+
+# 確認狀態
+
+
+
+
+
+#取消前面動作
+#kubeadm reset
+
+
+</code></pre></div><h3 id=init-多節點>init 多節點</h3>
+<p>高可用性 kube-vip
+Generating a Manifest</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>export VIP=192.168.5.200
+export INTERFACE=ens160
+
+# Get the latest version of the kube-vip 
+KVVERSION=$(curl -sL https://api.github.com/repos/kube-vip/kube-vip/releases | jq -r &#34;.[0].name&#34;)
+
+alias kube-vip=&#34;ctr run --rm --net-host ghcr.io/kube-vip/kube-vip:$KVVERSION vip /kube-vip&#34;
+
+ctr image pull ghcr.io/kube-vip/kube-vip:$KVVERSION
+
+# 如有 kubeadm reset  
+# 此步須重做
+# 建立 manifest 
+kube-vip manifest pod \
+    --interface $INTERFACE \
+    --address $VIP \
+    --controlplane \
+    --services \
+    --arp \
+    --leaderElection | tee /etc/kubernetes/manifests/kube-vip.yaml
+  
+  
+# 建立 cluster
+kubeadm init --control-plane-endpoint &#34;k8s-endpoint.localdomain:6443&#34; --upload-certs
+
+kubeadm init --control-plane-endpoint 192.168.5.200:6443 --pod-network-cidr=172.16.0.0/16 --upload-certs
+
+
+# install cni
+wget https://docs.projectcalico.org/manifests/tigera-operator.yaml 
+wget https://docs.projectcalico.org/manifests/custom-resources.yaml
+
+# 編輯 custom-resources.yaml  cidr: 部分
+kubectl create -f https://docs.projectcalico.org/manifests/tigera-operator.yaml 
+kubectl create -f https://docs.projectcalico.org/manifests/custom-resources.yaml
+</code></pre></div><p>建立完成</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>  mkdir -p $HOME/.kube
+  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+Alternatively, if you are the root user, you can run:
+
+  export KUBECONFIG=/etc/kubernetes/admin.conf
+
+You should now deploy a pod network to the cluster.
+Run &#34;kubectl apply -f [podnetwork].yaml&#34; with one of the options listed at:
+  https://kubernetes.io/docs/concepts/cluster-administration/addons/
+
+You can now join any number of control-plane nodes by copying certificate authorities
+and service account keys on each node and then running the following as root:
+
+  kubeadm join 192.168.5.200:6443 --token fzxw27.lnfylsxol4m2cdby \
+        --discovery-token-ca-cert-hash sha256:5f331fcdfcfe7c66bdfe8400be35d224494de1eebd51f0da90a69a345b9856e5 \
+        --control-plane
+
+Then you can join any number of worker nodes by running the following on each as root:
+
+kubeadm join 192.168.5.200:6443 --token fzxw27.lnfylsxol4m2cdby \
+        --discovery-token-ca-cert-hash sha256:5f331fcdfcfe7c66bdfe8400be35d224494de1eebd51f0da90a69a345b9856e5
+
+</code></pre></div><h2 id=trobleshoot>trobleshoot</h2>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback># node STATUS NotReady
+systemctl status kubelet
+
+systemctl status kubelet
+journalctl -xeu kubelet
+kubectl get nodes
+kubectl get pode -A
+kubectl logs -n tigera-operator -l k8s-app=tigera-operator
+# cleanup
+kubectl config get-clusters
+kubectl config delete-cluster kubernetes
+
+</code></pre></div><h2 id=其他資料>其他資料</h2>
+<p>高可用性 (方法2)
+<a href=https://github.com/kubernetes/kubeadm/blob/main/docs/ha-considerations.md#options-for-software-load-balancing>https://github.com/kubernetes/kubeadm/blob/main/docs/ha-considerations.md#options-for-software-load-balancing</a></p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>dnf install keepalived haproxy -y
+
+# keepalived
+mv /etc/keepalived/keepalived.conf /etc/keepalived/keepalived.conf.old
+nano /etc/keepalived/keepalived.conf
+
+# 官方 sample
+! /etc/keepalived/keepalived.conf
+! Configuration File for keepalived
+global_defs {
+    router_id LVS_DEVEL
+}
+vrrp_script check_apiserver {
+  script &#34;/etc/keepalived/check_apiserver.sh&#34;
+  interval 3
+  weight -2
+  fall 10
+  rise 2
+}
+
+vrrp_instance VI_1 {
+    state ${STATE}
+    interface ${INTERFACE}
+    virtual_router_id ${ROUTER_ID}
+    priority ${PRIORITY}
+    authentication {
+        auth_type PASS
+        auth_pass ${AUTH_PASS}
+    }
+    virtual_ipaddress {
+        ${APISERVER_VIP}
+    }
+    track_script {
+        check_apiserver
+    }
+}
+
+# 需修改
+There are some placeholders in bash variable style to fill in:
+
+${STATE} is MASTER for one and BACKUP for all other hosts, hence the virtual IP will initially be assigned to the MASTER.
+${INTERFACE} is the network interface taking part in the negotiation of the virtual IP, e.g. eth0.
+${ROUTER_ID} should be the same for all keepalived cluster hosts while unique amongst all clusters in the same subnet. Many distros pre-configure its value to 51.
+${PRIORITY} should be higher on the control plane node than on the backups. Hence 101 and 100 respectively will suffice.
+${AUTH_PASS} should be the same for all keepalived cluster hosts, e.g. 42
+${APISERVER_VIP} is the virtual IP address negotiated between the keepalived cluster hosts.
+</code></pre></div><p>實際 config (master)</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>! /etc/keepalived/keepalived.conf
+! Configuration File for keepalived
+global_defs {
+    router_id LVS_DEVEL
+}
+vrrp_script check_apiserver {
+  script &#34;/etc/keepalived/check_apiserver.sh&#34;
+  interval 3
+  weight -2
+  fall 10
+  rise 2
+}
+
+vrrp_instance VI_1 {
+    state MASTER
+    interface ens160
+    virtual_router_id 101
+    priority 101
+    authentication {
+        auth_type PASS
+        auth_pass vu-al-541931u/4
+    }
+    virtual_ipaddress {
+        192.168.5.200/24
+    }
+    track_script {
+        check_apiserver
+    }
+}
+</code></pre></div><p>實際 config (slave)</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>! /etc/keepalived/keepalived.conf
+! Configuration File for keepalived
+global_defs {
+    router_id LVS_DEVEL
+}
+vrrp_script check_apiserver {
+  script &#34;/etc/keepalived/check_apiserver.sh&#34;
+  interval 3
+  weight -2
+  fall 10
+  rise 2
+}
+
+vrrp_instance VI_1 {
+    state BACKUP
+    interface ens160
+    virtual_router_id 101
+    priority 100
+    authentication {
+        auth_type PASS
+        auth_pass vu-al-541931u/4
+    }
+    virtual_ipaddress {
+        192.168.5.200/24
+    }
+    track_script {
+        check_apiserver
+    }
+}
+</code></pre></div><p>check script /etc/keepalived/check_apiserver.sh</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#080>#!/bin/sh
+</span><span style=color:#080></span>
+errorExit<span style=color:#666>()</span> <span style=color:#666>{</span>
+    <span style=color:#a2f>echo</span> <span style=color:#b44>&#34;*** </span><span style=color:#b8860b>$*</span><span style=color:#b44>&#34;</span> 1&gt;&amp;<span style=color:#666>2</span>
+    <span style=color:#a2f>exit</span> <span style=color:#666>1</span>
+<span style=color:#666>}</span>
+
+curl --silent --max-time <span style=color:#666>2</span> --insecure https://localhost:<span style=color:#b68;font-weight:700>${</span><span style=color:#b8860b>APISERVER_DEST_PORT</span><span style=color:#b68;font-weight:700>}</span>/ -o /dev/null <span style=color:#666>||</span> errorExit <span style=color:#b44>&#34;Error GET https://localhost:</span><span style=color:#b68;font-weight:700>${</span><span style=color:#b8860b>APISERVER_DEST_PORT</span><span style=color:#b68;font-weight:700>}</span><span style=color:#b44>/&#34;</span>
+<span style=color:#a2f;font-weight:700>if</span> ip addr | grep -q <span style=color:#b68;font-weight:700>${</span><span style=color:#b8860b>APISERVER_VIP</span><span style=color:#b68;font-weight:700>}</span>; <span style=color:#a2f;font-weight:700>then</span>
+    curl --silent --max-time <span style=color:#666>2</span> --insecure https://<span style=color:#b68;font-weight:700>${</span><span style=color:#b8860b>APISERVER_VIP</span><span style=color:#b68;font-weight:700>}</span>:<span style=color:#b68;font-weight:700>${</span><span style=color:#b8860b>APISERVER_DEST_PORT</span><span style=color:#b68;font-weight:700>}</span>/ -o /dev/null <span style=color:#666>||</span> errorExit <span style=color:#b44>&#34;Error GET https://</span><span style=color:#b68;font-weight:700>${</span><span style=color:#b8860b>APISERVER_VIP</span><span style=color:#b68;font-weight:700>}</span><span style=color:#b44>:</span><span style=color:#b68;font-weight:700>${</span><span style=color:#b8860b>APISERVER_DEST_PORT</span><span style=color:#b68;font-weight:700>}</span><span style=color:#b44>/&#34;</span>
+<span style=color:#a2f;font-weight:700>fi</span>
+</code></pre></div><p>需修改</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>${APISERVER_VIP} is the virtual IP address negotiated between the keepalived cluster hosts.
+${APISERVER_DEST_PORT} the port through which Kubernetes will talk to the API Server.
+
+</code></pre></div><p>實際範例</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#080>#!/bin/sh
+</span><span style=color:#080></span>
+errorExit<span style=color:#666>()</span> <span style=color:#666>{</span>
+    <span style=color:#a2f>echo</span> <span style=color:#b44>&#34;*** </span><span style=color:#b8860b>$*</span><span style=color:#b44>&#34;</span> 1&gt;&amp;<span style=color:#666>2</span>
+    <span style=color:#a2f>exit</span> <span style=color:#666>1</span>
+<span style=color:#666>}</span>
+
+curl --silent --max-time <span style=color:#666>2</span> --insecure https://localhost:6443/ -o /dev/null <span style=color:#666>||</span> errorExit <span style=color:#b44>&#34;Error GET https://localhost:6443/&#34;</span>
+<span style=color:#a2f;font-weight:700>if</span> ip addr | grep -q 192.168.5.200; <span style=color:#a2f;font-weight:700>then</span>
+    curl --silent --max-time <span style=color:#666>2</span> --insecure https://192.168.5.200:6443/ -o /dev/null <span style=color:#666>||</span> errorExit <span style=color:#b44>&#34;Error GET https://192.168.5.200:6443/&#34;</span>
+<span style=color:#a2f;font-weight:700>fi</span>
+</code></pre></div><p>開始服務</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>firewall-cmd --permanent --zone=public --add-protocol=vrrp 
+firewall-cmd --reload
+chmod +x /etc/keepalived/check_apiserver.sh
+systemctl enable keepalived
+systemctl restart keepalived
+</code></pre></div><h3 id=haproxy>haproxy</h3>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback># /etc/haproxy/haproxy.cfg
+#---------------------------------------------------------------------
+# Global settings
+#---------------------------------------------------------------------
+global
+    log /dev/log local0
+    log /dev/log local1 notice
+    daemon
+
+#---------------------------------------------------------------------
+# common defaults that all the &#39;listen&#39; and &#39;backend&#39; sections will
+# use if not designated in their block
+#---------------------------------------------------------------------
+defaults
+    mode                    http
+    log                     global
+    option                  httplog
+    option                  dontlognull
+    option http-server-close
+    option forwardfor       except 127.0.0.0/8
+    option                  redispatch
+    retries                 1
+    timeout http-request    10s
+    timeout queue           20s
+    timeout connect         5s
+    timeout client          20s
+    timeout server          20s
+    timeout http-keep-alive 10s
+    timeout check           10s
+
+#---------------------------------------------------------------------
+# apiserver frontend which proxys to the control plane nodes
+#---------------------------------------------------------------------
+frontend apiserver
+    bind *:${APISERVER_DEST_PORT}
+    mode tcp
+    option tcplog
+    default_backend apiserver
+
+#---------------------------------------------------------------------
+# round robin balancing for apiserver
+#---------------------------------------------------------------------
+backend apiserver
+    option httpchk GET /healthz
+    http-check expect status 200
+    mode tcp
+    option ssl-hello-chk
+    balance     roundrobin
+        server ${HOST1_ID} ${HOST1_ADDRESS}:${APISERVER_SRC_PORT} check
+        # [...]
+</code></pre></div><p>修改</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>${APISERVER_DEST_PORT} the port through which Kubernetes will talk to the API Server.
+${APISERVER_SRC_PORT} the port used by the API Server instances
+${HOST1_ID} a symbolic name for the first load-balanced API Server host
+${HOST1_ADDRESS} a resolvable address (DNS name, IP address) for the first load-balanced API Server host
+additional server lines, one for each load-balanced API Server host
+</code></pre></div><p>實際範例</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback># /etc/haproxy/haproxy.cfg
+#---------------------------------------------------------------------
+# Global settings
+#---------------------------------------------------------------------
+global
+    log /dev/log local0
+    log /dev/log local1 notice
+    daemon
+
+#---------------------------------------------------------------------
+# common defaults that all the &#39;listen&#39; and &#39;backend&#39; sections will
+# use if not designated in their block
+#---------------------------------------------------------------------
+defaults
+    mode                    http
+    log                     global
+    option                  httplog
+    option                  dontlognull
+    option http-server-close
+    option forwardfor       except 127.0.0.0/8
+    option                  redispatch
+    retries                 1
+    timeout http-request    10s
+    timeout queue           20s
+    timeout connect         5s
+    timeout client          20s
+    timeout server          20s
+    timeout http-keep-alive 10s
+    timeout check           10s
+
+#---------------------------------------------------------------------
+# apiserver frontend which proxys to the control plane nodes
+#---------------------------------------------------------------------
+frontend apiserver
+    bind *:6443
+    mode tcp
+    option tcplog
+    default_backend apiserver
+
+#---------------------------------------------------------------------
+# round robin balancing for apiserver
+#---------------------------------------------------------------------
+backend apiserver
+    option httpchk GET /healthz
+    http-check expect status 200
+    mode tcp
+    option ssl-hello-chk
+    balance     roundrobin
+        server ${HOST1_ID} ${HOST1_ADDRESS}:${APISERVER_SRC_PORT} check
+        # [...]
+
+</code></pre></div><h2 id=container-runtimes-cri-o>Container runtimes CRI-O</h2>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback># Container runtimes CRI-o
+# Create the .conf file to load the modules at bootup
+cat &lt;&lt;EOF | sudo tee /etc/modules-load.d/crio.conf
+overlay
+br_netfilter
+EOF
+
+sudo modprobe overlay
+sudo modprobe br_netfilter
+
+# Set up required sysctl params, these persist across reboots.
+cat &lt;&lt;EOF | sudo tee /etc/sysctl.d/99-kubernetes-cri.conf
+net.bridge.bridge-nf-call-iptables  = 1
+net.ipv4.ip_forward                 = 1
+net.bridge.bridge-nf-call-ip6tables = 1
+EOF
+
+sudo sysctl --system
+
+# Install CRI-O 
+curl https://raw.githubusercontent.com/cri-o/cri-o/main/scripts/get | bash
+
+nano /etc/crio/crio.conf.d/02-cgroup-manager.conf
+
+sudo systemctl daemon-reload
+sudo systemctl enable crio --now
+
+
+cat &lt;&lt;EOF&gt;&gt; /etc/crio/crio.conf.d/02-cgroup-manager.conf
+[crio.runtime]
+conmon_cgroup = &#34;pod&#34;
+cgroup_manager = &#34;cgroupfs&#34;
+EOF
+
+</code></pre></div>
+</div>
+<footer class=post-footer>
+<div class=post-tags>
+<a href=/tags/k8s rel=tag title=K8S>#K8S#</a>
+</div>
+<div id=disqus_thread></div>
+<script type=application/javascript>var disqus_config=function(){};(function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById('disqus_thread').innerHTML='Disqus comments not available by default when the website is previewed locally.';return}var b=document,a=b.createElement('script');a.async=!0,a.src='//bu-jue-ming-shi.disqus.com/embed.js',a.setAttribute('data-timestamp',+new Date),(b.head||b.body).appendChild(a)})()</script>
+<noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript>
+<a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a>
+>
+</footer>
+</article>
+</section>
+</div>
+</div>
+<div class=sidebar-toggle>
+<div class=sidebar-toggle-line-wrap>
+<span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+<span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+<span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+</div>
+</div>
+<aside id=sidebar class=sidebar>
+<div class=sidebar-inner>
+<ul class="sidebar-nav motion-element">
+<li class="sidebar-nav-toc sidebar-nav-active" data-target=post-toc-wrap>
+文章目錄
+</li>
+<li class=sidebar-nav-overview data-target=site-overview>
+網站導覽
+</li>
+</ul>
+<section class="site-overview sidebar-panel">
+<div class="site-author motion-element" itemprop=author itemscope itemtype=http://schema.org/Person>
+<img class=site-author-image itemprop=image src=/img/avatar.png alt=Owan>
+<p class=site-author-name itemprop=name>Owan</p>
+<p class="site-description motion-element" itemprop=description>
+愛貓如癡
+</p>
+</div>
+<nav class="site-state motion-element">
+<div class="site-state-item site-state-posts">
+<a href=/post/>
+<span class=site-state-item-count>117</span>
+<span class=site-state-item-name>日誌</span>
+</a>
+</div>
+<div class="site-state-item site-state-categories">
+<a href=/categories/>
+<span class=site-state-item-count>17</span>
+<span class=site-state-item-name>分類</span>
+</a>
+</div>
+<div class="site-state-item site-state-tags">
+<a href=/tags/>
+<span class=site-state-item-count>25</span>
+<span class=site-state-item-name>標籤</span>
+</a>
+</div>
+</nav>
+<div class="links-of-author motion-element">
+<span class=links-of-author-item>
+<a href=https://github.com/lovesharepc/ target=_blank title=GitHub>
+<i class="fa fa-fw fa-github"></i>
+GitHub
+</a>
+</span>
+</div>
+<div class="tagcloud-of-blogroll motion-element tagcloud-of-blogroll-inline">
+<div class=tagcloud-of-blogroll-title>
+<i class="fa fa-fw fa-tags"></i>
+標簽雲
+</div>
+<ul class=tagcloud-of-blogroll-list>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/windows>Windows</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/centos-7>Centos 7</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/markdown>Markdown</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/anti-virus>Anti virus</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/bareos>Bareos</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/centos>Centos</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/chrony>Chrony</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/css>Css</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/emoji>Emoji</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/tags/html>HTML</a>
+</li>
+</ul>
+</div>
+</section>
+<section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+<div class=post-toc>
+<div class=post-toc-content><nav id=TableOfContents>
+<ul>
+<li><a href=#準備-ansible>準備 ansible</a></li>
+<li><a href=#安裝>安裝</a>
+<ul>
+<li><a href=#init-單節點>init 單節點</a></li>
+<li><a href=#init-多節點>init 多節點</a></li>
+</ul>
+</li>
+<li><a href=#trobleshoot>trobleshoot</a></li>
+<li><a href=#其他資料>其他資料</a>
+<ul>
+<li><a href=#haproxy>haproxy</a></li>
+</ul>
+</li>
+<li><a href=#container-runtimes-cri-o>Container runtimes CRI-O</a></li>
+</ul>
+</nav></div>
+</div>
+</section>
+</div>
+</aside>
+</div>
+</main>
+<footer id=footer class=footer>
+<div class=footer-inner>
+<div class=copyright>
+<span class=copyright-year>
+&copy; 2010 - 2022
+</span>
+<span class=with-love><i class="fa fa-heart"></i></span>
+<span class=copyright-author>補覺鳴詩</span>
+</div>
+<div class=powered-info>
+<span class=powered-by>
+Powered by - <a class=powered-link href=//gohugo.io target=_blank title=hugo>Hugo v0.92.2</a>
+</span>
+<span class=separator-line>/</span>
+<span class=theme-info>
+Theme by - <a class=powered-link href=//github.com/elkan1788/hugo-theme-next target=_blank> NexT
+</a>
+</span>
+</div>
+<div class=vistor-info>
+<script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
+<span class=site-uv>
+<i class="fa fa-user"></i>
+<span class=busuanzi-value id=busuanzi_value_site_uv></span>
+</span>
+<span class=separator-line>/</span>
+<span class=site-pv>
+<i class="fa fa-eye"></i>
+<span class=busuanzi-value id=busuanzi_value_site_pv></span>
+</span>
+</div>
+</div>
+</footer>
+<div class=back-to-top>
+<i class="fa fa-arrow-up"></i>
+<span id=scrollpercent><span>0</span>%</span>
+</div>
+</div>
+<script type=text/javascript src=//cdn.bootcdn.net/ajax/libs/jquery/2.1.4/jquery.min.js></script>
+<script type=text/javascript src=/js/search.js></script>
+<script type=text/javascript src=/js/affix.js></script>
+<script type=text/javascript src=/js/scrollspy.js></script>
+<script type=text/javascript>function detectIE(){var a=window.navigator.userAgent,b=a.indexOf('MSIE '),c=a.indexOf('Trident/'),d=a.indexOf('Edge/');return b>0||c>0||d>0?-1:1}function getCntViewHeight(){var b=$('#content').height(),a=$(window).height(),c=b>a?b-a:$(document).height()-a;return c}function getScrollbarWidth(){var a=$('<div />').addClass('scrollbar-measure').prependTo('body'),b=a[0],c=b.offsetWidth-b.clientWidth;return a.remove(),c}function registerBackTop(){var b=50,a=$('.back-to-top');$(window).on('scroll',function(){var d,e,f,c,g;a.toggleClass('back-to-top-on',window.pageYOffset>b),d=$(window).scrollTop(),e=getCntViewHeight(),f=d/e,c=Math.round(f*100),g=c>100?100:c,$('#scrollpercent>span').html(g)}),a.on('click',function(){$("html,body").animate({scrollTop:0,screenLeft:0},800)})}function initScrollSpy(){var a='.post-toc',d=$(a),b='.active-current';d.on('activate.bs.scrollspy',function(){var b=$(a+' .active').last();c(),b.addClass('active-current')}).on('clear.bs.scrollspy',c),$('body').scrollspy({target:a});function c(){$(a+' '+b).removeClass(b.substring(1))}}function initAffix(){var a=$('.header-inner').height(),b=parseInt($('.main').css('padding-bottom'),10),c=a+10;$('.sidebar-inner').affix({offset:{top:c,bottom:b}}),$(document).on('affixed.bs.affix',function(){updateTOCHeight(document.body.clientHeight-100)})}function initTOCDimension(){var a,b;$(window).on('resize',function(){a&&clearTimeout(a),a=setTimeout(function(){var a=document.body.clientHeight-100;updateTOCHeight(a)},0)}),updateTOCHeight(document.body.clientHeight-100),b=getScrollbarWidth(),$('.post-toc').css('width','calc(100% + '+b+'px)')}function updateTOCHeight(a){a=a||'auto',$('.post-toc').css('max-height',a)}$(function(){var b=$('.header-inner').height()+10,c,d,a,e;$('#sidebar').css({'margin-top':b}).show(),c=parseInt($('#sidebar').css('margin-top')),d=parseInt($('.sidebar-inner').css('height')),a=c+d,e=$('.content-wrap').height(),e<a&&$('.content-wrap').css('min-height',a),$('.site-nav-toggle').on('click',function(){var a=$('.site-nav'),e=$('.toggle'),b='site-nav-on',f='toggle-close',c=a.hasClass(b),g=c?'slideUp':'slideDown',d=c?'removeClass':'addClass';a.stop()[g]('normal',function(){a[d](b),e[d](f)})}),registerBackTop(),initScrollSpy(),initAffix(),initTOCDimension(),$('.sidebar-nav-toc').click(function(){$(this).addClass('sidebar-nav-active'),$(this).next().removeClass('sidebar-nav-active'),$('.'+$(this).next().attr('data-target')).toggle(500),$('.'+$(this).attr('data-target')).toggle(500)}),$('.sidebar-nav-overview').click(function(){$(this).addClass('sidebar-nav-active'),$(this).prev().removeClass('sidebar-nav-active'),$('.'+$(this).prev().attr('data-target')).toggle(500),$('.'+$(this).attr('data-target')).toggle(500)})})</script>
+<script src=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.js></script>
+<script type=text/javascript>$(function(){$('.post-body').viewer()})</script>
+<script type=text/javascript>$(function(){detectIE()>0?$.getScript(document.location.protocol+'//cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js',function(){new Waline({el:'#wcomments',visitor:!0,avatar:'wavatar',avatarCDN:'https://sdn.geekzu.org/avatar/',avatarForce:!1,wordLimit:'200',placeholder:' 歡迎留下您的寶貴建議，請填寫您的昵稱和郵箱便於後續交流. ^_^ ',requiredFields:['nick','mail'],serverURL:"Your WalineSerURL",lang:"zh-tw"})}):$('#wcomments').html('抱歉，Waline插件不支持IE或Edge，建議使用Chrome瀏覽器。')})</script>
+<script type=text/javascript src="//s7.addthis.com/js/300/addthis_widget.js#pubid=Your%20AddthisId"></script>
+<script>(function(){var a=document.createElement('script'),c=window.location.protocol.split(':')[0],b;c==='https'?a.src='https://zz.bdstatic.com/linksubmit/push.js':a.src='http://push.zhanzhang.baidu.com/push.js',b=document.getElementsByTagName("script")[0],b.parentNode.insertBefore(a,b)})()</script>
+</body>
+</html>
