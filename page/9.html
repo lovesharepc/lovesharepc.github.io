@@ -95,6 +95,51 @@
 <article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
 <header class=post-header>
 <h1 class=post-title itemprop="name headline">
+<a class=post-title-link href=https://lovesharepc.github.io/2019/01/02/hp-switch-5130-%E7%B0%A1%E6%98%93%E6%8C%87%E4%BB%A4/ itemprop=url>
+HP switch 5130 簡易指令
+</a>
+</h1>
+<div class=post-meta>
+<span class=post-time>
+<i class="fa fa-calendar-o fa-fw"></i>
+<span class=post-meta-item-text>時間：</span>
+<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2019-01-02">
+2019-01-02
+</time>
+</span>
+<span class=post-category>
+&nbsp; | &nbsp;
+<i class="fa fa-folder-o fa-fw"></i>
+<span class=post-meta-item-text>分類：</span>
+<span itemprop=about itemscope itemtype=https://schema.org/Thing>
+<a href=/categories/%E7%B6%B2%E7%AE%A1 itemprop=url rel=index style=text-decoration:underline>
+<span itemprop=name>網管</span>
+</a>
+&nbsp;
+</span>
+</span>
+<span>
+|
+<i class="fa fa-file-word-o fa-fw"></i>
+<span class=post-meta-item-text>字數：</span>
+<span class=leancloud-world-count>44 字</span>
+</span>
+<span>
+|
+<i class="fa fa-eye fa-fw"></i>
+<span class=post-meta-item-text>閱讀：</span>
+<span class=leancloud-view-count>1分鐘</span>
+</span>
+</div>
+</header>
+<div class=post-body itemprop=articleBody>
+system-view interface Vlan-interface 1 ip address 172.28.14.36 255.255.255.0 quit ip route-static 0.0.0.0 0.0.0.0 Vlan-interface 1 172.28.14.197 local-user admin service-type http https ssh authorization-attribute user-role network-admin password simple quit ip https enable ip http enable ssh server enable 存檔 save 看 config display current-configuration
+</div>
+<footer class=post-footer><div class=post-eof></div></footer>
+</article>
+<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
+<header class=post-header>
+<h1 class=post-title itemprop="name headline">
 <a class=post-title-link href=https://lovesharepc.github.io/2019/01/01/fortigate-config-%E8%BD%89%E6%AA%94/ itemprop=url>
 Fortigate config 轉檔
 </a>
@@ -540,56 +585,6 @@ syslog-ng config 範例
 </div>
 <footer class=post-footer><div class=post-eof></div></footer>
 </article>
-<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
-<header class=post-header>
-<h1 class=post-title itemprop="name headline">
-<a class=post-title-link href=https://lovesharepc.github.io/2018/09/01/centos-%E6%8E%92%E7%A8%8B-%E9%81%A0%E7%AB%AF%E6%8C%87%E4%BB%A4/ itemprop=url>
-centos 排程 遠端指令
-</a>
-</h1>
-<div class=post-meta>
-<span class=post-time>
-<i class="fa fa-calendar-o fa-fw"></i>
-<span class=post-meta-item-text>時間：</span>
-<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2018-09-01">
-2018-09-01
-</time>
-</span>
-<span class=post-category>
-&nbsp; | &nbsp;
-<i class="fa fa-folder-o fa-fw"></i>
-<span class=post-meta-item-text>分類：</span>
-<span itemprop=about itemscope itemtype=https://schema.org/Thing>
-<a href=/categories/centos-7 itemprop=url rel=index style=text-decoration:underline>
-<span itemprop=name>Centos 7</span>
-</a>
-&nbsp;
-</span>
-</span>
-<span>
-|
-<i class="fa fa-file-word-o fa-fw"></i>
-<span class=post-meta-item-text>字數：</span>
-<span class=leancloud-world-count>154 字</span>
-</span>
-<span>
-|
-<i class="fa fa-eye fa-fw"></i>
-<span class=post-meta-item-text>閱讀：</span>
-<span class=leancloud-view-count>1分鐘</span>
-</span>
-</div>
-</header>
-<div class=post-body itemprop=articleBody>
-yum -y install expect switchBK.sh chmod 775 switch.sh 建立 shell #!/usr/bin/expect ## TomDV ## http://blog.penumbra.be/2010/02/expect-scripts-backup-cisco-config/ set timeout 600 # —————- configuration device —————- # ## device 1 set device1 set tftp set device1_user set device1_pass # ————– run command ————– # ## device 1 spawn ssh -l $user $device expect “
-</div>
-<div class="post-more-link text-center">
-<a class=btn href=https://lovesharepc.github.io/2018/09/01/centos-%E6%8E%92%E7%A8%8B-%E9%81%A0%E7%AB%AF%E6%8C%87%E4%BB%A4/ rel=contents>
-閱讀全文 &#187;
-</a>
-</div>
-<footer class=post-footer><div class=post-eof></div></footer>
-</article>
 </section>
 <nav class=pagination>
 <a class="extend prev" rel=prev href=/page/8.html><i class="fa fa-angle-left"></i></a>
@@ -626,19 +621,19 @@ yum -y install expect switchBK.sh chmod 775 switch.sh 建立 shell #!/usr/bin/ex
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href=/post/>
-<span class=site-state-item-count>118</span>
+<span class=site-state-item-count>119</span>
 <span class=site-state-item-name>日誌</span>
 </a>
 </div>
 <div class="site-state-item site-state-categories">
 <a href=/categories/>
-<span class=site-state-item-count>18</span>
+<span class=site-state-item-count>19</span>
 <span class=site-state-item-name>分類</span>
 </a>
 </div>
 <div class="site-state-item site-state-tags">
 <a href=/tags/>
-<span class=site-state-item-count>26</span>
+<span class=site-state-item-count>27</span>
 <span class=site-state-item-name>標籤</span>
 </a>
 </div>

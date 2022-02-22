@@ -163,20 +163,20 @@ linux centos systemd create service
 該腳本能正常執行並不停止</p>
 <p>建立 service file
 /etc/systemd/system/coredns.service</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>[Unit]
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-powershell data-lang=powershell><span style=color:#800>[Unit]</span>
 Description=coredns
 
-[Service]
+<span style=color:#800>[Service]</span>
 Type=simple
 ExecStart=/root/coredns/coredns -conf corefile
 Restart=always
 
-[Install]
-WantedBy=multi-user.target
+<span style=color:#800>[Install]</span>
+WantedBy=<span style=color:#a2f>multi-user</span>.target
 
 </code></pre></div><p>設定權限、reload server</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>chmod 644 /etc/systemd/system/coredns.service
-systemctl daemon-reload
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-powershell data-lang=powershell>chmod 644 /etc/systemd/system/coredns.service
+systemctl <span style=color:#a2f>daemon-reload</span>
 </code></pre></div>
 </div>
 <footer class=post-footer>
@@ -224,19 +224,19 @@ systemctl daemon-reload
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href=/post/>
-<span class=site-state-item-count>118</span>
+<span class=site-state-item-count>119</span>
 <span class=site-state-item-name>日誌</span>
 </a>
 </div>
 <div class="site-state-item site-state-categories">
 <a href=/categories/>
-<span class=site-state-item-count>18</span>
+<span class=site-state-item-count>19</span>
 <span class=site-state-item-name>分類</span>
 </a>
 </div>
 <div class="site-state-item site-state-tags">
 <a href=/tags/>
-<span class=site-state-item-count>26</span>
+<span class=site-state-item-count>27</span>
 <span class=site-state-item-name>標籤</span>
 </a>
 </div>
