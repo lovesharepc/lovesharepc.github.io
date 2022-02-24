@@ -134,7 +134,7 @@ linux centos 常用指令
 |
 <i class="fa fa-file-word-o fa-fw"></i>
 <span class=post-meta-item-text>字數：</span>
-<span class=leancloud-world-count>2084 字</span>
+<span class=leancloud-world-count>2089 字</span>
 </span>
 <span>
 |
@@ -357,10 +357,8 @@ nmcli
 nmcli device show
 </code></pre></div><h2 id=其他>其他</h2>
 <h3 id=tcpdump>tcpdump</h3>
-<blockquote>
-<p>sudo tcpdump -ni ens160</p>
-</blockquote>
-<h3 id=proxy>Proxy</h3>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>tcpdump -i ens160 -vv port 514 | grep &lt;ip-address&gt;
+</code></pre></div><h3 id=proxy>Proxy</h3>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>PROXY
 export http_proxy=http://172.28.11.112:3128/
 echo &#34;http_proxy=http://172.28.11.112:3128/&#34; &gt; /etc/environment
