@@ -95,6 +95,206 @@
 <article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
 <header class=post-header>
 <h1 class=post-title itemprop="name headline">
+<a class=post-title-link href=https://lovesharepc.github.io/2019/11/09/proxmox-ve-storage-%E6%B8%AC%E9%80%9F-benchmarking-storage/ itemprop=url>
+Proxmox VE ZFS storage 測速 Benchmarking ZFS Storage
+</a>
+</h1>
+<div class=post-meta>
+<span class=post-time>
+<i class="fa fa-calendar-o fa-fw"></i>
+<span class=post-meta-item-text>時間：</span>
+<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2019-11-09">
+2019-11-09
+</time>
+</span>
+<span class=post-category>
+&nbsp; | &nbsp;
+<i class="fa fa-folder-o fa-fw"></i>
+<span class=post-meta-item-text>分類：</span>
+<span itemprop=about itemscope itemtype=https://schema.org/Thing>
+<a href=/categories/proxmox-ve itemprop=url rel=index style=text-decoration:underline>
+<span itemprop=name>proxmox VE</span>
+</a>
+&nbsp;
+</span>
+</span>
+<span>
+|
+<i class="fa fa-file-word-o fa-fw"></i>
+<span class=post-meta-item-text>字數：</span>
+<span class=leancloud-world-count>281 字</span>
+</span>
+<span>
+|
+<i class="fa fa-eye fa-fw"></i>
+<span class=post-meta-item-text>閱讀：</span>
+<span class=leancloud-view-count>1分鐘</span>
+</span>
+</div>
+</header>
+<div class=post-body itemprop=articleBody>
+官方手冊 https://pve.proxmox.com/wiki/Benchmarking_Storage https://manpages.ubuntu.com/manpages/bionic/en/man1/fio.1.html fio – flexible I/O tester 安裝 fio 套件 wget http://archive.ubuntu.com/ubuntu/pool/universe/f/fio/fio_3.1-1_amd64.deb dpkg -i fio_3.1-1_amd64.deb 指令 參考使用 https://martin.heiland.io/2018/02/23/zfs-tuning/ 先切換到你的 zpool 例如 cd /RAID1 –filesize=1G –runtime=10 這兩個參數自行修
+</div>
+<div class="post-more-link text-center">
+<a class=btn href=https://lovesharepc.github.io/2019/11/09/proxmox-ve-storage-%E6%B8%AC%E9%80%9F-benchmarking-storage/ rel=contents>
+閱讀全文 &#187;
+</a>
+</div>
+<footer class=post-footer><div class=post-eof></div></footer>
+</article>
+<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
+<header class=post-header>
+<h1 class=post-title itemprop="name headline">
+<a class=post-title-link href=https://lovesharepc.github.io/2019/11/09/proxmox-ve-%E6%9B%B4%E6%96%B0/ itemprop=url>
+Proxmox VE 更新
+</a>
+</h1>
+<div class=post-meta>
+<span class=post-time>
+<i class="fa fa-calendar-o fa-fw"></i>
+<span class=post-meta-item-text>時間：</span>
+<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2019-11-09">
+2019-11-09
+</time>
+</span>
+<span class=post-category>
+&nbsp; | &nbsp;
+<i class="fa fa-folder-o fa-fw"></i>
+<span class=post-meta-item-text>分類：</span>
+<span itemprop=about itemscope itemtype=https://schema.org/Thing>
+<a href=/categories/proxmox-ve itemprop=url rel=index style=text-decoration:underline>
+<span itemprop=name>proxmox VE</span>
+</a>
+&nbsp;
+</span>
+</span>
+<span>
+|
+<i class="fa fa-file-word-o fa-fw"></i>
+<span class=post-meta-item-text>字數：</span>
+<span class=leancloud-world-count>232 字</span>
+</span>
+<span>
+|
+<i class="fa fa-eye fa-fw"></i>
+<span class=post-meta-item-text>閱讀：</span>
+<span class=leancloud-view-count>1分鐘</span>
+</span>
+</div>
+</header>
+<div class=post-body itemprop=articleBody>
+官方手冊 https://pve.proxmox.com/wiki/Package_Repositories 查看目前版本 pveversion -v 新增更新來源 總共有三個 訂閱用戶 – 保證穩定度 非訂閱用戶 – 不保證穩定度，不建議用在正式環境 測試 test – 給開發者使用 編輯 sources.list nano
+</div>
+<div class="post-more-link text-center">
+<a class=btn href=https://lovesharepc.github.io/2019/11/09/proxmox-ve-%E6%9B%B4%E6%96%B0/ rel=contents>
+閱讀全文 &#187;
+</a>
+</div>
+<footer class=post-footer><div class=post-eof></div></footer>
+</article>
+<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
+<header class=post-header>
+<h1 class=post-title itemprop="name headline">
+<a class=post-title-link href=https://lovesharepc.github.io/2019/11/09/proxmox-ve-%E4%BD%BF%E7%94%A8-zfs/ itemprop=url>
+proxmox VE 使用 ZFS
+</a>
+</h1>
+<div class=post-meta>
+<span class=post-time>
+<i class="fa fa-calendar-o fa-fw"></i>
+<span class=post-meta-item-text>時間：</span>
+<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2019-11-09">
+2019-11-09
+</time>
+</span>
+<span class=post-category>
+&nbsp; | &nbsp;
+<i class="fa fa-folder-o fa-fw"></i>
+<span class=post-meta-item-text>分類：</span>
+<span itemprop=about itemscope itemtype=https://schema.org/Thing>
+<a href=/categories/proxmox-ve itemprop=url rel=index style=text-decoration:underline>
+<span itemprop=name>proxmox VE</span>
+</a>
+&nbsp;
+</span>
+</span>
+<span>
+|
+<i class="fa fa-file-word-o fa-fw"></i>
+<span class=post-meta-item-text>字數：</span>
+<span class=leancloud-world-count>847 字</span>
+</span>
+<span>
+|
+<i class="fa fa-eye fa-fw"></i>
+<span class=post-meta-item-text>閱讀：</span>
+<span class=leancloud-view-count>2分鐘</span>
+</span>
+</div>
+</header>
+<div class=post-body itemprop=articleBody>
+相關手冊 https://pve.proxmox.com/wiki/ZFS_on_Linux https://manpages.ubuntu.com/manpages/trusty/en/man8/zpool.8.html 簡介 ZFS 是 linux 能使用的 soft raid 軟體 其中指令相當”豐富” 可玩性很大，功能也很多 只是這也變成調校是件很重要的事情，在網路上 謠傳調校之後可以增
+</div>
+<div class="post-more-link text-center">
+<a class=btn href=https://lovesharepc.github.io/2019/11/09/proxmox-ve-%E4%BD%BF%E7%94%A8-zfs/ rel=contents>
+閱讀全文 &#187;
+</a>
+</div>
+<footer class=post-footer><div class=post-eof></div></footer>
+</article>
+<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
+<header class=post-header>
+<h1 class=post-title itemprop="name headline">
+<a class=post-title-link href=https://lovesharepc.github.io/2019/11/09/linux-fdisk-%E5%B7%A5%E5%85%B7/ itemprop=url>
+linux fdisk 工具
+</a>
+</h1>
+<div class=post-meta>
+<span class=post-time>
+<i class="fa fa-calendar-o fa-fw"></i>
+<span class=post-meta-item-text>時間：</span>
+<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2019-11-09">
+2019-11-09
+</time>
+</span>
+<span class=post-category>
+&nbsp; | &nbsp;
+<i class="fa fa-folder-o fa-fw"></i>
+<span class=post-meta-item-text>分類：</span>
+<span itemprop=about itemscope itemtype=https://schema.org/Thing>
+<a href=/categories/centos-7 itemprop=url rel=index style=text-decoration:underline>
+<span itemprop=name>Centos 7</span>
+</a>
+&nbsp;
+</span>
+</span>
+<span>
+|
+<i class="fa fa-file-word-o fa-fw"></i>
+<span class=post-meta-item-text>字數：</span>
+<span class=leancloud-world-count>112 字</span>
+</span>
+<span>
+|
+<i class="fa fa-eye fa-fw"></i>
+<span class=post-meta-item-text>閱讀：</span>
+<span class=leancloud-view-count>1分鐘</span>
+</span>
+</div>
+</header>
+<div class=post-body itemprop=articleBody>
+fdisk 用來建立硬碟的分割表 我使用的 fdisk 版本為 2.33.1 有支援 GPT、MBR 分割表 顯示目前有哪些硬碟 fdisk -l 把硬碟初始化，因為我的硬碟有使用過 所以先做 partition pable 重建 GPT
+</div>
+<div class="post-more-link text-center">
+<a class=btn href=https://lovesharepc.github.io/2019/11/09/linux-fdisk-%E5%B7%A5%E5%85%B7/ rel=contents>
+閱讀全文 &#187;
+</a>
+</div>
+<footer class=post-footer><div class=post-eof></div></footer>
+</article>
+<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
+<header class=post-header>
+<h1 class=post-title itemprop="name headline">
 <a class=post-title-link href=https://lovesharepc.github.io/2019/11/09/%E7%A1%AC%E7%A2%9F%E6%B8%AC%E9%80%9F%E5%B7%A5%E5%85%B7-ioblazer/ itemprop=url>
 硬碟測速工具 ioblazer
 </a>
@@ -377,196 +577,6 @@ centos 7 環境設定
 </div>
 <footer class=post-footer><div class=post-eof></div></footer>
 </article>
-<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
-<header class=post-header>
-<h1 class=post-title itemprop="name headline">
-<a class=post-title-link href=https://lovesharepc.github.io/2019/10/08/%E7%B6%B2%E7%AE%A1%E5%B7%A5%E5%85%B7-%E4%B8%89%E5%80%8B%E5%A4%A7%E7%B6%B2%E7%AB%99/ itemprop=url>
-網管工具 三個大網站
-</a>
-</h1>
-<div class=post-meta>
-<span class=post-time>
-<i class="fa fa-calendar-o fa-fw"></i>
-<span class=post-meta-item-text>時間：</span>
-<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2019-10-08">
-2019-10-08
-</time>
-</span>
-<span class=post-category>
-&nbsp; | &nbsp;
-<i class="fa fa-folder-o fa-fw"></i>
-<span class=post-meta-item-text>分類：</span>
-<span itemprop=about itemscope itemtype=https://schema.org/Thing>
-<a href=/categories/%E7%B6%B2%E7%AE%A1 itemprop=url rel=index style=text-decoration:underline>
-<span itemprop=name>網管</span>
-</a>
-&nbsp;
-</span>
-</span>
-<span>
-|
-<i class="fa fa-file-word-o fa-fw"></i>
-<span class=post-meta-item-text>字數：</span>
-<span class=leancloud-world-count>19 字</span>
-</span>
-<span>
-|
-<i class="fa fa-eye fa-fw"></i>
-<span class=post-meta-item-text>閱讀：</span>
-<span class=leancloud-view-count>1分鐘</span>
-</span>
-</div>
-</header>
-<div class=post-body itemprop=articleBody>
-這三個網站提供大部分網管實用工具 https://www.solarwinds.com/ https://www.manageengine.com https://www.paessler.com/
-</div>
-<footer class=post-footer><div class=post-eof></div></footer>
-</article>
-<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
-<header class=post-header>
-<h1 class=post-title itemprop="name headline">
-<a class=post-title-link href=https://lovesharepc.github.io/2019/10/08/centos7-%E5%AE%89%E8%A3%9D-ntop/ itemprop=url>
-centos 7 安裝 NTOP
-</a>
-</h1>
-<div class=post-meta>
-<span class=post-time>
-<i class="fa fa-calendar-o fa-fw"></i>
-<span class=post-meta-item-text>時間：</span>
-<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2019-10-08">
-2019-10-08
-</time>
-</span>
-<span class=post-category>
-&nbsp; | &nbsp;
-<i class="fa fa-folder-o fa-fw"></i>
-<span class=post-meta-item-text>分類：</span>
-<span itemprop=about itemscope itemtype=https://schema.org/Thing>
-<a href=/categories/%E7%B6%B2%E7%AE%A1 itemprop=url rel=index style=text-decoration:underline>
-<span itemprop=name>網管</span>
-</a>
-&nbsp;
-</span>
-</span>
-<span>
-|
-<i class="fa fa-file-word-o fa-fw"></i>
-<span class=post-meta-item-text>字數：</span>
-<span class=leancloud-world-count>32 字</span>
-</span>
-<span>
-|
-<i class="fa fa-eye fa-fw"></i>
-<span class=post-meta-item-text>閱讀：</span>
-<span class=leancloud-view-count>1分鐘</span>
-</span>
-</div>
-</header>
-<div class=post-body itemprop=articleBody>
-yum install -y wget cd /etc/yum.repos.d/ wget http://packages.ntop.org/centos-stable/ntop.repo -O ntop.repo rpm -ivh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm yum update -y yum install -y pfring n2disk nprobe ntopng ntopng-data cento pfring-drivers-zc-dkms firewall-cmd --zone=public --permanent --add-port=3000/tcp firewall-cmd --reload
-</div>
-<footer class=post-footer><div class=post-eof></div></footer>
-</article>
-<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
-<header class=post-header>
-<h1 class=post-title itemprop="name headline">
-<a class=post-title-link href=https://lovesharepc.github.io/2019/10/07/windows-server-backup-%E5%A4%B1%E6%95%97-%E6%8C%87%E5%AE%9A%E7%9A%84%E5%82%99%E4%BB%BD%E5%AD%98%E6%94%BE%E4%BD%8D%E7%BD%AE%E6%93%81%E6%9C%89%E5%85%B6%E4%BB%96%E7%A3%81%E7%A2%9F%E5%8D%80%E7%9A%84/ itemprop=url>
-windows server backup 失敗 “指定的備份存放位置,擁有其他磁碟區的陰影複製儲存區”
-</a>
-</h1>
-<div class=post-meta>
-<span class=post-time>
-<i class="fa fa-calendar-o fa-fw"></i>
-<span class=post-meta-item-text>時間：</span>
-<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2019-10-07">
-2019-10-07
-</time>
-</span>
-<span class=post-category>
-&nbsp; | &nbsp;
-<i class="fa fa-folder-o fa-fw"></i>
-<span class=post-meta-item-text>分類：</span>
-<span itemprop=about itemscope itemtype=https://schema.org/Thing>
-<a href=/categories/windows itemprop=url rel=index style=text-decoration:underline>
-<span itemprop=name>windows</span>
-</a>
-&nbsp;
-</span>
-</span>
-<span>
-|
-<i class="fa fa-file-word-o fa-fw"></i>
-<span class=post-meta-item-text>字數：</span>
-<span class=leancloud-world-count>118 字</span>
-</span>
-<span>
-|
-<i class="fa fa-eye fa-fw"></i>
-<span class=post-meta-item-text>閱讀：</span>
-<span class=leancloud-view-count>1分鐘</span>
-</span>
-</div>
-</header>
-<div class=post-body itemprop=articleBody>
-官方手冊 https://docs.microsoft.com/zh-tw/windows-server/administration/windows-commands/wbadmin 今天發現 windows server backup 失敗問題 就算重新建立排程 一樣失敗 “指定的備份存放位置,擁有其他磁碟區的陰影複製儲存區” 只要執行 DISKSHADOW 不是 vssadmin 把所有陰影複製
-</div>
-<div class="post-more-link text-center">
-<a class=btn href=https://lovesharepc.github.io/2019/10/07/windows-server-backup-%E5%A4%B1%E6%95%97-%E6%8C%87%E5%AE%9A%E7%9A%84%E5%82%99%E4%BB%BD%E5%AD%98%E6%94%BE%E4%BD%8D%E7%BD%AE%E6%93%81%E6%9C%89%E5%85%B6%E4%BB%96%E7%A3%81%E7%A2%9F%E5%8D%80%E7%9A%84/ rel=contents>
-閱讀全文 &#187;
-</a>
-</div>
-<footer class=post-footer><div class=post-eof></div></footer>
-</article>
-<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
-<header class=post-header>
-<h1 class=post-title itemprop="name headline">
-<a class=post-title-link href=https://lovesharepc.github.io/2019/09/29/centos-yum-%E7%9B%B8%E9%97%9C%E6%8C%87%E4%BB%A4/ itemprop=url>
-CENTOS YUM 相關指令
-</a>
-</h1>
-<div class=post-meta>
-<span class=post-time>
-<i class="fa fa-calendar-o fa-fw"></i>
-<span class=post-meta-item-text>時間：</span>
-<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2019-09-29">
-2019-09-29
-</time>
-</span>
-<span class=post-category>
-&nbsp; | &nbsp;
-<i class="fa fa-folder-o fa-fw"></i>
-<span class=post-meta-item-text>分類：</span>
-<span itemprop=about itemscope itemtype=https://schema.org/Thing>
-<a href=/categories/centos-7 itemprop=url rel=index style=text-decoration:underline>
-<span itemprop=name>Centos 7</span>
-</a>
-&nbsp;
-</span>
-</span>
-<span>
-|
-<i class="fa fa-file-word-o fa-fw"></i>
-<span class=post-meta-item-text>字數：</span>
-<span class=leancloud-world-count>150 字</span>
-</span>
-<span>
-|
-<i class="fa fa-eye fa-fw"></i>
-<span class=post-meta-item-text>閱讀：</span>
-<span class=leancloud-view-count>1分鐘</span>
-</span>
-</div>
-</header>
-<div class=post-body itemprop=articleBody>
-安裝套件 yum install 套件名 移除套件，config 也會清掉 yum remove 套件名 重新偵測 fastestmirror yum clean all yum makecache 查看套件可用版本 yum info 套件名 對套件升版或降板 yum downgrade 套件名 yum upgrade-to 套件名
-</div>
-<div class="post-more-link text-center">
-<a class=btn href=https://lovesharepc.github.io/2019/09/29/centos-yum-%E7%9B%B8%E9%97%9C%E6%8C%87%E4%BB%A4/ rel=contents>
-閱讀全文 &#187;
-</a>
-</div>
-<footer class=post-footer><div class=post-eof></div></footer>
-</article>
 </section>
 <nav class=pagination>
 <a class="extend prev" rel=prev href=/page/5.html><i class="fa fa-angle-left"></i></a>
@@ -603,19 +613,19 @@ CENTOS YUM 相關指令
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href=/post/>
-<span class=site-state-item-count>119</span>
+<span class=site-state-item-count>123</span>
 <span class=site-state-item-name>日誌</span>
 </a>
 </div>
 <div class="site-state-item site-state-categories">
 <a href=/categories/>
-<span class=site-state-item-count>19</span>
+<span class=site-state-item-count>23</span>
 <span class=site-state-item-name>分類</span>
 </a>
 </div>
 <div class="site-state-item site-state-tags">
 <a href=/tags/>
-<span class=site-state-item-count>27</span>
+<span class=site-state-item-count>31</span>
 <span class=site-state-item-name>標籤</span>
 </a>
 </div>

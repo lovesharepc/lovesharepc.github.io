@@ -95,6 +95,208 @@
 <article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
 <header class=post-header>
 <h1 class=post-title itemprop="name headline">
+<a class=post-title-link href=https://lovesharepc.github.io/2018/11/02/%E6%AA%A2%E6%9F%A5-server-%E4%B8%BB%E6%A9%9F%E5%B0%8D-ssl-tls-versions-%E7%9A%84%E7%9B%B8%E5%AE%B9%E6%80%A7/ itemprop=url>
+檢查 server 主機對 SSL/TLS versions 的相容性
+</a>
+</h1>
+<div class=post-meta>
+<span class=post-time>
+<i class="fa fa-calendar-o fa-fw"></i>
+<span class=post-meta-item-text>時間：</span>
+<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2018-11-02">
+2018-11-02
+</time>
+</span>
+<span class=post-category>
+&nbsp; | &nbsp;
+<i class="fa fa-folder-o fa-fw"></i>
+<span class=post-meta-item-text>分類：</span>
+<span itemprop=about itemscope itemtype=https://schema.org/Thing>
+<a href=/categories/%E7%B6%B2%E7%AE%A1 itemprop=url rel=index style=text-decoration:underline>
+<span itemprop=name>網管</span>
+</a>
+&nbsp;
+</span>
+</span>
+<span>
+|
+<i class="fa fa-file-word-o fa-fw"></i>
+<span class=post-meta-item-text>字數：</span>
+<span class=leancloud-world-count>74 字</span>
+</span>
+<span>
+|
+<i class="fa fa-eye fa-fw"></i>
+<span class=post-meta-item-text>閱讀：</span>
+<span class=leancloud-view-count>1分鐘</span>
+</span>
+</div>
+</header>
+<div class=post-body itemprop=articleBody>
+可以使用 openssl openssl s_client -connect example.com:443 -tls1_2 可用參數如下 -ssl2 – just use SSLv2 -ssl3 – just use SSLv3 -tls1_2 – just use TLSv1.2 -tls1_1 – just use TLSv1.1 -tls1 – just use TLSv1 也可以使用 nmap nmap –script ssl-enum-ciphers -p 443 example.com 如果沒出現該加密訊息就
+</div>
+<div class="post-more-link text-center">
+<a class=btn href=https://lovesharepc.github.io/2018/11/02/%E6%AA%A2%E6%9F%A5-server-%E4%B8%BB%E6%A9%9F%E5%B0%8D-ssl-tls-versions-%E7%9A%84%E7%9B%B8%E5%AE%B9%E6%80%A7/ rel=contents>
+閱讀全文 &#187;
+</a>
+</div>
+<footer class=post-footer><div class=post-eof></div></footer>
+</article>
+<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
+<header class=post-header>
+<h1 class=post-title itemprop="name headline">
+<a class=post-title-link href=https://lovesharepc.github.io/2018/10/13/syslog-ng-config-%E7%AF%84%E4%BE%8B/ itemprop=url>
+syslog-ng config 範例
+</a>
+</h1>
+<div class=post-meta>
+<span class=post-time>
+<i class="fa fa-calendar-o fa-fw"></i>
+<span class=post-meta-item-text>時間：</span>
+<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2018-10-13">
+2018-10-13
+</time>
+</span>
+<span class=post-category>
+&nbsp; | &nbsp;
+<i class="fa fa-folder-o fa-fw"></i>
+<span class=post-meta-item-text>分類：</span>
+<span itemprop=about itemscope itemtype=https://schema.org/Thing>
+<a href=/categories/centos-7 itemprop=url rel=index style=text-decoration:underline>
+<span itemprop=name>Centos 7</span>
+</a>
+&nbsp;
+</span>
+</span>
+<span>
+|
+<i class="fa fa-file-word-o fa-fw"></i>
+<span class=post-meta-item-text>字數：</span>
+<span class=leancloud-world-count>951 字</span>
+</span>
+<span>
+|
+<i class="fa fa-eye fa-fw"></i>
+<span class=post-meta-item-text>閱讀：</span>
+<span class=leancloud-view-count>2分鐘</span>
+</span>
+</div>
+</header>
+<div class=post-body itemprop=articleBody>
+[root@localhost syslog-ng]# cat syslog-ng.conf @version:3.5 @include “scl.conf” # syslog-ng configuration file. # This should behave pretty much like the original syslog on RedHat. But # it could be configured a lot smarter. # See syslog-ng(8) and syslog-ng.conf(5) for more information. # Note: it also sources additional configuration files (*.conf) # located in /etc/syslog-ng/conf.d/ options { flush_lines (2000); #time_reopen (10); log_fifo_size (1000);
+</div>
+<div class="post-more-link text-center">
+<a class=btn href=https://lovesharepc.github.io/2018/10/13/syslog-ng-config-%E7%AF%84%E4%BE%8B/ rel=contents>
+閱讀全文 &#187;
+</a>
+</div>
+<footer class=post-footer><div class=post-eof></div></footer>
+</article>
+<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
+<header class=post-header>
+<h1 class=post-title itemprop="name headline">
+<a class=post-title-link href=https://lovesharepc.github.io/2018/09/09/%E9%96%8B%E6%BA%90%E4%BC%81%E6%A5%AD%E5%82%99%E4%BB%BD%E8%BB%9F%E9%AB%94-bareos/ itemprop=url>
+開源企業備份軟體 Bareos
+</a>
+</h1>
+<div class=post-meta>
+<span class=post-time>
+<i class="fa fa-calendar-o fa-fw"></i>
+<span class=post-meta-item-text>時間：</span>
+<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2018-09-09">
+2018-09-09
+</time>
+</span>
+<span class=post-category>
+&nbsp; | &nbsp;
+<i class="fa fa-folder-o fa-fw"></i>
+<span class=post-meta-item-text>分類：</span>
+<span itemprop=about itemscope itemtype=https://schema.org/Thing>
+<a href=/categories/bareos itemprop=url rel=index style=text-decoration:underline>
+<span itemprop=name>bareos</span>
+</a>
+&nbsp;
+</span>
+</span>
+<span>
+|
+<i class="fa fa-file-word-o fa-fw"></i>
+<span class=post-meta-item-text>字數：</span>
+<span class=leancloud-world-count>4327 字</span>
+</span>
+<span>
+|
+<i class="fa fa-eye fa-fw"></i>
+<span class=post-meta-item-text>閱讀：</span>
+<span class=leancloud-view-count>9分鐘</span>
+</span>
+</div>
+</header>
+<div class=post-body itemprop=articleBody>
+<div style=clear:both;text-align:center>
+<a style=margin-left:1em;margin-right:1em href=https://2.bp.blogspot.com/-9_6-QigzDeU/W5TU137AkwI/AAAAAAAACtw/pCF1HZJfFlUP-1b6IM5MtQPWsCvEAJyMQCLcBGAs/s1600/bareos-full-logo.png><img loading=lazy src=https://2.bp.blogspot.com/-9_6-QigzDeU/W5TU137AkwI/AAAAAAAACtw/pCF1HZJfFlUP-1b6IM5MtQPWsCvEAJyMQCLcBGAs/s320/bareos-full-logo.png width=320 height=100 border=0 data-original-height=233 data-original-width=743></a>
+</div>
+</div>
+<div class="post-more-link text-center">
+<a class=btn href=https://lovesharepc.github.io/2018/09/09/%E9%96%8B%E6%BA%90%E4%BC%81%E6%A5%AD%E5%82%99%E4%BB%BD%E8%BB%9F%E9%AB%94-bareos/ rel=contents>
+閱讀全文 &#187;
+</a>
+</div>
+<footer class=post-footer><div class=post-eof></div></footer>
+</article>
+<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
+<header class=post-header>
+<h1 class=post-title itemprop="name headline">
+<a class=post-title-link href=https://lovesharepc.github.io/2018/09/02/%E5%9C%A8-centos-7-%E5%AE%89%E8%A3%9D-odoo/ itemprop=url>
+在 centos 7 安裝 odoo
+</a>
+</h1>
+<div class=post-meta>
+<span class=post-time>
+<i class="fa fa-calendar-o fa-fw"></i>
+<span class=post-meta-item-text>時間：</span>
+<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2018-09-02">
+2018-09-02
+</time>
+</span>
+<span class=post-category>
+&nbsp; | &nbsp;
+<i class="fa fa-folder-o fa-fw"></i>
+<span class=post-meta-item-text>分類：</span>
+<span itemprop=about itemscope itemtype=https://schema.org/Thing>
+<a href=/categories/%E7%B6%B2%E7%AE%A1 itemprop=url rel=index style=text-decoration:underline>
+<span itemprop=name>網管</span>
+</a>
+&nbsp;
+</span>
+</span>
+<span>
+|
+<i class="fa fa-file-word-o fa-fw"></i>
+<span class=post-meta-item-text>字數：</span>
+<span class=leancloud-world-count>432 字</span>
+</span>
+<span>
+|
+<i class="fa fa-eye fa-fw"></i>
+<span class=post-meta-item-text>閱讀：</span>
+<span class=leancloud-view-count>1分鐘</span>
+</span>
+</div>
+</header>
+<div class=post-body itemprop=articleBody>
+在 centos 7 安裝 odoo #雖然官方有提供 deb、rpm 包安裝 #但限於 ubuntu 跟 fedora #centos 7 #必須從 git 下載編譯安裝才可以 #但還好步驟不難 #首先做一次系統更新 yum update -y #安
+</div>
+<div class="post-more-link text-center">
+<a class=btn href=https://lovesharepc.github.io/2018/09/02/%E5%9C%A8-centos-7-%E5%AE%89%E8%A3%9D-odoo/ rel=contents>
+閱讀全文 &#187;
+</a>
+</div>
+<footer class=post-footer><div class=post-eof></div></footer>
+</article>
+<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
+<header class=post-header>
+<h1 class=post-title itemprop="name headline">
 <a class=post-title-link href=https://lovesharepc.github.io/2018/09/01/centos-%E6%8E%92%E7%A8%8B-%E9%81%A0%E7%AB%AF%E6%8C%87%E4%BB%A4/ itemprop=url>
 centos 排程 遠端指令
 </a>
@@ -387,200 +589,9 @@ ESXi 更新 ESXi 上傳 zip 到local 儲存區 開SSH 、 進入維護模式 檢
 </div>
 <footer class=post-footer><div class=post-eof></div></footer>
 </article>
-<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
-<header class=post-header>
-<h1 class=post-title itemprop="name headline">
-<a class=post-title-link href=https://lovesharepc.github.io/2018/07/23/%E4%BD%BF%E7%94%A8-vmware-ovf-tool-%E5%8C%AF%E5%87%BA%E8%99%9B%E6%93%AC%E6%A9%9F/ itemprop=url>
-使用 VMware ovf tool 匯出虛擬機
-</a>
-</h1>
-<div class=post-meta>
-<span class=post-time>
-<i class="fa fa-calendar-o fa-fw"></i>
-<span class=post-meta-item-text>時間：</span>
-<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2018-07-23">
-2018-07-23
-</time>
-</span>
-<span class=post-category>
-&nbsp; | &nbsp;
-<i class="fa fa-folder-o fa-fw"></i>
-<span class=post-meta-item-text>分類：</span>
-<span itemprop=about itemscope itemtype=https://schema.org/Thing>
-<a href=/categories/%E7%B6%B2%E7%AE%A1 itemprop=url rel=index style=text-decoration:underline>
-<span itemprop=name>網管</span>
-</a>
-&nbsp;
-</span>
-</span>
-<span>
-|
-<i class="fa fa-file-word-o fa-fw"></i>
-<span class=post-meta-item-text>字數：</span>
-<span class=leancloud-world-count>11 字</span>
-</span>
-<span>
-|
-<i class="fa fa-eye fa-fw"></i>
-<span class=post-meta-item-text>閱讀：</span>
-<span class=leancloud-view-count>1分鐘</span>
-</span>
-</div>
-</header>
-<div class=post-body itemprop=articleBody>
-# 匯出虛擬機 ovftool.exe &#8211;machineOutput &#8211;noSSLVerify vi://root:@10.4.200.90/&#8220;&#8221; D:test.ova
-</div>
-<footer class=post-footer><div class=post-eof></div></footer>
-</article>
-<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
-<header class=post-header>
-<h1 class=post-title itemprop="name headline">
-<a class=post-title-link href=https://lovesharepc.github.io/2018/07/02/centos-7-%E5%AE%89%E8%A3%9D-cacti-1-2-3/ itemprop=url>
-CentOS 7 安裝 cacti 1.2.3
-</a>
-</h1>
-<div class=post-meta>
-<span class=post-time>
-<i class="fa fa-calendar-o fa-fw"></i>
-<span class=post-meta-item-text>時間：</span>
-<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2018-07-02">
-2018-07-02
-</time>
-</span>
-<span class=post-category>
-&nbsp; | &nbsp;
-<i class="fa fa-folder-o fa-fw"></i>
-<span class=post-meta-item-text>分類：</span>
-<span itemprop=about itemscope itemtype=https://schema.org/Thing>
-<a href=/categories/centos-7 itemprop=url rel=index style=text-decoration:underline>
-<span itemprop=name>Centos 7</span>
-</a>
-&nbsp;
-</span>
-</span>
-<span>
-|
-<i class="fa fa-file-word-o fa-fw"></i>
-<span class=post-meta-item-text>字數：</span>
-<span class=leancloud-world-count>870 字</span>
-</span>
-<span>
-|
-<i class="fa fa-eye fa-fw"></i>
-<span class=post-meta-item-text>閱讀：</span>
-<span class=leancloud-view-count>2分鐘</span>
-</span>
-</div>
-</header>
-<div class=post-body itemprop=articleBody>
-cacti 為一套免費的 SNMP monitoring soft 由 MRTG 演化而來 主要差別在於比 MRTG 簡易好上手許多 (不過其實也是挺麻煩的) 在我接觸 cacti 之前，我是使用 PRTG 的 如果你只是要小範圍的監控，
-</div>
-<div class="post-more-link text-center">
-<a class=btn href=https://lovesharepc.github.io/2018/07/02/centos-7-%E5%AE%89%E8%A3%9D-cacti-1-2-3/ rel=contents>
-閱讀全文 &#187;
-</a>
-</div>
-<footer class=post-footer><div class=post-eof></div></footer>
-</article>
-<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
-<header class=post-header>
-<h1 class=post-title itemprop="name headline">
-<a class=post-title-link href=https://lovesharepc.github.io/2018/06/05/vmware-ovf-%E5%8C%AF%E5%85%A5%E5%A4%B1%E6%95%97-line-1-is-invalid-sha256/ itemprop=url>
-VMWare ovf 匯入失敗 (line 1) is invalid: SHA256
-</a>
-</h1>
-<div class=post-meta>
-<span class=post-time>
-<i class="fa fa-calendar-o fa-fw"></i>
-<span class=post-meta-item-text>時間：</span>
-<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2018-06-05">
-2018-06-05
-</time>
-</span>
-<span class=post-category>
-&nbsp; | &nbsp;
-<i class="fa fa-folder-o fa-fw"></i>
-<span class=post-meta-item-text>分類：</span>
-<span itemprop=about itemscope itemtype=https://schema.org/Thing>
-<a href=/categories/centos-7 itemprop=url rel=index style=text-decoration:underline>
-<span itemprop=name>Centos 7</span>
-</a>
-&nbsp;
-</span>
-</span>
-<span>
-|
-<i class="fa fa-file-word-o fa-fw"></i>
-<span class=post-meta-item-text>字數：</span>
-<span class=leancloud-world-count>57 字</span>
-</span>
-<span>
-|
-<i class="fa fa-eye fa-fw"></i>
-<span class=post-meta-item-text>閱讀：</span>
-<span class=leancloud-view-count>1分鐘</span>
-</span>
-</div>
-</header>
-<div class=post-body itemprop=articleBody>
-該原因為 vsphere client 不支援 (那就讓它支援阿!!!!) 必須用 OVF Tool 轉換 下載 OVF TOOL 用指令進行轉換動作(記得去 OVF tool 目錄執行) ovftool.exe --shaAlgorithm=SHA1 /path/to/the/original/ova_file.ova /path/to/the/new/ova/file-SHA1.ova
-</div>
-<footer class=post-footer><div class=post-eof></div></footer>
-</article>
-<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
-<header class=post-header>
-<h1 class=post-title itemprop="name headline">
-<a class=post-title-link href=https://lovesharepc.github.io/2018/05/04/%E5%BE%AE%E8%BB%9F-kms-%E5%BA%8F%E8%99%9F/ itemprop=url>
-微軟 KMS 序號
-</a>
-</h1>
-<div class=post-meta>
-<span class=post-time>
-<i class="fa fa-calendar-o fa-fw"></i>
-<span class=post-meta-item-text>時間：</span>
-<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2018-05-04">
-2018-05-04
-</time>
-</span>
-<span class=post-category>
-&nbsp; | &nbsp;
-<i class="fa fa-folder-o fa-fw"></i>
-<span class=post-meta-item-text>分類：</span>
-<span itemprop=about itemscope itemtype=https://schema.org/Thing>
-<a href=/categories/windows itemprop=url rel=index style=text-decoration:underline>
-<span itemprop=name>windows</span>
-</a>
-&nbsp;
-</span>
-</span>
-<span>
-|
-<i class="fa fa-file-word-o fa-fw"></i>
-<span class=post-meta-item-text>字數：</span>
-<span class=leancloud-world-count>5245 字</span>
-</span>
-<span>
-|
-<i class="fa fa-eye fa-fw"></i>
-<span class=post-meta-item-text>閱讀：</span>
-<span class=leancloud-view-count>11分鐘</span>
-</span>
-</div>
-</header>
-<div class=post-body itemprop=articleBody>
-應用範例 slmgr -upk //移除授權 slmgr -skms xxx.xxx.xxx.xxx:1688 //指定 KMS 主機 slmgr -ipk [key] //安裝金鑰 slmgr -ato //啟用授權 序號收集 Windows Server 版本1709 作業系統版本 &lt;td style="border-left: none; border: solid #E3E3E3 1.0pt; mso-border-alt: solid #E3E3E3 .25pt; mso-border-bottom-alt: solid
-</div>
-<div class="post-more-link text-center">
-<a class=btn href=https://lovesharepc.github.io/2018/05/04/%E5%BE%AE%E8%BB%9F-kms-%E5%BA%8F%E8%99%9F/ rel=contents>
-閱讀全文 &#187;
-</a>
-</div>
-<footer class=post-footer><div class=post-eof></div></footer>
-</article>
 </section>
 <nav class=pagination>
 <a class="extend prev" rel=prev href=/page/9.html><i class="fa fa-angle-left"></i></a>
-<a class=page-number href=/page/4.html>4</a>
 <a class=page-number href=/page/5.html>5</a>
 <a class=page-number href=/page/6.html>6</a>
 <a class=page-number href=/page/7.html>7</a>
@@ -589,6 +600,7 @@ VMWare ovf 匯入失敗 (line 1) is invalid: SHA256
 <span class="page-number current">10</span>
 <a class=page-number href=/page/11.html>11</a>
 <a class=page-number href=/page/12.html>12</a>
+<a class=page-number href=/page/13.html>13</a>
 <a class="extend next" rel=next href=/page/11.html><i class="fa fa-angle-right"></i></a>
 </nav>
 </div>
@@ -613,19 +625,19 @@ VMWare ovf 匯入失敗 (line 1) is invalid: SHA256
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href=/post/>
-<span class=site-state-item-count>119</span>
+<span class=site-state-item-count>123</span>
 <span class=site-state-item-name>日誌</span>
 </a>
 </div>
 <div class="site-state-item site-state-categories">
 <a href=/categories/>
-<span class=site-state-item-count>19</span>
+<span class=site-state-item-count>23</span>
 <span class=site-state-item-name>分類</span>
 </a>
 </div>
 <div class="site-state-item site-state-tags">
 <a href=/tags/>
-<span class=site-state-item-count>27</span>
+<span class=site-state-item-count>31</span>
 <span class=site-state-item-name>標籤</span>
 </a>
 </div>

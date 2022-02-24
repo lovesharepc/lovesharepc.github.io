@@ -122,7 +122,7 @@ kubernetes 安裝紀錄
 |
 <i class="fa fa-file-word-o fa-fw"></i>
 <span class=post-meta-item-text>字數：</span>
-<span class=leancloud-world-count>1730 字</span>
+<span class=leancloud-world-count>1733 字</span>
 </span>
 <span>
 |
@@ -140,87 +140,61 @@ kubernetes 安裝紀錄
 </header>
 <div class=post-body itemprop=articleBody>
 <p>紀錄 K8S 安裝相關</p>
+<p>K8S 可以採用 kubespray
+方便我們快速建立 production ready cluster
+除了建立外，連日後的維護都能用他完成
+可以大量節省 kubernetes 的建置維護工作
+<a href=https://kubespray.io>https://kubespray.io</a></p>
+<p>在部屬時最關心的高可用性問題
+<a href=https://kubespray.io/#/docs/ha-mode>https://kubespray.io/#/docs/ha-mode</a>
+kubespray 預設會在 worknode 底下建立 nginx-based proxy
+每個 worknode 都連到 locolhost 的 nginx
+nginx 再連線至 control node</p>
+<p><img src=assets/loadbalancer_localhost.png alt></p>
+<h2 id=部屬>部屬</h2>
+<p>在 LAB 環境底下先準備好 rockylinux 並設定完成
+linux 建議規格為 2 CPU + 1.5G RAM</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>allow IPv4 forwarding
+firewalld 
+
+</code></pre></div><h2 id=待修改>待修改</h2>
 <h2 id=準備-ansible>準備 ansible</h2>
 <p>ansible 可以讓重複工作以腳本方式運行</p>
 <p><a href=https://computingforgeeks.com/install-kubernetes-cluster-on-rocky-linux-with-kubeadm-crio/>https://computingforgeeks.com/install-kubernetes-cluster-on-rocky-linux-with-kubeadm-crio/</a></p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-powershell data-lang=powershell><span style=color:#080;font-style:italic># Prepare base Server for Kubernetes installation</span>
-sudo yum -y install git <span style=color:#a2f>wget curl </span>vim <span style=color:#a2f>bash-completion</span> python3.9
-<span style=color:#a2f>curl </span>https<span>:</span>//bootstrap.pypa.io/<span style=color:#a2f>get-pip</span>.py -o <span style=color:#a2f>get-pip</span>.py
-python3.9 -m pip install ansible --user
-root/.local/bin/
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-powershell data-lang=powershell><span style=color:#080;font-style:italic># Install dependencies from ``requirements.txt``</span>
+sudo pip3 install -r requirements.txt
 
+<span style=color:#080;font-style:italic># Copy ``inventory/sample`` as ``inventory/mycluster``</span>
+<span style=color:#a2f>cp </span>-rfp inventory/sample inventory/mycluster
 
-<span style=color:#080;font-style:italic># 設定環境變數</span>
-<span style=color:#a2f>cat </span>&lt;&lt;EOF&gt;&gt; ~/.bashrc
-export PATH=<span style=color:#b8860b>$PATH</span><span>:</span><span style=color:#b8860b>$HOME</span>/.local/bin 
-EOF
+<span style=color:#080;font-style:italic># Update Ansible inventory file with inventory builder</span>
+declare -a IPS=(10.10.1.3 10.10.1.4 10.10.1.5)
+CONFIG_FILE=inventory/mycluster/hosts.yaml python3 contrib/inventory_builder/inventory.py ${IPS[@]}
 
-source .bashrc
+<span style=color:#080;font-style:italic># Review and change parameters under ``inventory/mycluster/group_vars``</span>
+<span style=color:#a2f>cat </span>inventory/mycluster/group_vars/all/all.yml
+<span style=color:#a2f>cat </span>inventory/mycluster/group_vars/k8s_cluster/<span style=color:#a2f>k8s-cluster</span>.yml
 
+<span style=color:#080;font-style:italic># Deploy Kubespray with Ansible Playbook - run the playbook as root</span>
+<span style=color:#080;font-style:italic># The option `--become` is required, as for example writing SSL keys in /etc/,</span>
+<span style=color:#080;font-style:italic># installing packages and interacting with various systemd daemons.</span>
+<span style=color:#080;font-style:italic># Without --become the playbook will fail to run!</span>
 
-<span style=color:#080;font-style:italic># 檢查版本</span>
-[root<span style=color:#b8860b>@k8s</span>-mgmt ~]<span style=color:#080;font-style:italic># ansible --version</span>
-ansible <span style=color:#800>[core 2.12.2]</span>
-  config file = None
-  configured module search path = [<span style=color:#b44>&#39;/root/.ansible/plugins/modules&#39;</span>, <span style=color:#b44>&#39;/usr/share/ansible/plugins/modules&#39;</span>]
-  ansible python module location = /root/.local/lib/python3.9/<span style=color:#a2f>site-packages</span>/ansible
-  ansible collection location = /root/.ansible/collections<span>:</span>/usr/share/ansible/collections
-  executable location = /root/.local/bin/ansible
-  python version = 3.9.6 (<span style=color:#a2f;font-weight:700>default</span>, Nov  9 2021, 13<span>:</span>31<span>:</span>27) [GCC 8.5.0 20210514 (Red Hat 8.5.0-3)]
-  jinja version = 3.0.3
-  libyaml = True
-
-
-pip install netaddr
-pip install Jinja2
-
-<span style=color:#080;font-style:italic># 設定好 DNS 解析</span>
-192.168.5.141 k8s-1.lab.com
-192.168.5.142 k8s-2.lab.com
-192.168.5.143 k8s-3.lab.com
-192.168.5.144 k8s-4.lab.com
-192.168.5.145 k8s-5.lab.com
-192.168.5.146 k8s-6.lab.com
+<span style=color:#080;font-style:italic># 測試語法</span>
+<span style=color:#a2f>ansible-playbook</span> --syntax-check -i inventory/mycluster/hosts.yaml  --become --become-user=root cluster.yml
 
 
 
 
-<span style=color:#080;font-style:italic># 產生 SSH keys 之後連線時就不必在 key 密碼</span>
-[root<span style=color:#b8860b>@k8s</span>-mgmt ~]<span style=color:#080;font-style:italic># ssh-keygen -t rsa -b 4096 -N &#39;&#39;</span>
-Generating public/private rsa key pair.
-Enter file <span style=color:#a2f;font-weight:700>in</span> which to save the key (/root/.ssh/id_rsa)<span>:</span>
-Created directory <span style=color:#b44>&#39;/root/.ssh&#39;</span>.
-Your identification has been saved <span style=color:#a2f;font-weight:700>in</span> /root/.ssh/id_rsa.
-Your public key has been saved <span style=color:#a2f;font-weight:700>in</span> /root/.ssh/id_rsa.pub.
-The key fingerprint is<span>:</span>
-SHA256<span>:</span>ppI4ODzbpLCFa1pNEHgItBuPzn7JBKfo/7K6+C7fF48 root<span style=color:#b8860b>@k8s</span>-mgmt.localdomain
-The key<span>&#39;</span>s randomart image is<span>:</span>
-+---<span style=color:#800>[RSA 4096]</span>----+
-|++.              |
-|o o.             |
-| +.              |
-| .=o             |
-|.o+..   S        |
-|=+ = ..o         |
-|*=B.= .+         |
-|=O*B .E .        |
-|B<span style=color:#b8860b>@O</span>+=o           |
-+----<span style=color:#800>[SHA256]</span>-----+
-
-<span style=color:#080;font-style:italic># Create SSH client configuration file</span>
-[root<span style=color:#b8860b>@k8s</span>-mgmt ~]<span style=color:#080;font-style:italic># cat ~/.ssh/config</span>
-Host *
-    UserKnownHostsFile /dev/null
-    StrictHostKeyChecking no
-    IdentitiesOnly yes
-    ConnectTimeout 0
-    ServerAliveInterval 30
-
-
-</code></pre></div><h2 id=安裝-rocky-linux-8>安裝 rocky linux 8</h2>
+</code></pre></div><p>移除 rockylinux hostname 設定</p>
+<p>開始部屬
+ansible-playbook -i inventory/mycluster/hosts.yaml &ndash;become &ndash;become-user=root cluster.yml</p>
+<h2 id=安裝-rocky-linux-8>安裝 rocky linux 8</h2>
 <p>完成 IP 及 hostname 設定
 複製 SSH 金鑰</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-powershell data-lang=powershell><span style=color:#080;font-style:italic># Copy SSH keys to all Kubernetes cluster nodes</span>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-powershell data-lang=powershell><span style=color:#a2f>ssh-keygen</span> -t rsa -b 4096 -N <span style=color:#b44>&#39;&#39;</span>
+
+<span style=color:#080;font-style:italic># Copy SSH keys to all Kubernetes cluster nodes</span>
 <span style=color:#a2f;font-weight:700>for</span> host <span style=color:#a2f;font-weight:700>in</span> k8s-{1..3}; <span style=color:#a2f;font-weight:700>do</span>
   <span style=color:#a2f>ssh-copy</span>-id root@<span style=color:#b8860b>$host</span>
 done
@@ -232,8 +206,7 @@ done
 </code></pre></div><h2 id=使用-kubespray-部屬節點>使用 Kubespray 部屬節點</h2>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-powershell data-lang=powershell>git clone https<span>:</span>//github.com/<span style=color:#a2f>kubernetes-sigs</span>/kubespray.git
 
-</code></pre></div><h2 id=待修改>待修改</h2>
-<h2 id=安裝>安裝</h2>
+</code></pre></div><h2 id=安裝>安裝</h2>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=color:#080;font-style:italic>#set the system hostname and update DNS in your /etc/hosts</span>
 
 cat <span style=color:#b44>&lt;&lt;EOF&gt;&gt; /etc/hosts
@@ -754,19 +727,19 @@ EOF
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href=/post/>
-<span class=site-state-item-count>119</span>
+<span class=site-state-item-count>123</span>
 <span class=site-state-item-name>日誌</span>
 </a>
 </div>
 <div class="site-state-item site-state-categories">
 <a href=/categories/>
-<span class=site-state-item-count>19</span>
+<span class=site-state-item-count>23</span>
 <span class=site-state-item-name>分類</span>
 </a>
 </div>
 <div class="site-state-item site-state-tags">
 <a href=/tags/>
-<span class=site-state-item-count>27</span>
+<span class=site-state-item-count>31</span>
 <span class=site-state-item-name>標籤</span>
 </a>
 </div>
@@ -784,10 +757,11 @@ GitHub
 <div class=post-toc>
 <div class=post-toc-content><nav id=TableOfContents>
 <ul>
+<li><a href=#部屬>部屬</a></li>
+<li><a href=#待修改>待修改</a></li>
 <li><a href=#準備-ansible>準備 ansible</a></li>
 <li><a href=#安裝-rocky-linux-8>安裝 rocky linux 8</a></li>
 <li><a href=#使用-kubespray-部屬節點>使用 Kubespray 部屬節點</a></li>
-<li><a href=#待修改>待修改</a></li>
 <li><a href=#安裝>安裝</a>
 <ul>
 <li><a href=#init-單節點>init 單節點</a></li>
