@@ -1,0 +1,650 @@
+<!doctype html><html lang=zh-tw dir=content/zh-tw>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
+<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
+<meta http-equiv=content-security-policy content="upgrade-insecure-requests">
+<title> ansible 入門 - 補覺鳴詩 </title>
+<meta name=keywords content="infra">
+<meta name=author content="Owan">
+<meta property="og:title" content="ansible 入門">
+<meta property="og:site_name" content="補覺鳴詩">
+<meta property="og:image" content="/img/author.jpg">
+<meta name=title content="ansible 入門 - 補覺鳴詩">
+<meta name=description content="ansible">
+<link rel="shortcut icon" href=/img/favicon.ico>
+<link rel=apple-touch-icon href=/img/apple-touch-icon.png>
+<link rel=apple-touch-icon-precomposed href=/img/apple-touch-icon.png>
+<link href=//cdn.bootcdn.net/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css rel=stylesheet type=text/css>
+<link href=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.css rel=stylesheet>
+<link href=/css/main.css rel=stylesheet type=text/css>
+<link href=/css/syntax.css rel=stylesheet type=text/css>
+</head>
+<body itemscope itemtype=http://schema.org/WebPage lang=zh-hans>
+<div class="container one-collumn sidebar-position-left page-home">
+<div class=headband></div>
+<header id=header class=header itemscope itemtype=http://schema.org/WPHeader>
+<div class=header-inner> <div class=site-brand-container>
+<div class=site-nav-toggle>
+<div class=toggle role=button style=opacity:1;top:0>
+<span class=toggle-line></span>
+<span class=toggle-line></span>
+<span class=toggle-line></span>
+</div>
+</div>
+<div class=site-meta>
+<div class=multi-lang-switch>
+<i class="fa fa-fw fa-language" style=margin-right:5px></i>
+</div>
+<div class=custom-logo-site-title>
+<a href=/ class=brand rel=start>
+<span class=logo-line-before><i></i></span>
+<span class=site-title>補覺鳴詩</span>
+<span class=logo-line-after><i></i></span>
+</a>
+</div>
+<p class=site-subtitle>學海無涯</p>
+</div>
+<div class=site-nav-right>
+<div class="toggle popup-trigger" style=opacity:1;top:0>
+<i class="fa fa-search fa-fw fa-lg"></i>
+</div>
+</div>
+</div>
+<nav class=site-nav>
+<ul id=menu class=menu>
+<li class=menu-item>
+<a href=/ rel=section>
+<i class="menu-item-icon fa fa-fw fa-home"></i> <br>首頁
+</a>
+</li>
+<li class=menu-item>
+<a href=/post rel=section>
+<i class="menu-item-icon fa fa-fw fa-archive"></i> <br>archive
+</a>
+</li>
+<li class=menu-item>
+<a href=/about.html rel=section>
+<i class="menu-item-icon fa fa-fw fa-user"></i> <br>關於我
+</a>
+</li>
+<li class="menu-item menu-item-search">
+<a href=javascript:; class=popup-trigger> <i class="menu-item-icon fa fa-search fa-fw"></i> <br> 搜尋</a>
+</li>
+</ul>
+<div class=site-search>
+<div class="popup search-popup local-search-popup">
+<div class="local-search-header clearfix">
+<span class=search-icon><i class="fa fa-search"></i> </span>
+<span class=popup-btn-close><i class="fa fa-times-circle"></i></span>
+<div class=local-search-input-wrapper>
+<input autocomplete=off placeholder=搜索關鍵字... spellcheck=false type=text id=local-search-input autocapitalize=none autocorrect=off>
+</div>
+</div>
+<div id=local-search-result></div>
+</div>
+</div>
+</nav>
+</div>
+</header>
+<main id=main class=main>
+<div class=main-inner>
+<div class=content-wrap>
+<div id=content class=content>
+<section id=posts class=posts-expand>
+<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
+<header class=post-header>
+<h1 class=post-title itemprop="name headline">
+<a class=post-title-link href=https://lovesharepc.github.io/post/ansible_%E5%85%A5%E9%96%80.html itemprop=url>
+ansible 入門
+</a>
+</h1>
+<div class=post-meta>
+<span class=post-time>
+<i class="fa fa-calendar-o fa-fw"></i>
+<span class=post-meta-item-text>時間：</span>
+<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2022-02-23">
+2022-02-23
+</time>
+</span>
+<span class=post-category>
+&nbsp; | &nbsp;
+<i class="fa fa-folder-o fa-fw"></i>
+<span class=post-meta-item-text>分類：</span>
+<span itemprop=about itemscope itemtype=https://schema.org/Thing>
+<a href=/categories/ansible itemprop=url rel=index style=text-decoration:underline>
+<span itemprop=name>ansible</span>
+</a>
+&nbsp;
+</span>
+</span>
+<span>
+|
+<i class="fa fa-file-word-o fa-fw"></i>
+<span class=post-meta-item-text>字數：</span>
+<span class=leancloud-world-count>1401 字</span>
+</span>
+<span>
+|
+<i class="fa fa-eye fa-fw"></i>
+<span class=post-meta-item-text>閱讀：</span>
+<span class=leancloud-view-count>3分鐘</span>
+</span>
+<span id=/post/ansible_%E5%85%A5%E9%96%80.html class=leancloud_visitors data-flag-title="ansible 入門">
+|
+<i class="fa fa-binoculars fa-fw"></i>
+<span class=post-meta-item-text>閱讀次數：</span>
+<span class=leancloud-visitors-count></span>
+</span>
+</div>
+</header>
+<div class=post-body itemprop=articleBody>
+<p>筆記 ansible 操作方法</p>
+<p><img src=assets/Cat_carries.jpg alt></p>
+<p>ansible 目錄結構
+ansible.cfg # 參數
+hosts # 要被執行的主機</p>
+<p>ansible.cfg
+[defaults]
+inventory = hosts
+private_key_file=/path/to/file.pem
+hosts # yml 也可以
+[webservers]
+192.168.5.141
+192.168.5.142
+192.168.5.143</p>
+<h2 id=lab-環境建立>LAB 環境建立</h2>
+<p>開始前先建立 LAB 環境
+使用 vagrant 建立 1 台 mgmt 及 3 台 node
+由 mgmt 執行 ansible 控制 3 台 node</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=color:#080;font-style:italic># -*- mode: ruby -*-</span>
+<span style=color:#080;font-style:italic># vi: set ft=ruby :</span>
+
+Vagrant.configure<span style=color:#666>(</span><span style=color:#b44>&#34;2&#34;</span><span style=color:#666>)</span> <span style=color:#a2f;font-weight:700>do</span> |config|
+
+<span style=color:#080;font-style:italic># box 來源</span>
+  config.vm.box <span style=color:#666>=</span> <span style=color:#b44>&#34;rockylinux.box&#34;</span>
+<span style=color:#080;font-style:italic># box 驗證方式</span>
+  config.ssh.username <span style=color:#666>=</span> <span style=color:#b44>&#34;root&#34;</span>
+  config.ssh.password <span style=color:#666>=</span> <span style=color:#b44>&#34;P@ssw0rd&#34;</span>  
+
+<span style=color:#080;font-style:italic># 設定 VM 資源及使用 link clone 節省 host 空間  </span>
+  config.vm.provider <span style=color:#b44>&#34;virtualbox&#34;</span> <span style=color:#a2f;font-weight:700>do</span> |v|
+    v.linked_clone <span style=color:#666>=</span> <span style=color:#a2f>true</span>
+    v.memory <span style=color:#666>=</span> <span style=color:#666>2048</span>
+    v.cpus <span style=color:#666>=</span> <span style=color:#666>2</span>
+  end
+
+<span style=color:#080;font-style:italic># 使用迴圈建立大量 VM</span>
+	<span style=color:#666>(</span>1..3<span style=color:#666>)</span>.each <span style=color:#a2f;font-weight:700>do</span> |i|
+		<span style=color:#080;font-style:italic># Defining VM properties</span>
+		config.vm.define <span style=color:#b44>&#34;rockylinux_vm#{i}&#34;</span> <span style=color:#a2f;font-weight:700>do</span> |node|
+			node.vm.hostname <span style=color:#666>=</span> <span style=color:#b44>&#34;node#{i}.local&#34;</span>
+			node.vm.network <span style=color:#b44>&#34;public_network&#34;</span>, ip: <span style=color:#b44>&#34;192.168.15.#{140+machine_id}&#34;</span>
+		end
+	end
+
+<span style=color:#080;font-style:italic># 建立單一VM</span>
+config.vm.define <span style=color:#b44>&#34;rockylinux_mgmt&#34;</span> <span style=color:#a2f;font-weight:700>do</span> |mgmt|
+  mgmt.vm.hostname <span style=color:#666>=</span> <span style=color:#b44>&#34;mgmt.local&#34;</span>
+<span style=color:#080;font-style:italic># 設定 public 網卡，讓 host 能夠連線</span>
+  mgmt.vm.network <span style=color:#b44>&#34;public_network&#34;</span>, ip: <span style=color:#b44>&#34;192.168.15.100&#34;</span>
+end
+end
+
+</code></pre></div><h2 id=安裝>安裝</h2>
+<p>ansible 需使用 python3 (目前 ansible 需 python 3.8 以上)
+連線至 mgmt 安裝套件</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>dnf install -y git wget curl vim bash-completion curl jq tar iproute-tc python39 sshpass
+wget https://bootstrap.pypa.io/get-pip.py
+python3 get-pip.py
+<span style=color:#080;font-style:italic># check version is python3.9</span>
+python3 -V
+pip3 -V
+
+pip3 install ansible
+ansible --version
+
+
+<span style=color:#666>[</span>root@mgmt ~<span style=color:#666>]</span><span style=color:#080;font-style:italic># ansible --version</span>
+ansible <span style=color:#666>[</span>core 2.12.2<span style=color:#666>]</span>
+  config <span style=color:#b8860b>file</span> <span style=color:#666>=</span> None
+  configured module search <span style=color:#b8860b>path</span> <span style=color:#666>=</span> <span style=color:#666>[</span><span style=color:#b44>&#39;/root/.ansible/plugins/modules&#39;</span>, <span style=color:#b44>&#39;/usr/share/ansible/plugins/modules&#39;</span><span style=color:#666>]</span>
+  ansible python module <span style=color:#b8860b>location</span> <span style=color:#666>=</span> /usr/local/lib/python3.9/site-packages/ansible
+  ansible collection <span style=color:#b8860b>location</span> <span style=color:#666>=</span> /root/.ansible/collections:/usr/share/ansible/collections
+  executable <span style=color:#b8860b>location</span> <span style=color:#666>=</span> /usr/local/bin/ansible
+  python <span style=color:#b8860b>version</span> <span style=color:#666>=</span> 3.9.6 <span style=color:#666>(</span>default, Nov  <span style=color:#666>9</span> 2021, 13:31:27<span style=color:#666>)</span> <span style=color:#666>[</span>GCC 8.5.0 <span style=color:#666>20210514</span> <span style=color:#666>(</span>Red Hat 8.5.0-3<span style=color:#666>)]</span>
+  jinja <span style=color:#b8860b>version</span> <span style=color:#666>=</span> 3.0.3
+  <span style=color:#b8860b>libyaml</span> <span style=color:#666>=</span> True
+
+
+</code></pre></div><h3 id=測試執行>測試執行</h3>
+<p>控制本機執行 ping</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=color:#666>[</span>root@mgmt ~<span style=color:#666>]</span><span style=color:#080;font-style:italic># ansible localhost -m &#34;ping&#34;</span>
+<span style=color:#666>[</span>WARNING<span style=color:#666>]</span>: No inventory was parsed, only implicit localhost is available
+localhost | <span style=color:#b8860b>SUCCESS</span> <span style=color:#666>=</span>&gt; <span style=color:#666>{</span>
+    <span style=color:#b44>&#34;changed&#34;</span>: false,
+    <span style=color:#b44>&#34;ping&#34;</span>: <span style=color:#b44>&#34;pong&#34;</span>
+<span style=color:#666>}</span>
+</code></pre></div><p>控制遠端執行 ping</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>mkdir ansible-lab
+<span style=color:#a2f>cd</span> ansible-lab
+cat <span style=color:#b44>&lt;&lt;EOF&gt;&gt; inventory
+</span><span style=color:#b44>all:
+</span><span style=color:#b44>  hosts:
+</span><span style=color:#b44>    192.168.15.141:
+</span><span style=color:#b44>    192.168.15.142:
+</span><span style=color:#b44>    192.168.15.143:
+</span><span style=color:#b44>  vars:
+</span><span style=color:#b44>    ansible_connection: ssh
+</span><span style=color:#b44>    ansible_user: root
+</span><span style=color:#b44>    ansible_ssh_pass: P@ssw0rd
+</span><span style=color:#b44>EOF</span>
+
+<span style=color:#666>[</span>root@mgmt ansible-lab<span style=color:#666>]</span><span style=color:#080;font-style:italic># ansible -i  inventory  all --list-hosts</span>
+  hosts <span style=color:#666>(</span>3<span style=color:#666>)</span>:
+    192.168.15.141
+    192.168.15.142
+    192.168.15.143
+
+<span style=color:#080;font-style:italic># 關閉 ssh fingerprint 是否接受</span>
+cat <span style=color:#b44>&lt;&lt;EOF&gt;&gt; /etc/ssh/ssh_config
+</span><span style=color:#b44>StrictHostKeyChecking no
+</span><span style=color:#b44>EOF</span>
+
+<span style=color:#080;font-style:italic># 建立 inventory file 給 ansible 連線用</span>
+
+<span style=color:#666>==========================</span>
+
+<span style=color:#080;font-style:italic># 執行指令</span>
+<span style=color:#666>[</span>root@mgmt ansible-lab<span style=color:#666>]</span><span style=color:#080;font-style:italic># ansible -i inventory all -m ping</span>
+192.168.15.143 | <span style=color:#b8860b>SUCCESS</span> <span style=color:#666>=</span>&gt; <span style=color:#666>{</span>
+    <span style=color:#b44>&#34;ansible_facts&#34;</span>: <span style=color:#666>{</span>
+        <span style=color:#b44>&#34;discovered_interpreter_python&#34;</span>: <span style=color:#b44>&#34;/usr/libexec/platform-python&#34;</span>
+    <span style=color:#666>}</span>,
+    <span style=color:#b44>&#34;changed&#34;</span>: false,
+    <span style=color:#b44>&#34;ping&#34;</span>: <span style=color:#b44>&#34;pong&#34;</span>
+<span style=color:#666>}</span>
+192.168.15.141 | <span style=color:#b8860b>SUCCESS</span> <span style=color:#666>=</span>&gt; <span style=color:#666>{</span>
+    <span style=color:#b44>&#34;ansible_facts&#34;</span>: <span style=color:#666>{</span>
+        <span style=color:#b44>&#34;discovered_interpreter_python&#34;</span>: <span style=color:#b44>&#34;/usr/libexec/platform-python&#34;</span>
+    <span style=color:#666>}</span>,
+    <span style=color:#b44>&#34;changed&#34;</span>: false,
+    <span style=color:#b44>&#34;ping&#34;</span>: <span style=color:#b44>&#34;pong&#34;</span>
+<span style=color:#666>}</span>
+192.168.15.142 | <span style=color:#b8860b>SUCCESS</span> <span style=color:#666>=</span>&gt; <span style=color:#666>{</span>
+    <span style=color:#b44>&#34;ansible_facts&#34;</span>: <span style=color:#666>{</span>
+        <span style=color:#b44>&#34;discovered_interpreter_python&#34;</span>: <span style=color:#b44>&#34;/usr/libexec/platform-python&#34;</span>
+    <span style=color:#666>}</span>,
+    <span style=color:#b44>&#34;changed&#34;</span>: false,
+    <span style=color:#b44>&#34;ping&#34;</span>: <span style=color:#b44>&#34;pong&#34;</span>
+<span style=color:#666>}</span>
+
+<span style=color:#080;font-style:italic># 或是不在 inventory 設定帳密</span>
+ansible all -i  host.yaml -m <span style=color:#b44>&#34;ping&#34;</span>   --extra-vars <span style=color:#b44>&#34;ansible_user=root 
+</span></code></pre></div><h2 id=使用-ansible-vault>使用 ansible-vault</h2>
+<p>前面的設定檔我們將帳密寫在 inventory 中，在資安中會是不小的風險
+<code>ansible-vault</code> 提供將我們的設定檔或是字串做加密保護的動作
+參考文章 <a href=https://www.digitalocean.com/community/tutorials/how-to-use-vault-to-protect-sensitive-ansible-data>https://www.digitalocean.com/community/tutorials/how-to-use-vault-to-protect-sensitive-ansible-data</a></p>
+<p>ansible 分為加密變數及加密整個檔案</p>
+<h3 id=加密整個-yaml-檔案>加密整個 yaml 檔案</h3>
+<p>優點: 安全性提升，可以使用 rekey 重新加密
+缺點: 不易閱讀內容</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=color:#080;font-style:italic># 加密</span>
+ansible-vault encrypt &lt;filename.yaml&gt;
+
+<span style=color:#080;font-style:italic># 查看</span>
+ansible-vault view &lt;filename.yaml&gt;
+
+<span style=color:#080;font-style:italic># 編輯</span>
+ansible-vault edit &lt;filename.yaml&gt;
+
+<span style=color:#080;font-style:italic># 解密</span>
+ansible-vault decrypt &lt;filename.yaml&gt;
+
+<span style=color:#080;font-style:italic># 執行</span>
+ansible -i inventory-var-encrypte all -m ping  --ask-vault-pass
+
+<span style=color:#080;font-style:italic># rekey 重新加密</span>
+ansible-vault rekey &lt;filename.yaml&gt;
+Vault password:
+New Vault password:
+Confirm New Vault password:
+</code></pre></div><p>加密後的檔案</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>[root@mgmt ansible-lab]# cat inventory-var-encrypte
+$ANSIBLE_VAULT;1.1;AES256
+39666135363865333833353138333630376465356563313435376135396231653435316536653739
+3831623130366136323663383862333730616538366234610a363764616437316630656632643134
+64626164356532373134636534633336383130633063326331623936626266386137306330616164
+3938366563346530300a313233373866626565653234396538363663363335636366326664373430
+37383361396439353236363132633963356464663236396666636331386434383631663533653431
+33313235306464633931653538613862343535323264653932376463333032636431373935623462
+35393531663364393365633834636463616231623438613938326239626234303366363637303861
+62616665386138383862303935393937663832373738613963626262663033643839373432613331
+61663666643065623161353162306338633439643262616631383035393732313134666637353231
+31646434623766346465646435376639306666396565633562666464383362343065343433383662
+62333966323034633936396230666664343166636262333538663462373061303837356433613030
+33383936313263313263393765376533653766356662623365376265333435656536333735626431
+
+</code></pre></div><h3 id=加密變數>加密變數</h3>
+<p>優點: 只加密變數，使檔案維持易讀性
+缺點: 無法直接更新加密過的變數</p>
+<p>加密變數稍微不同的點在於
+加密的執行跟輸出是採用 stdin 、 stdout</p>
+<p>舉例
+原本 var-crypt.yaml 檔如此</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-powershell data-lang=powershell>---  <span style=color:#080;font-style:italic>#定義該檔為 yaml format</span>
+all<span>:</span>
+  hosts<span>:</span>
+    192.168.15.141<span>:</span>
+    192.168.15.142<span>:</span>
+    192.168.15.143<span>:</span>
+  vars<span>:</span>
+    ansible_connection<span>:</span> ssh
+    ansible_user<span>:</span> root
+    ansible_ssh_pass<span>:</span> P<span style=color:#b8860b>@ssw0rd</span>
+
+</code></pre></div><p>將 ansible_ssh_pass 進行加密</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-powershell data-lang=powershell>[root<span style=color:#b8860b>@mgmt</span> <span style=color:#a2f>ansible-lab</span>]<span style=color:#080;font-style:italic># ansible-vault encrypt_string -n &#39;ansible_ssh_pass&#39; &#39;P@ssw0rd&#39;</span>
+New Vault password<span>:</span>
+Confirm New Vault password<span>:</span>
+ansible_ssh_pass<span>:</span> !vault |
+          <span style=color:#b8860b>$ANSIBLE_VAULT</span>;1.1;AES256
+          35643435323937363061666532643633653839643739623562396438306637633939336137363130
+          6330393833313533633765343537306438663835326333610a646466303963643935393135636439
+          63303036303135633732343966653639636464393264646664656665623839633038393364396439
+          3566323366353361300a353139306230666664303038303966393732336465666136623265383561
+          3937
+Encryption successful
+
+
+</code></pre></div><p>跟前面 file encrypt 比較
+加密的開頭從 $ANSIBLE_VAULT 變成 ansible_ssh_pass: !vault
+在把這串加密過後的輸出存至 var-crypt.yaml 內</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>---  <span style=color:#080;font-style:italic>#定義該檔為 yaml format</span>
+all:
+  hosts:
+    192.168.15.141:
+    192.168.15.142:
+    192.168.15.143:
+  vars:
+    ansible_connection: ssh
+    ansible_user: root
+    ansible_ssh_pass: !vault |
+          <span style=color:#b8860b>$ANSIBLE_VAULT</span>;1.1;AES256
+          <span style=color:#666>35643435323937363061666532643633653839643739623562396438306637633939336137363130</span>
+          6330393833313533633765343537306438663835326333610a646466303963643935393135636439
+          <span style=color:#666>63303036303135633732343966653639636464393264646664656665623839633038393364396439</span>
+          3566323366353361300a353139306230666664303038303966393732336465666136623265383561
+          <span style=color:#666>3937</span>
+
+</code></pre></div><p>如此即完成變數加密
+測試執行</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-powershell data-lang=powershell>[root<span style=color:#b8860b>@mgmt</span> <span style=color:#a2f>ansible-lab</span>]<span style=color:#080;font-style:italic># ansible -i var-crypt.yaml all -m ping  --ask-vault-pass</span>
+Vault password<span>:</span>
+192.168.15.143 | SUCCESS =&gt; {
+    <span style=color:#b44>&#34;ansible_facts&#34;</span><span>:</span> {
+        <span style=color:#b44>&#34;discovered_interpreter_python&#34;</span><span>:</span> <span style=color:#b44>&#34;/usr/libexec/platform-python&#34;</span>
+    },
+    <span style=color:#b44>&#34;changed&#34;</span><span>:</span> false,
+    <span style=color:#b44>&#34;ping&#34;</span><span>:</span> <span style=color:#b44>&#34;pong&#34;</span>
+}
+192.168.15.141 | SUCCESS =&gt; {
+    <span style=color:#b44>&#34;ansible_facts&#34;</span><span>:</span> {
+        <span style=color:#b44>&#34;discovered_interpreter_python&#34;</span><span>:</span> <span style=color:#b44>&#34;/usr/libexec/platform-python&#34;</span>
+    },
+    <span style=color:#b44>&#34;changed&#34;</span><span>:</span> false,
+    <span style=color:#b44>&#34;ping&#34;</span><span>:</span> <span style=color:#b44>&#34;pong&#34;</span>
+}
+192.168.15.142 | SUCCESS =&gt; {
+    <span style=color:#b44>&#34;ansible_facts&#34;</span><span>:</span> {
+        <span style=color:#b44>&#34;discovered_interpreter_python&#34;</span><span>:</span> <span style=color:#b44>&#34;/usr/libexec/platform-python&#34;</span>
+    },
+    <span style=color:#b44>&#34;changed&#34;</span><span>:</span> false,
+    <span style=color:#b44>&#34;ping&#34;</span><span>:</span> <span style=color:#b44>&#34;pong&#34;</span>
+}
+
+</code></pre></div><p>更多人的作法是將跟機密有關係的內容另存一個 yaml 檔
+再加密此 yaml</p>
+<h3 id=使用密碼檔進行加密>使用密碼檔進行加密</h3>
+<p>前面的範例皆為使用輸入密碼的方式進行加解密
+可以使用密碼檔的方式進行加解密動作</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=color:#080;font-style:italic># 建立密碼檔</span>
+<span style=color:#a2f>echo</span> <span style=color:#b44>&#39;my_vault_password&#39;</span> &gt; .vault_pass
+
+<span style=color:#080;font-style:italic># git 排除密碼檔</span>
+<span style=color:#a2f>echo</span> <span style=color:#b44>&#39;.vault_pass&#39;</span> &gt;&gt; .gitignore
+
+<span style=color:#080;font-style:italic># 使用時，加上 --vault-password-file=.vault_pass 即可</span>
+ansible-vault encrypt --vault-password-file<span style=color:#666>=</span>.vault_pass vault-pass.yaml
+
+ansible-vault view --vault-password-file<span style=color:#666>=</span>.vault_pass vault-pass.yaml
+
+
+<span style=color:#080;font-style:italic># Reading the Password File Automatically</span>
+<span style=color:#a2f>export</span> <span style=color:#b8860b>ANSIBLE_VAULT_PASSWORD_FILE</span><span style=color:#666>=</span>./.vault_pass
+
+</code></pre></div><h2 id=ansible-playbook>ansible-playbook</h2>
+<p>再前面的範例中
+用的 <code>ansible</code> 指令、都只執行單行命令(ad-hoc commands)
+要能夠執行多個指令
+要使用 <code>ansible-playbook</code>
+playbook 就是將執行的指令寫成多個檔案，像讀一本 book 一般進行執行</p>
+<p>關於 yaml 的格式
+可以看 <a href=https://github.com/ansible/ansible/tree/devel/examples>https://github.com/ansible/ansible/tree/devel/examples</a> 做參考</p>
+<h3 id=以-ansible-playbook-執行-多個指令>以 ansible-playbook 執行 多個指令</h3>
+<p>在前面的目標，將目標行寫成多個檔案
+ansible.cfg
+hosts.yaml
+main.yaml</p>
+<p><strong>ansible.cfg</strong>
+ansible 在執行時會找目前目錄下的 ansible.cfg 作為每次要帶入的參數</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-powershell data-lang=powershell><span style=color:#800>[defaults]</span>
+<span style=color:#080;font-style:italic># 主機清單</span>
+inventory      = hosts.yaml
+<span style=color:#080;font-style:italic># 同步執行數量</span>
+forks          = 5
+<span style=color:#080;font-style:italic># 不跳出 SSL 警告避免中斷</span>
+host_key_checking = False
+</code></pre></div><p>這裡將主機分成兩個 group (webservers,testing)
+hosts.yaml</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-powershell data-lang=powershell>---  <span style=color:#080;font-style:italic>#定義該檔為 yaml format</span>
+webservers<span>:</span>
+  hosts<span>:</span>
+    192.168.15.141<span>:</span>
+    192.168.15.142<span>:</span>
+testing<span>:</span>
+  hosts<span>:</span>
+    192.168.15.143<span>:</span>
+
+</code></pre></div><p>接著寫一個 main.yaml 來作為所有執行階段的起點
+main.yaml</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-powershell data-lang=powershell>---
+- hosts<span>:</span> webservers
+  tasks<span>:</span>
+    - name<span>:</span> running ping
+      ping<span>:</span>
+- hosts<span>:</span> testing
+  tasks<span>:</span>
+    - name<span>:</span> running setup
+      setup<span>:</span>
+
+</code></pre></div><p>執行語法檢查</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>ansible-playbook --syntax-check main.yaml
+</code></pre></div><p>執行 play book</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=color:#666>[</span>root@mgmt ansible-lab<span style=color:#666>]</span><span style=color:#080;font-style:italic># ansible-playbook  main.yaml</span>
+
+PLAY <span style=color:#666>[</span>webservers<span style=color:#666>]</span> *******************************************************************************************************************************************************************************************************
+
+TASK <span style=color:#666>[</span>Gathering Facts<span style=color:#666>]</span> **************************************************************************************************************************************************************************************************
+ok: <span style=color:#666>[</span>192.168.15.142<span style=color:#666>]</span>
+ok: <span style=color:#666>[</span>192.168.15.141<span style=color:#666>]</span>
+
+TASK <span style=color:#666>[</span>running ping<span style=color:#666>]</span> *****************************************************************************************************************************************************************************************************
+ok: <span style=color:#666>[</span>192.168.15.142<span style=color:#666>]</span>
+ok: <span style=color:#666>[</span>192.168.15.141<span style=color:#666>]</span>
+
+PLAY <span style=color:#666>[</span>testing<span style=color:#666>]</span> **********************************************************************************************************************************************************************************************************
+
+TASK <span style=color:#666>[</span>Gathering Facts<span style=color:#666>]</span> **************************************************************************************************************************************************************************************************
+ok: <span style=color:#666>[</span>192.168.15.143<span style=color:#666>]</span>
+
+TASK <span style=color:#666>[</span>running setup<span style=color:#666>]</span> ****************************************************************************************************************************************************************************************************
+ok: <span style=color:#666>[</span>192.168.15.143<span style=color:#666>]</span>
+
+PLAY RECAP **************************************************************************************************************************************************************************************************************
+192.168.15.141             : <span style=color:#b8860b>ok</span><span style=color:#666>=</span><span style=color:#666>2</span>    <span style=color:#b8860b>changed</span><span style=color:#666>=</span><span style=color:#666>0</span>    <span style=color:#b8860b>unreachable</span><span style=color:#666>=</span><span style=color:#666>0</span>    <span style=color:#b8860b>failed</span><span style=color:#666>=</span><span style=color:#666>0</span>    <span style=color:#b8860b>skipped</span><span style=color:#666>=</span><span style=color:#666>0</span>    <span style=color:#b8860b>rescued</span><span style=color:#666>=</span><span style=color:#666>0</span>    <span style=color:#b8860b>ignored</span><span style=color:#666>=</span><span style=color:#666>0</span>
+192.168.15.142             : <span style=color:#b8860b>ok</span><span style=color:#666>=</span><span style=color:#666>2</span>    <span style=color:#b8860b>changed</span><span style=color:#666>=</span><span style=color:#666>0</span>    <span style=color:#b8860b>unreachable</span><span style=color:#666>=</span><span style=color:#666>0</span>    <span style=color:#b8860b>failed</span><span style=color:#666>=</span><span style=color:#666>0</span>    <span style=color:#b8860b>skipped</span><span style=color:#666>=</span><span style=color:#666>0</span>    <span style=color:#b8860b>rescued</span><span style=color:#666>=</span><span style=color:#666>0</span>    <span style=color:#b8860b>ignored</span><span style=color:#666>=</span><span style=color:#666>0</span>
+192.168.15.143             : <span style=color:#b8860b>ok</span><span style=color:#666>=</span><span style=color:#666>2</span>    <span style=color:#b8860b>changed</span><span style=color:#666>=</span><span style=color:#666>0</span>    <span style=color:#b8860b>unreachable</span><span style=color:#666>=</span><span style=color:#666>0</span>    <span style=color:#b8860b>failed</span><span style=color:#666>=</span><span style=color:#666>0</span>    <span style=color:#b8860b>skipped</span><span style=color:#666>=</span><span style=color:#666>0</span>    <span style=color:#b8860b>rescued</span><span style=color:#666>=</span><span style=color:#666>0</span>    <span style=color:#b8860b>ignored</span><span style=color:#666>=</span><span style=color:#666>0</span>
+
+</code></pre></div><h2 id=其他>其他</h2>
+<p><strong>Setting the Ansible Vault Editor</strong></p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>nano ~/.bashrc
+<span style=color:#a2f>export</span> <span style=color:#b8860b>EDITOR</span><span style=color:#666>=</span>nano
+
+
+<span style=color:#080;font-style:italic># or one time config</span>
+<span style=color:#b8860b>EDITOR</span><span style=color:#666>=</span>nano ansible-vault . . .
+</code></pre></div><p><strong>extra-vars</strong></p>
+<p>使用帳密登入</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>ansible all -i  host.yaml -m <span style=color:#b44>&#34;ping&#34;</span>   --extra-vars <span style=color:#b44>&#34;ansible_user=root ansible_password=P@ssw0rd&#34;</span>
+</code></pre></div><p><strong>plugin-index</strong>
+<a href=https://docs.ansible.com/ansible/latest/collections/ansible/builtin/index.html#plugin-index>https://docs.ansible.com/ansible/latest/collections/ansible/builtin/index.html#plugin-index</a></p>
+</div>
+<footer class=post-footer>
+<div class=post-tags>
+<a href=/tags/ansible rel=tag title=ansible>#ansible#</a>
+</div>
+<div id=disqus_thread></div>
+<script type=application/javascript>var disqus_config=function(){};(function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById('disqus_thread').innerHTML='Disqus comments not available by default when the website is previewed locally.';return}var b=document,a=b.createElement('script');a.async=!0,a.src='//bu-jue-ming-shi.disqus.com/embed.js',a.setAttribute('data-timestamp',+new Date),(b.head||b.body).appendChild(a)})()</script>
+<noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript>
+<a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a>
+>
+</footer>
+</article>
+</section>
+</div>
+</div>
+<div class=sidebar-toggle>
+<div class=sidebar-toggle-line-wrap>
+<span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+<span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+<span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+</div>
+</div>
+<aside id=sidebar class=sidebar>
+<div class=sidebar-inner>
+<ul class="sidebar-nav motion-element">
+<li class="sidebar-nav-toc sidebar-nav-active" data-target=post-toc-wrap>
+文章目錄
+</li>
+<li class=sidebar-nav-overview data-target=site-overview>
+網站導覽
+</li>
+</ul>
+<section class="site-overview sidebar-panel">
+<div class="site-author motion-element" itemprop=author itemscope itemtype=http://schema.org/Person>
+<img class=site-author-image itemprop=image src=/img/avatar.png alt=Owan>
+<p class=site-author-name itemprop=name>Owan</p>
+<p class="site-description motion-element" itemprop=description>
+愛貓如癡
+</p>
+</div>
+<nav class="site-state motion-element">
+<div class="site-state-item site-state-posts">
+<a href=/post/>
+<span class=site-state-item-count>126</span>
+<span class=site-state-item-name>日誌</span>
+</a>
+</div>
+<div class="site-state-item site-state-categories">
+<a href=/categories/>
+<span class=site-state-item-count>25</span>
+<span class=site-state-item-name>分類</span>
+</a>
+</div>
+<div class="site-state-item site-state-tags">
+<a href=/tags/>
+<span class=site-state-item-count>33</span>
+<span class=site-state-item-name>標籤</span>
+</a>
+</div>
+</nav>
+<div class="links-of-author motion-element">
+<span class=links-of-author-item>
+<a href=https://github.com/lovesharepc/ target=_blank title=GitHub>
+<i class="fa fa-fw fa-github"></i>
+GitHub
+</a>
+</span>
+</div>
+</section>
+<section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+<div class=post-toc>
+<div class=post-toc-content><nav id=TableOfContents>
+<ul>
+<li><a href=#lab-環境建立>LAB 環境建立</a></li>
+<li><a href=#安裝>安裝</a>
+<ul>
+<li><a href=#測試執行>測試執行</a></li>
+</ul>
+</li>
+<li><a href=#使用-ansible-vault>使用 ansible-vault</a>
+<ul>
+<li><a href=#加密整個-yaml-檔案>加密整個 yaml 檔案</a></li>
+<li><a href=#加密變數>加密變數</a></li>
+<li><a href=#使用密碼檔進行加密>使用密碼檔進行加密</a></li>
+</ul>
+</li>
+<li><a href=#ansible-playbook>ansible-playbook</a>
+<ul>
+<li><a href=#以-ansible-playbook-執行-多個指令>以 ansible-playbook 執行 多個指令</a></li>
+</ul>
+</li>
+<li><a href=#其他>其他</a></li>
+</ul>
+</nav></div>
+</div>
+</section>
+</div>
+</aside>
+</div>
+</main>
+<footer id=footer class=footer>
+<div class=footer-inner>
+<div class=copyright>
+<span class=copyright-year>
+&copy; 2010 - 2022
+</span>
+<span class=with-love><i class="fa fa-heart"></i></span>
+<span class=copyright-author>補覺鳴詩</span>
+</div>
+<div class=powered-info>
+<span class=powered-by>
+Powered by - <a class=powered-link href=//gohugo.io target=_blank title=hugo>Hugo v0.92.2</a>
+</span>
+<span class=separator-line>/</span>
+<span class=theme-info>
+Theme by - <a class=powered-link href=//github.com/elkan1788/hugo-theme-next target=_blank> NexT
+</a>
+</span>
+</div>
+<div class=vistor-info>
+</div>
+</div>
+</footer>
+<div class=back-to-top>
+<i class="fa fa-arrow-up"></i>
+<span id=scrollpercent><span>0</span>%</span>
+</div>
+</div>
+<script type=text/javascript src=//cdn.bootcdn.net/ajax/libs/jquery/2.1.4/jquery.min.js></script>
+<script type=text/javascript src=/js/search.js></script>
+<script type=text/javascript src=/js/affix.js></script>
+<script type=text/javascript src=/js/scrollspy.js></script>
+<script type=text/javascript>function detectIE(){var a=window.navigator.userAgent,b=a.indexOf('MSIE '),c=a.indexOf('Trident/'),d=a.indexOf('Edge/');return b>0||c>0||d>0?-1:1}function getCntViewHeight(){var b=$('#content').height(),a=$(window).height(),c=b>a?b-a:$(document).height()-a;return c}function getScrollbarWidth(){var a=$('<div />').addClass('scrollbar-measure').prependTo('body'),b=a[0],c=b.offsetWidth-b.clientWidth;return a.remove(),c}function registerBackTop(){var b=50,a=$('.back-to-top');$(window).on('scroll',function(){var d,e,f,c,g;a.toggleClass('back-to-top-on',window.pageYOffset>b),d=$(window).scrollTop(),e=getCntViewHeight(),f=d/e,c=Math.round(f*100),g=c>100?100:c,$('#scrollpercent>span').html(g)}),a.on('click',function(){$("html,body").animate({scrollTop:0,screenLeft:0},800)})}function initScrollSpy(){var a='.post-toc',d=$(a),b='.active-current';d.on('activate.bs.scrollspy',function(){var b=$(a+' .active').last();c(),b.addClass('active-current')}).on('clear.bs.scrollspy',c),$('body').scrollspy({target:a});function c(){$(a+' '+b).removeClass(b.substring(1))}}function initAffix(){var a=$('.header-inner').height(),b=parseInt($('.main').css('padding-bottom'),10),c=a+10;$('.sidebar-inner').affix({offset:{top:c,bottom:b}}),$(document).on('affixed.bs.affix',function(){updateTOCHeight(document.body.clientHeight-100)})}function initTOCDimension(){var a,b;$(window).on('resize',function(){a&&clearTimeout(a),a=setTimeout(function(){var a=document.body.clientHeight-100;updateTOCHeight(a)},0)}),updateTOCHeight(document.body.clientHeight-100),b=getScrollbarWidth(),$('.post-toc').css('width','calc(100% + '+b+'px)')}function updateTOCHeight(a){a=a||'auto',$('.post-toc').css('max-height',a)}$(function(){var b=$('.header-inner').height()+10,c,d,a,e;$('#sidebar').css({'margin-top':b}).show(),c=parseInt($('#sidebar').css('margin-top')),d=parseInt($('.sidebar-inner').css('height')),a=c+d,e=$('.content-wrap').height(),e<a&&$('.content-wrap').css('min-height',a),$('.site-nav-toggle').on('click',function(){var a=$('.site-nav'),e=$('.toggle'),b='site-nav-on',f='toggle-close',c=a.hasClass(b),g=c?'slideUp':'slideDown',d=c?'removeClass':'addClass';a.stop()[g]('normal',function(){a[d](b),e[d](f)})}),registerBackTop(),initScrollSpy(),initAffix(),initTOCDimension(),$('.sidebar-nav-toc').click(function(){$(this).addClass('sidebar-nav-active'),$(this).next().removeClass('sidebar-nav-active'),$('.'+$(this).next().attr('data-target')).toggle(500),$('.'+$(this).attr('data-target')).toggle(500)}),$('.sidebar-nav-overview').click(function(){$(this).addClass('sidebar-nav-active'),$(this).prev().removeClass('sidebar-nav-active'),$('.'+$(this).prev().attr('data-target')).toggle(500),$('.'+$(this).attr('data-target')).toggle(500)})})</script>
+<script src=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.js></script>
+<script type=text/javascript>$(function(){$('.post-body').viewer()})</script>
+<script>(function(){var a=document.createElement('script'),c=window.location.protocol.split(':')[0],b;c==='https'?a.src='https://zz.bdstatic.com/linksubmit/push.js':a.src='http://push.zhanzhang.baidu.com/push.js',b=document.getElementsByTagName("script")[0],b.parentNode.insertBefore(a,b)})()</script>
+</body>
+</html>

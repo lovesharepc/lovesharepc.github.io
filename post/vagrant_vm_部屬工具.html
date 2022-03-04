@@ -128,13 +128,13 @@ vagrant VM 部屬工具
 |
 <i class="fa fa-file-word-o fa-fw"></i>
 <span class=post-meta-item-text>字數：</span>
-<span class=leancloud-world-count>461 字</span>
+<span class=leancloud-world-count>509 字</span>
 </span>
 <span>
 |
 <i class="fa fa-eye fa-fw"></i>
 <span class=post-meta-item-text>閱讀：</span>
-<span class=leancloud-view-count>1分鐘</span>
+<span class=leancloud-view-count>2分鐘</span>
 </span>
 <span id=/post/vagrant_vm_%E9%83%A8%E5%B1%AC%E5%B7%A5%E5%85%B7.html class=leancloud_visitors data-flag-title="vagrant VM 部屬工具">
 |
@@ -248,13 +248,17 @@ Vagrant.configure(&#34;2&#34;) do |config|
 		# Defining VM properties
 		config.vm.define &#34;rockylinux_vm#{i}&#34; do |node|
 			node.vm.hostname = &#34;node#{i}.local&#34;
+            # 使用 public network 讓 host 能夠直接連線
 			node.vm.network &#34;public_network&#34;, ip: &#34;192.168.15.14#{i}&#34;
 		end
 	end
 
 end
 
-</code></pre></div>
+</code></pre></div><p>下面測試布建 9 台 VM
+可見確實使用 link-clone 占用極少資源
+在大量 LAB 的環境搭建非常實用</p>
+<p><img src=assets/1601_12.png alt=1601_12.png></p>
 </div>
 <footer class=post-footer>
 <div class=post-tags>
@@ -299,19 +303,19 @@ end
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href=/post/>
-<span class=site-state-item-count>123</span>
+<span class=site-state-item-count>126</span>
 <span class=site-state-item-name>日誌</span>
 </a>
 </div>
 <div class="site-state-item site-state-categories">
 <a href=/categories/>
-<span class=site-state-item-count>23</span>
+<span class=site-state-item-count>25</span>
 <span class=site-state-item-name>分類</span>
 </a>
 </div>
 <div class="site-state-item site-state-tags">
 <a href=/tags/>
-<span class=site-state-item-count>31</span>
+<span class=site-state-item-count>33</span>
 <span class=site-state-item-name>標籤</span>
 </a>
 </div>
