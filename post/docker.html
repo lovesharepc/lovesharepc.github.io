@@ -164,15 +164,16 @@ docker-compose --version
 <p>overlay:跨 host 存取</p>
 <p>Macvlan:橋接在實體網卡</p>
 <h3 id=macvlan>Macvlan</h3>
-<p># Macvlan 不會建立 gateway 此處為指定外部 gateway</p>
-<p>docker network create -d macvlan \</p>
-<p>&ndash;subnet=10.201.0.0/16 \</p>
-<p>&ndash;gateway=10.201.100.254 \</p>
-<p>&ndash;ip-range=10.201.104.0/24 \</p>
-<p>-o parent=ens192 macvlan192</p>
-<p># 測試</p>
-<p>[root@nuu ~]# docker run -it &ndash;rm &ndash;network=macvlan192 centos bash</p>
-<h3 id=overlay>overlay</h3>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=color:#080;font-style:italic># Macvlan 不會建立 gateway 此處為指定外部 gateway</span>
+docker network create -d macvlan <span style=color:#b62;font-weight:700>\
+</span><span style=color:#b62;font-weight:700></span>--subnet<span style=color:#666>=</span>10.201.0.0/16 <span style=color:#b62;font-weight:700>\
+</span><span style=color:#b62;font-weight:700></span>--gateway<span style=color:#666>=</span>10.201.100.254 <span style=color:#b62;font-weight:700>\
+</span><span style=color:#b62;font-weight:700></span>--ip-range<span style=color:#666>=</span>10.201.104.0/24 <span style=color:#b62;font-weight:700>\
+</span><span style=color:#b62;font-weight:700></span>-o <span style=color:#b8860b>parent</span><span style=color:#666>=</span>ens192 macvlan192
+
+<span style=color:#080;font-style:italic># 測試</span>
+<span style=color:#666>[</span>root@nuu ~<span style=color:#b62;font-weight:700>\]\#</span> docker run -it --rm --network<span style=color:#666>=</span>macvlan192 centos bash
+</code></pre></div><h3 id=overlay>overlay</h3>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=color:#b62;font-weight:700>\#</span> 建立 swarm manager 
 
 <span style=color:#b62;font-weight:700>\#</span> 第一台
@@ -423,19 +424,19 @@ docker push 10.202.1.6/httpd:version1.0
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href=/post/>
-<span class=site-state-item-count>126</span>
+<span class=site-state-item-count>129</span>
 <span class=site-state-item-name>日誌</span>
 </a>
 </div>
 <div class="site-state-item site-state-categories">
 <a href=/categories/>
-<span class=site-state-item-count>25</span>
+<span class=site-state-item-count>26</span>
 <span class=site-state-item-name>分類</span>
 </a>
 </div>
 <div class="site-state-item site-state-tags">
 <a href=/tags/>
-<span class=site-state-item-count>33</span>
+<span class=site-state-item-count>34</span>
 <span class=site-state-item-name>標籤</span>
 </a>
 </div>

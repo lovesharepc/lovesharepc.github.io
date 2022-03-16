@@ -134,7 +134,7 @@ linux centos 常用指令
 |
 <i class="fa fa-file-word-o fa-fw"></i>
 <span class=post-meta-item-text>字數：</span>
-<span class=leancloud-world-count>2089 字</span>
+<span class=leancloud-world-count>2242 字</span>
 </span>
 <span>
 |
@@ -154,6 +154,27 @@ linux centos 常用指令
 <p><img src=linux_centos_%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/cat_linux.jpg alt>
 紀錄 linux 指令</p>
 <h2 id=監控類>監控類</h2>
+<h3 id=journalctl>journalctl</h3>
+<p>Tail Systemd Service Logs using Journalctl</p>
+<p>Show all systemd journal logs:
+$ journalctl</p>
+<p>Display logs for the current boot only:
+$ journalctl -b</p>
+<p>Display logs for the previous boot:
+$ journalctl -b=-1</p>
+<p>Tail last 100 lines of systemd logs for particular service (equiv. tail -n 100):
+$ journalctl -u docker.service -n 100 &ndash;no-pager</p>
+<p>Follow systemd logs for service (equiv. tail -f):
+$ journalctl -u docker.service -f</p>
+<p>Show systemd logs for service since today, since yesterday, etc.:
+$ journalctl -u docker.service -S today
+$ journalctl -u docker.service -S yesterday
+$ journalctl -u docker.service -S &ldquo;1 hour ago&rdquo;
+$ journalctl -u docker.service -S &ldquo;2 days ago&rdquo;</p>
+<p>Show logs between two dates:
+$ journalctl -u docker.service -S &ldquo;2020-01-16 18:00:00&rdquo; -U &ldquo;2020-01-17 23:00:00&rdquo;</p>
+<p>Grep journalctl service logs:
+$ journalctl -u docker.service | grep -i error</p>
 <h3 id=iostat>iostat</h3>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>dnf install sysstat
 
@@ -169,7 +190,12 @@ avg-cpu:  %user   %nice %system %iowait  %steal   %idle
     0.04    0.12      1.4k     39.2k     0.00     0.00   0.0%   0.0%    1.38   60.94   0.01    39.9k   314.8k   2.06   0.0% dm-0
     0.00    0.00      0.0k      0.0k     0.00     0.00   0.0%   0.0%    0.51   49.91   0.00    15.3k     4.0k   1.66   0.0% dm-1
 
-</code></pre></div><h3 id=網路流量>網路流量</h3>
+</code></pre></div><h2 id=centos-8-python>centos 8 python</h2>
+<p>路徑
+/usr/libexec/platform-python
+wget <a href=https://bootstrap.pypa.io/pip/3.6/get-pip.py>https://bootstrap.pypa.io/pip/3.6/get-pip.py</a>
+/usr/libexec/platform-python get-pip.py</p>
+<h3 id=網路流量>網路流量</h3>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>[root@localhost local]# sar -n DEV 1
 Linux 4.18.0-358.el8.x86_64 (localhost.localdomain)     01/17/2022      _x86_64_        (2 CPU)
 
@@ -491,6 +517,9 @@ dnsperf -s 10.201.102.2 -d queryfile-example-10million-201202 -q 10000 -l 60
 firewall-cmd --permanent --add-service=ftp
 firewall-cmd --permanent --add-port=3690/tcp
 
+#移除規則
+firewall-cmd --permanent --remove-service=ftp
+firewall-cmd --permanent --remove-port=3690/tcp
 
 #列出規則
 firewall-cmd --list-all
@@ -809,19 +838,19 @@ echo $XDG_CURRENT_DESKTOP
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href=/post/>
-<span class=site-state-item-count>126</span>
+<span class=site-state-item-count>129</span>
 <span class=site-state-item-name>日誌</span>
 </a>
 </div>
 <div class="site-state-item site-state-categories">
 <a href=/categories/>
-<span class=site-state-item-count>25</span>
+<span class=site-state-item-count>26</span>
 <span class=site-state-item-name>分類</span>
 </a>
 </div>
 <div class="site-state-item site-state-tags">
 <a href=/tags/>
-<span class=site-state-item-count>33</span>
+<span class=site-state-item-count>34</span>
 <span class=site-state-item-name>標籤</span>
 </a>
 </div>
@@ -841,7 +870,12 @@ GitHub
 <ul>
 <li><a href=#監控類>監控類</a>
 <ul>
+<li><a href=#journalctl>journalctl</a></li>
 <li><a href=#iostat>iostat</a></li>
+</ul>
+</li>
+<li><a href=#centos-8-python>centos 8 python</a>
+<ul>
 <li><a href=#網路流量>網路流量</a></li>
 </ul>
 </li>

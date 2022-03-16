@@ -122,7 +122,7 @@ ansible 進階
 |
 <i class="fa fa-file-word-o fa-fw"></i>
 <span class=post-meta-item-text>字數：</span>
-<span class=leancloud-world-count>560 字</span>
+<span class=leancloud-world-count>612 字</span>
 </span>
 <span>
 |
@@ -283,6 +283,21 @@ used to display or dump the configured inventory as Ansible sees it</p>
     <span>│</span>   <span>└──</span> test.yml
     <span>└──</span> vars
         <span>└──</span> main.yml
+</code></pre></div><h2 id=when-判斷條件>when 判斷條件</h2>
+<p><a href=https://docs.ansible.com/ansible/latest/user_guide/playbooks_conditionals.html>https://docs.ansible.com/ansible/latest/user_guide/playbooks_conditionals.html</a></p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-powershell data-lang=powershell><span style=color:#080;font-style:italic>#可用判斷式 </span>
+!= 
+==
+
+<span style=color:#080;font-style:italic># 非陣列</span>
+inventory_hostname == <span style=color:#b44>&#34;{{ groups[&#39;MGservers&#39;][0] }}&#34;</span>
+
+<span style=color:#080;font-style:italic>#多重條件可用 </span>
+() and ()
+() or ()
+
+<span style=color:#080;font-style:italic>#如果判斷來源為陣列 可用 in </span>
+<span style=color:#b44>&#39;WKservers&#39;</span> <span style=color:#a2f;font-weight:700>in</span> group_names
 </code></pre></div>
 </div>
 <footer class=post-footer>
@@ -327,19 +342,19 @@ used to display or dump the configured inventory as Ansible sees it</p>
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href=/post/>
-<span class=site-state-item-count>126</span>
+<span class=site-state-item-count>129</span>
 <span class=site-state-item-name>日誌</span>
 </a>
 </div>
 <div class="site-state-item site-state-categories">
 <a href=/categories/>
-<span class=site-state-item-count>25</span>
+<span class=site-state-item-count>26</span>
 <span class=site-state-item-name>分類</span>
 </a>
 </div>
 <div class="site-state-item site-state-tags">
 <a href=/tags/>
-<span class=site-state-item-count>33</span>
+<span class=site-state-item-count>34</span>
 <span class=site-state-item-name>標籤</span>
 </a>
 </div>
@@ -361,6 +376,7 @@ GitHub
 <li><a href=#include-與-import-差異>include 與 import 差異</a></li>
 <li><a href=#ansible-command-介紹>ansible command 介紹</a></li>
 <li><a href=#製作-role>製作 role</a></li>
+<li><a href=#when-判斷條件>when 判斷條件</a></li>
 </ul>
 </nav></div>
 </div>
