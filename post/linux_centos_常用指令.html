@@ -134,7 +134,7 @@ linux centos 常用指令
 |
 <i class="fa fa-file-word-o fa-fw"></i>
 <span class=post-meta-item-text>字數：</span>
-<span class=leancloud-world-count>2242 字</span>
+<span class=leancloud-world-count>2276 字</span>
 </span>
 <span>
 |
@@ -153,7 +153,17 @@ linux centos 常用指令
 <div class=post-body itemprop=articleBody>
 <p><img src=linux_centos_%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/cat_linux.jpg alt>
 紀錄 linux 指令</p>
-<h2 id=監控類>監控類</h2>
+<h2 id=virtualbox-guest-additions>virtualbox guest additions</h2>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>dnf install -y epel-release 
+dnf install -y gcc make perl kernel-devel kernel-headers bzip2 dkms
+dnf install gcc kernel-devel kernel-headers make bzip2 perl 
+reboot
+
+mkdir -p /tmp/iso
+mount /dev/cdrom /tmp/iso
+sh /tmp/iso/VBoxLinuxAdditions.run
+
+</code></pre></div><h2 id=監控類>監控類</h2>
 <h3 id=journalctl>journalctl</h3>
 <p>Tail Systemd Service Logs using Journalctl</p>
 <p>Show all systemd journal logs:
@@ -838,19 +848,19 @@ echo $XDG_CURRENT_DESKTOP
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href=/post/>
-<span class=site-state-item-count>129</span>
+<span class=site-state-item-count>132</span>
 <span class=site-state-item-name>日誌</span>
 </a>
 </div>
 <div class="site-state-item site-state-categories">
 <a href=/categories/>
-<span class=site-state-item-count>26</span>
+<span class=site-state-item-count>29</span>
 <span class=site-state-item-name>分類</span>
 </a>
 </div>
 <div class="site-state-item site-state-tags">
 <a href=/tags/>
-<span class=site-state-item-count>34</span>
+<span class=site-state-item-count>37</span>
 <span class=site-state-item-name>標籤</span>
 </a>
 </div>
@@ -868,6 +878,7 @@ GitHub
 <div class=post-toc>
 <div class=post-toc-content><nav id=TableOfContents>
 <ul>
+<li><a href=#virtualbox-guest-additions>virtualbox guest additions</a></li>
 <li><a href=#監控類>監控類</a>
 <ul>
 <li><a href=#journalctl>journalctl</a></li>

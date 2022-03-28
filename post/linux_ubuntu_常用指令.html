@@ -1,0 +1,788 @@
+<!doctype html><html lang=zh-tw dir=content/zh-tw>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
+<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
+<meta http-equiv=content-security-policy content="upgrade-insecure-requests">
+<title> linux ubuntu 常用指令 - 補覺鳴詩 </title>
+<meta name=keywords content="infra">
+<meta name=author content="Owan">
+<meta property="og:title" content="linux ubuntu 常用指令">
+<meta property="og:site_name" content="補覺鳴詩">
+<meta property="og:image" content="/img/author.jpg">
+<meta name=title content="linux ubuntu 常用指令 - 補覺鳴詩">
+<meta name=description content="日常紀錄">
+<link rel="shortcut icon" href=/img/favicon.ico>
+<link rel=apple-touch-icon href=/img/apple-touch-icon.png>
+<link rel=apple-touch-icon-precomposed href=/img/apple-touch-icon.png>
+<link href=//cdn.bootcdn.net/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css rel=stylesheet type=text/css>
+<link href=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.css rel=stylesheet>
+<link href=/css/main.css rel=stylesheet type=text/css>
+<link href=/css/syntax.css rel=stylesheet type=text/css>
+</head>
+<body itemscope itemtype=http://schema.org/WebPage lang=zh-hans>
+<div class="container one-collumn sidebar-position-left page-home">
+<div class=headband></div>
+<header id=header class=header itemscope itemtype=http://schema.org/WPHeader>
+<div class=header-inner> <div class=site-brand-container>
+<div class=site-nav-toggle>
+<div class=toggle role=button style=opacity:1;top:0>
+<span class=toggle-line></span>
+<span class=toggle-line></span>
+<span class=toggle-line></span>
+</div>
+</div>
+<div class=site-meta>
+<div class=multi-lang-switch>
+<i class="fa fa-fw fa-language" style=margin-right:5px></i>
+</div>
+<div class=custom-logo-site-title>
+<a href=/ class=brand rel=start>
+<span class=logo-line-before><i></i></span>
+<span class=site-title>補覺鳴詩</span>
+<span class=logo-line-after><i></i></span>
+</a>
+</div>
+<p class=site-subtitle>學海無涯</p>
+</div>
+<div class=site-nav-right>
+<div class="toggle popup-trigger" style=opacity:1;top:0>
+<i class="fa fa-search fa-fw fa-lg"></i>
+</div>
+</div>
+</div>
+<nav class=site-nav>
+<ul id=menu class=menu>
+<li class=menu-item>
+<a href=/ rel=section>
+<i class="menu-item-icon fa fa-fw fa-home"></i> <br>首頁
+</a>
+</li>
+<li class=menu-item>
+<a href=/post rel=section>
+<i class="menu-item-icon fa fa-fw fa-archive"></i> <br>archive
+</a>
+</li>
+<li class=menu-item>
+<a href=/about.html rel=section>
+<i class="menu-item-icon fa fa-fw fa-user"></i> <br>關於我
+</a>
+</li>
+<li class="menu-item menu-item-search">
+<a href=javascript:; class=popup-trigger> <i class="menu-item-icon fa fa-search fa-fw"></i> <br> 搜尋</a>
+</li>
+</ul>
+<div class=site-search>
+<div class="popup search-popup local-search-popup">
+<div class="local-search-header clearfix">
+<span class=search-icon><i class="fa fa-search"></i> </span>
+<span class=popup-btn-close><i class="fa fa-times-circle"></i></span>
+<div class=local-search-input-wrapper>
+<input autocomplete=off placeholder=搜索關鍵字... spellcheck=false type=text id=local-search-input autocapitalize=none autocorrect=off>
+</div>
+</div>
+<div id=local-search-result></div>
+</div>
+</div>
+</nav>
+</div>
+</header>
+<main id=main class=main>
+<div class=main-inner>
+<div class=content-wrap>
+<div id=content class=content>
+<section id=posts class=posts-expand>
+<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
+<header class=post-header>
+<h1 class=post-title itemprop="name headline">
+<a class=post-title-link href=https://lovesharepc.github.io/post/linux_ubuntu_%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4.html itemprop=url>
+linux ubuntu 常用指令
+</a>
+</h1>
+<div class=post-meta>
+<span class=post-time>
+<i class="fa fa-calendar-o fa-fw"></i>
+<span class=post-meta-item-text>時間：</span>
+<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2022-02-21">
+2022-02-21
+</time>
+</span>
+<span class=post-category>
+&nbsp; | &nbsp;
+<i class="fa fa-folder-o fa-fw"></i>
+<span class=post-meta-item-text>分類：</span>
+<span itemprop=about itemscope itemtype=https://schema.org/Thing>
+<a href=/categories/linux itemprop=url rel=index style=text-decoration:underline>
+<span itemprop=name>linux</span>
+</a>
+&nbsp;
+</span>
+<span itemprop=about itemscope itemtype=https://schema.org/Thing>
+<a href=/categories/ubuntu itemprop=url rel=index style=text-decoration:underline>
+<span itemprop=name>ubuntu</span>
+</a>
+&nbsp;
+</span>
+</span>
+<span>
+|
+<i class="fa fa-file-word-o fa-fw"></i>
+<span class=post-meta-item-text>字數：</span>
+<span class=leancloud-world-count>1801 字</span>
+</span>
+<span>
+|
+<i class="fa fa-eye fa-fw"></i>
+<span class=post-meta-item-text>閱讀：</span>
+<span class=leancloud-view-count>4分鐘</span>
+</span>
+<span id=/post/linux_ubuntu_%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4.html class=leancloud_visitors data-flag-title="linux ubuntu 常用指令">
+|
+<i class="fa fa-binoculars fa-fw"></i>
+<span class=post-meta-item-text>閱讀次數：</span>
+<span class=leancloud-visitors-count></span>
+</span>
+</div>
+</header>
+<div class=post-body itemprop=articleBody>
+<h2 id=virtualbox-guest-additions>virtualbox guest additions</h2>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-powershell data-lang=powershell>sudo apt update
+sudo apt install -y 
+
+<span style=color:#080;font-style:italic># insert guest cd</span>
+mkdir /tmp/iso
+sudo <span style=color:#a2f>mount </span>/dev/cdrom /tmp/iso
+sudo /tmp/iso/VBoxLinuxAdditions.run
+
+</code></pre></div><h2 id=ansible>ansible</h2>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-powershell data-lang=powershell>sudo apt install -y <span style=color:#a2f>python3-pip</span> git <span style=color:#a2f>wget </span>vim <span style=color:#a2f>bash-completion</span> <span style=color:#a2f>curl </span>jq tar  sshpass
+
+<span style=color:#a2f>cat </span>&lt;&lt;EOF&gt;&gt; ~/.bashrc
+export PATH=<span style=color:#b8860b>$PATH</span><span>:</span><span style=color:#b8860b>$HOME</span>/.local/bin
+EOF
+
+
+
+
+</code></pre></div><h2 id=samba>samba</h2>
+<p><a href=https://www.thegeekdiary.com/how-to-add-or-delete-a-samba-user-under-linux/>https://www.thegeekdiary.com/how-to-add-or-delete-a-samba-user-under-linux/</a>
+sudo apt update
+sudo apt install samba</p>
+<p>sudo nano /etc/samba/smb.conf
+加最後面
+[nasDatasets]
+  comment = Samba on Ubuntu
+  path = /home/nas/Datasets
+  read only = no
+  browsable = yes</p>
+<p><strong>啟動服務</strong></p>
+<p>建立 nas 的 smb user
+sudo smbpasswd -a nas</p>
+<p>sudo service smbd restart</p>
+<h2 id=apt>APT</h2>
+<p>搜尋可用套件版本
+<code>apt info wget -a</code></p>
+<p>list 套件是否已安裝 (&ndash;installed), (&ndash;upgradeable)
+<code>apt list wget</code></p>
+<p>套件庫清單
+/etc/apt/sources.list.d</p>
+<p>apt-key - APT key management utility</p>
+<h2 id=listening-port>listening port</h2>
+<p>sudo lsof -i -P -n | grep LISTEN</p>
+<h2 id=ssh>ssh</h2>
+<p><a href=https://www.digitalocean.com/community/tutorials/ssh-essentials-working-with-ssh-servers-clients-and-keys#generating-and-working-with-ssh-keys>https://www.digitalocean.com/community/tutorials/ssh-essentials-working-with-ssh-servers-clients-and-keys#generating-and-working-with-ssh-keys</a>
+ssh key login</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=color:#080;font-style:italic># 產生 key</span>
+<span style=color:#080;font-style:italic># 先在本機產生SSH Key Generate an SSH Key</span>
+<span style=color:#080;font-style:italic># key 位置 </span>
+<span style=color:#080;font-style:italic># ~/.ssh/id_rsa: The private key. DO NOT SHARE THIS FILE!</span>
+<span style=color:#080;font-style:italic># ~/.ssh/id_rsa.pub: The associated public key. This can be shared freely without consequence.</span>
+
+ssh-keygen -t rsa -b <span style=color:#666>4096</span> -N <span style=color:#b44>&#39;&#39;</span>
+
+<span style=color:#080;font-style:italic># 更安全的 不使用 -N 參數</span>
+<span style=color:#080;font-style:italic># 除了 key 外還需要 key 的 passphrase</span>
+ssh-keygen
+
+<span style=color:#080;font-style:italic># Copy the key to a server (playbook 工作)</span>
+ssh-copy-id user@host
+
+<span style=color:#080;font-style:italic># 手動 copy key</span>
+.ssh/authorized_keys
+</code></pre></div><p>Setup ssh tunnel</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-powershell data-lang=powershell>sshuttle -r kubo<span style=color:#b8860b>@10</span>.92.21.17 30.0.0.0/16 192.168.150.0/24 -e ...
+
+
+</code></pre></div><p>ssh proxy</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-powershell data-lang=powershell>-N <span>:</span> 不執行任何指令
+<span style=color:#666>-f</span> <span>:</span> 在背景執行
+-L <span>:</span> 將 local port 轉向
+-R <span>:</span> 將 remote port 轉向
+-D <span>:</span> socks proxy
+
+
+<span style=color:#080;font-style:italic># 建立 SSH tunnel（正向）</span>
+<span style=color:#080;font-style:italic># 192.168.1.60 有 nginx server </span>
+<span style=color:#080;font-style:italic># 連線後</span>
+<span style=color:#080;font-style:italic># 在本機 8080 port 等於使用 ssh tunnel 至 192.168.1.60 再連線至 localhost:80</span>
+<span style=color:#080;font-style:italic># 本機 192.168.1.61</span>
+ssh -NL 8080<span>:</span>localhost<span>:</span>80 owan<span style=color:#b8860b>@192</span>.168.1.60
+
+<span style=color:#080;font-style:italic># 反向 </span>
+<span style=color:#080;font-style:italic># 192.168.1.60 連線 8080 port 時 會 tunnel 至我的 80</span>
+ssh -NR 8080<span>:</span>localhost<span>:</span>80 owan<span style=color:#b8860b>@192</span>.168.1.60
+
+</code></pre></div><p>建立 SOCKS proxy server</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback># 將我的 3128 port 封包給 192.168.1.61 處理
+ssh -NfD 3128 owan@192.168.1.61
+</code></pre></div><h3 id=bastion-情境>Bastion 情境</h3>
+<p><a href=https://towardsaws.com/ssh-into-the-private-server-through-bastion-host-f637aa5f5c17>https://towardsaws.com/ssh-into-the-private-server-through-bastion-host-f637aa5f5c17</a></p>
+<p>ssh client 193.168.1.141
+Bastion host 193.168.1.142
+web server 193.168.1.143</p>
+<ul>
+<li>
+<p>web server
+install nginx
+sudo apt install nginx -y
+sudo systemctl enable nginx &ndash;now</p>
+</li>
+<li>
+<p>ssh client
+gen ssh key
+ssh-keygen
+並將 key copy 至 web server</p>
+</li>
+</ul>
+<h4 id=ssh-agent>ssh-agent</h4>
+<p>Start the ssh-agent
+eval $(ssh-agent)</p>
+<p>Add ssh keys to the ssh-agent
+指定 private key
+owan@node1:~$ ssh-add .ssh/id_rsa</p>
+<p>Forward the ssh keys to the bastion host
+-A flag forwards the ssh keys into the bastion host
+<code>owan@node1:~$ ssh -A owan@192.168.1.142</code>
+check ssh agent
+<code>owan@node2:~$ ssh-add -l</code></p>
+<p>log into the remote host
+ssh <a href=mailto:owan@192.168.1.143>owan@192.168.1.143</a></p>
+<p>此時 因為 ssh-agent
+自動使用 ssh key 及 passphrases 進行登入 web server 不須再進一步驗證</p>
+<p><a href=https://smallstep.com/blog/ssh-agent-explained/>https://smallstep.com/blog/ssh-agent-explained/</a>
+security risk: anyone with root access on the remote host can discreetly access your local SSH agent through the socket</p>
+<h4 id=proxy-jump>Proxy Jump</h4>
+<p>不使用 ssh-agent
+直接 jump 至 web server</p>
+<p><code>ssh -J [user@bastion_ip] [user@Destination_IP] </code></p>
+<p>使用 config file 方便重複登入
+.ssh/config</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-powershell data-lang=powershell>owan<span style=color:#b8860b>@node1</span><span>:</span>~$ <span style=color:#a2f>cat </span>.ssh/config
+<span style=color:#080;font-style:italic>## Bastion Host</span>
+Host <span style=color:#a2f>bastion-host</span>
+  HostName 192.168.1.142
+  User owan
+
+<span style=color:#080;font-style:italic>## Remote Host</span>
+Host node3
+  HostName 192.168.1.143
+  User owan
+  ProxyJump <span style=color:#a2f>bastion-host</span>
+
+</code></pre></div><p>連線
+<code>ssh node3</code></p>
+<h3 id=proxy-command>Proxy Command</h3>
+<p>ProxyCommand</p>
+<p>單次執行</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>ssh -o ProxyCommand=&#34;ssh -W %h:%p bastion-host&#34; remote-host
+
+</code></pre></div><p>The %h:%p arguments to the -W flag above specify to forward standard in and out to the remote host (%h) and the remote host’s port (%p).</p>
+<p>config</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>## Bastion Host
+Host bastion-host
+  HostName 192.168.1.142
+  User owan
+
+## Remote Host
+Host node3
+  HostName 192.168.1.143
+  User owan
+  ProxyCommand ssh -q -W %h:%p bastion-host
+
+</code></pre></div><h2 id=gnome-flashback>GNOME Flashback</h2>
+<p>sudo apt install gnome-session-flashback</p>
+<p>把不要的 session rename</p>
+<p>weicloud@ubuntu1804:/usr/share/xsessions$ ls
+gnome-flashback-compiz.desktop.old gnome-flashback-metacity.desktop ubuntu-communitheme-snap.desktop.old ubuntu.desktop</p>
+<p>移除 welcome screen
+sudo apt remove gnome-initial-setup</p>
+<h2 id=dhcp-server>DHCP-server</h2>
+<p>apt install isc-dhcp-server
+/etc/dhcp/dhcpd.conf
+/var/lib/dhcp/dhcpd.lease</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Type</td>
+<td>simple – The default value</td>
+</tr>
+<tr>
+<td></td>
+<td>forking – parent process 會產生 child process as service 若 parent process 沒有在時間內結束,會作為 fail</td>
+</tr>
+<tr>
+<td></td>
+<td>oneshot – process 生命週期短, systemd 需等待完成,用於單次執行 service</td>
+</tr>
+<tr>
+<td></td>
+<td>dbus – This indicates that unit will take a name on the D-Bus bus. When this happens, systemd will continue to process the next unit.</td>
+</tr>
+<tr>
+<td></td>
+<td>notify – This indicates that the service will issue a notification when it has finished starting up. The systemd process will wait for this to happen before proceeding to other units.</td>
+</tr>
+<tr>
+<td></td>
+<td>idle – This indicates that the service will not be run until all jobs are dispatched</td>
+</tr>
+<tr>
+<td>ExecStart</td>
+<td>full path and the arguments of the command to be executed to start the process</td>
+</tr>
+<tr>
+<td>ExecStartpPre</td>
+<td>provide additional commands that should be executed before the main process is started</td>
+</tr>
+<tr>
+<td>ExecStartPost</td>
+<td>與 ExecStartpPre 差別在於 main process 之後執行</td>
+</tr>
+<tr>
+<td>ExecStop</td>
+<td>This indicates the command needed to stop the service. If this is not given, the process will be killed immediately when the service is stopped</td>
+</tr>
+<tr>
+<td>Restart</td>
+<td>This indicates the circumstances under which systemd will attempt to automatically restart the service. This can be set to values like “always”, “on-success”, “on-failure”, “on-abnormal”, “on-abort”, or “on-watchdog”. These will trigger a restart according to the way that the service was stopped.</td>
+</tr>
+<tr>
+<td></td>
+<td>搭配 <code>StartLimitInterval</code>, <code>StartLimitBurst</code> 來限制最大重試次數,StartLimitInterval 的時間內只能重啟 StartLimitBurst 次</td>
+</tr>
+<tr>
+<td>RestartSec</td>
+<td>If automatically restarting the service is enabled,自動重啟間隔時間</td>
+</tr>
+<tr>
+<td>TimeoutSec</td>
+<td>定義當 service stopping 時,判斷要 force kill 時間間隔</td>
+</tr>
+<tr>
+<td>alias bitfusion2g=&ldquo;bitfusion run -n 1 -m 2775&rdquo;    #bitfusion</td>
+<td></td>
+</tr>
+<tr>
+<td>alias bitfusion4g=&ldquo;bitfusion run -n 1 -m 3700&rdquo;    #bitfusion</td>
+<td></td>
+</tr>
+<tr>
+<td>alias bitfusion8g=&ldquo;bitfusion run -n 1 -m 7400&rdquo;    #bitfusion</td>
+<td></td>
+</tr>
+<tr>
+<td>alias bitfusion12g=&ldquo;bitfusion run -n 1 -m 11100&rdquo;    #bitfusion</td>
+<td></td>
+</tr>
+<tr>
+<td>alias bitfusion16g=&ldquo;bitfusion run -n 1 -m 14800&rdquo;    #bitfusion</td>
+<td></td>
+</tr>
+<tr>
+<td>alias bitfusion24g=&ldquo;bitfusion run -n 1 -m 22200&rdquo;    #bitfusion</td>
+<td></td>
+</tr>
+<tr>
+<td>alias bitfusion48g=&ldquo;bitfusion run -n 1 -m 44400&rdquo;    #bitfusion</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id=add-sudo-user>add sudo user</h2>
+<p>weicloud@ubuntu:~$ sudo adduser bimap
+Adding user <code>bimap' ...
+Adding new group </code>bimap' (1001) &mldr;
+Adding new user <code>bimap' (1001) with group </code>bimap' &mldr;
+Creating home directory <code>/home/bimap' ...
+Copying files from </code>/etc/skel' &mldr;
+New password:
+Retype new password:
+No password supplied
+New password:
+Retype new password:
+passwd: password updated successfully
+Changing the user information for bimap
+Enter the new value, or press ENTER for the default
+      Full Name []:
+      Room Number []:
+      Work Phone []:
+      Home Phone []:
+      Other []:</p>
+<p>weicloud@ubuntu:~$ sudo usermod -aG sudo bimap</p>
+<p>nopassword
+wardah ALL=(ALL) NOPASSWD:ALL</p>
+<h2 id=config-ip-address>config IP address</h2>
+<p><a href=https://netplan.io/examples/>https://netplan.io/examples/</a></p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>weicloud@ubuntu:~$ ip a
+1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu <span style=color:#666>65536</span> qdisc noqueue state UNKNOWN group default qlen <span style=color:#666>1000</span>
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host
+       valid_lft forever preferred_lft forever
+2: ens160: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu <span style=color:#666>1500</span> qdisc mq state UP group default qlen <span style=color:#666>1000</span>
+    link/ether 00:50:56:8a:70:b6 brd ff:ff:ff:ff:ff:ff
+    inet 10.201.99.5/16 brd 10.201.255.255 scope global dynamic ens160
+       valid_lft 162262sec preferred_lft 162262sec
+    inet6 fe80::250:56ff:fe8a:70b6/64 scope link
+       valid_lft forever preferred_lft forever
+
+<span style=color:#080;font-style:italic># use static IP</span>
+sudo nano /etc/netplan/99_config.yaml
+network:
+  version: <span style=color:#666>2</span>
+  renderer: networkd
+  ethernets:
+    ens160:
+      addresses:
+        - 10.201.102.24/16
+      gateway4: 10.201.100.254
+      nameservers:
+          search: <span style=color:#666>[</span>mydomain, otherdomain<span style=color:#666>]</span>
+          addresses: <span style=color:#666>[</span>10.201.100.100, 1.1.1.1<span style=color:#666>]</span>
+
+sudo rm -f 00-installer-config.yaml 
+          
+sudo netplan apply
+
+
+
+<span style=color:#080;font-style:italic># use DHCP</span>
+network:
+    version: <span style=color:#666>2</span>
+    renderer: networkd
+    ethernets:
+        enp3s0:
+            dhcp4: <span style=color:#a2f>true</span>
+
+</code></pre></div><h2 id=ufw>UFW</h2>
+<p>sudo ufw allow 7080</p>
+<p>sudo ufw status numbered</p>
+<p>sudo ufw delete [numbered]
+sudo ufw delete 22
+sudo ufw insert 1 allow 22
+sudo ufw deny from 10.0.0.1  </p>
+<h2 id=ha>HA</h2>
+<p>sudo nano /etc/hosts
+10.201.102.26 ha1
+10.201.102.27 ha2</p>
+<p>sudo apt install -y pacemaker corosync crmsh
+sudo systemctl stop corosync
+sudo systemctl stop pacemaker</p>
+<h3 id=第一台執行>第一台執行</h3>
+<p>sudo apt install -y haveged</p>
+<p>sudo corosync-keygen</p>
+<p>cd /etc/corosync/
+sudo mv corosync.conf corosync.conf.bekup</p>
+<p>sudo nano corosync.conf    # 第一台執行</p>
+<h3 id=totem-protocol-configuration>Totem Protocol Configuration</h3>
+<p>totem {
+version: 2
+cluster_name: hakase-cluster
+transport: udpu</p>
+<h3 id=interface-configuration-for-corosync>Interface configuration for Corosync</h3>
+<p>interface {
+  ringnumber: 0
+  bindnetaddr: 10.201.0.0
+  broadcast: yes
+  mcastport: 5407
+}
+}</p>
+<h3 id=nodelist---server-list>Nodelist - Server List</h3>
+<p>nodelist {
+ node {
+  ring0_addr: HA1
+}
+ node {
+  ring0_addr: HA2
+}
+}</p>
+<h3 id=quorum-configuration>Quorum configuration</h3>
+<p>quorum {
+provider: corosync_votequorum
+}</p>
+<h3 id=corosync-log-configuration>Corosync Log configuration</h3>
+<p>logging {
+to_logfile: yes
+logfile: /var/log/corosync/corosync.log
+to_syslog: yes
+timestamp: on
+}</p>
+<p>service {
+name: pacemaker
+ver: 0
+}
+scp
+scp /etc/corosync/* root@web02:/etc/corosync/
+scp /etc/corosync/* root@web03:/etc/corosync/</p>
+<p>Start All Cluster Services
+sudo systemctl start corosync
+sudo systemctl enable corosync
+sudo systemctl start pacemaker
+sudo update-rc.d pacemaker defaults 20 01
+sudo systemctl enable pacemaker</p>
+<p>sudo crm status</p>
+<p>sudo corosync-cmapctl | grep members</p>
+<p>Create and Configure the Cluster</p>
+<h3 id=第一台執行-1>第一台執行</h3>
+<p>sudo crm configure property stonith-enabled=false
+sudo crm configure property no-quorum-policy=ignore
+sudo crm configure show</p>
+<p>enable vip
+sudo crm configure primitive virtual_ip <br>
+ocf💓IPaddr2 params ip=&ldquo;10.201.102.28&rdquo; <br>
+cidr_netmask=&ldquo;32&rdquo; op monitor interval=&ldquo;10s&rdquo; <br>
+meta migration-threshold=&ldquo;10&rdquo;</p>
+<p>HA (keepalive)
+sudo apt-get update
+sudo apt-get install linux-headers-$(uname -r)
+sudo nano /etc/keepalived/keepalived.conf
+第一台
+! Configuration File for keepalived</p>
+<p>global_defs {
+  notification_email {
+    <a href=mailto:sysadmin@mydomain.com>sysadmin@mydomain.com</a>
+    <a href=mailto:support@mydomain.com>support@mydomain.com</a>
+  }
+  notification_email_from <a href=mailto:lb1@mydomain.com>lb1@mydomain.com</a>
+  smtp_server localhost
+  smtp_connect_timeout 30
+}</p>
+<p>vrrp_instance VI_1 {
+  state MASTER
+  interface ens160
+  virtual_router_id 101
+  priority 101
+  advert_int 1
+  authentication {
+      auth_type PASS
+      auth_pass 1111
+  }
+  virtual_ipaddress {
+       10.201.102.28
+  }
+}
+第二台
+! Configuration File for keepalived</p>
+<p>global_defs {
+  notification_email {
+    <a href=mailto:sysadmin@mydomain.com>sysadmin@mydomain.com</a>
+    <a href=mailto:support@mydomain.com>support@mydomain.com</a>
+  }
+  notification_email_from <a href=mailto:lb1@mydomain.com>lb1@mydomain.com</a>
+  smtp_server localhost
+  smtp_connect_timeout 30
+}</p>
+<p>vrrp_instance VI_1 {
+  state MASTER
+  interface ens160
+  virtual_router_id 101
+  priority 100
+  advert_int 1
+  authentication {
+      auth_type PASS
+      auth_pass 1111
+  }
+  virtual_ipaddress {
+       10.201.102.28
+  }
+}</p>
+<p>sudo systemctl start keepalived</p>
+<h2 id=scan-disk>scan disk</h2>
+<p>for host in /sys/class/scsi_host/<em>; do echo &ldquo;- - -&rdquo; | sudo tee $host/scan; ls /dev/sd</em> ; done</p>
+<h2 id=ulimit>ulimit</h2>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>ulimit: usage: <span style=color:#a2f>ulimit</span> <span style=color:#666>[</span>-SHabcdefiklmnpqrstuvxPT<span style=color:#666>]</span> <span style=color:#666>[</span>limit<span style=color:#666>]</span>
+owan@lab:~$ <span style=color:#a2f>ulimit</span> -a
+core file size          <span style=color:#666>(</span>blocks, -c<span style=color:#666>)</span> <span style=color:#666>0</span>
+data seg size           <span style=color:#666>(</span>kbytes, -d<span style=color:#666>)</span> unlimited
+scheduling priority             <span style=color:#666>(</span>-e<span style=color:#666>)</span> <span style=color:#666>0</span>
+file size               <span style=color:#666>(</span>blocks, -f<span style=color:#666>)</span> unlimited
+pending signals                 <span style=color:#666>(</span>-i<span style=color:#666>)</span> <span style=color:#666>7579</span>
+max locked memory       <span style=color:#666>(</span>kbytes, -l<span style=color:#666>)</span> <span style=color:#666>65536</span>
+max memory size         <span style=color:#666>(</span>kbytes, -m<span style=color:#666>)</span> unlimited
+open files                      <span style=color:#666>(</span>-n<span style=color:#666>)</span> <span style=color:#666>1024</span>
+pipe size            <span style=color:#666>(</span><span style=color:#666>512</span> bytes, -p<span style=color:#666>)</span> <span style=color:#666>8</span>
+POSIX message queues     <span style=color:#666>(</span>bytes, -q<span style=color:#666>)</span> <span style=color:#666>819200</span>
+real-time priority              <span style=color:#666>(</span>-r<span style=color:#666>)</span> <span style=color:#666>0</span>
+stack size              <span style=color:#666>(</span>kbytes, -s<span style=color:#666>)</span> <span style=color:#666>8192</span>
+cpu <span style=color:#a2f>time</span>               <span style=color:#666>(</span>seconds, -t<span style=color:#666>)</span> unlimited
+max user processes              <span style=color:#666>(</span>-u<span style=color:#666>)</span> <span style=color:#666>7579</span>
+virtual memory          <span style=color:#666>(</span>kbytes, -v<span style=color:#666>)</span> unlimited
+file locks                      <span style=color:#666>(</span>-x<span style=color:#666>)</span> unlimited
+
+</code></pre></div><p><a href=http://manpages.ubuntu.com/manpages/bionic/man7/signal.7.html>http://manpages.ubuntu.com/manpages/bionic/man7/signal.7.html</a></p>
+</div>
+<footer class=post-footer>
+<div class=post-tags>
+<a href=/tags/linux rel=tag title=linux>#linux#</a>
+<a href=/tags/ubuntu rel=tag title=ubuntu>#ubuntu#</a>
+</div>
+<div id=disqus_thread></div>
+<script type=application/javascript>var disqus_config=function(){};(function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById('disqus_thread').innerHTML='Disqus comments not available by default when the website is previewed locally.';return}var b=document,a=b.createElement('script');a.async=!0,a.src='//bu-jue-ming-shi.disqus.com/embed.js',a.setAttribute('data-timestamp',+new Date),(b.head||b.body).appendChild(a)})()</script>
+<noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript>
+<a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a>
+>
+</footer>
+</article>
+</section>
+</div>
+</div>
+<div class=sidebar-toggle>
+<div class=sidebar-toggle-line-wrap>
+<span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+<span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+<span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+</div>
+</div>
+<aside id=sidebar class=sidebar>
+<div class=sidebar-inner>
+<ul class="sidebar-nav motion-element">
+<li class="sidebar-nav-toc sidebar-nav-active" data-target=post-toc-wrap>
+文章目錄
+</li>
+<li class=sidebar-nav-overview data-target=site-overview>
+網站導覽
+</li>
+</ul>
+<section class="site-overview sidebar-panel">
+<div class="site-author motion-element" itemprop=author itemscope itemtype=http://schema.org/Person>
+<img class=site-author-image itemprop=image src=/img/avatar.png alt=Owan>
+<p class=site-author-name itemprop=name>Owan</p>
+<p class="site-description motion-element" itemprop=description>
+愛貓如癡
+</p>
+</div>
+<nav class="site-state motion-element">
+<div class="site-state-item site-state-posts">
+<a href=/post/>
+<span class=site-state-item-count>132</span>
+<span class=site-state-item-name>日誌</span>
+</a>
+</div>
+<div class="site-state-item site-state-categories">
+<a href=/categories/>
+<span class=site-state-item-count>29</span>
+<span class=site-state-item-name>分類</span>
+</a>
+</div>
+<div class="site-state-item site-state-tags">
+<a href=/tags/>
+<span class=site-state-item-count>37</span>
+<span class=site-state-item-name>標籤</span>
+</a>
+</div>
+</nav>
+<div class="links-of-author motion-element">
+<span class=links-of-author-item>
+<a href=https://github.com/lovesharepc/ target=_blank title=GitHub>
+<i class="fa fa-fw fa-github"></i>
+GitHub
+</a>
+</span>
+</div>
+</section>
+<section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+<div class=post-toc>
+<div class=post-toc-content><nav id=TableOfContents>
+<ul>
+<li><a href=#virtualbox-guest-additions>virtualbox guest additions</a></li>
+<li><a href=#ansible>ansible</a></li>
+<li><a href=#samba>samba</a></li>
+<li><a href=#apt>APT</a></li>
+<li><a href=#listening-port>listening port</a></li>
+<li><a href=#ssh>ssh</a>
+<ul>
+<li><a href=#bastion-情境>Bastion 情境</a></li>
+<li><a href=#proxy-command>Proxy Command</a></li>
+</ul>
+</li>
+<li><a href=#gnome-flashback>GNOME Flashback</a></li>
+<li><a href=#dhcp-server>DHCP-server</a></li>
+<li><a href=#add-sudo-user>add sudo user</a></li>
+<li><a href=#config-ip-address>config IP address</a></li>
+<li><a href=#ufw>UFW</a></li>
+<li><a href=#ha>HA</a>
+<ul>
+<li><a href=#第一台執行>第一台執行</a></li>
+<li><a href=#totem-protocol-configuration>Totem Protocol Configuration</a></li>
+<li><a href=#interface-configuration-for-corosync>Interface configuration for Corosync</a></li>
+<li><a href=#nodelist---server-list>Nodelist - Server List</a></li>
+<li><a href=#quorum-configuration>Quorum configuration</a></li>
+<li><a href=#corosync-log-configuration>Corosync Log configuration</a></li>
+<li><a href=#第一台執行-1>第一台執行</a></li>
+</ul>
+</li>
+<li><a href=#scan-disk>scan disk</a></li>
+<li><a href=#ulimit>ulimit</a></li>
+</ul>
+</nav></div>
+</div>
+</section>
+</div>
+</aside>
+</div>
+</main>
+<footer id=footer class=footer>
+<div class=footer-inner>
+<div class=copyright>
+<span class=copyright-year>
+&copy; 2010 - 2022
+</span>
+<span class=with-love><i class="fa fa-heart"></i></span>
+<span class=copyright-author>補覺鳴詩</span>
+</div>
+<div class=powered-info>
+<span class=powered-by>
+Powered by - <a class=powered-link href=//gohugo.io target=_blank title=hugo>Hugo v0.92.2</a>
+</span>
+<span class=separator-line>/</span>
+<span class=theme-info>
+Theme by - <a class=powered-link href=//github.com/elkan1788/hugo-theme-next target=_blank> NexT
+</a>
+</span>
+</div>
+<div class=vistor-info>
+</div>
+</div>
+</footer>
+<div class=back-to-top>
+<i class="fa fa-arrow-up"></i>
+<span id=scrollpercent><span>0</span>%</span>
+</div>
+</div>
+<script type=text/javascript src=//cdn.bootcdn.net/ajax/libs/jquery/2.1.4/jquery.min.js></script>
+<script type=text/javascript src=/js/search.js></script>
+<script type=text/javascript src=/js/affix.js></script>
+<script type=text/javascript src=/js/scrollspy.js></script>
+<script type=text/javascript>function detectIE(){var a=window.navigator.userAgent,b=a.indexOf('MSIE '),c=a.indexOf('Trident/'),d=a.indexOf('Edge/');return b>0||c>0||d>0?-1:1}function getCntViewHeight(){var b=$('#content').height(),a=$(window).height(),c=b>a?b-a:$(document).height()-a;return c}function getScrollbarWidth(){var a=$('<div />').addClass('scrollbar-measure').prependTo('body'),b=a[0],c=b.offsetWidth-b.clientWidth;return a.remove(),c}function registerBackTop(){var b=50,a=$('.back-to-top');$(window).on('scroll',function(){var d,e,f,c,g;a.toggleClass('back-to-top-on',window.pageYOffset>b),d=$(window).scrollTop(),e=getCntViewHeight(),f=d/e,c=Math.round(f*100),g=c>100?100:c,$('#scrollpercent>span').html(g)}),a.on('click',function(){$("html,body").animate({scrollTop:0,screenLeft:0},800)})}function initScrollSpy(){var a='.post-toc',d=$(a),b='.active-current';d.on('activate.bs.scrollspy',function(){var b=$(a+' .active').last();c(),b.addClass('active-current')}).on('clear.bs.scrollspy',c),$('body').scrollspy({target:a});function c(){$(a+' '+b).removeClass(b.substring(1))}}function initAffix(){var a=$('.header-inner').height(),b=parseInt($('.main').css('padding-bottom'),10),c=a+10;$('.sidebar-inner').affix({offset:{top:c,bottom:b}}),$(document).on('affixed.bs.affix',function(){updateTOCHeight(document.body.clientHeight-100)})}function initTOCDimension(){var a,b;$(window).on('resize',function(){a&&clearTimeout(a),a=setTimeout(function(){var a=document.body.clientHeight-100;updateTOCHeight(a)},0)}),updateTOCHeight(document.body.clientHeight-100),b=getScrollbarWidth(),$('.post-toc').css('width','calc(100% + '+b+'px)')}function updateTOCHeight(a){a=a||'auto',$('.post-toc').css('max-height',a)}$(function(){var b=$('.header-inner').height()+10,c,d,a,e;$('#sidebar').css({'margin-top':b}).show(),c=parseInt($('#sidebar').css('margin-top')),d=parseInt($('.sidebar-inner').css('height')),a=c+d,e=$('.content-wrap').height(),e<a&&$('.content-wrap').css('min-height',a),$('.site-nav-toggle').on('click',function(){var a=$('.site-nav'),e=$('.toggle'),b='site-nav-on',f='toggle-close',c=a.hasClass(b),g=c?'slideUp':'slideDown',d=c?'removeClass':'addClass';a.stop()[g]('normal',function(){a[d](b),e[d](f)})}),registerBackTop(),initScrollSpy(),initAffix(),initTOCDimension(),$('.sidebar-nav-toc').click(function(){$(this).addClass('sidebar-nav-active'),$(this).next().removeClass('sidebar-nav-active'),$('.'+$(this).next().attr('data-target')).toggle(500),$('.'+$(this).attr('data-target')).toggle(500)}),$('.sidebar-nav-overview').click(function(){$(this).addClass('sidebar-nav-active'),$(this).prev().removeClass('sidebar-nav-active'),$('.'+$(this).prev().attr('data-target')).toggle(500),$('.'+$(this).attr('data-target')).toggle(500)})})</script>
+<script src=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.js></script>
+<script type=text/javascript>$(function(){$('.post-body').viewer()})</script>
+<script>(function(){var a=document.createElement('script'),c=window.location.protocol.split(':')[0],b;c==='https'?a.src='https://zz.bdstatic.com/linksubmit/push.js':a.src='http://push.zhanzhang.baidu.com/push.js',b=document.getElementsByTagName("script")[0],b.parentNode.insertBefore(a,b)})()</script>
+</body>
+</html>

@@ -128,7 +128,7 @@ vagrant VM 部屬工具
 |
 <i class="fa fa-file-word-o fa-fw"></i>
 <span class=post-meta-item-text>字數：</span>
-<span class=leancloud-world-count>536 字</span>
+<span class=leancloud-world-count>571 字</span>
 </span>
 <span>
 |
@@ -177,17 +177,9 @@ box 即為已經打包好的 VM</p>
 <p>box 就是我們 VM 的範本
 首先在 virtualbox 先安裝好 VM
 並完成些基本設定 (安裝 Guest Additions 之類的)</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>dnf install -y epel-release 
-dnf install -y gcc make perl kernel-devel kernel-headers bzip2 dkms
-dnf install gcc kernel-devel kernel-headers make bzip2 perl 
-reboot
-
-mkdir -p /tmp/iso
-mount /dev/cdrom /tmp/iso
-sh /tmp/iso/VBoxLinuxAdditions.run
-
-</code></pre></div><p>使用指令包裝成 box 檔</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go>vagrant <span style=color:#a2f;font-weight:700>package</span> <span style=color:#666>--</span>base rockylinux <span style=color:#666>--</span>output rockylinux.box
+<p>使用指令包裝成 box 檔</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span>#</span>vagrant <span style=color:#a2f;font-weight:700>package</span> <span style=color:#666>--</span>base &lt;vm name&gt; <span style=color:#666>--</span>output &lt;box file&gt;
+vagrant <span style=color:#a2f;font-weight:700>package</span> <span style=color:#666>--</span>base rockylinux <span style=color:#666>--</span>output rockylinux.box
 </code></pre></div><p>等待完成後 box 就建好了
 之後我們要 LAB 的 VM 就可以直接使用此 box 快速產生</p>
 <p><img src=assets/1359_47.png alt=1356_51.png></p>
@@ -259,7 +251,17 @@ end
 可見確實使用 link-clone 占用極少資源
 在大量 LAB 的環境搭建非常實用</p>
 <p><img src=assets/1601_12.png alt=1601_12.png></p>
-<h2 id=vmware-workstation>Vmware workstation</h2>
+<h2 id=box-管理>box 管理</h2>
+<p>box 會 cache 在電腦中
+要更新box 需手動處理
+否則會持續使用舊 box</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-powershell data-lang=powershell><span style=color:#a2f>PS </span>C:\Users\NT03263&gt; vagrant.exe box list
+<span style=color:#a2f>ubuntu-desktop</span>.box (virtualbox, 0)
+ubuntu.box         (virtualbox, 0)
+
+<span style=color:#a2f>PS </span>C:\Users\NT03263&gt; vagrant.exe box remove <span style=color:#a2f>ubuntu-desktop</span>.box
+Removing box <span style=color:#b44>&#39;ubuntu-desktop.box&#39;</span> (v0) with provider <span style=color:#b44>&#39;virtualbox&#39;</span>...
+</code></pre></div><h2 id=vmware-workstation-待補>Vmware workstation (待補)</h2>
 <p>先下載 git 包
 <a href=https://github.com/hashicorp/vagrant-vmware-desktop>https://github.com/hashicorp/vagrant-vmware-desktop</a></p>
 <p>安裝 rube WITH DEVKIT
@@ -317,19 +319,19 @@ vagrant plugin install <span style=color:#a2f>vagrant-vmware</span>-desktop
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href=/post/>
-<span class=site-state-item-count>129</span>
+<span class=site-state-item-count>132</span>
 <span class=site-state-item-name>日誌</span>
 </a>
 </div>
 <div class="site-state-item site-state-categories">
 <a href=/categories/>
-<span class=site-state-item-count>26</span>
+<span class=site-state-item-count>29</span>
 <span class=site-state-item-name>分類</span>
 </a>
 </div>
 <div class="site-state-item site-state-tags">
 <a href=/tags/>
-<span class=site-state-item-count>34</span>
+<span class=site-state-item-count>37</span>
 <span class=site-state-item-name>標籤</span>
 </a>
 </div>
@@ -350,7 +352,8 @@ GitHub
 <li><a href=#quick-start>quick start</a></li>
 <li><a href=#自行建立-box>自行建立 box</a></li>
 <li><a href=#大量建立-vm>大量建立 VM</a></li>
-<li><a href=#vmware-workstation>Vmware workstation</a></li>
+<li><a href=#box-管理>box 管理</a></li>
+<li><a href=#vmware-workstation-待補>Vmware workstation (待補)</a></li>
 </ul>
 </nav></div>
 </div>

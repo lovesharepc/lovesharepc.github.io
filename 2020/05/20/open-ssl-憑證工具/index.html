@@ -122,7 +122,7 @@ open ssl 憑證工具
 |
 <i class="fa fa-file-word-o fa-fw"></i>
 <span class=post-meta-item-text>字數：</span>
-<span class=leancloud-world-count>267 字</span>
+<span class=leancloud-world-count>282 字</span>
 </span>
 <span>
 |
@@ -139,6 +139,8 @@ open ssl 憑證工具
 </div>
 </header>
 <div class=post-body itemprop=articleBody>
+<p>產生自簽憑證
+<code>openssl req -x509 -newkey rsa:4096 -sha256 -nodes -keyout key.pem -out cert.pem -days 3650</code></p>
 <img loading=lazy class="alignnone size-medium wp-image-1001" src=https://nevertired.nctu.me/wp-content/uploads/2020/05/openssl-logo-300x82.png alt width=300 height=82 srcset="https://wp.nevertired.mooo.com/wp-content/uploads/2020/05/openssl-logo-300x82.png 300w, https://wp.nevertired.mooo.com/wp-content/uploads/2020/05/openssl-logo-1024x278.png 1024w, https://wp.nevertired.mooo.com/wp-content/uploads/2020/05/openssl-logo-768x209.png 768w, https://wp.nevertired.mooo.com/wp-content/uploads/2020/05/openssl-logo-1536x418.png 1536w, https://wp.nevertired.mooo.com/wp-content/uploads/2020/05/openssl-logo.png 1600w" sizes="(max-width: 300px) 100vw, 300px">
 <p>linux 下載</p>
 <p><a href=https://www.openssl.org/source/>https://www.openssl.org/source/</a></p>
@@ -146,57 +148,46 @@ open ssl 憑證工具
 <p><a href=https://slproweb.com/products/Win32OpenSSL.html>https://slproweb.com/products/Win32OpenSSL.html</a></p>
 <p> </p>
 <p>操作</p>
-<p><a href=https://www.sslshopper.com/article-most-common-openssl-commands.html>https://www.sslshopper.com/article-most-common-openssl-commands.html</a></p>
-<p> </p>
-<pre class=EnlighterJSRAW data-enlighter-language=generic>產生 private KEY 、 CSR
+<p>產生 private KEY 、 CSR</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>
 
-D:\key&gt;openssl.exe" req -new -newkey rsa:2048 -nodes -keyout Wildcard.key -out Wildcard.csr
 
-Generating a RSA private key
-........................+++++
-....+++++
-writing new private key to 'Wildcard.key'
------
-You are about to be asked to enter information that will be incorporated
+</code></pre></div><p>D:\key>openssl.exe" req -new -newkey rsa:2048 -nodes -keyout Wildcard.key -out Wildcard.csr</p>
+<h2 id=writing-new-private-key-to-wildcardkey>Generating a RSA private key
+&mldr;&mldr;&mldr;&mldr;&mldr;&mldr;&mldr;&mldr;+++++
+&mldr;.+++++
+writing new private key to &lsquo;Wildcard.key&rsquo;</h2>
+<h2 id=if-you-enter--the-field-will-be-left-blank>You are about to be asked to enter information that will be incorporated
 into your certificate request.
 What you are about to enter is what is called a Distinguished Name or a DN.
 There are quite a few fields but you can leave some blank
 For some fields there will be a default value,
-If you enter '.', the field will be left blank.
------
-Country Name (2 letter code) [AU]:TW
+If you enter &lsquo;.&rsquo;, the field will be left blank.</h2>
+<p>Country Name (2 letter code) [AU]:TW
 State or Province Name (full name) [Some-State]:Taiwan
 Locality Name (eg, city) []:Taichung
 Organization Name (eg, company) [Internet Widgits Pty Ltd]:english company name
 Organizational Unit Name (eg, section) []:IT
 Common Name (e.g. server FQDN or YOUR name) []:*.domain.name
-Email Address []:whocare@who.who
-
-Please enter the following 'extra' attributes
+Email Address []:whocare@who.who</p>
+<p>Please enter the following &lsquo;extra&rsquo; attributes
 to be sent with your certificate request
 A challenge password []:P@ssw0rd
-An optional company name []:
-
-
-==================================
-將 CSR 給憑證單位簽發憑證
-==================================
-換回
-root.cer   根憑證
+An optional company name []:</p>
+<h1 id=將-csr-給憑證單位簽發憑證>==================================
+將 CSR 給憑證單位簽發憑證</h1>
+<p>換回
+root.cer 根憑證
 server.cer 主憑證
-uca_1.cer  鍊憑證1
-uca_2.cer  鍊憑證2
-
-
-合併鍊憑證
-copy  uca_2.cer+uca_1.cer chain.cer
-
-轉換憑證 pfx
-
-D:\key&gt;openssl pkcs12 -export -out Wildcard.pfx -inkey Wildcard.key -in server.cer -certfile root.cer -certfile chain.cer
+uca_1.cer 鍊憑證1
+uca_2.cer 鍊憑證2</p>
+<p>合併鍊憑證
+copy uca_2.cer+uca_1.cer chain.cer</p>
+<p>轉換憑證 pfx</p>
+<p>D:\key>openssl pkcs12 -export -out Wildcard.pfx -inkey Wildcard.key -in server.cer -certfile root.cer -certfile chain.cer
 Enter Export Password:自訂 PFX 密碼
 Verifying - Enter Export Password:自訂 PFX 密碼
-</pre>
+</pre></p>
 <p> </p>
 </div>
 <footer class=post-footer>
@@ -233,19 +224,19 @@ Verifying - Enter Export Password:自訂 PFX 密碼
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href=/post/>
-<span class=site-state-item-count>129</span>
+<span class=site-state-item-count>132</span>
 <span class=site-state-item-name>日誌</span>
 </a>
 </div>
 <div class="site-state-item site-state-categories">
 <a href=/categories/>
-<span class=site-state-item-count>26</span>
+<span class=site-state-item-count>29</span>
 <span class=site-state-item-name>分類</span>
 </a>
 </div>
 <div class="site-state-item site-state-tags">
 <a href=/tags/>
-<span class=site-state-item-count>34</span>
+<span class=site-state-item-count>37</span>
 <span class=site-state-item-name>標籤</span>
 </a>
 </div>

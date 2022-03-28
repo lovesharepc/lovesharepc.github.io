@@ -122,7 +122,7 @@ docker 操作
 |
 <i class="fa fa-file-word-o fa-fw"></i>
 <span class=post-meta-item-text>字數：</span>
-<span class=leancloud-world-count>608 字</span>
+<span class=leancloud-world-count>643 字</span>
 </span>
 <span>
 |
@@ -381,6 +381,14 @@ docker push 10.202.1.6/httpd:version1.0
 </code></pre></div><h1 id=其他-docker-倉庫>其他 docker 倉庫</h1>
 <p>NVIDIA
 <a href=https://ngc.nvidia.com/catalog/containers/>https://ngc.nvidia.com/catalog/containers/</a></p>
+<h2 id=docker-run-限制性能參數>docker run 限制性能參數</h2>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-powershell data-lang=powershell>--blkio-weight		Block IO (relative weight), between 10 and 1000, or 0 to disable (<span style=color:#a2f;font-weight:700>default</span> 0)
+--cpus		API 1.25+
+--memory , -m		Memory limit
+--shm-size		Size of /dev/shm
+
+
+</code></pre></div>
 </div>
 <footer class=post-footer>
 <div class=post-tags>
@@ -424,19 +432,19 @@ docker push 10.202.1.6/httpd:version1.0
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href=/post/>
-<span class=site-state-item-count>129</span>
+<span class=site-state-item-count>132</span>
 <span class=site-state-item-name>日誌</span>
 </a>
 </div>
 <div class="site-state-item site-state-categories">
 <a href=/categories/>
-<span class=site-state-item-count>26</span>
+<span class=site-state-item-count>29</span>
 <span class=site-state-item-name>分類</span>
 </a>
 </div>
 <div class="site-state-item site-state-tags">
 <a href=/tags/>
-<span class=site-state-item-count>34</span>
+<span class=site-state-item-count>37</span>
 <span class=site-state-item-name>標籤</span>
 </a>
 </div>
@@ -464,6 +472,9 @@ GitHub
 </li>
 <li><a href=#docker-操作>docker 操作</a></li>
 <li><a href=#other>other</a></li>
+</ul>
+<ul>
+<li><a href=#docker-run-限制性能參數>docker run 限制性能參數</a></li>
 </ul>
 </nav></div>
 </div>
